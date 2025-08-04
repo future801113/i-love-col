@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>雙帳號隨機圖片展示</title>
+    <title>i-COL</title>
     <style>
         * {
             margin: 0;
@@ -23,18 +23,6 @@
             margin: 0 auto;
         }
         
-        .header {
-            text-align: center;
-            color: white;
-            margin-bottom: 30px;
-        }
-        
-        .header h1 {
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            margin-bottom: 10px;
-        }
-        
         .dual-display {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -51,27 +39,18 @@
         .account-section {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
-            padding: 25px;
+            padding: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-        
-        .account-title {
-            color: #333;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            text-align: center;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #667eea;
         }
         
         .image-container {
             position: relative;
-            margin: 20px 0;
+            margin: 10px 0;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             background: #f0f0f0;
-            min-height: 350px;
+            min-height: 550px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -79,7 +58,7 @@
         
         .random-image {
             max-width: 100%;
-            max-height: 500px;
+            max-height: 750px;
             width: auto;
             height: auto;
             border-radius: 15px;
@@ -114,21 +93,27 @@
         }
         
         .controls {
-            margin: 20px 0;
+            margin: 15px 0;
             display: flex;
-            gap: 10px;
+            gap: 8px;
             justify-content: center;
             flex-wrap: wrap;
         }
         
-        color: white;
+        button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 0.9em;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 1.1em;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            min-width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         button:hover {
@@ -161,12 +146,17 @@
             border-radius: 20px;
             padding: 20px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
         
         .global-controls button {
-            margin: 0 10px;
-            padding: 12px 24px;
-            font-size: 1em;
+            margin: 0;
+            padding: 10px 20px;
+            font-size: 0.95em;
+            white-space: nowrap;
         }
         
         .footer {
@@ -179,16 +169,9 @@
 </head>
 <body>
     <div class="main-container">
-        <div class="header">
-            <h1>🖼️ 雙帳號圖片展示</h1>
-            <p>ice_deliverer × colne_icol</p>
-        </div>
-        
         <div class="dual-display">
             <!-- ice_deliverer 區域 -->
             <div class="account-section">
-                <h2 class="account-title">ice_deliverer</h2>
-                
                 <div class="image-container" id="imageContainer1">
                     <div class="loading">
                         <div class="spinner"></div>
@@ -201,8 +184,8 @@
                 </div>
                 
                 <div class="controls">
-                    <button onclick="loadRandomImage('ice_deliverer')">🎲 換圖片</button>
-                    <button onclick="downloadImage('ice_deliverer')">💾 下載</button>
+                    <button onclick="loadRandomImage('ice_deliverer')" title="換圖片">🎲</button>
+                    <button onclick="downloadImage('ice_deliverer')" title="下載">💾</button>
                 </div>
                 
                 <div class="info">
@@ -214,8 +197,6 @@
             
             <!-- colne_icol 區域 -->
             <div class="account-section">
-                <h2 class="account-title">colne_icol</h2>
-                
                 <div class="image-container" id="imageContainer2">
                     <div class="loading">
                         <div class="spinner"></div>
@@ -228,8 +209,8 @@
                 </div>
                 
                 <div class="controls">
-                    <button onclick="loadRandomImage('colne_icol')">🎲 換圖片</button>
-                    <button onclick="downloadImage('colne_icol')">💾 下載</button>
+                    <button onclick="loadRandomImage('colne_icol')" title="換圖片">🎲</button>
+                    <button onclick="downloadImage('colne_icol')" title="下載">💾</button>
                 </div>
                 
                 <div class="info">
@@ -248,7 +229,7 @@
         
         <div class="footer">
             <p>最後更新：<span id="lastUpdate">載入中...</span></p>
-            <p>© 2025 雙帳號圖片展示系統</p>
+            <p>© 2025 Just Vibe It</p>
         </div>
     </div>
 
@@ -273,6 +254,11 @@
                 loadImageList('ice_deliverer'),
                 loadImageList('colne_icol')
             ]);
+            
+            // 載入完成後自動開始播放
+            setTimeout(() => {
+                autoSlideshow();
+            }, 1000); // 等待1秒讓圖片載入完成後再開始自動播放
         }
 
         // 載入圖片清單
@@ -394,7 +380,7 @@
             
             slideshowInterval = setInterval(() => {
                 loadRandomImages();
-            }, 3000); // 每3秒換一次圖
+            }, 10000); // 每10秒換一次圖
             
             console.log('自動播放已開始');
         }
@@ -407,225 +393,6 @@
                 console.log('自動播放已停止');
             }
         }
-    </script>
-</body>
-</html>
-        
-        .info {
-            margin-top: 20px;
-            padding: 15px;
-            background: rgba(102, 126, 234, 0.1);
-            border-radius: 10px;
-            color: #555;
-        }
-        
-        .image-counter {
-            margin: 10px 0;
-            color: #666;
-            font-size: 0.9em;
-        }
-        
-        .footer {
-            margin-top: 30px;
-            color: #888;
-            font-size: 0.8em;
-        }
-        
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-                margin: 10px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .controls {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            button {
-                width: 100%;
-                max-width: 200px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>🖼️ ice_deliverer 隨機圖片</h1>
-        
-        <div class="image-container" id="imageContainer">
-            <div class="loading">
-                <div class="spinner"></div>
-                載入圖片中...
-            </div>
-        </div>
-        
-        <div class="image-counter" id="imageCounter">
-            載入中...
-        </div>
-        
-        <div class="controls">
-            <button onclick="loadRandomImage()">🎲 隨機圖片</button>
-            <button onclick="startSlideshow()">▶️ 自動播放</button>
-            <button onclick="stopSlideshow()">⏸️ 停止播放</button>
-            <button onclick="downloadCurrent()">💾 下載圖片</button>
-        </div>
-        
-        <div class="info">
-            <p>📸 這些圖片來自 @ice_deliverer 的推文</p>
-            <p>🔄 每次點擊「隨機圖片」都會顯示不同的圖片</p>
-            <p>⚡ 自動播放模式每 5 秒切換一張圖片</p>
-        </div>
-        
-        <div class="footer">
-            最後更新: <span id="lastUpdate">載入中...</span>
-        </div>
-    </div>
-
-    <script>
-        let imageList = [];
-        let currentImageIndex = 0;
-        let slideshowInterval = null;
-        let currentImageUrl = '';
-
-        // 載入圖片清單
-        async function loadImageList() {
-            try {
-                const response = await fetch('images/images.json');
-                const data = await response.json();
-                imageList = data;
-                
-                if (imageList.length > 0) {
-                    document.getElementById('imageCounter').textContent = 
-                        `共 ${imageList.length} 張圖片`;
-                    loadRandomImage();
-                    
-                    // 顯示最後更新時間
-                    const lastUpdate = imageList.reduce((latest, item) => {
-                        const date = new Date(item.uploaded_at);
-                        return date > latest ? date : latest;
-                    }, new Date(0));
-                    
-                    document.getElementById('lastUpdate').textContent = 
-                        lastUpdate.toLocaleString('zh-TW');
-                } else {
-                    showError('沒有找到圖片');
-                }
-            } catch (error) {
-                console.error('載入圖片清單失敗:', error);
-                showError('載入圖片清單失敗');
-            }
-        }
-
-        // 載入隨機圖片
-        function loadRandomImage() {
-            if (imageList.length === 0) return;
-            
-            const randomIndex = Math.floor(Math.random() * imageList.length);
-            const imageData = imageList[randomIndex];
-            currentImageIndex = randomIndex;
-            currentImageUrl = imageData.url;
-            
-            const container = document.getElementById('imageContainer');
-            container.innerHTML = `
-                <img src="${imageData.url}" 
-                     alt="${imageData.filename}" 
-                     class="random-image"
-                     onload="imageLoaded()"
-                     onerror="imageError()">
-            `;
-        }
-
-        // 圖片載入成功
-        function imageLoaded() {
-            console.log('圖片載入成功');
-        }
-
-        // 圖片載入失敗
-        function imageError() {
-            showError('圖片載入失敗');
-        }
-
-        // 顯示錯誤
-        function showError(message) {
-            const container = document.getElementById('imageContainer');
-            container.innerHTML = `
-                <div class="loading" style="color: #ff6b6b;">
-                    ❌ ${message}
-                </div>
-            `;
-        }
-
-        // 開始自動播放
-        function startSlideshow() {
-            stopSlideshow(); // 先停止現有的播放
-            slideshowInterval = setInterval(loadRandomImage, 5000);
-            
-            // 更新按鈕文字表示正在播放
-            const button = event.target;
-            button.textContent = '🔄 播放中...';
-            button.style.background = 'linear-gradient(45deg, #28a745, #20c997)';
-        }
-
-        // 停止自動播放
-        function stopSlideshow() {
-            if (slideshowInterval) {
-                clearInterval(slideshowInterval);
-                slideshowInterval = null;
-            }
-            
-            // 重置播放按鈕
-            const playButton = document.querySelector('button[onclick="startSlideshow()"]');
-            if (playButton) {
-                playButton.textContent = '▶️ 自動播放';
-                playButton.style.background = 'linear-gradient(45deg, #667eea, #764ba2)';
-            }
-        }
-
-        // 下載當前圖片
-        function downloadCurrent() {
-            if (!currentImageUrl) return;
-            
-            const link = document.createElement('a');
-            link.href = currentImageUrl;
-            link.download = imageList[currentImageIndex]?.filename || 'image.jpg';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
-        // 鍵盤快捷鍵
-        document.addEventListener('keydown', function(event) {
-            switch(event.key) {
-                case ' ': // 空格鍵
-                case 'r': // R 鍵
-                    event.preventDefault();
-                    loadRandomImage();
-                    break;
-                case 'p': // P 鍵
-                    event.preventDefault();
-                    if (slideshowInterval) {
-                        stopSlideshow();
-                    } else {
-                        startSlideshow();
-                    }
-                    break;
-                case 'd': // D 鍵
-                    event.preventDefault();
-                    downloadCurrent();
-                    break;
-            }
-        });
-
-        // 頁面載入時執行
-        window.addEventListener('load', loadImageList);
-        
-        // 頁面離開時停止自動播放
-        window.addEventListener('beforeunload', stopSlideshow);
     </script>
 </body>
 </html>
