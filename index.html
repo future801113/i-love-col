@@ -287,7 +287,7 @@
     </div>
     
     <!-- HTML5 音樂播放器 -->
-    <audio id="background-music" loop preload="auto">
+    <audio id="background-music" loop preload="auto" autoplay>
         <source src="music/パラレルワールド.mp3" type="audio/mpeg">
         您的瀏覽器不支援音樂播放
     </audio>
@@ -316,18 +316,106 @@
             if (audioPlayer) {
                 audioPlayer.volume = 0.3; // 設定初始音量 30%
                 
-                // 嘗試自動播放（某些瀏覽器可能會阻止）
-                const playPromise = audioPlayer.play();
-                if (playPromise !== undefined) {
-                    playPromise.then(() => {
-                        isPlaying = true;
-                        updateMusicButton();
-                    }).catch(error => {
-                        console.log('自動播放被阻止，需要用戶手動啟動');
-                        isPlaying = false;
-                        updateMusicButton();
-                    });
+                // 多種方式嘗試自動播放
+                attemptAutoplay();
+                
+                // 監聽用戶首次互動，然後自動播放
+                document.addEventListener('click', enableAutoplay, { once: true });
+                document.addEventListener('keydown', enableAutoplay, { once: true });
+                document.addEventListener('touchstart', enableAutoplay, { once: true });
+            }
+        }
+
+        // 嘗試自動播放
+        function attemptAutoplay() {
+            if (!audioPlayer) return;
+            
+            const playPromise = audioPlayer.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log('✅ 自動播放成功！');
+                    isPlaying = true;
+                    updateMusicButton();
+                }).catch(error => {
+                    console.log('⚠️ 自動播放被阻止，等待用戶互動');
+                    isPlaying = false;
+                    updateMusicButton();
+                    
+                    // 顯示提示訊息
+                    showAutoplayHint();
+                });
+            }
+        }
+
+        // 用戶首次互動後啟用自動播放
+        function enableAutoplay() {
+            if (!isPlaying && audioPlayer) {
+                attemptAutoplay();
+                hideAutoplayHint();
+            }
+        }
+
+        // 顯示自動播放提示
+        function showAutoplayHint() {
+            const hint = document.createElement('div');
+            hint.id = 'autoplay-hint';
+            hint.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 20px;
+                border-radius: 10px;
+                z-index: 10000;
+                text-align: center;
+                font-size: 16px;
+                max-width: 300px;
+                animation: fadeIn 0.5s ease;
+            `;
+            hint.innerHTML = `
+                <div style="margin-bottom: 10px;">🎵</div>
+                <div>點擊任意處開始播放背景音樂</div>
+                <div style="margin-top: 10px; font-size: 12px; opacity: 0.7;">
+                    (此提示會在首次互動後消失)
+                </div>
+            `;
+            
+            // 添加動畫
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+                    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
                 }
+                @keyframes fadeOut {
+                    from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+                    to { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+                }
+            `;
+            document.head.appendChild(style);
+            document.body.appendChild(hint);
+            
+            // 5秒後自動淡出
+            setTimeout(() => {
+                if (hint.parentNode) {
+                    hint.style.animation = 'fadeOut 0.5s ease';
+                    setTimeout(() => {
+                        if (hint.parentNode) {
+                            hint.remove();
+                        }
+                    }, 500);
+                }
+            }, 5000);
+        }
+
+        // 隱藏自動播放提示
+        function hideAutoplayHint() {
+            const hint = document.getElementById('autoplay-hint');
+            if (hint) {
+                hint.style.animation = 'fadeOut 0.5s ease';
+                setTimeout(() => hint.remove(), 500);
             }
         }
 
