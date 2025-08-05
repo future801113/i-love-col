@@ -165,6 +165,49 @@
             color: rgba(255, 255, 255, 0.8);
             font-size: 0.9em;
         }
+        
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            max-width: 300px;
+        }
+        
+        .music-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .music-toggle {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .volume-control {
+            flex: 1;
+            margin: 0 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .music-player {
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -233,6 +276,22 @@
         </div>
     </div>
 
+    <!-- 音樂播放器 -->
+    <div class="music-player" id="musicPlayer">
+        <div class="music-controls">
+            <button class="music-toggle" onclick="toggleMusic()" id="musicToggle">🎵 播放音樂</button>
+            <input type="range" class="volume-control" id="volumeControl" min="0" max="100" value="30" onchange="changeVolume()">
+            <span id="volumeLabel">30%</span>
+        </div>
+        <div style="font-size: 0.8em; color: #666;">背景音樂</div>
+    </div>
+    
+    <!-- HTML5 音樂播放器 -->
+    <audio id="background-music" loop preload="auto">
+        <source src="music/パラレルワールド.mp3" type="audio/mpeg">
+        您的瀏覽器不支援音樂播放
+    </audio>
+
     <script>
         // 全域變數
         let imageList1 = [];  // ice_deliverer 圖片清單
@@ -242,11 +301,74 @@
         let currentImageUrl1 = '';
         let currentImageUrl2 = '';
         let slideshowInterval = null;
+        let isPlaying = false;
+        let audioPlayer = null;
 
         // 頁面載入時初始化
         document.addEventListener('DOMContentLoaded', function() {
             loadImageLists();
+            initAudioPlayer();
         });
+
+        // 初始化音樂播放器
+        function initAudioPlayer() {
+            audioPlayer = document.getElementById('background-music');
+            if (audioPlayer) {
+                audioPlayer.volume = 0.3; // 設定初始音量 30%
+                
+                // 嘗試自動播放（某些瀏覽器可能會阻止）
+                const playPromise = audioPlayer.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        isPlaying = true;
+                        updateMusicButton();
+                    }).catch(error => {
+                        console.log('自動播放被阻止，需要用戶手動啟動');
+                        isPlaying = false;
+                        updateMusicButton();
+                    });
+                }
+            }
+        }
+
+        // 切換音樂播放
+        function toggleMusic() {
+            if (!audioPlayer) return;
+            
+            if (isPlaying) {
+                audioPlayer.pause();
+                isPlaying = false;
+            } else {
+                const playPromise = audioPlayer.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        isPlaying = true;
+                    }).catch(error => {
+                        console.log('播放失敗:', error);
+                    });
+                }
+            }
+            updateMusicButton();
+        }
+
+        // 更新音樂按鈕顯示
+        function updateMusicButton() {
+            const button = document.getElementById('musicToggle');
+            if (isPlaying) {
+                button.textContent = '🎵 暫停音樂';
+            } else {
+                button.textContent = '🎵 播放音樂';
+            }
+        }
+
+        // 調整音量
+        function changeVolume() {
+            const volume = document.getElementById('volumeControl').value;
+            document.getElementById('volumeLabel').textContent = volume + '%';
+            if (audioPlayer) {
+                audioPlayer.volume = volume / 100;
+            }
+        }
 
         // 載入兩個帳號的圖片清單
         async function loadImageLists() {
