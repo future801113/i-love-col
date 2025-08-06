@@ -17,13 +17,20 @@ from pathlib import Path
 # 載入環境變數
 def load_env():
     """載入 .env 檔案中的環境變數"""
+    # 先嘗試父目錄的 .env（本地開發環境）
     env_path = Path(__file__).parent.parent / '.env'
+    
+    # 如果找不到，嘗試當前工作目錄的 .env（GitHub Actions 環境）
+    if not env_path.exists():
+        env_path = Path.cwd() / '.env'
     
     if not env_path.exists():
         raise FileNotFoundError(
-            f"找不到 .env 檔案於 {env_path}\n"
+            f"找不到 .env 檔案於 {Path(__file__).parent.parent / '.env'} 或 {Path.cwd() / '.env'}\n"
             "請複製 .env.example 為 .env 並填入您的 API Key"
         )
+    
+    print(f"📁 載入環境設定檔: {env_path}")
     
     env_vars = {}
     with open(env_path, 'r', encoding='utf-8') as f:
@@ -303,8 +310,15 @@ def save_weather_data(weather_data, forecast_data=None):
         if forecast_data:
             output_data.update(forecast_data)
         
-        # 確保輸出目錄存在
-        output_file = "weather.json"
+        # 確保輸出目錄存在 - 根據執行環境決定輸出路徑
+        if Path(__file__).parent.name == 'scripts':
+            # 在 scripts 目錄下執行，輸出到父目錄（本地開發）
+            output_file = Path(__file__).parent.parent / "weather.json"
+        else:
+            # 在根目錄執行（GitHub Actions）
+            output_file = Path.cwd() / "weather.json"
+        
+        print(f"💾 輸出檔案路徑: {output_file}")
         
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(output_data, f, ensure_ascii=False, indent=2)
