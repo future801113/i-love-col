@@ -1,12 +1,36 @@
 {
-  "last_updated": "2025-08-06 22:36:45",
+  "last_updated": "2025-08-06 23:32:38",
   "total_count": 45,
   "categories": [
-    "科技",
     "娛樂",
-    "財經"
+    "財經",
+    "科技"
   ],
   "news": [
+    {
+      "title": "Google Cloud以AI代理與AI原生基礎架構，重新定義企業資料價值 - 奇摩新聞",
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNbWp1UXdNOWFGbWxmV3ppRW1kSUhsSWc3RWhYSTZseldiclg1R2s4TTNJZ1ZJSTRhbXZJYUE4NWxoUVBYdGpDa0NmeHlTTnloSG1wbnI0NXMwWVd0MUllTGpHVFdGTjVoY3A1WFF2ckMwTDgwNU8ydGRmcktjZnNMSlZZXzNBdmEyM1I5TWx5RXl1TThHS1pVb01POTd1QnRoTXJzTWxYNDdUaDk3ZUl0UVF5aS0xcEh4b3AzbGxXU3NMeFB3ZHhHRlZ1LUdZRFU1R3c?oc=5",
+      "description": "Google Cloud以AI代理與AI原生基礎架構，重新定義企業資料價值&nbsp;&nbsp;奇摩新聞",
+      "published": "2025-08-06 23:05",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "Grok Imagine引爆AI商機！法人看好這幾檔 投信卻爆砍這老AI破2億 - 奇摩股市",
+      "link": "https://news.google.com/rss/articles/CBMi5AJBVV95cUxQZzdNeUtRQlQ0WUcxa1ZYNVBERVBQUUlnRldld0QtQkFBWVc5clZibFdOLXdOanB3VHBfVEotbTctYVUzcnNNLUstWkl0Q3FJRllMdngwNXQ4dUZSNWVMejFIcHktMkY5NHBOaW5iTnBGTW5lMllsLUdhUXF6cWNLNTBJZkhfUDQ4Z2JLaFQ4SEZVRm43bXlSV3kyTjlXcGJpQlNNaHJhRlBKaHFRdndKblZHZVY3eTM1aHNGREkyQTcySEZOSHVVLUY4dS1hZ2M2TVpBbVVMYkF5OG9IbnFISHR6VmtObFpuaWhDZ0s2WFVMN3dGbHIxTG1nZnE4SXVld1JXZVBhdjA5OFVoTjhOWVF1cDF5LU1CbTVIMEx6SFBHNnJNX3JDaXJ2Q01xcmFBN2wzMU5MRTdKTks1a3lWRHZLRVRrcmc2Mms3RDRJWVRGcVQ0NFNUVXpwaGM2THMtOC1XNw?oc=5",
+      "description": "Grok Imagine引爆AI商機！法人看好這幾檔 投信卻爆砍這老AI破2億&nbsp;&nbsp;奇摩股市",
+      "published": "2025-08-06 22:40",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "金管會童政彰：金融回饋要內化為文化 以信任為起點、平權為終點 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBPbXVUUmpUcHB6VE91Rk5iSG5DMjBCODNENUZFeE16anBFTmZHajd2T3BNYUlBN3RZWS1oM0Y1YmhZTTJfOGJucC12ZzJhdU9n0gFWQVVfeXFMUEN0Sm5MbkRyX3JBdzJud0JkTzNMZlJ0aF9iUnM4MnJpak9RUkpUYnRFQk1ISGNucENWM2l1RmhCT3JHeHZUc3VNRFZkT0tYWkVHVlRhaUE?oc=5",
+      "description": "金管會童政彰：金融回饋要內化為文化 以信任為起點、平權為終點&nbsp;&nbsp;聯合新聞網",
+      "published": "2025-08-06 22:14",
+      "source": "news.google.com",
+      "category": "財經"
+    },
     {
       "title": "500甜音樂派對8月15日開唱 小樂吳思賢領軍5組音樂人用歌聲療癒粉絲 - udnSTYLE",
       "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5YYUU5cnM0T0oydXhSQ1VIalZFb0Zrb3AtV2d6N2dUTHZQWG93QlJqMk9BYm05UGlJdHN1eWhNNklSVmJWdTZuNVpWMllFMlZJeDQwSTBLZ24tYWp2RzF6ejZZWjNfRG1QM0loMWpNbUY5a3ZaUXUwQ2gtWHnSAV9BVV95cUxNT1N5eEY3bzZzVnlhQ2VsVEJ4YjJ0bGQ5b2JEQjFRa0NrcjNEMFo2NUplR2Zid25hVDN3WEVzSVBzUHdVdXRnNXdTLW5pRzBRbUgwUFN2cmNEcVFlY1JXVQ?oc=5",
@@ -48,20 +72,20 @@
       "category": "財經"
     },
     {
-      "title": "散裝回溫、AI撐空運 台航、中菲行看市況趨穩 - 奇摩新聞",
-      "link": "https://news.google.com/rss/articles/CBMipgJBVV95cUxPd0pGN21XakFZMGdQVFlGdWZEZmd2MERhZnZnT0tKcWNQQnlUTmVCcnpMS2Z3SlBVWjQ3NUU4Wk9oTWRfMHUwd1kwREoyTkRyR0xjWEFBQWszMlA0THBHbTV4Z19XVFNfQnYzZmI0ZWhhdjJpdm9JV2R6MEcxVy1aY1JoY1FoODhnbWVSajVRSWxPLUVaSFNLZnRrTkJ5OUxyZGxJS3R0aUlRSXRVMFBMY3N3bXBtRFUyWHBwZjVvQW9HU3Bfck82TC1mMjAxcEdXTTBDc3ZpdTFyMFJRY0Yya0w0TG41RHQ0VGlmcE9JOTdWTVVzMTJUODBGYUhkOGd1aTdNbXdHWVlQVXpsYk5jY0N2OFJYV2dkUlA4ZkFTb1h0ZWdNbVE?oc=5",
-      "description": "散裝回溫、AI撐空運 台航、中菲行看市況趨穩&nbsp;&nbsp;奇摩新聞",
+      "title": "總體經濟學家吳嘉隆：大膽投資、大膽開口打造台美利益共同體| 政治 - Newtalk新聞",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBOcE1OeEw1ZjlUb21BVmlyemFqVkEwLXNwOFRuWk1YbWM1ay00bTRpN01tanBmMmZkdjBQaTZicHE5OFZPc1BBREhxeWx5dkNZak9zeUVINXJpUQ?oc=5",
+      "description": "總體經濟學家吳嘉隆：大膽投資、大膽開口打造台美利益共同體| 政治&nbsp;&nbsp;Newtalk新聞",
+      "published": "2025-08-06 20:15",
+      "source": "news.google.com",
+      "category": "財經"
+    },
+    {
+      "title": "散裝回溫、AI撐空運台航、中菲行看市況趨穩| 產經 - 中央社 CNA",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5XWW95MER2NHRxWGM3OFRmb25oRVl1QXJ5TU9lUjF5dl9uWXZyT3BOMnNXelZVcXJ6M1FqdlEteDh0UTM0T0VIaGNrWkh0MUtVWjdQSnBCbDdMcy16VWc?oc=5",
+      "description": "散裝回溫、AI撐空運台航、中菲行看市況趨穩| 產經&nbsp;&nbsp;中央社 CNA",
       "published": "2025-08-06 20:05",
       "source": "news.google.com",
       "category": "科技"
-    },
-    {
-      "title": "經濟已死？這國不滿遭川普狠酸 怒反擊「我們對全球貢獻大於美國」 - 聯合新聞網",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5TWXJyYmVwYWQyczhjMjlpVGdZY3V6eXVnRmhRVDV4WGMzN0xYTXJXWXcwTXhzeDRhdTAzTjJCNHpFVUlUMUlDT2xrY29LZlZv0gFWQVVfeXFMTnVCdE93dnFweTVTMW10NHlWajFvcXpwazExdVhNMGx6bW5ET2V0UXV6YXdNcThfQXBWMWV2eFgyVWtjRXQ2VXIzMkgyS2RPTTdpVHRzM1E?oc=5",
-      "description": "經濟已死？這國不滿遭川普狠酸 怒反擊「我們對全球貢獻大於美國」&nbsp;&nbsp;聯合新聞網",
-      "published": "2025-08-06 19:39",
-      "source": "news.google.com",
-      "category": "財經"
     },
     {
       "title": "日本 ETF 市場新篇章！金融巨頭 SBI 申請推出「BTC 、 XRP」雙幣 ETF - 區塊客",
@@ -80,6 +104,14 @@
       "category": "娛樂"
     },
     {
+      "title": "地緣風險增 金融三業上半年對中國曝險再創新低 - 經濟日報",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFAtTGt6eW01dGVpbEFPdUUzTG1KZWh3b2Q1bngwN09FcTYtRFNrWF9WbW9RUXc2QkJwaFhFUmFwckkwUzhnTEdVZXQ5ZmVwN0ZtZ1FxNWNIek1RQdIBX0FVX3lxTE1sZDZGR3JRMjItQVd4aGstYV9ucHA4bXNxbG1WMDl5cEs4ZTJONnE0bWhSbHFBWmRzdW85amZwTElHdFVvU29vSlE3VHhIalhmM3ZlUGFYQVhLMV9YS0NF?oc=5",
+      "description": "地緣風險增 金融三業上半年對中國曝險再創新低&nbsp;&nbsp;經濟日報",
+      "published": "2025-08-06 19:00",
+      "source": "news.google.com",
+      "category": "財經"
+    },
+    {
       "title": "漲停不是偶然？國碩(2406)打進AI散熱市場的關鍵細節 - 優分析UAnalyze",
       "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0wM0ZCbDd3NGFmSE1nRTQxUHBBUHhHel9tWlluTmVvSU84WVNDX0hVdHc0UExJTVFmbnlZc0FfVTJVV1YyXzM5dTNJVEVwdjhTa2VaM3J3?oc=5",
       "description": "漲停不是偶然？國碩(2406)打進AI散熱市場的關鍵細節&nbsp;&nbsp;優分析UAnalyze",
@@ -96,14 +128,6 @@
       "category": "科技"
     },
     {
-      "title": "金融業不再只是數字！金管會啟動三階段金融回饋行動 - 聯合新聞網",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE41dlo4NDl1STZ1aDNVWlc0S2hfMXQwdWJsRE43T3JNdlpPNzU1NHRvUG9DWm84Tm5KV2paNEhhUG9iLTY1WVdfOFVybHdZOVd50gFWQVVfeXFMTkRIYWpaV0pNaFRIWlVrdnJ5X2UySHF1ckp4SFE2ZFFHNmlFaE5SMXFfM1BaQ3dtSnhRc1doNFVIVWEwQVV5VmJZTWE4ZENBQkpuSktRR2c?oc=5",
-      "description": "金融業不再只是數字！金管會啟動三階段金融回饋行動&nbsp;&nbsp;聯合新聞網",
-      "published": "2025-08-06 17:46",
-      "source": "news.google.com",
-      "category": "財經"
-    },
-    {
       "title": "台積電利空纏身外資出逃台股急挫213點/川普拋3千億投資話題經長「沒研究」惹議/台塑加碼新產線四寶聯手翻紅｜Yahoo財經掃描 - 奇摩股市",
       "link": "https://news.google.com/rss/articles/CBMi2wVBVV95cUxORU1sRjNvOVdEeW5QaFBBN2NlejV0QWRCWElHSGZMa0xTa3BtTUFUZTlTdDZ3WXJteTVCNF93RFYyVzliaHY3MXRzTkxkS1RmcWN6bmRGaFdHa2ZkWDFxcW1XcTVTVnQxZVhuZm1OdUtPQnFoTUh4S2hkVjRoWGFCQ1NLMTJQdnZZRDRqeHJkMzJaOWM4VWp3SUlXdTVURnZYV3ZBYTI3a25Rbl9URU16RzhpLVF2cUdLM3VLejk5RUlVOEx4cWxXUjY5QUlsdFd0V2pBbDB1QWt5X2V2VHB5WEtwd3h1Z1JqX2t2S21FdFJ1RzNBZk1aS2x6OTlZd1J5RlVYc3VTbm5zU2h1Q25GdHdhOXlLR0pFNzBvMlBZMTZZMGNVa3NvRFZSYkVDZ0VGWmRTeEc4V25RYy1Cc3ZBVERpVE0zNDQ4dEVoX0l2Ykl3d1o2ZldmY2VZbDJ0MzZybHZobnJvUWg3NEVKOS1oWTFlc2VYRFRiSDFtVWdKbjFyZXVsS2NfeUROdGV0TzNJekpudUhwS1RBVnNIZ3pySGJXUlA5NlczT0xVRDVtZU90UUpVN2JlV2M0UFJ4RFJpb2tPUWpIVXpKVGwxRnZObnJ2UlI1WlFsQnFLN05DV3hsc3FwbjE5SWozWHVuSjc0UmFRTUJHNUlYSXo3ODFMTUpmd2pqcFdBeTlTdmlrWmdzZEM4cm5PZ05mR0RnY1g0UGVZQnJIS0JIY3llU2tPYzNkM1VSNVg1amROdk84aFBQc3VpdTdZYjBPck1XVDEwV05oZkJKekJJUzBZelR2WlFtZ0M4RHpqVjRjc2RsVVp5ZDNWNi1pZVdROFJyejF2bUNaUl8xWWJXOXFiM0J3Rlg3eWJ3U2k3SEN2WEZia3RYUkdZb1ZYZWVVU2FBekRoeHVnWDY3TF9Ia1dnZHZuejBCdkJRWjNna3UzOTlYYWVHMWZ4NHoxaGFNVQ?oc=5",
       "description": "台積電利空纏身外資出逃台股急挫213點/川普拋3千億投資話題經長「沒研究」惹議/台塑加碼新產線四寶聯手翻紅｜Yahoo財經掃描&nbsp;&nbsp;奇摩股市",
@@ -112,12 +136,12 @@
       "category": "財經"
     },
     {
-      "title": "日本經濟｜下任日揆熱門人選之一 河野太郎倡結構改革減支出 與寬鬆主流意見相違 - Yahoo 財經",
-      "link": "https://news.google.com/rss/articles/CBMi-gNBVV95cUxQVFdsRFpreFZPOXFMbkFEUEpaWUk4SU55YmpBUEF4dmlVYVZKbUZ1TVg2ckdoYl9YT0NDM1BqWFB3YXlpLWgyMjBtTUlCX1c3bE4xaGg1cU9aeWd6YW1CMDNneU1NV2Z5OHE1NS0yQ2NsMWR5TU01aGl4VnVoMktCWmhzRU1XV1pfN2l0M0JvSHNIZ1l6c2Q1XzBKV1hIMW1mb3kycFhOSk96YUZHenZtZllRb0R6aWprWjAxTl9jalpkNkFYVE9kbkI3X0xIcWhIQTJzS0lhRDZ3YkZ1OEpncktkS3hWV0l0bjQ0M0djd0ZJU1VmMTYtd09MbGJKM2lpR1BnUWktV0E5T01oRThmY1VNNUZKWXp4VEg3V254QlY5dXV5VkZXbTdpWkFqYUt3OHlvUXNhS2lib0lxdFI5WTVGSXZUUDhlVEdVTUtTS3lXTzAyTVAwZEx6WHY2RGdUTWY1b19sY2toZ3ZjRFBUdm9nLXAzX09qVDg0YTJlSlJXVGJqNEVxYThLR2pObzdfQmJPWHQxT1h1RjRJb1FxNVJNazZlZVpuSjFXRlBVOVpSMTd1MGNzUVJ0S19LWGM1ZnhfMkp3SFVYcDg3dldBNVJSRV9CX1h6cm9sVnl6YktTTnJmYkd5bm91bi04bFptNk5HZnhFX3Y3QQ?oc=5",
-      "description": "日本經濟｜下任日揆熱門人選之一 河野太郎倡結構改革減支出 與寬鬆主流意見相違&nbsp;&nbsp;Yahoo 財經",
-      "published": "2025-08-06 17:30",
+      "title": "如何讓 AI 從威脅變幫手？科技小白、不分領域工作者都能懂的 7 道 Q&A - 換日線 Crossing",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1SSTZhZ3JFa09yY0hGdDJzd0dZaVRDTkdxVlhqQk9WRnZyMWMxYWQta09kUjZzZ19HU0tLM0ZFaG9rSHlSM0IzSTJHUWtvYTZCV2c?oc=5",
+      "description": "如何讓 AI 從威脅變幫手？科技小白、不分領域工作者都能懂的 7 道 Q&amp;A&nbsp;&nbsp;換日線 Crossing",
+      "published": "2025-08-06 17:27",
       "source": "news.google.com",
-      "category": "財經"
+      "category": "科技"
     },
     {
       "title": "百度推首批 7 類 AI 數位員工，懂業務 / 給結果 / 可進化 - TechNews 科技新報",
@@ -184,18 +208,10 @@
       "category": "財經"
     },
     {
-      "title": "兩名中國人因非法向中國運送英偉達AI芯片在美被起訴 - RFI",
-      "link": "https://news.google.com/rss/articles/CBMi9gJBVV95cUxNbTc2bXFwWm41MU8tMktYTVQ1aE83aUoyTjFPNjF6bVNTRDZwNEh4LXk2Y1dXSU9OZEdXUU94ZUhtYXl1cnVCS05jX1NHYUdHdnAzUUx2bkVxcVk4MExMWGZEVEk3eHZ3eVNPTHo3cVlpSElka2xuM3BValMwUXplMFVNMEhkR0QtMXowVlN1czgxSjhaTXpOczMwN0FUbXF2NmE3WUhXQklmZk9JZXpOUmpDNHBEMENWRnREX25qeVZyRXdfWXZuUVdyOXF1Z1VselA5cVFnUFo0YURCSWR5dWttSThXTXJYMW1oZXVaS0ktQm1LM1o5X1JPRVVqRXpaTS11cWs4ektEY193Z1NwZm1penh4b1U0bGZqUl9MNUxTbENIS1FSdlJFa080QWVZcFFkS0V1SkJTc2xSQjhlRWlzZWJiQ2FlNGZUbGZINHdWblZBbjZNUUJmQ1c5SEQ2NDYtMnhZc0EzMjZNUUdlS2J2eE5Bdw?oc=5",
-      "description": "兩名中國人因非法向中國運送英偉達AI芯片在美被起訴&nbsp;&nbsp;RFI",
-      "published": "2025-08-06 16:28",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "潘瑋柏全新單曲《Yes I Do》正式上線 帶來專屬夏天的狂愛告白 - playmusic.tw",
-      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9EOHlYb3dUOGItakRxRm1fVFo1ZFd1RzZhd3hoM0Qzb1JGZXhBeWpFbDE3WWkzampJYnFSZVZuSTZXeDktenhyWGFvUWRPSVAtTW9UbzlPWWpsVDB3eE8tckhoeDg1ZENQaWxj?oc=5",
-      "description": "潘瑋柏全新單曲《Yes I Do》正式上線 帶來專屬夏天的狂愛告白&nbsp;&nbsp;playmusic.tw",
-      "published": "2025-08-06 16:27",
+      "title": "下一代創作力爆發！2025達人秀畢業季海內外百校激戰落幕 - playmusic.tw",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE94LTZRNFY3UzBOV0ZNQkFYdkdocW9CaUVkN0djZXYySXY4bXdLYTcxTjcwOXdjMnBaeHVxWmJiRHlva0t6a2lCNzdQR0pBQmNuLURwQ3BVNnNYSDkxUmpIOHpJeXhYd09VWm5Qb0tydEJfQQ?oc=5",
+      "description": "下一代創作力爆發！2025達人秀畢業季海內外百校激戰落幕&nbsp;&nbsp;playmusic.tw",
+      "published": "2025-08-06 16:37",
       "source": "news.google.com",
       "category": "娛樂"
     },
@@ -280,28 +296,20 @@
       "category": "娛樂"
     },
     {
-      "title": "早侵入台灣！中國AI認知作戰滲台 美研究：2024大選前已發動攻擊 - 奇摩新聞",
-      "link": "https://news.google.com/rss/articles/CBMi_wJBVV95cUxNenVtYVlJYmZqTnd2YkdpSlVNa0RUX2VJOXFqZUI3bEpkeTBpZUJPNEIwdWo2WWxJOHQ4YXBDR09hNEJlQmZxaFIyUTY5eV81MEE2dHFldTB1YkNnRENvVmhzbmhzTU9BWG81OWIxcEtneDJHbThoZVdwXzJNVnlLUTFCbm1HVTR4Smc5TWM0aHRYa3Y0VmMzaEFOLU9MZlFCLW1fUk9aV1hoZVA5dnNVcWlUMHI4VGJtemQ2Sm9zUGh1WHlzSmN0ZW5nRVl1S1p5TWpNVUpYa09vR0RITHoyNUdfdnp2VmZwMWFwNnRVYndoUC1hTmNpU0YxdmZaVkVwdzlGRzE3LTJFMnBQVnptVUd6WmVwb2JUa3ZKdkF6aVhGV1hfOXlicG9VYUVXV0diUmxSdFpLa2NmRldFX3JMaXJPXzRkaEtkaFRDRGo1UU83bFh0VUFURDUyOEl2d0xNYV9OcGI1V3l5S29malV5Ty1Kd19oQ1RBTF9WdzZnYw?oc=5",
-      "description": "早侵入台灣！中國AI認知作戰滲台 美研究：2024大選前已發動攻擊&nbsp;&nbsp;奇摩新聞",
-      "published": "2025-08-06 14:44",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "中企干預台灣2024大選美研究揭AI生成「真實」對話操作輿論手法| 國際 - 中央社 CNA",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1YRXB0SmZkUVFNSUUyb1hDeG5SZldLUUcwaDVFY0kzV3J2TVhKandMWnVVUnZYVGpvZDE0MFNzVlhseE85dkFmWVp6amZSMlpsbW9vZVVEN05EUGdVUlhN?oc=5",
-      "description": "中企干預台灣2024大選美研究揭AI生成「真實」對話操作輿論手法| 國際&nbsp;&nbsp;中央社 CNA",
-      "published": "2025-08-06 14:36",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
       "title": "中央應變中心階段任務完成 各部會持續辦理復原重建工作 - moea.gov.tw",
       "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNQlhKX29BWGd1ZS1iRWpvYTdNdmoyTV9pNWs3Ul8xdVY5Y0pGMDFud0c3dzdEdmtlcVRxVXVKNWdycVAybHBBRHlwam5JOG14UXN6eVpfZkR0WU1oRXJSVVg0Z2VTMmMwd0ZyV0s1UzBvWExnS2VrV1g5T2tzVFRuNE0xM2F3LXFsNDRudA?oc=5",
       "description": "中央應變中心階段任務完成 各部會持續辦理復原重建工作&nbsp;&nbsp;moea.gov.tw",
       "published": "2025-08-06 14:15",
       "source": "news.google.com",
       "category": "財經"
+    },
+    {
+      "title": "向陽與路寒袖以詩會友音樂會譜寫文學樂章| 文化 - 中央社 CNA",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBxR3ZxaktRN1FBTGt0Z0lKMXFQM3pPdGZWNmZlMElLaEZfeEZXaEp5QkVTN2ZWTkJFclRUYWFRZzhJWm5EcklHYlhZamVVNFA2Nmt1aHpqbXM5bTNFR3lV?oc=5",
+      "description": "向陽與路寒袖以詩會友音樂會譜寫文學樂章| 文化&nbsp;&nbsp;中央社 CNA",
+      "published": "2025-08-06 13:56",
+      "source": "news.google.com",
+      "category": "娛樂"
     },
     {
       "title": "黑膠唱片與電子音樂人新的集散地 「Slipped Disk摔碟唱片舍」8/6正式開幕！ - Blow 吹音樂",
@@ -326,14 +334,6 @@
       "published": "2025-08-06 12:27",
       "source": "news.google.com",
       "category": "財經"
-    },
-    {
-      "title": "台灣電影再傳捷報「左撇子女孩」入選多倫多影展| 娛樂 - 中央社 CNA",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE56MUN6bzZFWE1nZjZsRDRaVWs0TTFoZGJhenB5dHREMXdyalkyeEprNzBpcFRtdExIWXFaTTIxb1F6aFA2OU1BNXpXTnI0MERXM2hGR0ZNUHRDRmZyUDZr?oc=5",
-      "description": "台灣電影再傳捷報「左撇子女孩」入選多倫多影展| 娛樂&nbsp;&nbsp;中央社 CNA",
-      "published": "2025-08-06 11:44",
-      "source": "news.google.com",
-      "category": "娛樂"
     },
     {
       "title": "受藍葦華參演「零日攻擊」影響？香港電影節取消放映「我家的事」 - 中央社 CNA",
