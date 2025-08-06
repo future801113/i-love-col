@@ -6,6 +6,9 @@ on:
     - cron: '*/30 * * * *'
   workflow_dispatch: # 允許手動觸發
 
+permissions:
+  contents: write  # 允許寫入內容和推送
+
 jobs:
   update-weather:
     runs-on: ubuntu-latest
@@ -13,7 +16,9 @@ jobs:
     steps:
     - name: 檢出程式碼
       uses: actions/checkout@v4
-      
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
     - name: 設定 Python 環境
       uses: actions/setup-python@v4
       with:
@@ -27,36 +32,64 @@ jobs:
     - name: 建立環境設定檔
       run: |
         echo "CWA_API_KEY=${{ secrets.CWA_API_KEY }}" > .env
+        ls -la .env
         
     - name: 抓取天氣資料
       run: |
+        echo "當前工作目錄: $(pwd)"
+        echo "目錄內容:"
+        ls -la
         cd scripts
+        echo "scripts 目錄內容:"
+        ls -la
         python fetch_weather.py
+        cd ..
+        echo "執行後根目錄內容:"
+        ls -la weather.json || echo "weather.json 不存在"
         
     - name: 檢查是否有變更
       id: check_changes
       run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
         if [ -f weather.json ]; then
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          echo "✅ weather.json 檔案存在"
+          echo "📊 檔案內容:"
+          head -5 weather.json
+          
+          # 檢查是否有變更
           git add weather.json
           if git diff --staged --quiet; then
+            echo "📝 沒有變更"
             echo "changes=false" >> $GITHUB_OUTPUT
           else
+            echo "📝 有變更需要提交"
             echo "changes=true" >> $GITHUB_OUTPUT
           fi
         else
+          echo "❌ weather.json 檔案不存在"
           echo "changes=false" >> $GITHUB_OUTPUT
         fi
         
     - name: 提交並推送變更
       if: steps.check_changes.outputs.changes == 'true'
       run: |
+        echo "🔄 準備提交變更..."
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        
+        # 確保檔案已添加
         git add weather.json
+        git status
+        
+        # 提交變更
         git commit -m "🌤️ 更新天氣資料 $(date '+%Y-%m-%d %H:%M:%S')"
+        
+        # 推送變更
+        echo "📤 推送變更到遠端..."
         git push
+        echo "✅ 推送完成"
         
     - name: 顯示天氣資料
       if: always()
