@@ -30,17 +30,27 @@
             margin-bottom: 30px;
         }
         
-        @media (max-width: 768px) {
-            .dual-display {
-                grid-template-columns: 1fr;
-            }
-        }
-        
         .account-section {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             padding: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .dual-display {
+                grid-template-columns: 1fr;
+            }
+            
+            .music-controls-inline {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .music-controls-inline .volume-control {
+                min-width: 150px;
+                max-width: 200px;
+            }
         }
         
         .image-container {
@@ -159,6 +169,39 @@
             white-space: nowrap;
         }
         
+        .music-controls-inline {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 5px 15px;
+            margin: 5px 0;
+        }
+        
+        .music-controls-inline .music-toggle {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        
+        .music-controls-inline .volume-control {
+            flex: 1;
+            min-width: 80px;
+            max-width: 120px;
+        }
+        
+        .music-controls-inline #volumeLabel {
+            font-size: 12px;
+            color: #666;
+            min-width: 30px;
+        }
+        
         .footer {
             margin-top: 30px;
             text-align: center;
@@ -166,46 +209,19 @@
             font-size: 0.9em;
         }
         
-        .music-player {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            max-width: 300px;
-        }
-        
-        .music-controls {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        
-        .music-toggle {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        
-        .volume-control {
-            flex: 1;
-            margin: 0 10px;
-        }
-        
         @media (max-width: 768px) {
-            .music-player {
-                bottom: 10px;
-                right: 10px;
-                left: 10px;
-                max-width: none;
+            .dual-display {
+                grid-template-columns: 1fr;
+            }
+            
+            .music-controls-inline {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .music-controls-inline .volume-control {
+                min-width: 150px;
+                max-width: 200px;
             }
         }
     </style>
@@ -268,6 +284,13 @@
             <button onclick="loadRandomImages()">🎲 同時換圖</button>
             <button onclick="autoSlideshow()">▶️ 自動播放</button>
             <button onclick="stopSlideshow()">⏸️ 停止播放</button>
+            
+            <!-- 音樂控制項 -->
+            <div class="music-controls-inline">
+                <button class="music-toggle" onclick="toggleMusic()" id="musicToggle">🎵 播放音樂</button>
+                <input type="range" class="volume-control" id="volumeControl" min="0" max="100" value="30" onchange="changeVolume()">
+                <span id="volumeLabel">30%</span>
+            </div>
         </div>
         
         <div class="footer">
@@ -276,16 +299,6 @@
         </div>
     </div>
 
-    <!-- 音樂播放器 -->
-    <div class="music-player" id="musicPlayer">
-        <div class="music-controls">
-            <button class="music-toggle" onclick="toggleMusic()" id="musicToggle">🎵 播放音樂</button>
-            <input type="range" class="volume-control" id="volumeControl" min="0" max="100" value="30" onchange="changeVolume()">
-            <span id="volumeLabel">30%</span>
-        </div>
-        <div style="font-size: 0.8em; color: #666;">背景音樂</div>
-    </div>
-    
     <!-- HTML5 音樂播放器 -->
     <audio id="background-music" loop preload="auto" autoplay>
         <source src="music/パラレルワールド.mp3" type="audio/mpeg">
