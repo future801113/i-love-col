@@ -13,9 +13,10 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #f5f5f5; /* 中性背景，由各模式自行設定 */
             min-height: 100vh;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
         }
         
         .main-container {
@@ -194,10 +195,11 @@
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
         
-        /* 模式切換樣式 */
+        /* 模式切換樣式 - 完整版 */
         .gallery-mode,
         .news-mode {
             display: none;
+            min-height: 100vh;
         }
         
         .gallery-mode.active,
@@ -205,18 +207,31 @@
             display: block;
         }
         
+        /* 相簿模式樣式 */
+        .gallery-mode {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        /* 新聞模式樣式 - 簡化版 */
+        .news-mode {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            padding: 20px;
+        }
+        
         .compact-gallery {
             position: fixed;
             top: 20px;
             left: 20px;
-            right: 300px;
-            height: 200px;
+            right: 250px;
+            height: 280px;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
-            padding: 15px;
+            padding: 20px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
             display: flex;
-            gap: 15px;
+            gap: 20px;
             z-index: 900;
         }
         
@@ -252,7 +267,7 @@
         }
         
         .news-container {
-            margin-top: 250px;
+            margin-top: 330px;
             padding: 20px;
             max-width: 1200px;
             margin-left: auto;
@@ -361,17 +376,18 @@
                 top: 60px;
                 left: 10px;
                 right: 10px;
-                height: 150px;
+                height: 180px;
                 flex-direction: column;
-                gap: 10px;
+                gap: 12px;
+                padding: 15px;
             }
             
             .compact-image-container {
-                height: 60px;
+                height: 70px;
             }
             
             .news-container {
-                margin-top: 230px;
+                margin-top: 260px;
                 padding: 10px;
             }
             
@@ -517,96 +533,94 @@
         <button class="mode-btn" onclick="switchMode('news')">📰</button>
     </div>
 
-    <!-- 相簿模式 (原有內容) -->
+    <!-- 相簿模式 -->
     <div id="galleryMode" class="gallery-mode active">
         <div class="main-container">
-        <div class="dual-display">
-            <!-- ice_deliverer 區域 -->
-            <div class="account-section">
-                <div class="image-container" id="imageContainer1">
-                    <div class="loading">
-                        <div class="spinner"></div>
-                        載入圖片中...
+            <div class="dual-display">
+                <!-- ice_deliverer 區域 -->
+                <div class="account-section">
+                    <div class="image-container" id="imageContainer1">
+                        <div class="loading">
+                            <div class="spinner"></div>
+                            載入圖片中...
+                        </div>
+                    </div>
+                    
+                    <div class="image-counter" id="imageCounter1">
+                        載入中...
+                    </div>
+                    
+                    <div class="controls">
+                        <button onclick="loadRandomImage('ice_deliverer')" title="換圖片">🎲</button>
+                        <button onclick="downloadImage('ice_deliverer')" title="下載">💾</button>
+                    </div>
+                    
+                    <div class="info">
+                        <div>檔案名稱：<span id="filename1">-</span></div>
+                        <div>檔案大小：<span id="filesize1">-</span></div>
+                        <div>上傳時間：<span id="uploadtime1">-</span></div>
                     </div>
                 </div>
                 
-                <div class="image-counter" id="imageCounter1">
-                    載入中...
-                </div>
-                
-                <div class="controls">
-                    <button onclick="loadRandomImage('ice_deliverer')" title="換圖片">🎲</button>
-                    <button onclick="downloadImage('ice_deliverer')" title="下載">💾</button>
-                </div>
-                
-                <div class="info">
-                    <div>檔案名稱：<span id="filename1">-</span></div>
-                    <div>檔案大小：<span id="filesize1">-</span></div>
-                    <div>上傳時間：<span id="uploadtime1">-</span></div>
-                </div>
-            </div>
-            
-            <!-- colne_icol 區域 -->
-            <div class="account-section">
-                <div class="image-container" id="imageContainer2">
-                    <div class="loading">
-                        <div class="spinner"></div>
-                        載入圖片中...
+                <!-- colne_icol 區域 -->
+                <div class="account-section">
+                    <div class="image-container" id="imageContainer2">
+                        <div class="loading">
+                            <div class="spinner"></div>
+                            載入圖片中...
+                        </div>
+                    </div>
+                    
+                    <div class="image-counter" id="imageCounter2">
+                        載入中...
+                    </div>
+                    
+                    <div class="controls">
+                        <button onclick="loadRandomImage('colne_icol')" title="換圖片">🎲</button>
+                        <button onclick="downloadImage('colne_icol')" title="下載">💾</button>
+                    </div>
+                    
+                    <div class="info">
+                        <div>檔案名稱：<span id="filename2">-</span></div>
+                        <div>檔案大小：<span id="filesize2">-</span></div>
+                        <div>上傳時間：<span id="uploadtime2">-</span></div>
                     </div>
                 </div>
-                
-                <div class="image-counter" id="imageCounter2">
-                    載入中...
-                </div>
-                
-                <div class="controls">
-                    <button onclick="loadRandomImage('colne_icol')" title="換圖片">🎲</button>
-                    <button onclick="downloadImage('colne_icol')" title="下載">💾</button>
-                </div>
-                
-                <div class="info">
-                    <div>檔案名稱：<span id="filename2">-</span></div>
-                    <div>檔案大小：<span id="filesize2">-</span></div>
-                    <div>上傳時間：<span id="uploadtime2">-</span></div>
-                </div>
             </div>
-        </div>
-        
-        <div class="global-controls">
-            <button onclick="loadRandomImages()">🎲 同時換圖</button>
-            <button onclick="autoSlideshow()">▶️ 自動播放</button>
-            <button onclick="stopSlideshow()">⏸️ 停止播放</button>
             
-            <!-- 音樂控制項 -->
-            <div class="music-controls-inline">
-                <button class="music-toggle" onclick="toggleMusic()" id="musicToggle">🎵 播放音樂</button>
-                <input type="range" class="volume-control" id="volumeControl" min="0" max="100" value="30" onchange="changeVolume()">
-                <span id="volumeLabel">30%</span>
+            <div class="global-controls">
+                <button onclick="loadRandomImages()">🎲 同時換圖</button>
+                <button onclick="autoSlideshow()">▶️ 自動播放</button>
+                <button onclick="stopSlideshow()">⏸️ 停止播放</button>
+                
+                <!-- 音樂控制項 -->
+                <div class="music-controls-inline">
+                    <button class="music-toggle" onclick="toggleMusic()" id="musicToggle">🎵 播放音樂</button>
+                    <input type="range" class="volume-control" id="volumeControl" min="0" max="100" value="30" onchange="changeVolume()">
+                    <span id="volumeLabel">30%</span>
+                </div>
             </div>
-        </div>
-        
-        <div class="footer">
-            <!-- <p>最後更新：<span id="lastUpdate">載入中...</span></p> -->
-            <p>© 2025 Just Vibe It</p>
+            
+            <div class="footer">
+                <p>© 2025 Just Vibe It</p>
+            </div>
         </div>
     </div>
 
-    <!-- 新聞模式 -->
-    <div id="newsMode" class="news-mode">
+    <!-- 新聞模式 - 加上縮小圖片畫廊 -->
+    <div id="newsMode" class="news-mode">        
         <!-- 縮小的圖片畫廊 -->
         <div class="compact-gallery">
             <div class="compact-image-container">
                 <img id="compactImage1" class="compact-image" src="" alt="ice_deliverer">
-                <div class="compact-info" id="compactInfo1">ice_deliverer</div>
             </div>
             <div class="compact-image-container">
                 <img id="compactImage2" class="compact-image" src="" alt="colne_icol">
-                <div class="compact-info" id="compactInfo2">colne_icol</div>
             </div>
         </div>
         
         <!-- 新聞內容區域 -->
-        <div class="news-container">
+        <div class="news-container" style="margin-top: 330px;">
             <div class="news-header">
                 <h2>📰 即時新聞</h2>
                 <div class="news-stats">
@@ -1058,8 +1072,9 @@
             document.getElementById('weatherWidget').classList.add('weather-error');
         }
         
-        // 模式切換功能
+        // 模式切換功能 - 簡化版本
         function switchMode(mode) {
+            console.log('🔄 切換到模式:', mode);
             currentMode = mode;
             
             // 更新按鈕狀態
@@ -1070,6 +1085,7 @@
             
             // 切換顯示內容
             if (mode === 'gallery') {
+                console.log('📸 顯示相簿模式');
                 document.getElementById('galleryMode').classList.add('active');
                 document.getElementById('newsMode').classList.remove('active');
                 
@@ -1078,7 +1094,9 @@
                     clearInterval(compactSlideshowInterval);
                     compactSlideshowInterval = null;
                 }
+                
             } else if (mode === 'news') {
+                console.log('📰 顯示新聞模式');
                 document.getElementById('galleryMode').classList.remove('active');
                 document.getElementById('newsMode').classList.add('active');
                 
@@ -1086,63 +1104,34 @@
                 loadCompactImages();
                 startCompactSlideshow();
                 
-                // 載入新聞
-                displayNews();
+                // 顯示新聞內容
+                showNewsTestContent();
             }
         }
         
-        // 載入縮小模式的圖片
-        function loadCompactImages() {
-            if (imageList1.length > 0) {
-                const randomIndex1 = Math.floor(Math.random() * imageList1.length);
-                const image1 = imageList1[randomIndex1];
-                document.getElementById('compactImage1').src = image1.url;
-                document.getElementById('compactInfo1').textContent = `ice_deliverer (${randomIndex1 + 1}/${imageList1.length})`;
-            }
+        // 顯示新聞測試內容 -> 改為顯示真實新聞內容
+        function showNewsTestContent() {
+            console.log('📰 載入新聞內容');
             
-            if (imageList2.length > 0) {
-                const randomIndex2 = Math.floor(Math.random() * imageList2.length);
-                const image2 = imageList2[randomIndex2];
-                document.getElementById('compactImage2').src = image2.url;
-                document.getElementById('compactInfo2').textContent = `colne_icol (${randomIndex2 + 1}/${imageList2.length})`;
-            }
-        }
-        
-        // 開始縮小模式的自動播放
-        function startCompactSlideshow() {
-            if (compactSlideshowInterval) return;
-            
-            compactSlideshowInterval = setInterval(() => {
-                loadCompactImages();
-            }, 8000); // 每8秒換一次圖
-        }
-        
-        // 載入新聞資料
-        async function loadNewsData() {
-            try {
-                const response = await fetch('news.json');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
+            if (!newsData || !newsData.news || newsData.news.length === 0) {
+                console.log('❌ 沒有新聞資料，顯示錯誤訊息');
+                document.getElementById('newsCount').textContent = '無新聞資料';
+                document.getElementById('newsUpdateTime').textContent = '載入失敗';
                 
-                newsData = await response.json();
-                console.log('新聞資料載入成功:', newsData.total_count, '條');
-                
-            } catch (error) {
-                console.error('載入新聞資料失敗:', error);
-                newsData = {
-                    last_updated: '載入失敗',
-                    total_count: 0,
-                    news: []
-                };
-            }
-        }
-        
-        // 顯示新聞
-        function displayNews() {
-            if (!newsData || !newsData.news) {
-                document.getElementById('newsGrid').innerHTML = 
-                    '<div class="loading">❌ 新聞載入失敗</div>';
+                const newsGrid = document.getElementById('newsGrid');
+                newsGrid.innerHTML = `
+                    <div style="
+                        grid-column: 1 / -1;
+                        text-align: center;
+                        padding: 40px;
+                        background: rgba(255, 255, 255, 0.95);
+                        border-radius: 15px;
+                        color: #666;
+                    ">
+                        <h3 style="margin-bottom: 10px;">📰 新聞載入失敗</h3>
+                        <p>無法載入新聞資料，請稍後再試</p>
+                    </div>
+                `;
                 return;
             }
             
@@ -1173,12 +1162,96 @@
                 
                 newsGrid.appendChild(newsItem);
             });
+            
+            console.log('✅ 新聞內容載入完成，共', newsData.news.length, '條');
         }
         
-        // 定期更新天氣資料（每天更新）
+        // 暫時移除複雜的載入函數，避免錯誤
+        // TODO: 後續再加回縮小圖片功能
+        
+        // 載入新聞資料
+        async function loadNewsData() {
+            try {
+                console.log('🔄 載入新聞資料...');
+                const response = await fetch('news.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                newsData = await response.json();
+                console.log('✅ 新聞資料載入成功:', newsData.total_count, '條');
+                
+            } catch (error) {
+                console.error('❌ 載入新聞資料失敗:', error);
+                // 使用內嵌測試資料作為備案
+                newsData = {
+                    last_updated: '2025-08-06 15:33:42',
+                    total_count: 3,
+                    news: [
+                        {
+                            title: 'OpenAI擬推持股轉售反制AI搶才戰 估值衝5,000億美元',
+                            link: 'https://example.com/news1',
+                            description: 'OpenAI準備推出員工持股轉售計畫，以因應激烈的AI人才爭奪戰',
+                            published: '2025-08-06 15:18',
+                            source: 'DIGITIMES',
+                            category: '科技'
+                        },
+                        {
+                            title: '劇場版《鬼滅之刃無限城篇》電影8/8上映',
+                            link: 'https://example.com/news2',
+                            description: '猗窩座為何不殺女人？7個故事讓你愛上他！',
+                            published: '2025-08-06 14:30',
+                            source: "Harper's BAZAAR",
+                            category: '娛樂'
+                        },
+                        {
+                            title: '台股今日表現亮眼 科技股領漲',
+                            link: 'https://example.com/news3',
+                            description: '受惠於AI概念股帶動，台股今日收漲超過200點',
+                            published: '2025-08-06 13:45',
+                            source: '財經日報',
+                            category: '財經'
+                        }
+                    ]
+                };
+                console.log('⚠️ 使用備案測試資料:', newsData.total_count, '條');
+            }
+        }
+        
+        // 載入縮小模式的圖片
+        function loadCompactImages() {
+            console.log('🖼️ 載入縮小圖片');
+            
+            if (imageList1.length > 0) {
+                const randomIndex1 = Math.floor(Math.random() * imageList1.length);
+                const image1 = imageList1[randomIndex1];
+                document.getElementById('compactImage1').src = image1.url;
+                console.log('✅ ice_deliverer 縮小圖片載入:', image1.filename);
+            }
+            
+            if (imageList2.length > 0) {
+                const randomIndex2 = Math.floor(Math.random() * imageList2.length);
+                const image2 = imageList2[randomIndex2];
+                document.getElementById('compactImage2').src = image2.url;
+                console.log('✅ colne_icol 縮小圖片載入:', image2.filename);
+            }
+        }
+        
+        // 開始縮小模式的自動播放
+        function startCompactSlideshow() {
+            if (compactSlideshowInterval) return;
+            
+            console.log('🎬 開始縮小圖片自動播放');
+            compactSlideshowInterval = setInterval(() => {
+                loadCompactImages();
+            }, 8000); // 每8秒換一次圖
+        }
+        
+        // 定期更新天氣資料
         function setupWeatherUpdates() {
             loadWeatherData(); // 立即載入一次
-            // 天氣和新聞改為每日由 GitHub Actions 更新，前端只需載入一次
+            // 暫時移除定期更新，避免錯誤
+            console.log('⚠️ 暫時只載入一次天氣資料');
         }
         
     </script>
