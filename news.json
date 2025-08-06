@@ -1,12 +1,36 @@
 {
-  "last_updated": "2025-08-06 18:32:04",
+  "last_updated": "2025-08-06 19:25:34",
   "total_count": 45,
   "categories": [
-    "科技",
+    "娛樂",
     "財經",
-    "娛樂"
+    "科技"
   ],
   "news": [
+    {
+      "title": "「向陽與路寒袖」 音樂會走入詩與樂交織時空 - ydn.com.tw",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBTTHMzendxaXRRQWFlc3FhWWdmbGxqNjdYSkRvSjJWUDVmUGZrTU5ydkJEYXBkQ2VidzVhaVpMX2RlMlNleV9ySFJTVEVieDVRU2ZmQXNILVVELTVxWkZKS0VxMXprb0RDZzBRNQ?oc=5",
+      "description": "「向陽與路寒袖」 音樂會走入詩與樂交織時空&nbsp;&nbsp;ydn.com.tw",
+      "published": "2025-08-06 19:11",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "地緣風險增 金融三業上半年對中國曝險再創新低 - 經濟日報",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFAtTGt6eW01dGVpbEFPdUUzTG1KZWh3b2Q1bngwN09FcTYtRFNrWF9WbW9RUXc2QkJwaFhFUmFwckkwUzhnTEdVZXQ5ZmVwN0ZtZ1FxNWNIek1RQdIBX0FVX3lxTE1sZDZGR3JRMjItQVd4aGstYV9ucHA4bXNxbG1WMDl5cEs4ZTJONnE0bWhSbHFBWmRzdW85amZwTElHdFVvU29vSlE3VHhIalhmM3ZlUGFYQVhLMV9YS0NF?oc=5",
+      "description": "地緣風險增 金融三業上半年對中國曝險再創新低&nbsp;&nbsp;經濟日報",
+      "published": "2025-08-06 19:00",
+      "source": "news.google.com",
+      "category": "財經"
+    },
+    {
+      "title": "創新板新兵！電漿設備廠暉盛上市案 證交所審議通過 - 奇摩股市",
+      "link": "https://news.google.com/rss/articles/CBMi8AJBVV95cUxPa21zUHVLNk1KRlVBZXI3SkgxaFJLWkp6MjVEbEQtS3ptWTAwcGhiem1GV1dlNzdnNUlRbEQ3X2ZQZU5nTmNoSEpKVDE0eFdrZkhBSXVIRDd3Q3ppNnhCbWhKQVBFZk1DUGt6d2NjTGtZYzZfcnhyZ3kwTEZ0OWh2MjBNMkR6OFpUdTBvWFZCQzNjckk4SlY0ZV9rWU45NFRzWVdSU2RGMHZWRWE3VVNqdHJWdUt1OFNVaUp1Xzk2dEhrczF4aU43UldQYkI3OXk4dk9lV2xhd2poMUhXRm9Qdko5SGVFX3h0TTRwX0dXYjlqYWs0RHZrcUpCM1JLYUtVRkZnSkpfaTY4WHpLY2dkeFpFU3UzWlo5TmdRbzlVYld1em5nQ0RDbEZ1aEk5YzhXYTZOZi1fYnpIaGFPcmkxSWp3eklQSGprQUVMcWJFM2tHSmZyR09SV0tNZVRiUWJyaG1kT09vc29EUnJnZUtpUA?oc=5",
+      "description": "創新板新兵！電漿設備廠暉盛上市案 證交所審議通過&nbsp;&nbsp;奇摩股市",
+      "published": "2025-08-06 18:21",
+      "source": "news.google.com",
+      "category": "財經"
+    },
     {
       "title": "OpenAI為什麼突然開源兩個關鍵AI模型？ - 天下雜誌",
       "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1XcGdTU0xXSWVBUUstM0pCM1VkQkJSd3JPS0tsMjJZODBnYUlVdEx0N0pBSFNHZ0kzWTM2TlRiUzdLUm5zY1VvdE5KRDFWTmdSX1lNM1JwbV9RQzQ?oc=5",
@@ -32,12 +56,12 @@
       "category": "財經"
     },
     {
-      "title": "音樂會突飛來\"不速之客\" 張棋惠笑嘆:比不過一隻蟑螂 - 奇摩新聞",
-      "link": "https://news.google.com/rss/articles/CBMi1AJBVV95cUxQd3FpWHhMQXBGWUx1dUNibVY1OG9sUVRyeUJmbi1KOEdvOVpkVnhTSzRsQkVvWEFfczFBbml1NG9RSDNYcWU0UWU5UHVEc2JOMFd1cktxd01VQ3VsQUdJMkdtSFRzaTJSeE5sN1JXdlZGdWUxd0hva0JPZ2ZldUwwRms1cm91WEQ3dTR3Snd0Z1pvMnZYSVZvazAzUThHaGI0QlhpeTQ1RXQ4NnlNbjRlNnFhb3MyWVNES2xCaWE5N202NE5RdklFUUIwUC15WVA3b3BHSjQyVUs0RkZGVGhoWDBWZVJqLXR6OURkRWppZ2tZQ3lsYWdjRThJN0FJY1BXeHVjcG53NGtwakRvQUZ1SndoMWsybGFjOXVnaUlvTy1tTllDa09WMW9zSkdzY3NKX2FjYnJvT1VmRno4VVFXZGxBMjlLcUdEOXlOckVVNXlfRlVY?oc=5",
-      "description": "音樂會突飛來\"不速之客\" 張棋惠笑嘆:比不過一隻蟑螂&nbsp;&nbsp;奇摩新聞",
-      "published": "2025-08-06 17:37",
+      "title": "如何讓 AI 從威脅變幫手？科技小白、不分領域工作者都能懂的 7 道 Q&A - 換日線 Crossing",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1SSTZhZ3JFa09yY0hGdDJzd0dZaVRDTkdxVlhqQk9WRnZyMWMxYWQta09kUjZzZ19HU0tLM0ZFaG9rSHlSM0IzSTJHUWtvYTZCV2c?oc=5",
+      "description": "如何讓 AI 從威脅變幫手？科技小白、不分領域工作者都能懂的 7 道 Q&amp;A&nbsp;&nbsp;換日線 Crossing",
+      "published": "2025-08-06 17:27",
       "source": "news.google.com",
-      "category": "娛樂"
+      "category": "科技"
     },
     {
       "title": "百度推首批 7 類 AI 數位員工，懂業務 / 給結果 / 可進化 - TechNews 科技新報",
@@ -88,14 +112,6 @@
       "category": "財經"
     },
     {
-      "title": "彭金隆：3階段推動金融大回饋 盼業者發展特色回饋 - 經濟日報",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9UOHFkZVIzS2RjNkh6N3lEMFVtSlhQWjlKVHgta0M1NUJBLThzYWVSS3UwdnNBclotM0hwZUFvYkZna2NTeGhrd2RiSGpzMElPZnVrSWdpaFlIZ9IBX0FVX3lxTE9Vb1JEWUMwUWJZVWl0SHVDZGpXSTl1Y19FTXlIZ0JBNlZTZldUZmVpZk5HWmkxdTJvQ0VtYXNBQzIwZlZMZktRb1VaRWJ6ZEZmVXlBREVJQVVCZlNTanNB?oc=5",
-      "description": "彭金隆：3階段推動金融大回饋 盼業者發展特色回饋&nbsp;&nbsp;經濟日報",
-      "published": "2025-08-06 16:54",
-      "source": "news.google.com",
-      "category": "財經"
-    },
-    {
       "title": "楊登仕公使出席佛光山萬年寺「臺灣超人」電影觀賞會 - ROC Taiwan.org",
       "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE4tdmp0YTZ0NzlBbkctQkhacnFnN29OQjRqRndXZUtTSFQ0UGtpOGNwaWJrQ1VWNHBPakd5X21heFFjSWhIb2N0MDAydUtjNTU3QVdHUUJrbVI?oc=5",
       "description": "楊登仕公使出席佛光山萬年寺「臺灣超人」電影觀賞會&nbsp;&nbsp;ROC Taiwan.org",
@@ -104,20 +120,20 @@
       "category": "娛樂"
     },
     {
+      "title": "彭金隆：3階段推動金融大回饋盼業者發展特色回饋| 產經 - 中央社 CNA",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9ENVA3d1dLUkFPREdmbEphZC1DLTZtVkQxdjh5VW1LdVpndW9lUUhZWjY5MDE2bTJQeDFUV29jODhvZDB6NFY0MVc4WFR1aGJTbGFMb3NCYzVXd21IaWc?oc=5",
+      "description": "彭金隆：3階段推動金融大回饋盼業者發展特色回饋| 產經&nbsp;&nbsp;中央社 CNA",
+      "published": "2025-08-06 16:47",
+      "source": "news.google.com",
+      "category": "財經"
+    },
+    {
       "title": "潘瑋柏全新單曲《Yes I Do》正式上線 帶來專屬夏天的狂愛告白 - playmusic.tw",
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9EOHlYb3dUOGItakRxRm1fVFo1ZFd1RzZhd3hoM0Qzb1JGZXhBeWpFbDE3WWkzampJYnFSZVZuSTZXeDktenhyWGFvUWRPSVAtTW9UbzlPWWpsVDB3eE8tckhoeDg1ZENQaWxj?oc=5",
       "description": "潘瑋柏全新單曲《Yes I Do》正式上線 帶來專屬夏天的狂愛告白&nbsp;&nbsp;playmusic.tw",
       "published": "2025-08-06 16:27",
       "source": "news.google.com",
       "category": "娛樂"
-    },
-    {
-      "title": "AI飆股富喬第二季EPS轉虧0.06元...網喊「這就是妖股」 - 奇摩股市",
-      "link": "https://news.google.com/rss/articles/CBMiygJBVV95cUxPSEwySXRDbFg0X0ZNT1l6MWNET1JHdWVfVEV2Zmo2bWljNVhjdkJpLWY1M3dMWDNJWlNXNmg4UW1tZGp5SkU5UFBZd3BhbG5OR0dRQS0wR0JBWTU4M2J0bjhCX3RhdWhrWnhkcGRUR2NpY2ZfSlE0SlBIcU5ZQW5rVmlwYzh3RDJocjlPckN4SS13ZmxnLXM3X0hOeGJmSjBlMHBnSXl4UUJ5YzdyRF9HcTFhdWFUc1VDaTRWRWZjQ2wzYjA3UXRYdGJUVzU4U0JNWXEzbGxhZVBtazhKc3h5OF8xakg5N3lKSDRlRWo1YUctV1dSdWtDdnQwY05KQjdubnR0WFQzVEtUanltbWJpdWZBYTB0QWc4RUdNSjFBb29aRVJ4Q0ZuSThUTWlrT01VWHpGUGU0eEhpVVJSUGlQNEdLRzBCVzY1dUE?oc=5",
-      "description": "AI飆股富喬第二季EPS轉虧0.06元...網喊「這就是妖股」&nbsp;&nbsp;奇摩股市",
-      "published": "2025-08-06 16:14",
-      "source": "news.google.com",
-      "category": "科技"
     },
     {
       "title": "掌握財稅脈動 橙縣邀請專家剖析財經趨勢|北美洲 - 僑務電子報",
@@ -134,14 +150,6 @@
       "published": "2025-08-06 15:47",
       "source": "news.google.com",
       "category": "科技"
-    },
-    {
-      "title": "20歲天菜新人季凡立 身高188 亮眼帥度驚豔演藝圈 - playmusic.tw",
-      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFA5ZHowRm9Kc2NJaUQ5UnI4X1cxMTJtV3hZWjhUR3BXTmNURTNia2VqdVVLTDBleVFPVzlnbTFkRFgyTEZ6MlBUUDBENHZjUEkyOFJuMk84X3VzYWV2UTBNZldrVzhFSXkxeW4xeFlJdFU5UEp6?oc=5",
-      "description": "20歲天菜新人季凡立 身高188 亮眼帥度驚豔演藝圈&nbsp;&nbsp;playmusic.tw",
-      "published": "2025-08-06 15:47",
-      "source": "news.google.com",
-      "category": "娛樂"
     },
     {
       "title": "川普嗆印度「經濟已死」 威脅24小時內課25%重稅 - 奇摩股市",
@@ -182,6 +190,14 @@
       "published": "2025-08-06 15:30",
       "source": "news.google.com",
       "category": "科技"
+    },
+    {
+      "title": "劇場版《鬼滅之刃無限城篇》電影8/8上映：猗窩座為何不殺女人？7個故事愛上他！ - Harper's BAZAAR",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPeGcxa0ozRk5NZVMyYnhGemwxYmZRWGNrVEhWTzgtOGJZM2M4bEJhbk5SVmtFUGg3ZTFFOTlwTmdzeGMzckVPMEtTUHR2VE1Md1ZFNmtiMHp0b3Zmb1RWNFBNakVXVHpURVBMak5OckxmeWJFUzZ5Y05yMnh5U3dIMzlxb1BTclFGc1ZkUWRzbWZJcjduMk5CYk1EVQ?oc=5",
+      "description": "劇場版《鬼滅之刃無限城篇》電影8/8上映：猗窩座為何不殺女人？7個故事愛上他！&nbsp;&nbsp;Harper's BAZAAR",
+      "published": "2025-08-06 15:12",
+      "source": "news.google.com",
+      "category": "娛樂"
     },
     {
       "title": "AI資安大破口！貼圖繞過防線、深偽開會詐財 - 遠見雜誌",
@@ -264,20 +280,12 @@
       "category": "財經"
     },
     {
-      "title": "葡西華多音樂佛郎明歌舞猶太人與皮包 - peopo.org",
-      "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9xanRQYms0WVNvOXpXdTJtYkVOYkVhNkMwdFJtRjJvMkQ0MGNJODAybFMtcDRkb0dwUGpla3RBb3lVWDFrTEJScQ?oc=5",
-      "description": "葡西華多音樂佛郎明歌舞猶太人與皮包&nbsp;&nbsp;peopo.org",
-      "published": "2025-08-06 13:17",
+      "title": "呼叫音樂節11/1、11/2新北市大都會公園回歸！魏如萱、陳綺貞重返舞台…票價資訊、演出陣容不斷更新 - 奇摩新聞",
+      "link": "https://news.google.com/rss/articles/CBMixwRBVV95cUxNNV9sNGtTaWtmb0xIRWdHMUtyeE5DaFFHTHcxcjZyZmNBejFsd2JrMXU2cm5IRVc2SHBTX2dDOXdRdnBQM0tLVjFkWmdYLW5aUl8telAwTFFWU1dCVUwzWHBwVDlPMEVCVTM5QlpqN2lxVFpQZjNqV3FDNDhCUEFVTkxyeVpjUXhFd3otekZIUldYN2hWUk1VYVpsTzlKTHpUa2d5QmRWYmNzWjBTMlpNLUNLUm54aHVacmhmemZVMWRwNmJmeWZ4WUZQcVd4VjR0NlBfSWh4dTZxM2ZHX182cGNnR2lqTkN1WXBlZHhoU2FUaGkxM05Sd2dTcU5uRWRicWowMXdoeUxvM21hSmRZajZZS2dfRmo1b1hQS0E2bzJPRjV6aE9ldW44eGxNRV9UbU94QUQteHRXSHNrMVQtRXE4azZ5T0tXOXN2d0E2T25qV056Q3lvc25MNk4wM2p2WDk5QmpHRjJGbjNiakIzT1g5VUtvay03NHRTaklxSHNBbUlwMFlnTV9wYkI3VV80U3RCZHNvNDBLTUZmR0htd2s1dDRCYWFNX0hLZTBqNWd0RUZYWHBzWjA3S21sVXFZS2ltQXRLR28wRUZ6OHFKYklPeHBQMGs3Q1ZhT2pqb25UQWloVGNVUlhNamE5ZmNKZ2l6MS1WRGJ4ZWI0ZWVPeTRnWjlFRXg4QzNsNWIxa0F5aVpXb2FyYTh4WWswMGd2NU5ZYWV0NTl2R0l6dVJsMUJmRHFrUlFkTll1SktkRnFNMU1KX2pj?oc=5",
+      "description": "呼叫音樂節11/1、11/2新北市大都會公園回歸！魏如萱、陳綺貞重返舞台…票價資訊、演出陣容不斷更新&nbsp;&nbsp;奇摩新聞",
+      "published": "2025-08-06 12:58",
       "source": "news.google.com",
       "category": "娛樂"
-    },
-    {
-      "title": "川普爆台積電投資3000億美元 經濟部長郭智輝：假訊息 - 聯合新聞網",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFAwVVhhUGxfd1gwSG9DdW5GQmhUMHhzMEZPZUU3THpIWFVOc0cwWkJBbklzRkV5R2c5YnJtOS1pZTdKcXdVWWJpOFdnTE9Pa19NOHBr0gFYQVVfeXFMTzBWcjgwVHBZVzRrRWwydGlDYVFTSzBkanJkbEFBYXBEUTY3dEdkRVlTNXhnd2s1MUtqSXVpajZQbWFkVWx3NE5pQmtORFByS2lXUzJDMkpTbw?oc=5",
-      "description": "川普爆台積電投資3000億美元 經濟部長郭智輝：假訊息&nbsp;&nbsp;聯合新聞網",
-      "published": "2025-08-06 12:57",
-      "source": "news.google.com",
-      "category": "財經"
     },
     {
       "title": "金融業對陸曝險中信金一家1738億元占4分之一 富邦、台新新光金居二、三 - 奇摩股市",
@@ -294,14 +302,6 @@
       "published": "2025-08-06 12:24",
       "source": "news.google.com",
       "category": "科技"
-    },
-    {
-      "title": "【Hot台股】塑化救台股？網嗨喊「關稅重災區=利空出盡」 分析師勸不要躁進「外資悄悄撤退」 - 奇摩股市",
-      "link": "https://news.google.com/rss/articles/CBMiwARBVV95cUxNNFRQMUx4VnVqVThRdm1iRWpFZEtBUl9jRTBxZ2VMQTZBSzJXTE1ZS2hHa21jaV9aSzU3di1EQUtqQXRteEZVVlFCcURSanVwejBGblpSRDRST05TTUljSXF6QlI3YXh5TV9pR0dDNzdxb3B2S25QYlZ5VjNaMm9Pbm5zYkFkOFFCSTVlNFBjeUJ0SF9FeUZFQzA1cEVoM25RczIwdTdMcnpQRmtMU2NnNWVJMHg0bUEzM2EtVmNwU0htb2g2Yl9feTlOR2pQZ2xwVlNXaHFpaHUzbGlQOW9UTGJQR09qNlBndDFkcWJnS25zRDM4dC1oVVAyUEtaNkxySkFvZ2FEdzB1LW1ELUlqWEhkV19iMmRjVktTT0d4NHFCVll0Xy1jZHhyRFVvNHJsc1JfWGpVM0FaUWlTMk1NVmVacTczeXQ0S2RGbmNmYTZocGJlTHlob0lIcnRsWjFKcHhDTmpKZk9lMVlidnZDbDYzYUpZZEdmbWw5MldoM3E0RHR4ZWx2bWoyVFNzVFlpRzVSV2J0bkNMeDRsOFhWemFqS2RGRkFFcnRYZkdMbEtvR0pFV3JOcmdKcXBnUzdEWVBjckdtWDUyNGtScy12NHo3OUpuOTlweUlMVXJVUXlQWG5uejdnTWxISWk0aHdmNG82UWtheGFKNzl3Q3M0UTFqMkU4eDctclFOQ0c5b3dPTk1tTHVjTkZsanEtV2ZfOE96dXQ0LU8weElnWDJJc3BSVkt4RDNVX3hkc3EzMUo?oc=5",
-      "description": "【Hot台股】塑化救台股？網嗨喊「關稅重災區=利空出盡」 分析師勸不要躁進「外資悄悄撤退」&nbsp;&nbsp;奇摩股市",
-      "published": "2025-08-06 12:15",
-      "source": "news.google.com",
-      "category": "財經"
     },
     {
       "title": "幸福埔里人的世界級音樂視角——天空之城國際山林音樂會 - peopo.org",
