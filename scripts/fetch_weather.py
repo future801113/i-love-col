@@ -96,17 +96,24 @@ def get_taipei_weather():
         
         # 尋找台北市的測站
         taipei_station = None
+        print("🔍 搜尋台北地區測站...")
         for station in stations:
             station_name = station.get("StationName", "")
             county_name = station.get("CountyName", "")
             town_name = station.get("TownName", "")
             
-            # 尋找台北市相關測站 - 優先順序：臺北 > 大安森林 > 陽明山 > 淡水
+            # 尋找台北市相關測站 - 優先順序：臺北 > 大安森林 > 文化大學 > 臺灣大學 > 淡水
             if station_name == "臺北":
                 taipei_station = station
                 print(f"🎯 找到台北主測站: {station_name}")
                 break
-            elif "大安森林" in station_name:
+            elif station_name == "大安森林" and not taipei_station:
+                taipei_station = station
+                print(f"🎯 找到台北測站: {station_name}")
+            elif station_name == "文化大學" and not taipei_station:
+                taipei_station = station
+                print(f"🎯 找到台北測站: {station_name}")
+            elif station_name == "臺灣大學" and not taipei_station:
                 taipei_station = station
                 print(f"🎯 找到台北測站: {station_name}")
             elif not taipei_station and ("陽明山" in station_name or "淡水" in station_name):
@@ -170,7 +177,7 @@ def get_taipei_weather():
         current_time = datetime.now(taiwan_tz)
         
         weather_info = {
-            "location": "台北市",
+            "location": "台北市中山區",
             "station": taipei_station.get("StationName", "台北"),
             "county": geo_info.get("CountyName", ""),
             "town": geo_info.get("TownName", ""),
@@ -273,7 +280,7 @@ def create_error_response(error_msg):
     current_time = datetime.now(taiwan_tz)
     
     return {
-        "location": "台北市",
+        "location": "台北市中山區",
         "station": "台北",
         "temperature": 0,
         "humidity": 0,
