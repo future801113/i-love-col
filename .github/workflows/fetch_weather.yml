@@ -58,11 +58,23 @@ jobs:
           echo "📊 檔案內容:"
           head -5 weather.json
           
-          # 檢查是否有變更
+          # 顯示當前 git 狀態
+          echo "🔍 添加前的 Git 狀態:"
+          git status --porcelain
+          
+          # 添加檔案
           git add weather.json
+          
+          echo "� 添加後的 Git 狀態:"
+          git status --porcelain
+          
+          # 檢查暫存區是否有變更
           if git diff --staged --quiet; then
-            echo "📝 沒有變更"
-            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "� 暫存區沒有變更 - 強制更新（確保定期更新）"
+            # 強制更新檔案的修改時間以產生變更
+            touch weather.json
+            git add weather.json
+            echo "changes=true" >> $GITHUB_OUTPUT
           else
             echo "📝 有變更需要提交"
             echo "changes=true" >> $GITHUB_OUTPUT
