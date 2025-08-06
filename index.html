@@ -224,6 +224,71 @@
                 max-width: 200px;
             }
         }
+        
+        /* 天氣浮動視窗樣式 */
+        .weather-widget {
+            position: fixed;
+            bottom: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 12px 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.9rem;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .weather-widget:hover {
+            transform: translateX(-50%) translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .weather-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #2c3e50;
+        }
+        
+        .weather-icon {
+            font-size: 1.2rem;
+        }
+        
+        .weather-temp {
+            font-weight: bold;
+            color: #e67e22;
+        }
+        
+        .weather-rain {
+            color: #3498db;
+        }
+        
+        .weather-error {
+            color: #e74c3c;
+        }
+        
+        @media (max-width: 768px) {
+            .weather-widget {
+                bottom: 120px;
+                left: 10px;
+                right: 10px;
+                transform: none;
+                justify-content: center;
+                gap: 15px;
+                padding: 10px 15px;
+            }
+            
+            .weather-widget:hover {
+                transform: translateY(-3px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -304,6 +369,22 @@
         <source src="music/パラレルワールド.mp3" type="audio/mpeg">
         您的瀏覽器不支援音樂播放
     </audio>
+
+    <!-- 天氣浮動視窗 -->
+    <div class="weather-widget" id="weatherWidget">
+        <div class="weather-item">
+            <span class="weather-icon" id="weatherIcon">🌤️</span>
+            <span id="weatherLocation">台北市</span>
+        </div>
+        <div class="weather-item">
+            <span>🌡️</span>
+            <span class="weather-temp" id="weatherTemp">--°C</span>
+        </div>
+        <div class="weather-item">
+            <span>💧</span>
+            <span class="weather-rain" id="weatherRain">--%</span>
+        </div>
+    </div>
 
     <script>
         // 全域變數
@@ -616,6 +697,77 @@
                 console.log('自動播放已停止');
             }
         }
+        
+        // 天氣相關函數
+        async function loadWeatherData() {
+            try {
+                const response = await fetch('weather.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const weather = await response.json();
+                updateWeatherUI(weather);
+                
+            } catch (error) {
+                console.error('載入天氣資料失敗:', error);
+                showWeatherError('無法載入天氣資料');
+            }
+        }
+        
+        function updateWeatherUI(weather) {
+            if (weather.status === 'success') {
+                // 地點
+                document.getElementById('weatherLocation').textContent = 
+                    weather.town && weather.town !== '' ? `${weather.location} ${weather.town}` : weather.location;
+                
+                // 溫度
+                document.getElementById('weatherTemp').textContent = `${weather.temperature}°C`;
+                
+                // 天氣圖示
+                document.getElementById('weatherIcon').textContent = weather.icon || '🌤️';
+                
+                // 降雨率 (使用降雨量作為替代，如果沒有降雨率資料)
+                let rainInfo = '--%';
+                if (weather.precipitation && weather.precipitation !== '-') {
+                    const precipitation = parseFloat(weather.precipitation);
+                    if (precipitation > 0) {
+                        rainInfo = `${precipitation}mm`;
+                    } else {
+                        rainInfo = '0%';
+                    }
+                } else {
+                    rainInfo = '0%';
+                }
+                document.getElementById('weatherRain').textContent = rainInfo;
+                
+                // 移除錯誤樣式
+                document.getElementById('weatherWidget').classList.remove('weather-error');
+            } else {
+                showWeatherError();
+            }
+        }
+        
+        function showWeatherError(message = '無法載入') {
+            document.getElementById('weatherIcon').textContent = '❌';
+            document.getElementById('weatherLocation').textContent = '台北市';
+            document.getElementById('weatherTemp').textContent = '--°C';
+            document.getElementById('weatherRain').textContent = '--%';
+            
+            // 添加錯誤樣式
+            document.getElementById('weatherWidget').classList.add('weather-error');
+        }
+        
+        // 定期更新天氣資料（每30分鐘）
+        function setupWeatherUpdates() {
+            loadWeatherData(); // 立即載入一次
+            setInterval(loadWeatherData, 30 * 60 * 1000); // 每30分鐘更新
+        }
+        
+        // 頁面載入完成後啟動天氣功能
+        document.addEventListener('DOMContentLoaded', function() {
+            setupWeatherUpdates();
+        });
     </script>
 </body>
 </html>

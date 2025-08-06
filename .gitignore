@@ -20,5 +20,8 @@ Thumbs.db
 *.temp
 temp_*
 
+# 環境設定檔 (包含 API Key)
+.env
+
 # 不要忽略圖片檔案 - 這些是要展示的內容！
 # downloaded_images/ 這行被註解掉，因為我們要提交圖片到 GitHub Pages

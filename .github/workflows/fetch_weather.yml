@@ -1,0 +1,69 @@
+name: 更新天氣資料
+
+on:
+  schedule:
+    # 每 30 分鐘執行一次 (UTC 時間)
+    - cron: '*/30 * * * *'
+  workflow_dispatch: # 允許手動觸發
+
+jobs:
+  update-weather:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 檢出程式碼
+      uses: actions/checkout@v4
+      
+    - name: 設定 Python 環境
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: 安裝依賴套件
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+        
+    - name: 建立環境設定檔
+      run: |
+        echo "CWA_API_KEY=${{ secrets.CWA_API_KEY }}" > .env
+        
+    - name: 抓取天氣資料
+      run: |
+        cd scripts
+        python fetch_weather.py
+        
+    - name: 檢查是否有變更
+      id: check_changes
+      run: |
+        if [ -f weather.json ]; then
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add weather.json
+          if git diff --staged --quiet; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+          fi
+        else
+          echo "changes=false" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: 提交並推送變更
+      if: steps.check_changes.outputs.changes == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add weather.json
+        git commit -m "🌤️ 更新天氣資料 $(date '+%Y-%m-%d %H:%M:%S')"
+        git push
+        
+    - name: 顯示天氣資料
+      if: always()
+      run: |
+        if [ -f weather.json ]; then
+          echo "📊 最新天氣資料:"
+          cat weather.json
+        else
+          echo "❌ 天氣資料檔案不存在"
+        fi

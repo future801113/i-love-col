@@ -1,0 +1,23 @@
+{
+  "location": "台北市",
+  "station": "臺北",
+  "county": "臺北市",
+  "town": "中正區",
+  "temperature": 32.7,
+  "humidity": 64.0,
+  "weather": "晴",
+  "icon": "🌤️",
+  "wind_speed": "1.8",
+  "wind_direction": "180.0",
+  "air_pressure": "1006.4",
+  "uv_index": "9",
+  "precipitation": "0.0",
+  "visibility": ">30",
+  "sunshine_duration": "4.2",
+  "daily_high": "33.4",
+  "daily_low": "26.0",
+  "obs_time": "2025-08-06T11:20:00+08:00",
+  "update_time": "2025-08-06 11:32:58",
+  "timestamp": "2025-08-06T11:32:58.250077+08:00",
+  "status": "success"
+}
