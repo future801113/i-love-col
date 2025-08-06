@@ -2,8 +2,8 @@ name: 更新天氣資料
 
 on:
   schedule:
-    # 每 30 分鐘執行一次 (UTC 時間) - 已修正變更檢測邏輯
-    - cron: '*/30 * * * *'
+    # 每天 07:50 (UTC-1) = 台灣時間 07:50 執行
+    - cron: '50 23 * * *'
   workflow_dispatch: # 允許手動觸發
 
 permissions:
@@ -53,6 +53,11 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
+        # 先同步遠端變更
+        echo "🔄 同步遠端變更..."
+        git fetch origin
+        git pull --rebase origin master || true
+        
         if [ -f weather.json ]; then
           echo "✅ weather.json 檔案存在"
           echo "📊 檔案內容:"
@@ -65,12 +70,12 @@ jobs:
           # 添加檔案
           git add weather.json
           
-          echo "� 添加後的 Git 狀態:"
+          echo "🌤️ 添加後的 Git 狀態:"
           git status --porcelain
           
           # 檢查暫存區是否有變更
           if git diff --staged --quiet; then
-            echo "� 暫存區沒有變更 - 強制更新（確保定期更新）"
+            echo "🌤️ 暫存區沒有變更 - 強制更新（確保定期更新）"
             # 強制更新檔案的修改時間以產生變更
             touch weather.json
             git add weather.json
@@ -100,7 +105,7 @@ jobs:
         
         # 推送變更
         echo "📤 推送變更到遠端..."
-        git push
+        git push origin master
         echo "✅ 推送完成"
         
     - name: 顯示天氣資料

@@ -2,8 +2,8 @@ name: 更新新聞資料
 
 on:
   schedule:
-    # 每 30 分鐘執行一次 (UTC 時間)
-    - cron: '*/30 * * * *'
+    # 每天 07:55 (UTC-1) = 台灣時間 07:55 執行
+    - cron: '55 23 * * *'
   workflow_dispatch: # 允許手動觸發
 
 permissions:
@@ -50,6 +50,11 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        
+        # 先同步遠端變更
+        echo "🔄 同步遠端變更..."
+        git fetch origin
+        git pull --rebase origin master || true
         
         if [ -f news.json ]; then
           echo "✅ news.json 檔案存在"
@@ -100,7 +105,7 @@ jobs:
         
         # 推送變更
         echo "📤 推送變更到遠端..."
-        git push
+        git push origin master
         echo "✅ 推送完成"
         
     - name: 顯示新聞統計
