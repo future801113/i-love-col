@@ -480,6 +480,11 @@
             transition: all 0.3s ease;
         }
         
+        /* 在新聞模式下隱藏天氣視窗 */
+        .news-mode.active ~ .weather-widget {
+            display: none;
+        }
+        
         .weather-widget:hover {
             transform: translateX(-50%) translateY(-5px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
@@ -1083,11 +1088,17 @@
             });
             document.querySelector(`[onclick="switchMode('${mode}')"]`).classList.add('active');
             
+            // 控制天氣視窗顯示/隱藏
+            const weatherWidget = document.getElementById('weatherWidget');
+            
             // 切換顯示內容
             if (mode === 'gallery') {
                 console.log('📸 顯示相簿模式');
                 document.getElementById('galleryMode').classList.add('active');
                 document.getElementById('newsMode').classList.remove('active');
+                
+                // 顯示天氣視窗
+                if (weatherWidget) weatherWidget.style.display = 'flex';
                 
                 // 停止縮小模式的幻燈片
                 if (compactSlideshowInterval) {
@@ -1099,6 +1110,9 @@
                 console.log('📰 顯示新聞模式');
                 document.getElementById('galleryMode').classList.remove('active');
                 document.getElementById('newsMode').classList.add('active');
+                
+                // 隱藏天氣視窗
+                if (weatherWidget) weatherWidget.style.display = 'none';
                 
                 // 載入縮小圖片並開始自動播放
                 loadCompactImages();
