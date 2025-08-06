@@ -717,9 +717,8 @@
         
         function updateWeatherUI(weather) {
             if (weather.status === 'success') {
-                // 地點
-                document.getElementById('weatherLocation').textContent = 
-                    weather.town && weather.town !== '' ? `${weather.location} ${weather.town}` : weather.location;
+                // 地點 - 只顯示 location 欄位（已設定為台北市中山區）
+                document.getElementById('weatherLocation').textContent = weather.location;
                 
                 // 溫度
                 document.getElementById('weatherTemp').textContent = `${weather.temperature}°C`;
