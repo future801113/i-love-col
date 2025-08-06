@@ -141,7 +141,7 @@ class NewsScaper:
         
         return all_news
     
-    def save_news_to_json(self, output_path='../i-love-col-public/news.json'):
+    def save_news_to_json(self, output_path='../news.json'):
         """保存新聞到 JSON 檔案"""
         try:
             news_data = self.fetch_all_news()
