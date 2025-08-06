@@ -384,6 +384,10 @@
             <span>💧</span>
             <span class="weather-rain" id="weatherRain">--%</span>
         </div>
+        <div class="weather-item">
+            <span>🕒</span>
+            <span id="weatherTime" style="font-size: 0.8em; color: #666;">--:--</span>
+        </div>
     </div>
 
     <script>
@@ -402,6 +406,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             loadImageLists();
             initAudioPlayer();
+            setupWeatherUpdates();
+            startRealTimeClock(); // 啟動實時時鐘
         });
 
         // 初始化音樂播放器
@@ -715,6 +721,26 @@
             }
         }
         
+        // 實時時鐘功能
+        function startRealTimeClock() {
+            function updateClock() {
+                const now = new Date();
+                const timeString = now.toLocaleTimeString('zh-TW', { 
+                    hour: '2-digit', 
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: false 
+                });
+                document.getElementById('weatherTime').textContent = timeString;
+            }
+            
+            // 立即更新一次
+            updateClock();
+            
+            // 每秒更新時間
+            setInterval(updateClock, 1000);
+        }
+        
         function updateWeatherUI(weather) {
             if (weather.status === 'success') {
                 // 地點 - 只顯示 location 欄位（已設定為台北市中山區）
@@ -752,6 +778,7 @@
             document.getElementById('weatherLocation').textContent = '台北市';
             document.getElementById('weatherTemp').textContent = '--°C';
             document.getElementById('weatherRain').textContent = '--%';
+            // 不重置時間，讓實時時鐘繼續運行
             
             // 添加錯誤樣式
             document.getElementById('weatherWidget').classList.add('weather-error');
@@ -762,11 +789,6 @@
             loadWeatherData(); // 立即載入一次
             setInterval(loadWeatherData, 30 * 60 * 1000); // 每30分鐘更新
         }
-        
-        // 頁面載入完成後啟動天氣功能
-        document.addEventListener('DOMContentLoaded', function() {
-            setupWeatherUpdates();
-        });
     </script>
 </body>
 </html>
