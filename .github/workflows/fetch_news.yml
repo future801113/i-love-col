@@ -1,0 +1,124 @@
+name: 更新新聞資料
+
+on:
+  schedule:
+    # 每 30 分鐘執行一次 (UTC 時間)
+    - cron: '*/30 * * * *'
+  workflow_dispatch: # 允許手動觸發
+
+permissions:
+  contents: write  # 允許寫入內容和推送
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 檢出程式碼
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: 設定 Python 環境
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: 安裝依賴套件
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests feedparser
+        
+    - name: 從 runner 倉庫抓取新聞腳本
+      run: |
+        echo "📥 下載新聞抓取腳本..."
+        curl -o news_scraper.py https://raw.githubusercontent.com/future801113/i-love-col-runner/main/news_scraper.py
+        ls -la news_scraper.py
+        
+    - name: 抓取新聞資料
+      run: |
+        echo "📰 開始抓取新聞資料..."
+        echo "當前工作目錄: $(pwd)"
+        echo "目錄內容:"
+        ls -la
+        python news_scraper.py
+        echo "執行後目錄內容:"
+        ls -la news.json || echo "news.json 不存在"
+        
+    - name: 檢查是否有變更
+      id: check_changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        if [ -f news.json ]; then
+          echo "✅ news.json 檔案存在"
+          echo "📊 檔案資訊:"
+          wc -l news.json
+          echo "📰 新聞摘要:"
+          head -10 news.json
+          
+          # 顯示當前 git 狀態
+          echo "🔍 添加前的 Git 狀態:"
+          git status --porcelain
+          
+          # 添加檔案
+          git add news.json
+          
+          echo "📋 添加後的 Git 狀態:"
+          git status --porcelain
+          
+          # 檢查暫存區是否有變更
+          if git diff --staged --quiet; then
+            echo "📰 暫存區沒有變更 - 強制更新（確保定期更新）"
+            # 強制更新檔案的修改時間以產生變更
+            touch news.json
+            git add news.json
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "📝 有變更需要提交"
+            echo "changes=true" >> $GITHUB_OUTPUT
+          fi
+        else
+          echo "❌ news.json 檔案不存在"
+          echo "changes=false" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: 提交並推送變更
+      if: steps.check_changes.outputs.changes == 'true'
+      run: |
+        echo "🔄 準備提交變更..."
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # 確保檔案已添加
+        git add news.json
+        git status
+        
+        # 提交變更
+        git commit -m "📰 更新新聞資料 $(date '+%Y-%m-%d %H:%M:%S')"
+        
+        # 推送變更
+        echo "📤 推送變更到遠端..."
+        git push
+        echo "✅ 推送完成"
+        
+    - name: 顯示新聞統計
+      if: always()
+      run: |
+        if [ -f news.json ]; then
+          echo "📊 新聞統計資料:"
+          echo "📰 檔案大小: $(wc -c < news.json) bytes"
+          echo "📝 檔案行數: $(wc -l < news.json) lines"
+          
+          # 嘗試顯示新聞數量統計
+          if command -v jq &> /dev/null; then
+            echo "📈 新聞數量: $(jq '.total_count' news.json 2>/dev/null || echo '無法解析')"
+            echo "📂 新聞類別: $(jq -r '.categories | join(", ")' news.json 2>/dev/null || echo '無法解析')"
+          else
+            echo "📋 新聞檔案前10行:"
+            head -10 news.json
+          fi
+        else
+          echo "❌ 新聞資料檔案不存在"
+        fi

@@ -162,6 +162,223 @@
             gap: 10px;
         }
         
+        /* 模式切換按鈕 */
+        .mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 5px;
+        }
+        
+        .mode-btn {
+            background: rgba(255, 255, 255, 0.9);
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 8px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .mode-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .mode-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* 新聞模式樣式 */
+        .news-mode {
+            display: none;
+        }
+        
+        .news-mode.active {
+            display: block;
+        }
+        
+        .compact-gallery {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            right: 300px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            display: flex;
+            gap: 15px;
+            z-index: 900;
+        }
+        
+        .compact-image-container {
+            flex: 1;
+            background: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .compact-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .compact-info {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            right: 5px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            text-align: center;
+        }
+        
+        .news-container {
+            margin-top: 250px;
+            padding: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .news-header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .news-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .news-stat {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        
+        .news-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .news-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .news-description {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+        
+        .news-source {
+            background: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+        
+        .news-category {
+            background: #e8f5e8;
+            color: #2e7d32;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .mode-toggle {
+                top: 10px;
+                right: 10px;
+            }
+            
+            .compact-gallery {
+                top: 60px;
+                left: 10px;
+                right: 10px;
+                height: 150px;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .compact-image-container {
+                height: 60px;
+            }
+            
+            .news-container {
+                margin-top: 230px;
+                padding: 10px;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+        
         .global-controls button {
             margin: 0;
             padding: 10px 20px;
@@ -292,7 +509,15 @@
     </style>
 </head>
 <body>
-    <div class="main-container">
+    <!-- 模式切換按鈕 -->
+    <div class="mode-toggle">
+        <button class="mode-btn active" onclick="switchMode('gallery')">📸 相簿模式</button>
+        <button class="mode-btn" onclick="switchMode('news')">📰 新聞模式</button>
+    </div>
+
+    <!-- 相簿模式 (原有內容) -->
+    <div id="galleryMode" class="gallery-mode active">
+        <div class="main-container">
         <div class="dual-display">
             <!-- ice_deliverer 區域 -->
             <div class="account-section">
@@ -364,6 +589,49 @@
         </div>
     </div>
 
+    <!-- 新聞模式 -->
+    <div id="newsMode" class="news-mode">
+        <!-- 縮小的圖片畫廊 -->
+        <div class="compact-gallery">
+            <div class="compact-image-container">
+                <img id="compactImage1" class="compact-image" src="" alt="ice_deliverer">
+                <div class="compact-info" id="compactInfo1">ice_deliverer</div>
+            </div>
+            <div class="compact-image-container">
+                <img id="compactImage2" class="compact-image" src="" alt="colne_icol">
+                <div class="compact-info" id="compactInfo2">colne_icol</div>
+            </div>
+        </div>
+        
+        <!-- 新聞內容區域 -->
+        <div class="news-container">
+            <div class="news-header">
+                <h2>📰 即時新聞</h2>
+                <div class="news-stats">
+                    <div class="news-stat">
+                        <span>📊</span>
+                        <span id="newsCount">載入中...</span>
+                    </div>
+                    <div class="news-stat">
+                        <span>🕒</span>
+                        <span id="newsUpdateTime">載入中...</span>
+                    </div>
+                    <div class="news-stat">
+                        <span>🔄</span>
+                        <span>每30分鐘更新</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="news-grid" id="newsGrid">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    載入新聞中...
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- HTML5 音樂播放器 -->
     <audio id="background-music" loop preload="auto" autoplay>
         <source src="music/パラレルワールド.mp3" type="audio/mpeg">
@@ -401,6 +669,9 @@
         let slideshowInterval = null;
         let isPlaying = false;
         let audioPlayer = null;
+        let currentMode = 'gallery'; // 當前模式
+        let newsData = null; // 新聞資料
+        let compactSlideshowInterval = null; // 縮小模式的幻燈片
 
         // 頁面載入時初始化
         document.addEventListener('DOMContentLoaded', function() {
@@ -408,6 +679,7 @@
             initAudioPlayer();
             setupWeatherUpdates();
             startRealTimeClock(); // 啟動實時時鐘
+            loadNewsData(); // 載入新聞資料
         });
 
         // 初始化音樂播放器
@@ -784,11 +1056,131 @@
             document.getElementById('weatherWidget').classList.add('weather-error');
         }
         
+        // 模式切換功能
+        function switchMode(mode) {
+            currentMode = mode;
+            
+            // 更新按鈕狀態
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[onclick="switchMode('${mode}')"]`).classList.add('active');
+            
+            // 切換顯示內容
+            if (mode === 'gallery') {
+                document.getElementById('galleryMode').classList.add('active');
+                document.getElementById('newsMode').classList.remove('active');
+                
+                // 停止縮小模式的幻燈片
+                if (compactSlideshowInterval) {
+                    clearInterval(compactSlideshowInterval);
+                    compactSlideshowInterval = null;
+                }
+            } else if (mode === 'news') {
+                document.getElementById('galleryMode').classList.remove('active');
+                document.getElementById('newsMode').classList.add('active');
+                
+                // 載入縮小圖片並開始自動播放
+                loadCompactImages();
+                startCompactSlideshow();
+                
+                // 載入新聞
+                displayNews();
+            }
+        }
+        
+        // 載入縮小模式的圖片
+        function loadCompactImages() {
+            if (imageList1.length > 0) {
+                const randomIndex1 = Math.floor(Math.random() * imageList1.length);
+                const image1 = imageList1[randomIndex1];
+                document.getElementById('compactImage1').src = image1.url;
+                document.getElementById('compactInfo1').textContent = `ice_deliverer (${randomIndex1 + 1}/${imageList1.length})`;
+            }
+            
+            if (imageList2.length > 0) {
+                const randomIndex2 = Math.floor(Math.random() * imageList2.length);
+                const image2 = imageList2[randomIndex2];
+                document.getElementById('compactImage2').src = image2.url;
+                document.getElementById('compactInfo2').textContent = `colne_icol (${randomIndex2 + 1}/${imageList2.length})`;
+            }
+        }
+        
+        // 開始縮小模式的自動播放
+        function startCompactSlideshow() {
+            if (compactSlideshowInterval) return;
+            
+            compactSlideshowInterval = setInterval(() => {
+                loadCompactImages();
+            }, 8000); // 每8秒換一次圖
+        }
+        
+        // 載入新聞資料
+        async function loadNewsData() {
+            try {
+                const response = await fetch('news.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                newsData = await response.json();
+                console.log('新聞資料載入成功:', newsData.total_count, '條');
+                
+            } catch (error) {
+                console.error('載入新聞資料失敗:', error);
+                newsData = {
+                    last_updated: '載入失敗',
+                    total_count: 0,
+                    news: []
+                };
+            }
+        }
+        
+        // 顯示新聞
+        function displayNews() {
+            if (!newsData || !newsData.news) {
+                document.getElementById('newsGrid').innerHTML = 
+                    '<div class="loading">❌ 新聞載入失敗</div>';
+                return;
+            }
+            
+            // 更新統計資訊
+            document.getElementById('newsCount').textContent = `共 ${newsData.total_count} 條新聞`;
+            document.getElementById('newsUpdateTime').textContent = `更新時間: ${newsData.last_updated}`;
+            
+            // 生成新聞項目
+            const newsGrid = document.getElementById('newsGrid');
+            newsGrid.innerHTML = '';
+            
+            newsData.news.forEach((news, index) => {
+                const newsItem = document.createElement('div');
+                newsItem.className = 'news-item';
+                newsItem.onclick = () => window.open(news.link, '_blank');
+                
+                newsItem.innerHTML = `
+                    <div class="news-title">${news.title}</div>
+                    <div class="news-description">${news.description}</div>
+                    <div class="news-meta">
+                        <div>
+                            <span class="news-category">${news.category}</span>
+                            <span class="news-source">${news.source}</span>
+                        </div>
+                        <div>${news.published}</div>
+                    </div>
+                `;
+                
+                newsGrid.appendChild(newsItem);
+            });
+        }
+        
         // 定期更新天氣資料（每30分鐘）
         function setupWeatherUpdates() {
             loadWeatherData(); // 立即載入一次
             setInterval(loadWeatherData, 30 * 60 * 1000); // 每30分鐘更新
-        }
+            
+            // 每30分鐘也更新一次新聞
+            setInterval(loadNewsData, 30 * 60 * 1000);
+        
     </script>
 </body>
 </html>
