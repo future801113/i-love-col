@@ -194,11 +194,13 @@
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
         
-        /* 新聞模式樣式 */
+        /* 模式切換樣式 */
+        .gallery-mode,
         .news-mode {
             display: none;
         }
         
+        .gallery-mode.active,
         .news-mode.active {
             display: block;
         }
@@ -511,8 +513,8 @@
 <body>
     <!-- 模式切換按鈕 -->
     <div class="mode-toggle">
-        <button class="mode-btn active" onclick="switchMode('gallery')">📸 相簿模式</button>
-        <button class="mode-btn" onclick="switchMode('news')">📰 新聞模式</button>
+        <button class="mode-btn active" onclick="switchMode('gallery')">📸</button>
+        <button class="mode-btn" onclick="switchMode('news')">📰</button>
     </div>
 
     <!-- 相簿模式 (原有內容) -->
@@ -1173,13 +1175,11 @@
             });
         }
         
-        // 定期更新天氣資料（每30分鐘）
+        // 定期更新天氣資料（每天更新）
         function setupWeatherUpdates() {
             loadWeatherData(); // 立即載入一次
-            setInterval(loadWeatherData, 30 * 60 * 1000); // 每30分鐘更新
-            
-            // 每30分鐘也更新一次新聞
-            setInterval(loadNewsData, 30 * 60 * 1000);
+            // 天氣和新聞改為每日由 GitHub Actions 更新，前端只需載入一次
+        }
         
     </script>
 </body>
