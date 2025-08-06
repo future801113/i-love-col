@@ -332,5 +332,19 @@
     "size": 77288,
     "uploaded_at": "2025-08-06T08:00:29.833615",
     "url_hash": "5dff10ac"
+  },
+  {
+    "filename": "ice_deliverer_20250806_094106_07a41d6b_1.jpg",
+    "url": "images/ice_deliverer_20250806_094106_07a41d6b_1.jpg",
+    "size": 154825,
+    "uploaded_at": "2025-08-06T09:41:13.072269",
+    "url_hash": "07a41d6b"
+  },
+  {
+    "filename": "ice_deliverer_20250806_094110_5877374d_2.jpg",
+    "url": "images/ice_deliverer_20250806_094110_5877374d_2.jpg",
+    "size": 565493,
+    "uploaded_at": "2025-08-06T09:41:13.072310",
+    "url_hash": "5877374d"
   }
 ]
