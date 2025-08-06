@@ -1172,27 +1172,28 @@
         // 載入新聞資料
         async function loadNewsData() {
             try {
-                console.log('🔄 載入新聞資料...');
+                const now = new Date();
+                console.log('🔄 載入新聞資料...', now.toLocaleTimeString('zh-TW'));
                 const response = await fetch('news.json');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 
                 newsData = await response.json();
-                console.log('✅ 新聞資料載入成功:', newsData.total_count, '條');
+                console.log('✅ 新聞資料載入成功:', newsData.total_count, '條', now.toLocaleTimeString('zh-TW'));
                 
             } catch (error) {
                 console.error('❌ 載入新聞資料失敗:', error);
                 // 使用內嵌測試資料作為備案
                 newsData = {
-                    last_updated: '2025-08-06 15:33:42',
+                    last_updated: new Date().toLocaleString('zh-TW'),
                     total_count: 3,
                     news: [
                         {
                             title: 'OpenAI擬推持股轉售反制AI搶才戰 估值衝5,000億美元',
                             link: 'https://example.com/news1',
                             description: 'OpenAI準備推出員工持股轉售計畫，以因應激烈的AI人才爭奪戰',
-                            published: '2025-08-06 15:18',
+                            published: new Date().toLocaleString('zh-TW'),
                             source: 'DIGITIMES',
                             category: '科技'
                         },
@@ -1200,7 +1201,7 @@
                             title: '劇場版《鬼滅之刃無限城篇》電影8/8上映',
                             link: 'https://example.com/news2',
                             description: '猗窩座為何不殺女人？7個故事讓你愛上他！',
-                            published: '2025-08-06 14:30',
+                            published: new Date().toLocaleString('zh-TW'),
                             source: "Harper's BAZAAR",
                             category: '娛樂'
                         },
@@ -1208,7 +1209,7 @@
                             title: '台股今日表現亮眼 科技股領漲',
                             link: 'https://example.com/news3',
                             description: '受惠於AI概念股帶動，台股今日收漲超過200點',
-                            published: '2025-08-06 13:45',
+                            published: new Date().toLocaleString('zh-TW'),
                             source: '財經日報',
                             category: '財經'
                         }
