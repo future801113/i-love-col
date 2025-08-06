@@ -2,7 +2,7 @@ name: 更新天氣資料
 
 on:
   schedule:
-    # 每 30 分鐘執行一次 (UTC 時間)
+    # 每 30 分鐘執行一次 (UTC 時間) - 已修正變更檢測邏輯
     - cron: '*/30 * * * *'
   workflow_dispatch: # 允許手動觸發
 
