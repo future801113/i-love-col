@@ -31,20 +31,18 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests feedparser
         
-    - name: 從 runner 倉庫抓取新聞腳本
-      run: |
-        echo "📥 下載新聞抓取腳本..."
-        curl -o news_scraper.py https://raw.githubusercontent.com/future801113/i-love-col-runner/main/news_scraper.py
-        ls -la news_scraper.py
-        
     - name: 抓取新聞資料
       run: |
-        echo "📰 開始抓取新聞資料..."
+        echo "� 開始抓取新聞資料..."
         echo "當前工作目錄: $(pwd)"
         echo "目錄內容:"
         ls -la
+        cd scripts
+        echo "scripts 目錄內容:"
+        ls -la
         python news_scraper.py
-        echo "執行後目錄內容:"
+        cd ..
+        echo "執行後根目錄內容:"
         ls -la news.json || echo "news.json 不存在"
         
     - name: 檢查是否有變更
