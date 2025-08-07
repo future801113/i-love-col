@@ -28,23 +28,34 @@ jobs:
       with:
         python-version: '3.9'
         
-    - name: 安裝 Chrome 和 ChromeDriver
+    - name: 設定 Chrome 和 ChromeDriver
+      uses: browser-actions/setup-chrome@v1
+      with:
+        chrome-version: stable
+        
+    - name: 驗證 Chrome 安裝
       run: |
-        # 安裝 Chrome
-        wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-        sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-        sudo apt-get update
-        sudo apt-get install -y google-chrome-stable
-        
-        # 安裝 ChromeDriver
-        CHROME_VERSION=$(google-chrome --version | cut -d " " -f3 | cut -d "." -f1)
-        CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
-        wget -O /tmp/chromedriver.zip "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
-        sudo unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
-        sudo chmod +x /usr/local/bin/chromedriver
-        
-        # 驗證安裝
         google-chrome --version
+        which chromedriver || echo "ChromeDriver 路徑檢查..."
+        
+        # 如果 chromedriver 不在 PATH 中，嘗試尋找並連結
+        if ! which chromedriver; then
+          echo "尋找 ChromeDriver..."
+          CHROMEDRIVER_PATH=$(find /opt /usr -name "chromedriver" 2>/dev/null | head -1)
+          if [ -n "$CHROMEDRIVER_PATH" ]; then
+            echo "找到 ChromeDriver: $CHROMEDRIVER_PATH"
+            sudo ln -sf "$CHROMEDRIVER_PATH" /usr/local/bin/chromedriver
+          else
+            echo "手動安裝 ChromeDriver..."
+            # 使用最新穩定版本
+            LATEST_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE")
+            wget -O /tmp/chromedriver.zip "https://chromedriver.storage.googleapis.com/$LATEST_VERSION/chromedriver_linux64.zip"
+            cd /tmp && unzip chromedriver.zip
+            sudo mv chromedriver /usr/local/bin/
+            sudo chmod +x /usr/local/bin/chromedriver
+          fi
+        fi
+        
         chromedriver --version
         
     - name: 安裝 Python 依賴
