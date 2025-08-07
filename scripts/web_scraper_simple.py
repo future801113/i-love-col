@@ -698,7 +698,15 @@ def daily_scrape_and_send():
     else:
         print("   😔 沒有新圖片可建立組合")
     
-    # 步驟 3: 發送組合圖片到 LINE 群組
+    # 步驟 3: 發送組合圖片到 LINE 群組 (如果未被禁用)
+    if os.environ.get('SKIP_LINE_SEND', '').lower() == 'true':
+        print(f"\n📱 跳過 LINE 發送 (SKIP_LINE_SEND=true)")
+        print(f"\n🎉 每日任務完成！")
+        print(f"📊 總計下載 {total_new_images} 張圖片")
+        if combined_image_path:
+            print(f"🖼️ 已建立組合圖片: {combined_image_path}")
+        return True
+    
     print(f"\n📱 步驟 3/3: 發送組合圖片到 LINE 群組")
     
     total_sent = 0

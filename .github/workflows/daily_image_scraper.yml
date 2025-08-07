@@ -79,7 +79,7 @@ jobs:
         echo "LINE_CHANNEL_ACCESS_TOKEN=${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}" >> $GITHUB_ENV
         echo "LINE_TARGET_ID=${{ secrets.LINE_TARGET_ID }}" >> $GITHUB_ENV
         
-    - name: 執行每日圖片抓取
+    - name: 執行每日圖片抓取 (不發送 LINE)
       run: |
         cd scripts
         echo "🚀 開始執行每日圖片抓取..."
@@ -90,6 +90,8 @@ jobs:
         echo "LINE_CHANNEL_ACCESS_TOKEN: ${LINE_CHANNEL_ACCESS_TOKEN:0:20}..." 
         echo "LINE_TARGET_ID: $LINE_TARGET_ID"
         
+        # 暫時禁用 LINE 發送，先專注於圖片抓取和組合
+        export SKIP_LINE_SEND=true
         python web_scraper_simple.py daily
         
         echo "執行後目錄變化:"
@@ -140,6 +142,151 @@ jobs:
           echo "✅ 推送完成"
         else
           echo "📰 沒有變更需要提交"
+        fi
+        
+    - name: 等待 GitHub Pages 部署
+      if: success()
+      run: |
+        echo "⏳ 等待 GitHub Pages 部署完成..."
+        echo "等待 30 秒讓 GitHub Pages 更新..."
+        sleep 30
+        
+    - name: 發送組合圖片到 LINE 群組
+      if: success()
+      run: |
+        cd scripts
+        echo "📱 開始發送組合圖片到 LINE 群組..."
+        
+        # 檢查是否有新的組合圖片
+        LATEST_COMBINED=$(find ../combined_images -name "daily_combined_*.jpg" 2>/dev/null | sort -r | head -1)
+        
+        if [ -n "$LATEST_COMBINED" ]; then
+          echo "🖼️ 找到最新組合圖片: $LATEST_COMBINED"
+          
+          # 建立組合圖片的 GitHub Pages URL
+          FILENAME=$(basename "$LATEST_COMBINED")
+          IMAGE_URL="https://future801113.github.io/i-love-col/combined_images/$FILENAME"
+          
+          echo "🔗 圖片 URL: $IMAGE_URL"
+          
+          # 測試 URL 是否可訪問
+          echo "🧪 測試圖片 URL 可用性..."
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$IMAGE_URL")
+          echo "HTTP 狀態碼: $HTTP_STATUS"
+          
+          if [ "$HTTP_STATUS" = "200" ]; then
+            echo "✅ 圖片 URL 可訪問"
+            
+            # 使用 Python 腳本發送 LINE 訊息
+            python3 << EOF
+import requests
+import os
+
+def send_line_image(image_url):
+    token = os.environ.get('LINE_CHANNEL_ACCESS_TOKEN')
+    target_id = os.environ.get('LINE_TARGET_ID')
+    
+    if not token or not target_id:
+        print("❌ LINE Bot 設定不完整")
+        return False
+        
+    headers = {
+        'Authorization': f'Bearer {token}',
+        'Content-Type': 'application/json'
+    }
+    
+    data = {
+        'to': target_id,
+        'messages': [
+            {
+                'type': 'image',
+                'originalContentUrl': image_url,
+                'previewImageUrl': image_url
+            }
+        ]
+    }
+    
+    try:
+        response = requests.post('https://api.line.me/v2/bot/message/push', 
+                               headers=headers, json=data)
+        if response.status_code == 200:
+            print("✅ 成功發送組合圖片到 LINE 群組")
+            return True
+        else:
+            print(f"❌ LINE 發送失敗: {response.status_code} - {response.text}")
+            return False
+    except Exception as e:
+        print(f"❌ LINE 發送時發生錯誤: {e}")
+        return False
+
+# 發送圖片
+if send_line_image("$IMAGE_URL"):
+    print("🎉 LINE 訊息發送成功")
+else:
+    print("😞 LINE 訊息發送失敗")
+EOF
+          else
+            echo "❌ 圖片 URL 尚未可訪問 (狀態碼: $HTTP_STATUS)"
+            echo "⏳ 再等待 30 秒後重試..."
+            sleep 30
+            
+            HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$IMAGE_URL")
+            if [ "$HTTP_STATUS" = "200" ]; then
+              echo "✅ 重試成功，圖片 URL 現在可訪問"
+              # 重複上面的 Python 腳本
+              python3 << EOF
+import requests
+import os
+
+def send_line_image(image_url):
+    token = os.environ.get('LINE_CHANNEL_ACCESS_TOKEN')
+    target_id = os.environ.get('LINE_TARGET_ID')
+    
+    if not token or not target_id:
+        print("❌ LINE Bot 設定不完整")
+        return False
+        
+    headers = {
+        'Authorization': f'Bearer {token}',
+        'Content-Type': 'application/json'
+    }
+    
+    data = {
+        'to': target_id,
+        'messages': [
+            {
+                'type': 'image',
+                'originalContentUrl': image_url,
+                'previewImageUrl': image_url
+            }
+        ]
+    }
+    
+    try:
+        response = requests.post('https://api.line.me/v2/bot/message/push', 
+                               headers=headers, json=data)
+        if response.status_code == 200:
+            print("✅ 成功發送組合圖片到 LINE 群組")
+            return True
+        else:
+            print(f"❌ LINE 發送失敗: {response.status_code} - {response.text}")
+            return False
+    except Exception as e:
+        print(f"❌ LINE 發送時發生錯誤: {e}")
+        return False
+
+# 發送圖片
+if send_line_image("$IMAGE_URL"):
+    print("🎉 LINE 訊息發送成功")
+else:
+    print("😞 LINE 訊息發送失敗")
+EOF
+            else
+              echo "❌ 圖片 URL 仍然無法訪問，跳過 LINE 發送"
+            fi
+          fi
+        else
+          echo "😔 沒有找到新的組合圖片"
         fi
         
     - name: 顯示執行結果統計
