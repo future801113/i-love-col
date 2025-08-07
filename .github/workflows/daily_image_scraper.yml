@@ -177,61 +177,8 @@ jobs:
           if [ "$HTTP_STATUS" = "200" ]; then
             echo "✅ 圖片 URL 可訪問"
             
-            # 建立 Python 腳本檔案
-            cat > send_line.py << 'PYTHON_SCRIPT'
-import requests
-import os
-import sys
-
-def send_line_image(image_url):
-    token = os.environ.get('LINE_CHANNEL_ACCESS_TOKEN')
-    target_id = os.environ.get('LINE_TARGET_ID')
-    
-    if not token or not target_id:
-        print("❌ LINE Bot 設定不完整")
-        return False
-        
-    headers = {
-        'Authorization': f'Bearer {token}',
-        'Content-Type': 'application/json'
-    }
-    
-    data = {
-        'to': target_id,
-        'messages': [
-            {
-                'type': 'image',
-                'originalContentUrl': image_url,
-                'previewImageUrl': image_url
-            }
-        ]
-    }
-    
-    try:
-        response = requests.post('https://api.line.me/v2/bot/message/push', 
-                               headers=headers, json=data)
-        if response.status_code == 200:
-            print("✅ 成功發送組合圖片到 LINE 群組")
-            return True
-        else:
-            print(f"❌ LINE 發送失敗: {response.status_code} - {response.text}")
-            return False
-    except Exception as e:
-        print(f"❌ LINE 發送時發生錯誤: {e}")
-        return False
-
-if __name__ == "__main__":
-    image_url = sys.argv[1] if len(sys.argv) > 1 else ""
-    if send_line_image(image_url):
-        print("🎉 LINE 訊息發送成功")
-        exit(0)
-    else:
-        print("😞 LINE 訊息發送失敗")
-        exit(1)
-PYTHON_SCRIPT
-            
-            # 執行 Python 腳本
-            python3 send_line.py "$IMAGE_URL"
+            # 使用獨立的 Python 腳本發送 LINE 訊息
+            python3 send_line_image.py "$IMAGE_URL"
             
           else
             echo "❌ 圖片 URL 尚未可訪問 (狀態碼: $HTTP_STATUS)"
@@ -242,61 +189,8 @@ PYTHON_SCRIPT
             if [ "$HTTP_STATUS" = "200" ]; then
               echo "✅ 重試成功，圖片 URL 現在可訪問"
               
-              # 建立 Python 腳本檔案 (重試版本)
-              cat > send_line_retry.py << 'PYTHON_SCRIPT'
-import requests
-import os
-import sys
-
-def send_line_image(image_url):
-    token = os.environ.get('LINE_CHANNEL_ACCESS_TOKEN')
-    target_id = os.environ.get('LINE_TARGET_ID')
-    
-    if not token or not target_id:
-        print("❌ LINE Bot 設定不完整")
-        return False
-        
-    headers = {
-        'Authorization': f'Bearer {token}',
-        'Content-Type': 'application/json'
-    }
-    
-    data = {
-        'to': target_id,
-        'messages': [
-            {
-                'type': 'image',
-                'originalContentUrl': image_url,
-                'previewImageUrl': image_url
-            }
-        ]
-    }
-    
-    try:
-        response = requests.post('https://api.line.me/v2/bot/message/push', 
-                               headers=headers, json=data)
-        if response.status_code == 200:
-            print("✅ 成功發送組合圖片到 LINE 群組")
-            return True
-        else:
-            print(f"❌ LINE 發送失敗: {response.status_code} - {response.text}")
-            return False
-    except Exception as e:
-        print(f"❌ LINE 發送時發生錯誤: {e}")
-        return False
-
-if __name__ == "__main__":
-    image_url = sys.argv[1] if len(sys.argv) > 1 else ""
-    if send_line_image(image_url):
-        print("🎉 LINE 訊息發送成功")
-        exit(0)
-    else:
-        print("😞 LINE 訊息發送失敗")
-        exit(1)
-PYTHON_SCRIPT
-              
-              # 執行 Python 腳本
-              python3 send_line_retry.py "$IMAGE_URL"
+              # 重試發送 LINE 訊息
+              python3 send_line_image.py "$IMAGE_URL"
             else
               echo "❌ 圖片 URL 仍然無法訪問，跳過 LINE 發送"
             fi
