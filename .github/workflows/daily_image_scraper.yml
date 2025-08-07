@@ -177,10 +177,11 @@ jobs:
           if [ "$HTTP_STATUS" = "200" ]; then
             echo "✅ 圖片 URL 可訪問"
             
-            # 使用 Python 腳本發送 LINE 訊息
-            python3 << EOF
+            # 建立 Python 腳本檔案
+            cat > send_line.py << 'PYTHON_SCRIPT'
 import requests
 import os
+import sys
 
 def send_line_image(image_url):
     token = os.environ.get('LINE_CHANNEL_ACCESS_TOKEN')
@@ -219,12 +220,19 @@ def send_line_image(image_url):
         print(f"❌ LINE 發送時發生錯誤: {e}")
         return False
 
-# 發送圖片
-if send_line_image("$IMAGE_URL"):
-    print("🎉 LINE 訊息發送成功")
-else:
-    print("😞 LINE 訊息發送失敗")
-EOF
+if __name__ == "__main__":
+    image_url = sys.argv[1] if len(sys.argv) > 1 else ""
+    if send_line_image(image_url):
+        print("🎉 LINE 訊息發送成功")
+        exit(0)
+    else:
+        print("😞 LINE 訊息發送失敗")
+        exit(1)
+PYTHON_SCRIPT
+            
+            # 執行 Python 腳本
+            python3 send_line.py "$IMAGE_URL"
+            
           else
             echo "❌ 圖片 URL 尚未可訪問 (狀態碼: $HTTP_STATUS)"
             echo "⏳ 再等待 30 秒後重試..."
@@ -233,10 +241,12 @@ EOF
             HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$IMAGE_URL")
             if [ "$HTTP_STATUS" = "200" ]; then
               echo "✅ 重試成功，圖片 URL 現在可訪問"
-              # 重複上面的 Python 腳本
-              python3 << EOF
+              
+              # 建立 Python 腳本檔案 (重試版本)
+              cat > send_line_retry.py << 'PYTHON_SCRIPT'
 import requests
 import os
+import sys
 
 def send_line_image(image_url):
     token = os.environ.get('LINE_CHANNEL_ACCESS_TOKEN')
@@ -275,12 +285,18 @@ def send_line_image(image_url):
         print(f"❌ LINE 發送時發生錯誤: {e}")
         return False
 
-# 發送圖片
-if send_line_image("$IMAGE_URL"):
-    print("🎉 LINE 訊息發送成功")
-else:
-    print("😞 LINE 訊息發送失敗")
-EOF
+if __name__ == "__main__":
+    image_url = sys.argv[1] if len(sys.argv) > 1 else ""
+    if send_line_image(image_url):
+        print("🎉 LINE 訊息發送成功")
+        exit(0)
+    else:
+        print("😞 LINE 訊息發送失敗")
+        exit(1)
+PYTHON_SCRIPT
+              
+              # 執行 Python 腳本
+              python3 send_line_retry.py "$IMAGE_URL"
             else
               echo "❌ 圖片 URL 仍然無法訪問，跳過 LINE 發送"
             fi
