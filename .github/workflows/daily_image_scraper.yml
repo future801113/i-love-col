@@ -1,0 +1,152 @@
+name: 定時圖片抓取 (08:00/13:25/20:00)
+
+on:
+  schedule:
+    # 台灣時間 08:00 (UTC 00:00)
+    - cron: '0 0 * * *'
+    # 台灣時間 13:25 (UTC 05:25)
+    - cron: '25 5 * * *'
+    # 台灣時間 20:00 (UTC 12:00)
+    - cron: '0 12 * * *'
+  workflow_dispatch: # 允許手動觸發
+
+permissions:
+  contents: write  # 允許寫入內容和推送
+
+jobs:
+  scheduled-scrape:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 檢出程式碼
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: 設定 Python 環境
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: 安裝 Chrome 和 ChromeDriver
+      run: |
+        # 安裝 Chrome
+        wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+        
+        # 安裝 ChromeDriver
+        CHROME_VERSION=$(google-chrome --version | cut -d " " -f3 | cut -d "." -f1)
+        CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
+        wget -O /tmp/chromedriver.zip "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
+        sudo unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
+        sudo chmod +x /usr/local/bin/chromedriver
+        
+        # 驗證安裝
+        google-chrome --version
+        chromedriver --version
+        
+    - name: 安裝 Python 依賴
+      run: |
+        pip install selenium requests pillow
+        
+    - name: 創建設定檔
+      run: |
+        cat > scripts/config.json << EOF
+        {
+          "images_directory": "../images",
+          "colne_icol_directory": "../colne_icol_images",
+          "line_bot": {
+            "github_pages_base": "https://future801113.github.io/i-love-col"
+          }
+        }
+        EOF
+        
+    - name: 設定環境變數
+      run: |
+        echo "LINE_CHANNEL_ACCESS_TOKEN=${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}" >> $GITHUB_ENV
+        echo "LINE_TARGET_ID=${{ secrets.LINE_TARGET_ID }}" >> $GITHUB_ENV
+        
+    - name: 執行每日圖片抓取
+      run: |
+        cd scripts
+        echo "🚀 開始執行每日圖片抓取..."
+        echo "當前工作目錄: $(pwd)"
+        echo "目錄內容:"
+        ls -la
+        echo "環境變數檢查:"
+        echo "LINE_CHANNEL_ACCESS_TOKEN: ${LINE_CHANNEL_ACCESS_TOKEN:0:20}..." 
+        echo "LINE_TARGET_ID: $LINE_TARGET_ID"
+        
+        python web_scraper_simple.py daily
+        
+        echo "執行後目錄變化:"
+        ls -la ../images/ || echo "images 目錄不存在"
+        ls -la ../colne_icol_images/ || echo "colne_icol_images 目錄不存在"
+        ls -la ../combined_images/ || echo "combined_images 目錄不存在"
+        
+    - name: 檢查變更並提交
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # 先同步遠端變更
+        echo "🔄 同步遠端變更..."
+        git fetch origin
+        git pull --rebase origin master || true
+        
+        # 檢查是否有變更
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "✅ 有變更需要提交"
+          
+          # 顯示變更統計
+          echo "📊 變更統計:"
+          git status --porcelain | wc -l
+          echo "📝 變更詳情:"
+          git status --porcelain
+          
+          # 統計各目錄的圖片數量
+          if [ -d images ]; then
+            echo "📸 ice_deliverer 圖片總數: $(find images -name "*.jpg" -o -name "*.png" | wc -l)"
+          fi
+          if [ -d colne_icol_images ]; then
+            echo "📸 colne_icol 圖片總數: $(find colne_icol_images -name "*.jpg" -o -name "*.png" | wc -l)"
+          fi
+          if [ -d combined_images ]; then
+            echo "🎨 組合圖片總數: $(find combined_images -name "*.jpg" -o -name "*.png" | wc -l)"
+          fi
+          
+          # 添加所有變更
+          git add .
+          
+          # 提交變更
+          git commit -m "🤖 定時自動抓取圖片 - $(date '+%Y-%m-%d %H:%M:%S')"
+          
+          # 推送變更
+          echo "📤 推送變更到遠端..."
+          git push origin master
+          echo "✅ 推送完成"
+        else
+          echo "📰 沒有變更需要提交"
+        fi
+        
+    - name: 顯示執行結果統計
+      if: always()
+      run: |
+        echo "📊 執行結果統計:"
+        if [ -d images ]; then
+          echo "📸 ice_deliverer 圖片總數: $(find images -name "*.jpg" -o -name "*.png" | wc -l)"
+          echo "📸 ice_deliverer 最新圖片:"
+          find images -name "*.jpg" -o -name "*.png" | sort -r | head -5
+        fi
+        if [ -d colne_icol_images ]; then
+          echo "📸 colne_icol 圖片總數: $(find colne_icol_images -name "*.jpg" -o -name "*.png" | wc -l)"
+          echo "📸 colne_icol 最新圖片:"
+          find colne_icol_images -name "*.jpg" -o -name "*.png" | sort -r | head -5
+        fi
+        if [ -d combined_images ]; then
+          echo "🎨 組合圖片總數: $(find combined_images -name "*.jpg" -o -name "*.png" | wc -l)"
+          echo "🎨 最新組合圖片:"
+          find combined_images -name "*.jpg" -o -name "*.png" | sort -r | head -3
+        fi
