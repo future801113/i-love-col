@@ -659,6 +659,219 @@
         您的瀏覽器不支援音樂播放
     </audio>
 
+    <!-- 天氣 RSS 解析器 - 內嵌版本 -->
+    <script>
+        // 天氣 RSS 解析器
+        class WeatherRSSParser {
+            constructor() {
+                this.rssUrl = 'https://www.cwa.gov.tw/rss/forecast/36_01.xml';
+                this.corsProxies = [
+                    'https://api.allorigins.win/raw?url=',
+                    'https://cors-anywhere.herokuapp.com/',
+                    'https://api.codetabs.com/v1/proxy?quest='
+                ];
+            }
+
+            async fetchRSSWithProxy(proxyIndex = 0) {
+                if (proxyIndex >= this.corsProxies.length) {
+                    throw new Error('所有 CORS 代理都無法使用');
+                }
+
+                const proxy = this.corsProxies[proxyIndex];
+                const proxyUrl = proxy + encodeURIComponent(this.rssUrl);
+
+                try {
+                    console.log(`🌐 嘗試使用代理 ${proxyIndex + 1}: ${proxy.substring(0, 30)}...`);
+                    
+                    const response = await fetch(proxyUrl, {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/xml, text/xml, */*'
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+
+                    const xmlText = await response.text();
+                    return this.parseWeatherXML(xmlText);
+
+                } catch (error) {
+                    console.warn(`代理 ${proxyIndex + 1} 失敗:`, error.message);
+                    return this.fetchRSSWithProxy(proxyIndex + 1);
+                }
+            }
+
+            parseWeatherXML(xmlText) {
+                try {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+
+                    const parseError = xmlDoc.querySelector('parsererror');
+                    if (parseError) {
+                        throw new Error('XML 解析錯誤');
+                    }
+
+                    const items = xmlDoc.querySelectorAll('item');
+                    const weatherData = [];
+
+                    items.forEach(item => {
+                        const title = item.querySelector('title')?.textContent || '';
+                        const description = item.querySelector('description')?.textContent || '';
+                        const pubDate = item.querySelector('pubDate')?.textContent || '';
+
+                        // 解析標題中的地區和天氣資訊
+                        const locationMatch = title.match(/(.+?)(?:今|明|後|一週)/);
+                        const location = locationMatch ? locationMatch[1].trim() : '台北市';
+
+                        // 解析標題中的溫度和天氣狀況（RSS 格式：溫度: 31 ~ 35）
+                        const tempMatch = title.match(/溫度:\s*(\d+)\s*~\s*(\d+)/);
+                        const weatherMatch = title.match(/(?:今日白天|白天|晚上)\s*(.+?)\s*溫度/);
+                        const rainMatch = title.match(/降雨機率:\s*(\d+)%/);
+
+                        // 如果標題沒有，嘗試從描述中解析
+                        let minTemp = tempMatch ? tempMatch[1] : null;
+                        let maxTemp = tempMatch ? tempMatch[2] : null;
+                        let weather = weatherMatch ? weatherMatch[1].trim() : null;
+                        let rainChance = rainMatch ? rainMatch[1] : null;
+
+                        // 從描述中補充資訊
+                        if (!minTemp || !maxTemp) {
+                            const descTempMatch = description.match(/溫度:\s*(\d+)\s*~\s*(\d+)/);
+                            if (descTempMatch) {
+                                minTemp = minTemp || descTempMatch[1];
+                                maxTemp = maxTemp || descTempMatch[2];
+                            }
+                        }
+
+                        if (!weather) {
+                            const descWeatherMatch = description.match(/(?:白天|晚上)\s*(.+?)(?:\s*溫度|\s*<|$)/);
+                            if (descWeatherMatch) {
+                                weather = descWeatherMatch[1].trim();
+                            }
+                        }
+
+                        if (!rainChance) {
+                            const descRainMatch = description.match(/降雨機率:\s*(\d+)%/);
+                            if (descRainMatch) {
+                                rainChance = descRainMatch[1];
+                            }
+                        }
+
+                        weatherData.push({
+                            location: location,
+                            title: title,
+                            description: description,
+                            pubDate: pubDate,
+                            minTemp: minTemp,
+                            maxTemp: maxTemp,
+                            weather: weather,
+                            rainChance: rainChance
+                        });
+                    });
+
+                    return weatherData;
+
+                } catch (error) {
+                    console.error('解析 XML 失敗:', error);
+                    throw error;
+                }
+            }
+
+            async getTaipeiWeather() {
+                try {
+                    const weatherData = await this.fetchRSSWithProxy();
+                    
+                    // 尋找台北市相關的天氣資料
+                    const taipeiWeather = weatherData.find(item => 
+                        item.location.includes('台北') || 
+                        item.title.includes('台北')
+                    );
+
+                    if (taipeiWeather) {
+                        return this.formatWeatherData(taipeiWeather);
+                    } else {
+                        return weatherData.length > 0 ? this.formatWeatherData(weatherData[0]) : null;
+                    }
+
+                } catch (error) {
+                    console.error('獲取天氣資料失敗:', error);
+                    throw error;
+                }
+            }
+
+            formatWeatherData(rawData) {
+                const weather = rawData.weather || '多雲';
+                const icon = this.getWeatherIcon(weather);
+
+                return {
+                    location: rawData.location || '台北市',
+                    weather: weather,
+                    icon: icon,
+                    minTemp: rawData.minTemp,
+                    maxTemp: rawData.maxTemp,
+                    temperature: rawData.maxTemp || '--',
+                    rainChance: rawData.rainChance,
+                    humidity: '--',
+                    updateTime: new Date().toLocaleString('zh-TW'),
+                    source: 'CWA RSS',
+                    rawTitle: rawData.title,
+                    rawDescription: rawData.description
+                };
+            }
+
+            getWeatherIcon(weather) {
+                const iconMap = {
+                    '晴': '☀️',
+                    '多雲': '⛅',
+                    '陰': '☁️',
+                    '雨': '🌧️',
+                    '雷雨': '⛈️',
+                    '雪': '❄️',
+                    '霧': '🌫️',
+                    '晴時多雲': '🌤️',
+                    '多雲時晴': '⛅',
+                    '多雲時陰': '☁️',
+                    '陰時多雲': '☁️'
+                };
+
+                for (const [key, icon] of Object.entries(iconMap)) {
+                    if (weather.includes(key)) {
+                        return icon;
+                    }
+                }
+
+                return '🌤️';
+            }
+        }
+
+        // 整合到現有的天氣系統
+        async function loadWeatherDataFromRSS() {
+            const weatherParser = new WeatherRSSParser();
+            
+            try {
+                console.log('🌤️ 開始從 RSS 載入天氣資料...');
+                
+                const weatherData = await weatherParser.getTaipeiWeather();
+                
+                if (weatherData) {
+                    console.log('✅ RSS 天氣資料載入成功:', weatherData);
+                    updateWeatherUI(weatherData);
+                } else {
+                    throw new Error('無法解析天氣資料');
+                }
+
+            } catch (error) {
+                console.error('❌ RSS 天氣載入失敗:', error);
+                
+                // 回退到原本的 JSON 方式
+                console.log('🔄 回退到 JSON 天氣資料...');
+                loadWeatherData();
+            }
+        }
+    </script>
+
     <!-- 天氣浮動視窗 -->
     <div class="weather-widget" id="weatherWidget">
         <div class="weather-item">
@@ -1078,19 +1291,35 @@
         }
         
         function updateWeatherUI(weather) {
-            if (weather.status === 'success') {
-                // 地點 - 只顯示 location 欄位（已設定為台北市中山區）
-                document.getElementById('weatherLocation').textContent = weather.location;
+            // 檢查是否為成功狀態（JSON 格式）或直接是天氣資料（RSS 格式）
+            const isSuccess = weather.status === 'success' || weather.source === 'CWA RSS' || !weather.status;
+            
+            if (isSuccess) {
+                // 地點
+                document.getElementById('weatherLocation').textContent = weather.location || '台北市';
                 
-                // 溫度
-                document.getElementById('weatherTemp').textContent = `${weather.temperature}°C`;
+                // 溫度 - 處理不同的溫度格式
+                let tempText = '--°C';
+                if (weather.temperature && weather.temperature !== '--') {
+                    tempText = `${weather.temperature}°C`;
+                } else if (weather.maxTemp) {
+                    // RSS 資料可能只有最高溫
+                    tempText = weather.minTemp ? 
+                        `${weather.minTemp}~${weather.maxTemp}°C` : 
+                        `${weather.maxTemp}°C`;
+                }
+                document.getElementById('weatherTemp').textContent = tempText;
                 
                 // 天氣圖示
                 document.getElementById('weatherIcon').textContent = weather.icon || '🌤️';
                 
-                // 降雨率 (使用降雨量作為替代，如果沒有降雨率資料)
+                // 降雨資訊
                 let rainInfo = '--%';
-                if (weather.precipitation && weather.precipitation !== '-') {
+                if (weather.rainChance) {
+                    // RSS 資料的降雨機率
+                    rainInfo = `${weather.rainChance}%`;
+                } else if (weather.precipitation && weather.precipitation !== '-') {
+                    // JSON 資料的降雨量
                     const precipitation = parseFloat(weather.precipitation);
                     if (precipitation > 0) {
                         rainInfo = `${precipitation}mm`;
@@ -1104,6 +1333,15 @@
                 
                 // 移除錯誤樣式
                 document.getElementById('weatherWidget').classList.remove('weather-error');
+                
+                // 如果是 RSS 資料，在控制台顯示詳細資訊
+                if (weather.source === 'CWA RSS') {
+                    console.log('📊 天氣詳細資訊:', {
+                        標題: weather.rawTitle,
+                        描述: weather.rawDescription,
+                        來源: weather.source
+                    });
+                }
             } else {
                 showWeatherError();
             }
@@ -1307,9 +1545,13 @@
         
         // 定期更新天氣資料
         function setupWeatherUpdates() {
-            loadWeatherData(); // 立即載入一次
-            // 暫時移除定期更新，避免錯誤
-            console.log('⚠️ 暫時只載入一次天氣資料');
+            // 優先嘗試 RSS 方式
+            loadWeatherDataFromRSS();
+            
+            // 每 30 分鐘更新一次天氣
+            setInterval(() => {
+                loadWeatherDataFromRSS();
+            }, 30 * 60 * 1000);
         }
         
     </script>
