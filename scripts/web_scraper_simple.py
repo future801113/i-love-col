@@ -417,12 +417,12 @@ class TwitterImageScraperSimple:
             
             # 加入一般的 URL
             urls_to_try.extend([
-                # Nitter 鏡像站（通常不需要登入），加上 f-media=on&e-nativeretweets=on 參數
-                f"https://nitter.net/{username}?f-media=on&e-nativeretweets=on",
-                f"https://nitter.it/{username}?f-media=on&e-nativeretweets=on",
-                f"https://nitter.1d4.us/{username}?f-media=on&e-nativeretweets=on",
-                f"https://nitter.poast.org/{username}?f-media=on&e-nativeretweets=on",
-                f"https://nitter.privacydev.net/{username}?f-media=on&e-nativeretweets=on",
+                # Nitter 鏡像站（/media 結尾，加上 f-media=on&e-nativeretweets=on 參數）
+                f"https://nitter.net/{username}/media?f-media=on&e-nativeretweets=on",
+                f"https://nitter.it/{username}/media?f-media=on&e-nativeretweets=on",
+                f"https://nitter.1d4.us/{username}/media?f-media=on&e-nativeretweets=on",
+                f"https://nitter.poast.org/{username}/media?f-media=on&e-nativeretweets=on",
+                f"https://nitter.privacydev.net/{username}/media?f-media=on&e-nativeretweets=on",
                 # 官方站點
                 f"https://x.com/{username}",
                 f"https://twitter.com/{username}",
