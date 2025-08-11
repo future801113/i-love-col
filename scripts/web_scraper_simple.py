@@ -618,8 +618,8 @@ class TwitterImageScraperSimple:
             print(f"❌ LINE 發送時發生錯誤: {e}")
             return False
 
-def generate_random_date_range(days_span=10):
-    """生成隨機的日期區間（10天）"""
+def generate_random_date_range(days_span=20):
+    """生成隨機的日期區間（20天）"""
     # 隨機選擇一個開始日期（過去一年內）
     today = datetime.now()
     max_days_back = 365  # 最多往前一年
@@ -640,7 +640,7 @@ def daily_scrape_and_send():
     print("=" * 50)
     
     # 生成隨機日期區間
-    start_date, end_date = generate_random_date_range(10)
+    start_date, end_date = generate_random_date_range()
     print(f"🎲 使用隨機日期區間: {start_date} ~ {end_date}")
     
     accounts = ['ice_deliverer', 'colne_icol']
@@ -770,14 +770,14 @@ def main():
     
     # 檢查是否使用隨機日期
     if len(sys.argv) > 3 and sys.argv[3].lower() == 'random':
-        start_date, end_date = generate_random_date_range(10)
+        start_date, end_date = generate_random_date_range()
         print(f"🎲 使用隨機日期區間: {start_date} ~ {end_date}")
     else:
         start_date = sys.argv[3] if len(sys.argv) > 3 else None
         end_date = sys.argv[4] if len(sys.argv) > 4 else None
         # 如果沒有指定日期，默認使用隨機日期
         if not start_date and not end_date:
-            start_date, end_date = generate_random_date_range(10)
+            start_date, end_date = generate_random_date_range()
             print(f"🎲 默認使用隨機日期區間: {start_date} ~ {end_date}")
     
     scraper = TwitterImageScraperSimple(username=username)
