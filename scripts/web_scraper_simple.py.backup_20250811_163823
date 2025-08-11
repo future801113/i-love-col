@@ -225,11 +225,6 @@ class TwitterImageScraperSimple:
     def download_image(self, url, filename):
         """下載圖片"""
         try:
-            # 排除指定的 domain
-            if url.startswith("https://future801113.github.io/i-love-col/"):
-                print(f"   ⏭️  跳過排除的 domain: {url[:80]}...")
-                return None
-            
             headers = {
                 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
                 'Referer': 'https://x.com/'

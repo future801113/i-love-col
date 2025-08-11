@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,50 +11,51 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f5f5; /* 中性背景，由各模式自行設定 */
+            background: #f5f5f5;
+            /* 中性背景，由各模式自行設定 */
             min-height: 100vh;
             margin: 0;
             padding: 0;
         }
-        
+
         .main-container {
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         .dual-display {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
             margin-bottom: 30px;
         }
-        
+
         .account-section {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             padding: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
-        
+
         @media (max-width: 768px) {
             .dual-display {
                 grid-template-columns: 1fr;
             }
-            
+
             .music-controls-inline {
                 flex-direction: column;
                 gap: 8px;
             }
-            
+
             .music-controls-inline .volume-control {
                 min-width: 150px;
                 max-width: 200px;
             }
         }
-        
+
         .image-container {
             position: relative;
             margin: 10px 0;
@@ -66,7 +68,7 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .random-image {
             max-width: 100%;
             max-height: 750px;
@@ -75,11 +77,11 @@
             border-radius: 15px;
             transition: transform 0.3s ease;
         }
-        
+
         .random-image:hover {
             transform: scale(1.02);
         }
-        
+
         .loading {
             color: #666;
             font-size: 1.1em;
@@ -88,7 +90,7 @@
             justify-content: center;
             gap: 10px;
         }
-        
+
         .spinner {
             width: 20px;
             height: 20px;
@@ -97,12 +99,17 @@
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
-        
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
-        
+
         .controls {
             margin: 15px 0;
             display: flex;
@@ -110,7 +117,7 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-        
+
         button {
             background: linear-gradient(45deg, #87CEEB, #FFB6C1);
             color: white;
@@ -126,16 +133,16 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
-        
+
         button:active {
             transform: translateY(0);
         }
-        
+
         .info {
             margin-top: 15px;
             padding: 10px;
@@ -144,13 +151,13 @@
             color: #555;
             font-size: 0.9em;
         }
-        
+
         .image-counter {
             margin: 10px 0;
             color: #666;
             font-size: 0.85em;
         }
-        
+
         .global-controls {
             text-align: center;
             background: rgba(255, 255, 255, 0.95);
@@ -162,7 +169,7 @@
             justify-content: center;
             gap: 10px;
         }
-        
+
         /* 模式切換按鈕 */
         .mode-toggle {
             position: fixed;
@@ -172,7 +179,7 @@
             display: flex;
             gap: 5px;
         }
-        
+
         .mode-btn {
             background: rgba(255, 255, 255, 0.9);
             color: #87CEEB;
@@ -184,42 +191,42 @@
             font-size: 0.9rem;
             font-weight: bold;
         }
-        
+
         .mode-btn.active {
             background: #87CEEB;
             color: white;
         }
-        
+
         .mode-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(135, 206, 235, 0.3);
         }
-        
+
         /* 模式切換樣式 - 完整版 */
         .gallery-mode,
         .news-mode {
             display: none;
             min-height: 100vh;
         }
-        
+
         .gallery-mode.active,
         .news-mode.active {
             display: block;
         }
-        
+
         /* 相簿模式樣式 */
         .gallery-mode {
             background: linear-gradient(135deg, #87CEEB 0%, #FFB6C1 100%);
             padding: 20px;
         }
-        
+
         /* 新聞模式樣式 - 簡化版 */
         .news-mode {
             background: linear-gradient(135deg, #87CEEB 0%, #FFB6C1 100%);
             position: relative;
             padding: 20px;
         }
-        
+
         .compact-gallery {
             position: fixed;
             top: 20px;
@@ -234,7 +241,7 @@
             gap: 20px;
             z-index: 900;
         }
-        
+
         .compact-image-container {
             flex: 1;
             background: #f0f0f0;
@@ -245,14 +252,14 @@
             justify-content: center;
             position: relative;
         }
-        
+
         .compact-image {
             max-width: 100%;
             max-height: 100%;
             object-fit: cover;
             border-radius: 10px;
         }
-        
+
         .compact-info {
             position: absolute;
             bottom: 5px;
@@ -265,7 +272,7 @@
             font-size: 0.7rem;
             text-align: center;
         }
-        
+
         .news-container {
             margin-top: 330px;
             padding: 20px;
@@ -273,7 +280,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .news-header {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
@@ -282,7 +289,7 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-        
+
         .news-stats {
             display: flex;
             justify-content: center;
@@ -290,7 +297,7 @@
             margin-top: 10px;
             flex-wrap: wrap;
         }
-        
+
         .news-stat {
             display: flex;
             align-items: center;
@@ -298,13 +305,13 @@
             color: #666;
             font-size: 0.9rem;
         }
-        
+
         .news-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 20px;
         }
-        
+
         .news-item {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
@@ -313,12 +320,12 @@
             transition: all 0.3s ease;
             cursor: pointer;
         }
-        
+
         .news-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
-        
+
         .news-title {
             font-size: 1.1rem;
             font-weight: bold;
@@ -330,7 +337,7 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-        
+
         .news-description {
             color: #666;
             font-size: 0.9rem;
@@ -341,7 +348,7 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-        
+
         .news-meta {
             display: flex;
             justify-content: space-between;
@@ -351,27 +358,27 @@
             border-top: 1px solid #eee;
             padding-top: 10px;
         }
-        
+
         .news-source {
             background: #87CEEB;
             color: white;
             padding: 2px 8px;
             border-radius: 10px;
         }
-        
+
         .news-category {
             background: #FFE4E1;
             color: #FF69B4;
             padding: 2px 8px;
             border-radius: 10px;
         }
-        
+
         @media (max-width: 768px) {
             .mode-toggle {
                 top: 10px;
                 right: 10px;
             }
-            
+
             .compact-gallery {
                 top: 60px;
                 left: 10px;
@@ -381,29 +388,29 @@
                 gap: 12px;
                 padding: 15px;
             }
-            
+
             .compact-image-container {
                 height: 70px;
             }
-            
+
             .news-container {
                 margin-top: 260px;
                 padding: 10px;
             }
-            
+
             .news-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
         }
-        
+
         .global-controls button {
             margin: 0;
             padding: 10px 20px;
             font-size: 0.95em;
             white-space: nowrap;
         }
-        
+
         .music-controls-inline {
             display: flex;
             align-items: center;
@@ -413,7 +420,7 @@
             padding: 5px 15px;
             margin: 5px 0;
         }
-        
+
         .music-controls-inline .music-toggle {
             background: linear-gradient(45deg, #87CEEB, #FFB6C1);
             color: white;
@@ -424,42 +431,42 @@
             font-size: 14px;
             white-space: nowrap;
         }
-        
+
         .music-controls-inline .volume-control {
             flex: 1;
             min-width: 80px;
             max-width: 120px;
         }
-        
+
         .music-controls-inline #volumeLabel {
             font-size: 12px;
             color: #666;
             min-width: 30px;
         }
-        
+
         .footer {
             margin-top: 30px;
             text-align: center;
             color: rgba(255, 255, 255, 0.8);
             font-size: 0.9em;
         }
-        
+
         @media (max-width: 768px) {
             .dual-display {
                 grid-template-columns: 1fr;
             }
-            
+
             .music-controls-inline {
                 flex-direction: column;
                 gap: 8px;
             }
-            
+
             .music-controls-inline .volume-control {
                 min-width: 150px;
                 max-width: 200px;
             }
         }
-        
+
         /* 天氣浮動視窗樣式 */
         .weather-widget {
             position: fixed;
@@ -473,64 +480,308 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             display: flex;
-            align-items: center;
-            gap: 20px;
+            flex-direction: column;
+            gap: 8px;
             font-size: 0.9rem;
             z-index: 1000;
             transition: all 0.3s ease;
         }
-        
+
+        .weather-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+
+
         /* 在新聞模式下隱藏天氣視窗 */
-        .news-mode.active ~ .weather-widget {
+        .news-mode.active~.weather-widget {
             display: none;
         }
-        
+
         .weather-widget:hover {
             transform: translateX(-50%) translateY(-5px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
         }
-        
+
         .weather-item {
             display: flex;
             align-items: center;
             gap: 5px;
             color: #2c3e50;
         }
-        
+
         .weather-icon {
             font-size: 1.2rem;
         }
-        
+
         .weather-temp {
             font-weight: bold;
             color: #e67e22;
         }
-        
+
         .weather-rain {
             color: #3498db;
         }
-        
+
+        .weather-update-source {
+            font-size: 0.7em;
+            color: #888;
+            opacity: 0.8;
+        }
+
+        /* 一週天氣預報區塊樣式 */
+        .weekly-weather-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .weekly-weather-title {
+            text-align: center;
+            color: #2c3e50;
+            margin: 0 0 20px 0;
+            font-size: 1.3em;
+            border-bottom: 2px solid #87CEEB;
+            padding-bottom: 10px;
+        }
+
+        .weekly-weather-container {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding: 10px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #87CEEB #f1f1f1;
+            justify-content: flex-start;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+
+        .weekly-weather-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .weekly-weather-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .weekly-weather-container::-webkit-scrollbar-thumb {
+            background: #87CEEB;
+            border-radius: 10px;
+        }
+
+        .weekly-weather-container::-webkit-scrollbar-thumb:hover {
+            background: #6bb6d6;
+        }
+
+        /* 改善觸控滑動體驗 */
+        @media (max-width: 768px) {
+            .weekly-weather-container {
+                /* 隱藏滾動條但保持滑動功能 */
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+
+            .weekly-weather-container::-webkit-scrollbar {
+                display: none;
+            }
+
+            /* 添加滑動提示 */
+            .weekly-weather-section::after {
+                content: "👈 左右滑動查看更多";
+                display: block;
+                text-align: center;
+                font-size: 0.7em;
+                color: #888;
+                margin-top: 5px;
+                opacity: 0.7;
+            }
+        }
+
+        .daily-forecast-card {
+            flex: 0 0 auto;
+            min-width: 140px;
+            max-width: 160px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            border-left: 4px solid #87CEEB;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .daily-forecast-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .forecast-date-with-day {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .forecast-date-main {
+            font-size: 1em;
+        }
+
+        .forecast-day-name {
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        .forecast-icon-large {
+            font-size: 2em;
+            margin: 8px 0;
+        }
+
+        .forecast-temp-range {
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #e67e22;
+            margin: 8px 0;
+        }
+
+        .forecast-rain-chance {
+            font-size: 0.8em;
+            color: #3498db;
+            margin: 5px 0;
+            font-weight: 500;
+        }
+
+        .forecast-weather-desc {
+            font-size: 0.8em;
+            color: #555;
+            line-height: 1.3;
+            margin-top: 5px;
+        }
+
+        .weekly-loading {
+            text-align: center;
+            color: #666;
+            padding: 20px;
+            font-size: 1.1em;
+        }
+
+        /* 今天的天氣卡片樣式 */
+        .today-card {
+            border-left: 4px solid #FFB6C1 !important;
+            background: linear-gradient(135deg, #fff5f5, #ffe6e6) !important;
+            box-shadow: 0 6px 20px rgba(255, 182, 193, 0.3) !important;
+        }
+
+        .today-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(255, 182, 193, 0.4) !important;
+        }
+
+        .today-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #FFB6C1, #FF69B4);
+            color: white;
+            font-size: 0.6em;
+            padding: 2px 6px;
+            border-radius: 8px;
+            margin-left: 4px;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 768px) {
+            .weekly-weather-section {
+                margin: 15px 0;
+                padding: 15px;
+            }
+
+            .weekly-weather-title {
+                font-size: 1.1em;
+                margin-bottom: 15px;
+            }
+
+            .daily-forecast-card {
+                min-width: 110px;
+                padding: 10px;
+                flex-shrink: 0;
+            }
+
+            .weekly-weather-container {
+                gap: 10px;
+                padding: 10px 5px;
+                justify-content: flex-start;
+            }
+
+            .weekly-weather-container::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            .forecast-date-with-day {
+                font-size: 0.8em;
+                margin-bottom: 6px;
+            }
+
+            .forecast-icon-large {
+                font-size: 1.8em;
+                margin: 6px 0;
+            }
+
+            .forecast-temp-range {
+                font-size: 0.8em;
+                margin: 6px 0;
+            }
+
+            .forecast-rain-chance {
+                font-size: 0.7em;
+                margin: 4px 0;
+            }
+
+            .forecast-weather-desc {
+                font-size: 0.7em;
+                line-height: 1.2;
+            }
+
+            .today-badge {
+                font-size: 0.5em;
+                padding: 1px 4px;
+                margin-left: 2px;
+            }
+        }
+
         .weather-error {
             color: #e74c3c;
         }
-        
+
         @media (max-width: 768px) {
             .weather-widget {
                 bottom: 60px;
                 left: 10px;
                 right: 10px;
                 transform: none;
-                justify-content: center;
-                gap: 15px;
                 padding: 10px 15px;
             }
-            
+
+            .weather-row {
+                justify-content: center;
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+
+
             .weather-widget:hover {
                 transform: translateY(-3px);
             }
         }
     </style>
 </head>
+
 <body>
     <!-- 模式切換按鈕 -->
     <div class="mode-toggle">
@@ -550,23 +801,23 @@
                             載入圖片中...
                         </div>
                     </div>
-                    
+
                     <div class="image-counter" id="imageCounter1">
                         載入中...
                     </div>
-                    
+
                     <div class="controls">
                         <button onclick="loadRandomImage('ice_deliverer')" title="換圖片">🎲</button>
                         <button onclick="downloadImage('ice_deliverer')" title="下載">💾</button>
                     </div>
-                    
+
                     <div class="info">
                         <div>檔案名稱：<span id="filename1">-</span></div>
                         <div>檔案大小：<span id="filesize1">-</span></div>
                         <div>上傳時間：<span id="uploadtime1">-</span></div>
                     </div>
                 </div>
-                
+
                 <!-- colne_icol 區域 -->
                 <div class="account-section">
                     <div class="image-container" id="imageContainer2">
@@ -575,16 +826,16 @@
                             載入圖片中...
                         </div>
                     </div>
-                    
+
                     <div class="image-counter" id="imageCounter2">
                         載入中...
                     </div>
-                    
+
                     <div class="controls">
                         <button onclick="loadRandomImage('colne_icol')" title="換圖片">🎲</button>
                         <button onclick="downloadImage('colne_icol')" title="下載">💾</button>
                     </div>
-                    
+
                     <div class="info">
                         <div>檔案名稱：<span id="filename2">-</span></div>
                         <div>檔案大小：<span id="filesize2">-</span></div>
@@ -592,20 +843,29 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="global-controls">
                 <button onclick="loadRandomImages()">🎲 同時換圖</button>
                 <button onclick="autoSlideshow()">▶️ 自動播放</button>
                 <button onclick="stopSlideshow()">⏸️ 停止播放</button>
-                
+
                 <!-- 音樂控制項 -->
                 <div class="music-controls-inline">
                     <button class="music-toggle" onclick="toggleMusic()" id="musicToggle">🎵 播放音樂</button>
-                    <input type="range" class="volume-control" id="volumeControl" min="0" max="100" value="30" onchange="changeVolume()">
+                    <input type="range" class="volume-control" id="volumeControl" min="0" max="100" value="30"
+                        onchange="changeVolume()">
                     <span id="volumeLabel">30%</span>
                 </div>
             </div>
-            
+
+            <!-- 一週天氣預報區塊 -->
+            <div class="weekly-weather-section" id="weeklyWeatherSection">
+                <h3 class="weekly-weather-title">📅 一週天氣預報 (來源：中央氣象局)</h3>
+                <div class="weekly-weather-container" id="weeklyWeatherContainer">
+                    <div class="weekly-loading">載入一週天氣中...</div>
+                </div>
+            </div>
+
             <div class="footer">
                 <p>© 2025 Just Vibe It</p>
             </div>
@@ -613,7 +873,7 @@
     </div>
 
     <!-- 新聞模式 - 加上縮小圖片畫廊 -->
-    <div id="newsMode" class="news-mode">        
+    <div id="newsMode" class="news-mode">
         <!-- 縮小的圖片畫廊 -->
         <div class="compact-gallery">
             <div class="compact-image-container">
@@ -623,7 +883,7 @@
                 <img id="compactImage2" class="compact-image" src="" alt="colne_icol">
             </div>
         </div>
-        
+
         <!-- 新聞內容區域 -->
         <div class="news-container" style="margin-top: 330px;">
             <div class="news-header">
@@ -643,7 +903,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="news-grid" id="newsGrid">
                 <div class="loading">
                     <div class="spinner"></div>
@@ -682,7 +942,7 @@
 
                 try {
                     console.log(`🌐 嘗試使用代理 ${proxyIndex + 1}: ${proxy.substring(0, 30)}...`);
-                    
+
                     const response = await fetch(proxyUrl, {
                         method: 'GET',
                         headers: {
@@ -721,9 +981,13 @@
                         const description = item.querySelector('description')?.textContent || '';
                         const pubDate = item.querySelector('pubDate')?.textContent || '';
 
-                        // 解析標題中的地區和天氣資訊
-                        const locationMatch = title.match(/(.+?)(?:今|明|後|一週)/);
-                        const location = locationMatch ? locationMatch[1].trim() : '台北市';
+                        // 解析標題中的地區和天氣資訊，移除日期部分
+                        let location = '台北市';
+                        const locationMatch = title.match(/(.+?)(?:\d{2}\/\d{2}|今|明|後|一週)/);
+                        if (locationMatch) {
+                            // 移除可能的日期格式（如：08/11）
+                            location = locationMatch[1].trim().replace(/\d{2}\/\d{2}\s*/, '');
+                        }
 
                         // 解析標題中的溫度和天氣狀況（RSS 格式：溫度: 31 ~ 35）
                         const tempMatch = title.match(/溫度:\s*(\d+)\s*~\s*(\d+)/);
@@ -782,10 +1046,10 @@
             async getTaipeiWeather() {
                 try {
                     const weatherData = await this.fetchRSSWithProxy();
-                    
+
                     // 尋找台北市相關的天氣資料
-                    const taipeiWeather = weatherData.find(item => 
-                        item.location.includes('台北') || 
+                    const taipeiWeather = weatherData.find(item =>
+                        item.location.includes('台北') ||
                         item.title.includes('台北')
                     );
 
@@ -801,9 +1065,93 @@
                 }
             }
 
+            async getWeeklyWeather() {
+                try {
+                    const weatherData = await this.fetchRSSWithProxy();
+
+                    // 尋找一週天氣預報
+                    const weeklyWeather = weatherData.find(item =>
+                        item.title.includes('一週天氣預報')
+                    );
+
+                    if (weeklyWeather) {
+                        return this.parseWeeklyForecast(weeklyWeather);
+                    }
+
+                    return null;
+
+                } catch (error) {
+                    console.error('獲取一週天氣失敗:', error);
+                    throw error;
+                }
+            }
+
+            parseWeeklyForecast(weeklyData) {
+                const description = weeklyData.description;
+                const forecasts = [];
+
+                // 解析每日天氣資料 (格式: 08/11 白天 溫度:31 ~ 35 多雲午後短暫雷陣雨<BR>)
+                const dayMatches = description.match(/(\d{2}\/\d{2})\s+(白天|晚上)\s+溫度:(\d+)\s*~\s*(\d+)\s+(.+?)(?:<BR>|$)/g);
+
+                if (dayMatches) {
+                    dayMatches.forEach(match => {
+                        const parts = match.match(/(\d{2}\/\d{2})\s+(白天|晚上)\s+溫度:(\d+)\s*~\s*(\d+)\s+(.+?)(?:<BR>|$)/);
+                        if (parts) {
+                            const [, date, period, minTemp, maxTemp, weather] = parts;
+                            const weatherDesc = weather.trim();
+
+                            forecasts.push({
+                                date: date,
+                                period: period,
+                                minTemp: minTemp,
+                                maxTemp: maxTemp,
+                                weather: weatherDesc,
+                                icon: this.getWeatherIcon(weatherDesc),
+                                rainChance: this.estimateRainChance(weatherDesc)
+                            });
+                        }
+                    });
+                }
+
+                return {
+                    title: weeklyData.title,
+                    forecasts: forecasts,
+                    updateTime: weeklyData.pubDate
+                };
+            }
+
             formatWeatherData(rawData) {
                 const weather = rawData.weather || '多雲';
                 const icon = this.getWeatherIcon(weather);
+
+                // 解析 RSS 發布時間
+                let rssUpdateTime = '';
+                let formattedRssTime = '';
+
+                if (rawData.pubDate) {
+                    try {
+                        const pubDate = new Date(rawData.pubDate);
+                        if (!isNaN(pubDate.getTime())) {
+                            rssUpdateTime = pubDate.toLocaleString('zh-TW', {
+                                month: '2-digit',
+                                day: '2-digit',
+                                hour: '2-digit',
+                                minute: '2-digit'
+                            });
+                            formattedRssTime = pubDate.toISOString();
+                        }
+                    } catch (error) {
+                        console.warn('解析 RSS 時間失敗:', error);
+                    }
+                }
+
+                // 從標題中提取發布時間（如：08/11 11:00發布）
+                if (!rssUpdateTime && rawData.title) {
+                    const timeMatch = rawData.title.match(/(\d{2}\/\d{2})\s+(\d{2}:\d{2})發布/);
+                    if (timeMatch) {
+                        rssUpdateTime = `${timeMatch[1]} ${timeMatch[2]}`;
+                    }
+                }
 
                 return {
                     location: rawData.location || '台北市',
@@ -815,6 +1163,8 @@
                     rainChance: rawData.rainChance,
                     humidity: '--',
                     updateTime: new Date().toLocaleString('zh-TW'),
+                    rssUpdateTime: rssUpdateTime,
+                    rssUpdateTimeISO: formattedRssTime,
                     source: 'CWA RSS',
                     rawTitle: rawData.title,
                     rawDescription: rawData.description
@@ -844,17 +1194,36 @@
 
                 return '🌤️';
             }
+
+            estimateRainChance(weather) {
+                // 根據天氣描述推估降雨機率
+                if (weather.includes('雷陣雨') || weather.includes('雷雨')) {
+                    return '80';
+                } else if (weather.includes('陣雨') || weather.includes('短暫雨')) {
+                    return '70';
+                } else if (weather.includes('雨')) {
+                    return '60';
+                } else if (weather.includes('陰')) {
+                    return '30';
+                } else if (weather.includes('多雲')) {
+                    return '20';
+                } else if (weather.includes('晴')) {
+                    return '10';
+                } else {
+                    return '20'; // 預設值
+                }
+            }
         }
 
         // 整合到現有的天氣系統
         async function loadWeatherDataFromRSS() {
             const weatherParser = new WeatherRSSParser();
-            
+
             try {
                 console.log('🌤️ 開始從 RSS 載入天氣資料...');
-                
+
                 const weatherData = await weatherParser.getTaipeiWeather();
-                
+
                 if (weatherData) {
                     console.log('✅ RSS 天氣資料載入成功:', weatherData);
                     updateWeatherUI(weatherData);
@@ -864,33 +1233,115 @@
 
             } catch (error) {
                 console.error('❌ RSS 天氣載入失敗:', error);
-                
+
                 // 回退到原本的 JSON 方式
                 console.log('🔄 回退到 JSON 天氣資料...');
                 loadWeatherData();
+            }
+        }
+
+        // 一週天氣相關函數
+        async function loadWeeklyWeather() {
+            const weeklyContainer = document.getElementById('weeklyWeatherContainer');
+
+            try {
+                const weatherParser = new WeatherRSSParser();
+                const weeklyData = await weatherParser.getWeeklyWeather();
+
+                if (weeklyData && weeklyData.forecasts.length > 0) {
+                    displayWeeklyForecast(weeklyData);
+                } else {
+                    weeklyContainer.innerHTML = '<div class="weekly-loading">❌ 無法載入一週天氣預報</div>';
+                }
+            } catch (error) {
+                console.error('載入一週天氣失敗:', error);
+                weeklyContainer.innerHTML = '<div class="weekly-loading">❌ 載入失敗，請稍後再試</div>';
+            }
+        }
+
+        function displayWeeklyForecast(weeklyData) {
+            const weeklyContainer = document.getElementById('weeklyWeatherContainer');
+
+            // 按日期分組預報資料，只取白天的資料
+            const groupedForecasts = {};
+            weeklyData.forecasts.forEach(forecast => {
+                if (forecast.period === '白天') {  // 只顯示白天的天氣
+                    groupedForecasts[forecast.date] = forecast;
+                }
+            });
+
+            // 獲取今天的日期（MM/DD 格式）
+            const today = new Date();
+            const todayString = `${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getDate().toString().padStart(2, '0')}`;
+
+            let html = '';
+            Object.keys(groupedForecasts).forEach(date => {
+                const forecast = groupedForecasts[date];
+                const dayName = getChineseDayName(date);
+                const isToday = date === todayString;
+
+                html += `
+                    <div class="daily-forecast-card ${isToday ? 'today-card' : ''}">
+                        <div class="forecast-date-with-day">
+                            <div class="forecast-date-main">
+                                ${date} (${dayName})
+                            </div>
+                        </div>
+                        <div class="forecast-icon-large">${forecast.icon}</div>
+                        <div class="forecast-temp-range">${forecast.minTemp}° ~ ${forecast.maxTemp}°</div>
+                        <div class="forecast-rain-chance">💧 ${forecast.rainChance}%</div>
+                        <div class="forecast-weather-desc">${forecast.weather}</div>
+                    </div>
+                `;
+            });
+
+            weeklyContainer.innerHTML = html;
+        }
+
+        // 將日期轉換為中文星期
+        function getChineseDayName(dateString) {
+            try {
+                // 解析 MM/DD 格式的日期
+                const [month, day] = dateString.split('/').map(num => parseInt(num));
+                const currentYear = new Date().getFullYear();
+                const date = new Date(currentYear, month - 1, day);
+
+                const dayNames = ['日', '一', '二', '三', '四', '五', '六'];
+                return dayNames[date.getDay()];
+            } catch (error) {
+                console.warn('解析日期失敗:', error);
+                return '?';
             }
         }
     </script>
 
     <!-- 天氣浮動視窗 -->
     <div class="weather-widget" id="weatherWidget">
-        <div class="weather-item">
-            <span class="weather-icon" id="weatherIcon">🌤️</span>
-            <span id="weatherLocation">台北市中山區</span>
-        </div>
-        <div class="weather-item">
-            <span>🌡️</span>
-            <span class="weather-temp" id="weatherTemp">--°C</span>
-        </div>
-        <div class="weather-item">
-            <span>💧</span>
-            <span class="weather-rain" id="weatherRain">--%</span>
-        </div>
-        <div class="weather-item">
-            <span>🕒</span>
-            <span id="weatherTime" style="font-size: 0.8em; color: #666;">--:--</span>
+        <div class="weather-row">
+            <div class="weather-item">
+                <span>🕒</span>
+                <span id="weatherTime" style="font-size: 0.8em; color: #666;">--:--</span>
+            </div>
+            <div class="weather-item">
+                <span class="weather-icon" id="weatherIcon">🌤️</span>
+                <span id="weatherLocation">台北市中山區</span>
+            </div>
+            <div class="weather-item">
+                <span>🌡️</span>
+                <span class="weather-temp" id="weatherTemp">--°C</span>
+            </div>
+            <div class="weather-item">
+                <span>💧</span>
+                <span class="weather-rain" id="weatherRain">--%</span>
+            </div>
+            <div class="weather-item" id="weatherUpdateTime" style="display: none;">
+                <span>📡</span>
+                <span id="weatherUpdateTimeText" class="weather-update-source">--</span>
+            </div>
         </div>
     </div>
+
+
 
     <script>
         // 全域變數
@@ -908,7 +1359,7 @@
         let compactSlideshowInterval = null; // 縮小模式的幻燈片
 
         // 頁面載入時初始化
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             loadImageLists();
             initAudioPlayer();
             setupWeatherUpdates();
@@ -921,13 +1372,13 @@
             audioPlayer = document.getElementById('background-music');
             if (audioPlayer) {
                 audioPlayer.volume = 0.3; // 設定初始音量 30%
-                
+
                 // 檢測是否為電視或大螢幕裝置
                 if (isTVOrLargeScreen()) {
                     console.log('🖥️ 偵測到電視或大螢幕裝置，嘗試自動播放');
                     // 多種方式嘗試自動播放
                     attemptAutoplay();
-                    
+
                     // 監聽用戶首次互動，然後自動播放
                     document.addEventListener('click', enableAutoplay, { once: true });
                     document.addEventListener('keydown', enableAutoplay, { once: true });
@@ -944,23 +1395,23 @@
         function isTVOrLargeScreen() {
             // 檢查螢幕解析度（電視通常 >= 1920x1080）
             const isLargeScreen = window.screen.width >= 1920 && window.screen.height >= 1080;
-            
+
             // 檢查是否為電視相關的 User Agent
             const userAgent = navigator.userAgent.toLowerCase();
-            const isTVUserAgent = userAgent.includes('tv') || 
-                                  userAgent.includes('smart') || 
-                                  userAgent.includes('webos') || 
-                                  userAgent.includes('tizen') || 
-                                  userAgent.includes('roku') || 
-                                  userAgent.includes('chromecast');
-            
+            const isTVUserAgent = userAgent.includes('tv') ||
+                userAgent.includes('smart') ||
+                userAgent.includes('webos') ||
+                userAgent.includes('tizen') ||
+                userAgent.includes('roku') ||
+                userAgent.includes('chromecast');
+
             // 檢查是否使用大螢幕且沒有觸控功能（通常是電視或桌機）
             const isNonTouchLargeScreen = isLargeScreen && !('ontouchstart' in window);
-            
+
             // 檢查瀏覽器是否在全螢幕模式（可能是電視應用）
-            const isFullscreen = window.innerHeight === window.screen.height && 
-                                 window.innerWidth === window.screen.width;
-            
+            const isFullscreen = window.innerHeight === window.screen.height &&
+                window.innerWidth === window.screen.width;
+
             console.log('🔍 裝置偵測資訊:', {
                 screenSize: `${window.screen.width}x${window.screen.height}`,
                 isLargeScreen,
@@ -970,14 +1421,14 @@
                 hasTouch: 'ontouchstart' in window,
                 userAgent: userAgent.substring(0, 100) + '...'
             });
-            
+
             return isTVUserAgent || (isLargeScreen && (isNonTouchLargeScreen || isFullscreen));
         }
 
         // 嘗試自動播放
         function attemptAutoplay() {
             if (!audioPlayer) return;
-            
+
             const playPromise = audioPlayer.play();
             if (playPromise !== undefined) {
                 playPromise.then(() => {
@@ -988,7 +1439,7 @@
                     console.log('⚠️ 自動播放被阻止，等待用戶互動');
                     isPlaying = false;
                     updateMusicButton();
-                    
+
                     // 顯示提示訊息
                     showAutoplayHint();
                 });
@@ -1030,7 +1481,7 @@
                     (此提示會在首次互動後消失)
                 </div>
             `;
-            
+
             // 添加動畫
             const style = document.createElement('style');
             style.textContent = `
@@ -1045,7 +1496,7 @@
             `;
             document.head.appendChild(style);
             document.body.appendChild(hint);
-            
+
             // 5秒後自動淡出
             setTimeout(() => {
                 if (hint.parentNode) {
@@ -1071,7 +1522,7 @@
         // 切換音樂播放
         function toggleMusic() {
             if (!audioPlayer) return;
-            
+
             if (isPlaying) {
                 audioPlayer.pause();
                 isPlaying = false;
@@ -1113,7 +1564,7 @@
                 loadImageList('ice_deliverer'),
                 loadImageList('colne_icol')
             ]);
-            
+
             // 載入完成後自動開始播放
             setTimeout(() => {
                 autoSlideshow();
@@ -1126,7 +1577,7 @@
                 const jsonPath = account === 'ice_deliverer' ? 'images/images.json' : 'colne_icol_images/images.json';
                 const response = await fetch(jsonPath);
                 const data = await response.json();
-                
+
                 if (account === 'ice_deliverer') {
                     imageList1 = data;
                     updateUI('ice_deliverer', imageList1.length);
@@ -1136,13 +1587,13 @@
                     updateUI('colne_icol', imageList2.length);
                     if (imageList2.length > 0) loadRandomImage('colne_icol');
                 }
-                
+
             } catch (error) {
                 console.error(`載入 ${account} 圖片清單失敗:`, error);
                 const containerId = account === 'ice_deliverer' ? 'imageContainer1' : 'imageContainer2';
                 const counterId = account === 'ice_deliverer' ? 'imageCounter1' : 'imageCounter2';
-                
-                document.getElementById(containerId).innerHTML = 
+
+                document.getElementById(containerId).innerHTML =
                     `<div class="loading">❌ 無法載入 ${account} 圖片</div>`;
                 document.getElementById(counterId).textContent = '載入失敗';
             }
@@ -1157,17 +1608,17 @@
         // 載入隨機圖片
         function loadRandomImage(account) {
             const imageList = account === 'ice_deliverer' ? imageList1 : imageList2;
-            
+
             if (imageList.length === 0) return;
-            
+
             const randomIndex = Math.floor(Math.random() * imageList.length);
             const imageData = imageList[randomIndex];
-            
+
             const containerId = account === 'ice_deliverer' ? 'imageContainer1' : 'imageContainer2';
             const filenameId = account === 'ice_deliverer' ? 'filename1' : 'filename2';
             const filesizeId = account === 'ice_deliverer' ? 'filesize1' : 'filesize2';
             const uploadtimeId = account === 'ice_deliverer' ? 'uploadtime1' : 'uploadtime2';
-            
+
             if (account === 'ice_deliverer') {
                 currentImageIndex1 = randomIndex;
                 currentImageUrl1 = imageData.url;
@@ -1175,7 +1626,7 @@
                 currentImageIndex2 = randomIndex;
                 currentImageUrl2 = imageData.url;
             }
-            
+
             const container = document.getElementById(containerId);
             container.innerHTML = `
                 <img src="${imageData.url}" 
@@ -1184,7 +1635,7 @@
                      onload="imageLoaded('${account}')"
                      onerror="imageError('${account}')">
             `;
-            
+
             // 更新資訊
             document.getElementById(filenameId).textContent = imageData.filename;
             document.getElementById(filesizeId).textContent = formatFileSize(imageData.size);
@@ -1205,16 +1656,16 @@
         // 圖片載入失敗
         function imageError(account) {
             const containerId = account === 'ice_deliverer' ? 'imageContainer1' : 'imageContainer2';
-            document.getElementById(containerId).innerHTML = 
+            document.getElementById(containerId).innerHTML =
                 `<div class="loading">❌ ${account} 圖片載入失敗</div>`;
         }
 
         // 下載圖片
         function downloadImage(account) {
             const currentUrl = account === 'ice_deliverer' ? currentImageUrl1 : currentImageUrl2;
-            
+
             if (!currentUrl) return;
-            
+
             const link = document.createElement('a');
             link.href = currentUrl;
             link.download = '';
@@ -1236,11 +1687,11 @@
         // 自動播放
         function autoSlideshow() {
             if (slideshowInterval) return; // 已經在播放中
-            
+
             slideshowInterval = setInterval(() => {
                 loadRandomImages();
             }, 10000); // 每10秒換一次圖
-            
+
             console.log('自動播放已開始');
         }
 
@@ -1252,7 +1703,7 @@
                 console.log('自動播放已停止');
             }
         }
-        
+
         // 天氣相關函數
         async function loadWeatherData() {
             try {
@@ -1260,59 +1711,69 @@
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                
+
                 const weather = await response.json();
                 updateWeatherUI(weather);
-                
+
             } catch (error) {
                 console.error('載入天氣資料失敗:', error);
                 showWeatherError('無法載入天氣資料');
             }
         }
-        
+
         // 實時時鐘功能
         function startRealTimeClock() {
+            startWeatherClock();
+        }
+
+        // 天氣時鐘功能（可以被控制）
+        function startWeatherClock() {
+            // 清除現有的時鐘間隔
+            if (window.weatherClockInterval) {
+                clearInterval(window.weatherClockInterval);
+            }
+
             function updateClock() {
                 const now = new Date();
-                const timeString = now.toLocaleTimeString('zh-TW', { 
-                    hour: '2-digit', 
+                const timeString = now.toLocaleTimeString('zh-TW', {
+                    hour: '2-digit',
                     minute: '2-digit',
                     second: '2-digit',
-                    hour12: false 
+                    hour12: false
                 });
                 document.getElementById('weatherTime').textContent = timeString;
             }
-            
+
             // 立即更新一次
             updateClock();
-            
+
             // 每秒更新時間
-            setInterval(updateClock, 1000);
+            window.weatherClockInterval = setInterval(updateClock, 1000);
         }
-        
+
         function updateWeatherUI(weather) {
             // 檢查是否為成功狀態（JSON 格式）或直接是天氣資料（RSS 格式）
             const isSuccess = weather.status === 'success' || weather.source === 'CWA RSS' || !weather.status;
-            
+
             if (isSuccess) {
                 // 地點
                 document.getElementById('weatherLocation').textContent = weather.location || '台北市';
-                
+
                 // 溫度 - 處理不同的溫度格式
                 let tempText = '--°C';
                 if (weather.temperature && weather.temperature !== '--') {
                     tempText = `${weather.temperature}°C`;
                 } else if (weather.maxTemp) {
                     // RSS 資料可能只有最高溫
-                    tempText = weather.minTemp ? 
-                        `${weather.minTemp}~${weather.maxTemp}°C` : 
+                    tempText = weather.minTemp ?
+                        `${weather.minTemp}~${weather.maxTemp}°C` :
                         `${weather.maxTemp}°C`;
                 }
                 document.getElementById('weatherTemp').textContent = tempText;
-                
+
                 // 天氣圖示
                 document.getElementById('weatherIcon').textContent = weather.icon || '🌤️';
-                
+
                 // 降雨資訊
                 let rainInfo = '--%';
                 if (weather.rainChance) {
@@ -1330,15 +1791,30 @@
                     rainInfo = '0%';
                 }
                 document.getElementById('weatherRain').textContent = rainInfo;
-                
+
+                // 處理時間顯示
+                if (weather.source === 'CWA RSS' && weather.rssUpdateTime) {
+                    // 顯示 RSS 更新時間在上方，時鐘元件保持實時時間
+                    document.getElementById('weatherUpdateTime').style.display = 'flex';
+                    document.getElementById('weatherUpdateTimeText').textContent = weather.rssUpdateTime;
+
+                    // 時鐘元件繼續顯示實時時間
+                    startWeatherClock();
+                } else {
+                    // 隱藏 RSS 更新時間，只顯示實時時鐘
+                    document.getElementById('weatherUpdateTime').style.display = 'none';
+                    startWeatherClock();
+                }
+
                 // 移除錯誤樣式
                 document.getElementById('weatherWidget').classList.remove('weather-error');
-                
+
                 // 如果是 RSS 資料，在控制台顯示詳細資訊
                 if (weather.source === 'CWA RSS') {
                     console.log('📊 天氣詳細資訊:', {
                         標題: weather.rawTitle,
                         描述: weather.rawDescription,
+                        RSS更新時間: weather.rssUpdateTime,
                         來源: weather.source
                     });
                 }
@@ -1346,73 +1822,76 @@
                 showWeatherError();
             }
         }
-        
+
         function showWeatherError(message = '無法載入') {
             document.getElementById('weatherIcon').textContent = '❌';
             document.getElementById('weatherLocation').textContent = '台北市';
             document.getElementById('weatherTemp').textContent = '--°C';
             document.getElementById('weatherRain').textContent = '--%';
-            // 不重置時間，讓實時時鐘繼續運行
-            
+
+            // 隱藏 RSS 更新時間，顯示實時時鐘
+            document.getElementById('weatherUpdateTime').style.display = 'none';
+            startWeatherClock();
+
             // 添加錯誤樣式
             document.getElementById('weatherWidget').classList.add('weather-error');
         }
-        
+
         // 模式切換功能 - 簡化版本
         function switchMode(mode) {
             console.log('🔄 切換到模式:', mode);
             currentMode = mode;
-            
+
             // 更新按鈕狀態
             document.querySelectorAll('.mode-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
             document.querySelector(`[onclick="switchMode('${mode}')"]`).classList.add('active');
-            
+
             // 控制天氣視窗顯示/隱藏
             const weatherWidget = document.getElementById('weatherWidget');
-            
+
             // 切換顯示內容
             if (mode === 'gallery') {
                 console.log('📸 顯示相簿模式');
                 document.getElementById('galleryMode').classList.add('active');
                 document.getElementById('newsMode').classList.remove('active');
-                
+
                 // 顯示天氣視窗
                 if (weatherWidget) weatherWidget.style.display = 'flex';
-                
+
                 // 停止縮小模式的幻燈片
                 if (compactSlideshowInterval) {
                     clearInterval(compactSlideshowInterval);
                     compactSlideshowInterval = null;
                 }
-                
+
             } else if (mode === 'news') {
                 console.log('📰 顯示新聞模式');
                 document.getElementById('galleryMode').classList.remove('active');
                 document.getElementById('newsMode').classList.add('active');
-                
+
                 // 隱藏天氣視窗
                 if (weatherWidget) weatherWidget.style.display = 'none';
-                
+
                 // 載入縮小圖片並開始自動播放
                 loadCompactImages();
                 startCompactSlideshow();
-                
+
                 // 顯示新聞內容
                 showNewsTestContent();
             }
         }
-        
+
         // 顯示新聞測試內容 -> 改為顯示真實新聞內容
         function showNewsTestContent() {
             console.log('📰 載入新聞內容');
-            
+
             if (!newsData || !newsData.news || newsData.news.length === 0) {
                 console.log('❌ 沒有新聞資料，顯示錯誤訊息');
                 document.getElementById('newsCount').textContent = '無新聞資料';
                 document.getElementById('newsUpdateTime').textContent = '載入失敗';
-                
+
                 const newsGrid = document.getElementById('newsGrid');
                 newsGrid.innerHTML = `
                     <div style="
@@ -1429,20 +1908,20 @@
                 `;
                 return;
             }
-            
+
             // 更新統計資訊
             document.getElementById('newsCount').textContent = `共 ${newsData.total_count} 條新聞`;
             document.getElementById('newsUpdateTime').textContent = `更新時間: ${newsData.last_updated}`;
-            
+
             // 生成新聞項目
             const newsGrid = document.getElementById('newsGrid');
             newsGrid.innerHTML = '';
-            
+
             newsData.news.forEach((news, index) => {
                 const newsItem = document.createElement('div');
                 newsItem.className = 'news-item';
                 newsItem.onclick = () => window.open(news.link, '_blank');
-                
+
                 newsItem.innerHTML = `
                     <div class="news-title">${news.title}</div>
                     <div class="news-description">${news.description}</div>
@@ -1454,16 +1933,16 @@
                         <div>${news.published}</div>
                     </div>
                 `;
-                
+
                 newsGrid.appendChild(newsItem);
             });
-            
+
             console.log('✅ 新聞內容載入完成，共', newsData.news.length, '條');
         }
-        
+
         // 暫時移除複雜的載入函數，避免錯誤
         // TODO: 後續再加回縮小圖片功能
-        
+
         // 載入新聞資料
         async function loadNewsData() {
             try {
@@ -1473,10 +1952,10 @@
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                
+
                 newsData = await response.json();
                 console.log('✅ 新聞資料載入成功:', newsData.total_count, '條', now.toLocaleTimeString('zh-TW'));
-                
+
             } catch (error) {
                 console.error('❌ 載入新聞資料失敗:', error);
                 // 使用內嵌測試資料作為備案
@@ -1513,18 +1992,18 @@
                 console.log('⚠️ 使用備案測試資料:', newsData.total_count, '條');
             }
         }
-        
+
         // 載入縮小模式的圖片
         function loadCompactImages() {
             console.log('🖼️ 載入縮小圖片');
-            
+
             if (imageList1.length > 0) {
                 const randomIndex1 = Math.floor(Math.random() * imageList1.length);
                 const image1 = imageList1[randomIndex1];
                 document.getElementById('compactImage1').src = image1.url;
                 console.log('✅ ice_deliverer 縮小圖片載入:', image1.filename);
             }
-            
+
             if (imageList2.length > 0) {
                 const randomIndex2 = Math.floor(Math.random() * imageList2.length);
                 const image2 = imageList2[randomIndex2];
@@ -1532,28 +2011,33 @@
                 console.log('✅ colne_icol 縮小圖片載入:', image2.filename);
             }
         }
-        
+
         // 開始縮小模式的自動播放
         function startCompactSlideshow() {
             if (compactSlideshowInterval) return;
-            
+
             console.log('🎬 開始縮小圖片自動播放');
             compactSlideshowInterval = setInterval(() => {
                 loadCompactImages();
             }, 8000); // 每8秒換一次圖
         }
-        
+
         // 定期更新天氣資料
         function setupWeatherUpdates() {
             // 優先嘗試 RSS 方式
             loadWeatherDataFromRSS();
-            
+
+            // 載入一週天氣
+            loadWeeklyWeather();
+
             // 每 30 分鐘更新一次天氣
             setInterval(() => {
                 loadWeatherDataFromRSS();
+                loadWeeklyWeather();
             }, 30 * 60 * 1000);
         }
-        
+
     </script>
 </body>
+
 </html>
