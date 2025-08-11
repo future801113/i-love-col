@@ -124,7 +124,6 @@ class TwitterImageScraperSimple:
     def build_nitter_search_url(self, username, start_date=None, end_date=None, nitter_instance="nitter.net"):
         """建立 Nitter 搜尋 URL（支援日期區間）"""
         import urllib.parse
-        
         # 建立搜尋查詢
         if start_date and end_date:
             query = f"from:{username} since:{start_date} until:{end_date}"
@@ -132,9 +131,9 @@ class TwitterImageScraperSimple:
             query = f"from:{username} since:{start_date}"
         else:
             query = f"from:{username}"
-        
         encoded_query = urllib.parse.quote(query)
-        return f"https://{nitter_instance}/search?q={encoded_query}&f=tweets"
+        # 加上 f-media=on & e-nativeretweets=on 參數
+        return f"https://{nitter_instance}/search?q={encoded_query}&f=tweets&f-media=on&e-nativeretweets=on"
     
     def extract_image_urls(self):
         """提取圖片 URL"""
