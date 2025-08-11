@@ -1,10 +1,11 @@
-name: 更新天氣資料
+name: 更新天氣資料 (已停用 - 改用前端 RSS)
 
 on:
-  schedule:
-    # 每天 07:50 (UTC-1) = 台灣時間 07:50 執行
-    - cron: '50 23 * * *'
-  workflow_dispatch: # 允許手動觸發
+  # 已停用自動執行，改用前端直接從中央氣象署 RSS 抓取天氣資料
+  # schedule:
+  #   # 每天 07:50 (UTC-1) = 台灣時間 07:50 執行
+  #   - cron: '50 23 * * *'
+  workflow_dispatch: # 保留手動觸發功能以備不時之需
 
 permissions:
   contents: write  # 允許寫入內容和推送
