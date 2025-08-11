@@ -553,12 +553,14 @@
             display: flex;
             gap: 15px;
             overflow-x: auto;
+            overflow-y: hidden;
             padding: 10px 0;
             scrollbar-width: thin;
             scrollbar-color: #87CEEB #f1f1f1;
             justify-content: flex-start;
             -webkit-overflow-scrolling: touch;
             scroll-behavior: smooth;
+            touch-action: pan-x;
         }
 
         .weekly-weather-container::-webkit-scrollbar {
@@ -585,10 +587,20 @@
                 /* 隱藏滾動條但保持滑動功能 */
                 scrollbar-width: none;
                 -ms-overflow-style: none;
+                /* 強制只允許橫向滑動 */
+                touch-action: pan-x;
+                overscroll-behavior-x: contain;
+                overscroll-behavior-y: none;
             }
 
             .weekly-weather-container::-webkit-scrollbar {
                 display: none;
+            }
+
+            /* 為天氣區塊添加觸控優化 */
+            .weekly-weather-section {
+                /* 防止垂直滑動時影響天氣元件 */
+                touch-action: manipulation;
             }
 
             /* 添加滑動提示 */
@@ -845,9 +857,9 @@
             </div>
 
             <div class="global-controls">
-                <button onclick="loadRandomImages()">🎲 同時換圖</button>
-                <button onclick="autoSlideshow()">▶️ 自動播放</button>
-                <button onclick="stopSlideshow()">⏸️ 停止播放</button>
+                <button onclick="loadRandomImages()">🎲 </button>
+                <button onclick="autoSlideshow()">▶️ </button>
+                <button onclick="stopSlideshow()">⏸️ </button>
 
                 <!-- 音樂控制項 -->
                 <div class="music-controls-inline">
@@ -1312,6 +1324,44 @@
                 console.warn('解析日期失敗:', error);
                 return '?';
             }
+        }
+
+        // 改善天氣元件的觸控滑動體驗
+        function setupWeatherTouchHandling() {
+            const weeklyContainer = document.getElementById('weeklyWeatherContainer');
+            if (!weeklyContainer) return;
+
+            let startX = 0;
+            let startY = 0;
+            let isHorizontalScroll = false;
+
+            weeklyContainer.addEventListener('touchstart', function (e) {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+                isHorizontalScroll = false;
+            }, { passive: true });
+
+            weeklyContainer.addEventListener('touchmove', function (e) {
+                if (!startX || !startY) return;
+
+                const currentX = e.touches[0].clientX;
+                const currentY = e.touches[0].clientY;
+                const diffX = Math.abs(currentX - startX);
+                const diffY = Math.abs(currentY - startY);
+
+                // 如果橫向滑動距離大於垂直滑動距離，則認為是橫向滑動
+                if (diffX > diffY && diffX > 10) {
+                    isHorizontalScroll = true;
+                    // 阻止頁面滾動
+                    e.preventDefault();
+                }
+            }, { passive: false });
+
+            weeklyContainer.addEventListener('touchend', function () {
+                startX = 0;
+                startY = 0;
+                isHorizontalScroll = false;
+            }, { passive: true });
         }
     </script>
 
@@ -2029,6 +2079,11 @@
 
             // 載入一週天氣
             loadWeeklyWeather();
+
+            // 設置觸控滑動處理
+            setTimeout(() => {
+                setupWeatherTouchHandling();
+            }, 1000); // 等待天氣資料載入完成
 
             // 每 30 分鐘更新一次天氣
             setInterval(() => {
