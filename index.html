@@ -538,6 +538,10 @@
             padding: 20px;
             margin: 20px 0;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            /* 改善觸控體驗 */
+            touch-action: manipulation;
+            -webkit-user-select: none;
+            user-select: none;
         }
 
         .weekly-weather-title {
@@ -561,6 +565,10 @@
             -webkit-overflow-scrolling: touch;
             scroll-behavior: smooth;
             touch-action: pan-x;
+            /* 增加滑動區域的高度 */
+            min-height: 60px;
+            /* 確保滑動容器有足夠的觸控區域 */
+            position: relative;
         }
 
         .weekly-weather-container::-webkit-scrollbar {
@@ -591,6 +599,11 @@
                 touch-action: pan-x;
                 overscroll-behavior-x: contain;
                 overscroll-behavior-y: none;
+                /* 增加觸控區域 */
+                padding: 15px 5px;
+                margin: -5px 0;
+                /* 確保有足夠的觸控空間 */
+                min-height: 80px;
             }
 
             .weekly-weather-container::-webkit-scrollbar {
@@ -601,17 +614,41 @@
             .weekly-weather-section {
                 /* 防止垂直滑動時影響天氣元件 */
                 touch-action: manipulation;
+                /* 增加整個區塊的觸控區域 */
+                padding: 20px 15px;
+            }
+
+            /* 天氣卡片在手機上的觸控優化 */
+            .daily-forecast-card {
+                /* 確保卡片不會阻擋滑動 */
+                pointer-events: none;
+                /* 增加卡片間距以便滑動 */
+                margin: 0 2px;
             }
 
             /* 添加滑動提示 */
             .weekly-weather-section::after {
-                content: "👈 左右滑動查看更多";
+                content: "👈👉 左右滑動查看更多天氣";
                 display: block;
                 text-align: center;
-                font-size: 0.7em;
-                color: #888;
-                margin-top: 5px;
-                opacity: 0.7;
+                font-size: 0.8em;
+                color: #87CEEB;
+                margin-top: 10px;
+                opacity: 0.8;
+                font-weight: 500;
+                animation: slideHint 2s ease-in-out infinite;
+            }
+
+            @keyframes slideHint {
+
+                0%,
+                100% {
+                    opacity: 0.8;
+                }
+
+                50% {
+                    opacity: 0.4;
+                }
             }
         }
 
@@ -872,7 +909,7 @@
 
             <!-- 一週天氣預報區塊 -->
             <div class="weekly-weather-section" id="weeklyWeatherSection">
-                <h3 class="weekly-weather-title">📅 一週天氣預報 (來源：中央氣象局)</h3>
+                <h3 class="weekly-weather-title">📅 中央氣象局</h3>
                 <div class="weekly-weather-container" id="weeklyWeatherContainer">
                     <div class="weekly-loading">載入一週天氣中...</div>
                 </div>
@@ -1255,6 +1292,7 @@
         // 一週天氣相關函數
         async function loadWeeklyWeather() {
             const weeklyContainer = document.getElementById('weeklyWeatherContainer');
+            const weeklyTitle = document.querySelector('.weekly-weather-title');
 
             try {
                 const weatherParser = new WeatherRSSParser();
@@ -1264,15 +1302,41 @@
                     displayWeeklyForecast(weeklyData);
                 } else {
                     weeklyContainer.innerHTML = '<div class="weekly-loading">❌ 無法載入一週天氣預報</div>';
+                    // 載入失敗時重置標題
+                    if (weeklyTitle) {
+                        weeklyTitle.textContent = '📅 中央氣象局';
+                    }
                 }
             } catch (error) {
                 console.error('載入一週天氣失敗:', error);
                 weeklyContainer.innerHTML = '<div class="weekly-loading">❌ 載入失敗，請稍後再試</div>';
+                // 載入失敗時重置標題
+                if (weeklyTitle) {
+                    weeklyTitle.textContent = '📅 中央氣象局';
+                }
             }
         }
 
         function displayWeeklyForecast(weeklyData) {
             const weeklyContainer = document.getElementById('weeklyWeatherContainer');
+            const weeklyTitle = document.querySelector('.weekly-weather-title');
+
+            // 更新標題，加入 RSS 更新時間
+            if (weeklyTitle && weeklyData.updateTime) {
+                try {
+                    const updateDate = new Date(weeklyData.updateTime);
+                    const updateTimeStr = updateDate.toLocaleString('zh-TW', {
+                        month: '2-digit',
+                        day: '2-digit',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        hour12: false
+                    });
+                    weeklyTitle.textContent = `📅 中央氣象局 (${updateTimeStr})`;
+                } catch (error) {
+                    weeklyTitle.textContent = '📅 中央氣象局';
+                }
+            }
 
             // 按日期分組預報資料，只取白天的資料
             const groupedForecasts = {};
@@ -1329,19 +1393,23 @@
         // 改善天氣元件的觸控滑動體驗
         function setupWeatherTouchHandling() {
             const weeklyContainer = document.getElementById('weeklyWeatherContainer');
-            if (!weeklyContainer) return;
+            const weeklySection = document.getElementById('weeklyWeatherSection');
+            if (!weeklyContainer || !weeklySection) return;
 
             let startX = 0;
             let startY = 0;
-            let isHorizontalScroll = false;
+            let isScrolling = false;
+            let scrollStarted = false;
 
-            weeklyContainer.addEventListener('touchstart', function (e) {
+            // 為整個天氣區塊添加觸控處理
+            weeklySection.addEventListener('touchstart', function (e) {
                 startX = e.touches[0].clientX;
                 startY = e.touches[0].clientY;
-                isHorizontalScroll = false;
+                isScrolling = false;
+                scrollStarted = false;
             }, { passive: true });
 
-            weeklyContainer.addEventListener('touchmove', function (e) {
+            weeklySection.addEventListener('touchmove', function (e) {
                 if (!startX || !startY) return;
 
                 const currentX = e.touches[0].clientX;
@@ -1349,19 +1417,46 @@
                 const diffX = Math.abs(currentX - startX);
                 const diffY = Math.abs(currentY - startY);
 
-                // 如果橫向滑動距離大於垂直滑動距離，則認為是橫向滑動
-                if (diffX > diffY && diffX > 10) {
-                    isHorizontalScroll = true;
-                    // 阻止頁面滾動
+                // 降低觸發閾值，讓滑動更敏感
+                if (!scrollStarted && (diffX > 5 || diffY > 5)) {
+                    scrollStarted = true;
+
+                    // 如果橫向滑動距離大於垂直滑動距離，則認為是橫向滑動
+                    if (diffX > diffY) {
+                        isScrolling = true;
+                        // 阻止頁面滾動
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        // 手動處理滑動
+                        const deltaX = currentX - startX;
+                        weeklyContainer.scrollLeft -= deltaX * 0.8; // 調整滑動靈敏度
+                        startX = currentX; // 更新起始點
+                    }
+                } else if (isScrolling) {
+                    // 繼續橫向滑動
                     e.preventDefault();
+                    e.stopPropagation();
+
+                    const deltaX = currentX - startX;
+                    weeklyContainer.scrollLeft -= deltaX * 0.8;
+                    startX = currentX;
                 }
             }, { passive: false });
 
-            weeklyContainer.addEventListener('touchend', function () {
+            weeklySection.addEventListener('touchend', function () {
                 startX = 0;
                 startY = 0;
-                isHorizontalScroll = false;
+                isScrolling = false;
+                scrollStarted = false;
             }, { passive: true });
+
+            // 為容器本身也添加處理
+            weeklyContainer.addEventListener('touchstart', function (e) {
+                e.stopPropagation();
+            }, { passive: true });
+
+            console.log('✅ 天氣觸控滑動處理已設置');
         }
     </script>
 
@@ -1384,10 +1479,7 @@
                 <span>💧</span>
                 <span class="weather-rain" id="weatherRain">--%</span>
             </div>
-            <div class="weather-item" id="weatherUpdateTime" style="display: none;">
-                <span>📡</span>
-                <span id="weatherUpdateTimeText" class="weather-update-source">--</span>
-            </div>
+
         </div>
     </div>
 
@@ -1842,19 +1934,8 @@
                 }
                 document.getElementById('weatherRain').textContent = rainInfo;
 
-                // 處理時間顯示
-                if (weather.source === 'CWA RSS' && weather.rssUpdateTime) {
-                    // 顯示 RSS 更新時間在上方，時鐘元件保持實時時間
-                    document.getElementById('weatherUpdateTime').style.display = 'flex';
-                    document.getElementById('weatherUpdateTimeText').textContent = weather.rssUpdateTime;
-
-                    // 時鐘元件繼續顯示實時時間
-                    startWeatherClock();
-                } else {
-                    // 隱藏 RSS 更新時間，只顯示實時時鐘
-                    document.getElementById('weatherUpdateTime').style.display = 'none';
-                    startWeatherClock();
-                }
+                // 時鐘元件始終顯示實時時間
+                startWeatherClock();
 
                 // 移除錯誤樣式
                 document.getElementById('weatherWidget').classList.remove('weather-error');
