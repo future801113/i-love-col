@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>i-COL</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="logo3.svg">
+    <link rel="alternate icon" href="logo3.svg">
+    <link rel="shortcut icon" href="logo3.svg">
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FH9B8J5XN"></script>
     <script>
@@ -838,6 +843,79 @@
                 transform: translateY(-3px);
             }
         }
+
+        /* Footer 樣式 */
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9em;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 訪客統計 Footer 樣式 */
+        .visitor-stats-footer {
+            display: flex;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .visitor-stats-footer .stats-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.8rem;
+        }
+
+        .visitor-stats-footer .stats-icon {
+            font-size: 1rem;
+        }
+
+        .visitor-stats-footer .stats-label {
+            color: rgba(255, 255, 255, 0.7);
+            min-width: 30px;
+        }
+
+        .visitor-stats-footer .stats-value {
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.9);
+            min-width: 20px;
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .visitor-stats-footer {
+                gap: 15px;
+                justify-content: center;
+            }
+            
+            .visitor-stats-footer .stats-item {
+                flex-direction: column;
+                gap: 2px;
+                text-align: center;
+            }
+            
+            .visitor-stats-footer .stats-label {
+                font-size: 0.7rem;
+                min-width: auto;
+            }
+        }
     </style>
 </head>
 
@@ -926,7 +1004,26 @@
             </div>
 
             <div class="footer">
-                <p>© 2025 Just Vibe It</p>
+                <div class="footer-content">
+                    <p>© 2025 Just Vibe It</p>
+                    <div class="visitor-stats-footer" id="visitorStats">
+                        <div class="stats-item">
+                            <span class="stats-icon">👥</span>
+                            <span class="stats-label">今日</span>
+                            <span class="stats-value" id="todayVisitors">-</span>
+                        </div>
+                        <div class="stats-item">
+                            <span class="stats-icon">🌍</span>
+                            <span class="stats-label">總計</span>
+                            <span class="stats-value" id="totalVisitors">-</span>
+                        </div>
+                        <div class="stats-item">
+                            <span class="stats-icon">📊</span>
+                            <span class="stats-label">線上</span>
+                            <span class="stats-value" id="onlineVisitors">-</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -977,6 +1074,8 @@
         <source src="music/パラレルワールド.mp3" type="audio/mpeg">
         您的瀏覽器不支援音樂播放
     </audio>
+
+
 
     <!-- 天氣 RSS 解析器 - 內嵌版本 -->
     <script>
@@ -1983,6 +2082,11 @@
             console.log('🔄 切換到模式:', mode);
             currentMode = mode;
 
+            // 記錄模式切換到訪客追蹤系統
+            if (window.visitorTracker) {
+                window.visitorTracker.switchMode(mode);
+            }
+
             // 更新按鈕狀態
             document.querySelectorAll('.mode-btn').forEach(btn => {
                 btn.classList.remove('active');
@@ -2183,6 +2287,47 @@
             }, 30 * 60 * 1000);
         }
 
+    </script>
+
+    <!-- 訪客追蹤器 -->
+    <script src="visitor-tracker.js"></script>
+    <script>
+        // 初始化訪客追蹤器（防止重複初始化）
+        if (!window.visitorTrackerInitialized) {
+            document.addEventListener('DOMContentLoaded', function() {
+                try {
+                    // 檢查是否已經初始化
+                    if (window.visitorTracker) {
+                        console.log('⚠️ 訪客追蹤器已存在，跳過初始化');
+                        return;
+                    }
+                    
+                    // 初始化追蹤器
+                    const tracker = new VisitorTracker('https://i-love-col.zeabur.app/api/v1');
+                    window.visitorTracker = tracker;
+                    window.visitorTrackerInitialized = true;
+                    
+                    console.log('✅ 訪客追蹤器已初始化');
+                    
+                    // 每 5 分鐘更新一次統計
+                    setInterval(() => {
+                        if (window.visitorTracker) {
+                            window.visitorTracker.updateStatsDisplay();
+                        }
+                    }, 5 * 60 * 1000);
+                    
+                    // 2 秒後首次更新統計
+                    setTimeout(() => {
+                        if (window.visitorTracker) {
+                            window.visitorTracker.updateStatsDisplay();
+                        }
+                    }, 2000);
+                    
+                } catch (error) {
+                    console.warn('⚠️ 訪客追蹤器初始化失敗:', error);
+                }
+            });
+        }
     </script>
 </body>
 

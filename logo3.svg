@@ -1,0 +1,21 @@
+<svg width="200" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- 頭部 -->
+  <circle cx="100" cy="80" r="30" fill="#F5E6E8" />
+  <!-- 眼睛 -->
+  <circle cx="90" cy="70" r="5" fill="#000000" />
+  <circle cx="110" cy="70" r="5" fill="#000000" />
+  <!-- 頭飾 -->
+  <path d="M90 40 L80 30 L100 20 L110 30 Z" fill="#FF4040" />
+  <!-- 身體 -->
+  <rect x="80" y="110" width="40" height="70" fill="#D3A4B2" />
+  <!-- 圍巾 -->
+  <rect x="90" y="110" width="20" height="30" fill="#FF4040" />
+  <!-- 裙子 -->
+  <path d="M70 180 L130 180 L150 250 L50 250 Z" fill="#87CEEB" />
+  <!-- 腿部 -->
+  <rect x="85" y="250" width="15" height="40" fill="#F5E6E8" />
+  <rect x="100" y="250" width="15" height="40" fill="#F5E6E8" />
+  <!-- 鞋子 -->
+  <rect x="80" y="290" width="20" height="10" fill="#000000" />
+  <rect x="100" y="290" width="20" height="10" fill="#000000" />
+</svg>

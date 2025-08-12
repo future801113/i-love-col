@@ -1,0 +1,26 @@
+<svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9D82FF;" />
+      <stop offset="100%" style="stop-color:#F2A9FF;" />
+    </linearGradient>
+  </defs>
+
+  <circle 
+    cx="50" 
+    cy="50" 
+    r="15" 
+    fill="none" 
+    stroke="#BEA9FF" 
+    stroke-width="6" 
+    stroke-linecap="butt"
+    stroke-dasharray="70 95"
+    transform="rotate(60 50 50)"
+  />
+
+  <g transform="translate(43 60)">
+    <rect width="4" height="15" fill="#F2A9FF" rx="2" />
+    <circle cx="2" cy="-5" r="2" fill="#BEA9FF" />
+  </g>
+
+</svg>
