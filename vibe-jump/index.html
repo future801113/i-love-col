@@ -1,0 +1,97 @@
+<!doctype html><html lang="zh-TW"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="description" content="無限跳躍遊戲 - 挑戰你的極限，看你能跳多高！"><meta name="theme-color" content="#667eea"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="無限跳躍"><meta name="mobile-web-app-capable" content="yes"><link rel="manifest" href="./manifest.json"><link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png"><link rel="apple-touch-icon" href="./icon-192.png"><title>無限跳躍遊戲</title><style>* {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh; /* 動態視窗高度，避免手機瀏覽器地址欄問題 */
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            touch-action: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background: #000; /* 純黑背景，遊戲會覆蓋整個螢幕 */
+        }
+        
+        #gameContainer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #gameCanvas {
+            display: block;
+            touch-action: none;
+            /* 移除所有邊框和圓角，實現真正全螢幕 */
+        }
+        
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        /* 全螢幕優化 - 移除所有邊距和裝飾 */
+        @media (max-width: 768px) {
+            .loading {
+                font-size: 14px;
+            }
+        }
+        
+        /* 確保在所有瀏覽器中都是全螢幕 */
+        html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* PWA 全螢幕模式 */
+        @media (display-mode: fullscreen) {
+            body {
+                background: #000;
+            }
+        }
+        
+        /* iOS Safari 全螢幕 */
+        @media (display-mode: standalone) {
+            body {
+                background: #000;
+            }
+        }
+        
+        /* 隱藏滾動條 */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        html {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }</style><script defer="defer" src="bundle.2d312cdf7d5d73b39ac2.js"></script></head><body><div id="gameContainer"><canvas id="gameCanvas"></canvas><div class="loading" id="loadingText">載入中...</div></div><script type="module" src="index.js"></script><script>// 註冊 Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }</script></body></html>

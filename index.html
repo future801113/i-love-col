@@ -568,6 +568,77 @@
             padding-bottom: 10px;
         }
 
+        /* 遊戲區塊樣式 */
+        .game-section {
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            touch-action: manipulation;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .game-title {
+            margin: 0 0 15px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .game-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .game-link {
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease;
+        }
+
+        .game-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .game-card {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+            min-width: 250px;
+        }
+
+        .game-card:hover {
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .game-icon {
+            font-size: 2em;
+            margin-right: 15px;
+        }
+
+        .game-info h4 {
+            margin: 0 0 5px 0;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .game-info p {
+            margin: 0;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
         .weekly-weather-container {
             display: flex;
             gap: 15px;
@@ -764,6 +835,30 @@
                 margin: 15px 0;
                 padding: 15px;
             }
+
+            .game-section {
+                margin: 15px 0;
+                padding: 15px;
+            }
+
+            .game-card {
+                min-width: 200px;
+                padding: 12px 15px;
+            }
+
+            .game-icon {
+                font-size: 1.8em;
+                margin-right: 12px;
+            }
+
+            .game-info h4 {
+                font-size: 1em;
+            }
+
+            .game-info p {
+                font-size: 0.8em;
+            }
+        }
 
             .weekly-weather-title {
                 font-size: 1.1em;
@@ -1000,6 +1095,22 @@
                 <h3 class="weekly-weather-title">📅 中央氣象局</h3>
                 <div class="weekly-weather-container" id="weeklyWeatherContainer">
                     <div class="weekly-loading">載入一週天氣中...</div>
+                </div>
+            </div>
+
+            <!-- 遊戲區塊 -->
+            <div class="game-section">
+                <h3 class="game-title">🎮 小遊戲</h3>
+                <div class="game-container">
+                    <a href="./vibe-jump/" class="game-link" target="_blank">
+                        <div class="game-card">
+                            <div class="game-icon">🚀</div>
+                            <div class="game-info">
+                                <h4>無限跳躍</h4>
+                                <p>挑戰你的極限，看你能跳多高！</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
 
