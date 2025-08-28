@@ -2498,7 +2498,7 @@
 </body>
     <script>
     // LINE 分享功能
-    function shareLine(account) {
+    async function shareLine(account) {
         var url = account === 'ice_deliverer' ? window.currentImageUrl1 : window.currentImageUrl2;
         if (!url) {
             alert('目前沒有圖片可分享');
@@ -2515,6 +2515,25 @@
                 url = base + url.replace(/^.*colne_icol_images\//, '');
             }
         }
+        // 使用 Web Share API 分享圖片 blob
+        if (navigator.share && navigator.canShare) {
+            try {
+                const response = await fetch(url);
+                const blob = await response.blob();
+                const file = new File([blob], url.split('/').pop(), { type: blob.type });
+                if (navigator.canShare({ files: [file] })) {
+                    await navigator.share({
+                        files: [file],
+                        title: '分享圖片',
+                        text: '這是來自 Just Vibe It 的圖片！'
+                    });
+                    return;
+                }
+            } catch (e) {
+                // fallback to url share
+            }
+        }
+        // 不支援 Web Share API 或分享失敗，改用 LINE 分享網址
         var shareUrl = 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(url);
         window.open(shareUrl, '_blank');
     }
