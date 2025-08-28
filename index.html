@@ -25,7 +25,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
+
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -82,6 +82,34 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+.line-share-btn {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    background: #00c300;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+    z-index: 10;
+    padding: 0;
+    transition: box-shadow 0.2s;
+
+.line-share-btn svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+
+}
+        
         }
 
         .random-image {
@@ -1032,6 +1060,13 @@
                             <div class="spinner"></div>
                             載入圖片中...
                         </div>
+                        <button class="line-share-btn" onclick="shareLine('ice_deliverer')" title="LINE 分享">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="12" fill="#00c300"/>
+                                <path d="M7 12.5l7.5-3.5c.7-.3 1.3.5.9 1.1l-3.5 7.5c-.3.7-1.3.7-1.6 0l-3.5-7.5c-.4-.6.2-1.4.9-1.1z" fill="#fff"/>
+                                <path d="M7 12.5l7.5-3.5c.7-.3 1.3.5.9 1.1l-3.5 7.5c-.3.7-1.3.7-1.6 0l-3.5-7.5c-.4-.6.2-1.4.9-1.1z" stroke="#fff" stroke-width="1"/>
+                            </svg>
+                        </button>
                     </div>
 
                     <div class="image-counter" id="imageCounter1">
@@ -1041,6 +1076,7 @@
                     <div class="controls">
                         <button onclick="loadRandomImage('ice_deliverer')" title="換圖片">🎲</button>
                         <button onclick="downloadImage('ice_deliverer')" title="下載">💾</button>
+
                     </div>
 
                     <div class="info">
@@ -1057,6 +1093,13 @@
                             <div class="spinner"></div>
                             載入圖片中...
                         </div>
+                        <button class="line-share-btn" onclick="shareLine('colne_icol')" title="LINE 分享">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="12" fill="#00c300"/>
+                                <path d="M7 12.5l7.5-3.5c.7-.3 1.3.5.9 1.1l-3.5 7.5c-.3.7-1.3.7-1.6 0l-3.5-7.5c-.4-.6.2-1.4.9-1.1z" fill="#fff"/>
+                                <path d="M7 12.5l7.5-3.5c.7-.3 1.3.5.9 1.1l-3.5 7.5c-.3.7-1.3.7-1.6 0l-3.5-7.5c-.4-.6.2-1.4.9-1.1z" stroke="#fff" stroke-width="1"/>
+                            </svg>
+                        </button>
                     </div>
 
                     <div class="image-counter" id="imageCounter2">
@@ -1066,6 +1109,7 @@
                     <div class="controls">
                         <button onclick="loadRandomImage('colne_icol')" title="換圖片">🎲</button>
                         <button onclick="downloadImage('colne_icol')" title="下載">💾</button>
+
                     </div>
 
                     <div class="info">
@@ -1984,19 +2028,26 @@
             if (account === 'ice_deliverer') {
                 currentImageIndex1 = randomIndex;
                 currentImageUrl1 = imageData.url;
+                window.currentImageUrl1 = imageData.url;
             } else {
                 currentImageIndex2 = randomIndex;
                 currentImageUrl2 = imageData.url;
+                window.currentImageUrl2 = imageData.url;
             }
 
             const container = document.getElementById(containerId);
-            container.innerHTML = `
-                <img src="${imageData.url}" 
-                     alt="${imageData.filename}" 
-                     class="random-image"
-                     onload="imageLoaded('${account}')"
-                     onerror="imageError('${account}')">
-            `;
+            // 只更新圖片，不覆蓋分享按鈕
+            let img = container.querySelector('img.random-image');
+            if (!img) {
+                img = document.createElement('img');
+                img.className = 'random-image';
+                img.alt = imageData.filename;
+                img.onload = function() { imageLoaded(account); };
+                img.onerror = function() { imageError(account); };
+                container.insertBefore(img, container.firstChild);
+            }
+            img.src = imageData.url;
+            img.alt = imageData.filename;
 
             // 更新資訊
             document.getElementById(filenameId).textContent = imageData.filename;
@@ -2013,6 +2064,10 @@
         // 圖片載入成功
         function imageLoaded(account) {
             console.log(`${account} 圖片載入成功`);
+            const containerId = account === 'ice_deliverer' ? 'imageContainer1' : 'imageContainer2';
+            const container = document.getElementById(containerId);
+            const loadingDiv = container.querySelector('.loading');
+            if (loadingDiv) loadingDiv.style.display = 'none';
         }
 
         // 圖片載入失敗
@@ -2441,5 +2496,28 @@
         }
     </script>
 </body>
+    <script>
+    // LINE 分享功能
+    function shareLine(account) {
+        var url = account === 'ice_deliverer' ? window.currentImageUrl1 : window.currentImageUrl2;
+        if (!url) {
+            alert('目前沒有圖片可分享');
+            return;
+        }
+        // 若 url 為相對路徑，自動補上正確的 GitHub Pages 路徑
+        if (!/^https?:\/\//.test(url)) {
+            var base = '';
+            if (account === 'ice_deliverer') {
+                base = 'https://future801113.github.io/i-love-col/images/';
+                url = base + url.replace(/^.*images\//, '');
+            } else {
+                base = 'https://future801113.github.io/i-love-col/colne_icol_images/';
+                url = base + url.replace(/^.*colne_icol_images\//, '');
+            }
+        }
+        var shareUrl = 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(url);
+        window.open(shareUrl, '_blank');
+    }
+    </script>
 
 </html>
