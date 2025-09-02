@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圖片猜謎遊戲 - i-COL</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../logo3.svg">
+    <link rel="alternate icon" href="../logo3.svg">
+    <link rel="shortcut icon" href="../logo3.svg">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🔍 圖片猜謎遊戲</h1>
+            <div class="controls">
+                <button id="backBtn" class="btn btn-secondary">← 返回主頁</button>
+                <button id="newGameBtn" class="btn btn-primary">新遊戲</button>
+                <button id="hintBtn" class="btn btn-warning" style="display: none;">💡 提示</button>
+            </div>
+        </header>
+
+        <!-- 遊戲設定面板 -->
+        <div id="setupPanel" class="setup-panel">
+            <div class="setup-content">
+                <h2>遊戲設定</h2>
+                
+                <div class="setting-group">
+                    <h3>選擇難度</h3>
+                    <div class="difficulty-options">
+                        <label class="option-card">
+                            <input type="radio" name="difficulty" value="easy" checked>
+                            <span class="option-info">
+                                <strong>簡單</strong>
+                                <small>顯示較多圖片區域</small>
+                            </span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="difficulty" value="medium">
+                            <span class="option-info">
+                                <strong>中等</strong>
+                                <small>適中的挑戰難度</small>
+                            </span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="difficulty" value="hard">
+                            <span class="option-info">
+                                <strong>困難</strong>
+                                <small>只顯示小部分圖片</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>遊戲模式</h3>
+                    <div class="game-mode-options">
+                        <label class="option-card">
+                            <input type="radio" name="gameMode" value="single" checked>
+                            <span class="option-info">
+                                <strong>單人模式</strong>
+                                <small>挑戰最高分數</small>
+                            </span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="gameMode" value="time">
+                            <span class="option-info">
+                                <strong>限時挑戰</strong>
+                                <small>60秒內猜越多越好</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>圖片來源</h3>
+                    <div class="image-source-options">
+                        <label class="option-card">
+                            <input type="radio" name="imageSource" value="mixed" checked>
+                            <span class="option-info">
+                                <strong>混合圖片</strong>
+                                <small>ice_deliverer + colne_icol</small>
+                            </span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="imageSource" value="ice_deliverer">
+                            <span class="option-info">
+                                <strong>ice_deliverer</strong>
+                                <small>只使用 ice_deliverer 圖片</small>
+                            </span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="imageSource" value="colne_icol">
+                            <span class="option-info">
+                                <strong>colne_icol</strong>
+                                <small>只使用 colne_icol 圖片</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <button id="startGameBtn" class="btn btn-primary btn-large">開始遊戲</button>
+            </div>
+        </div>
+
+        <!-- 遊戲區域 -->
+        <div id="gameArea" class="game-area" style="display: none;">
+            <div class="game-info">
+                <div class="score-info">
+                    <div class="score-card">
+                        <h3>🏆 得分</h3>
+                        <div class="score-value" id="currentScore">0</div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stat-item">
+                            <span>回合</span>
+                            <span id="currentRound">1</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>連續答對</span>
+                            <span id="streak">0</span>
+                        </div>
+                        <div class="stat-item" id="timeDisplay" style="display: none;">
+                            <span>剩餘時間</span>
+                            <span id="timeLeft">60</span>
+                        </div>
+                    </div>
+                    <div class="progress-card">
+                        <h4>顯示進度</h4>
+                        <div class="reveal-progress">
+                            <div id="revealBar" class="reveal-bar"></div>
+                        </div>
+                        <small id="revealText">10% 已顯示</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-content">
+                <div class="image-container">
+                    <div id="gameImage" class="game-image">
+                        <img id="targetImage" src="" alt="猜謎圖片">
+                        <div id="imageMask" class="image-mask"></div>
+                    </div>
+                </div>
+
+                <div class="guess-section">
+                    <div class="guess-options" id="guessOptions">
+                        <!-- 選項會動態生成 -->
+                    </div>
+                    
+                    <div class="game-actions">
+                        <button id="revealMoreBtn" class="btn btn-info">🔍 顯示更多</button>
+                        <button id="skipBtn" class="btn btn-secondary">⏭️ 跳過</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 結果提示 -->
+        <div id="resultModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2 id="resultTitle">🎉 答對了！</h2>
+                <div id="resultContent">
+                    <div class="result-image">
+                        <img id="resultImage" src="" alt="完整圖片">
+                    </div>
+                    <div id="resultStats"></div>
+                </div>
+                <div class="modal-actions">
+                    <button id="nextRoundBtn" class="btn btn-primary">下一題</button>
+                    <button id="endGameBtn" class="btn btn-secondary">結束遊戲</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 遊戲結束提示 -->
+        <div id="gameOverModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2 id="gameOverTitle">🏁 遊戲結束！</h2>
+                <div id="gameOverStats"></div>
+                <div class="modal-actions">
+                    <button id="playAgainBtn" class="btn btn-primary">再玩一次</button>
+                    <button id="backToMainBtn" class="btn btn-secondary">返回主頁</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 載入提示 -->
+        <div id="loadingModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>🖼️ 載入圖片中...</h2>
+                <div class="loading-progress">
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <p id="loadingText">準備圖片資源...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="guess-image.js"></script>
+</body>
+</html>
