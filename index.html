@@ -119,10 +119,52 @@
             height: auto;
             border-radius: 15px;
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
 
         .random-image:hover {
             transform: scale(1.02);
+        }
+
+        .compact-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .compact-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* 拼圖遊戲提示 */
+        .puzzle-hint {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(66, 153, 225, 0.9);
+            color: white;
+            padding: 8px;
+            border-radius: 50%;
+            font-size: 16px;
+            opacity: 1;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .image-container:hover .puzzle-hint {
+            opacity: 1;
+            transform: scale(1.1);
+            background: rgba(66, 153, 225, 1);
         }
 
         .loading {
@@ -621,6 +663,8 @@
         .game-container {
             display: flex;
             justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .game-link {
@@ -642,12 +686,22 @@
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
             transition: all 0.3s ease;
-            min-width: 250px;
+            min-width: 220px;
+            max-width: 280px;
         }
 
         .game-card:hover {
             box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
             transform: translateY(-2px);
+        }
+
+        /* 拼圖遊戲卡片特殊樣式 */
+        #randomPuzzleBtn .game-card {
+            background: linear-gradient(135deg, #4299e1 0%, #38b2ac 100%);
+        }
+
+        #randomPuzzleBtn .game-card:hover {
+            box-shadow: 0 8px 25px rgba(66, 153, 225, 0.4);
         }
 
         .game-icon {
@@ -1060,6 +1114,7 @@
                             <div class="spinner"></div>
                             載入圖片中...
                         </div>
+                        <div class="puzzle-hint">🧩</div>
                         <button class="line-share-btn" onclick="shareLine('ice_deliverer')" title="LINE 分享">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="12" cy="12" r="12" fill="#00c300"/>
@@ -1093,6 +1148,7 @@
                             <div class="spinner"></div>
                             載入圖片中...
                         </div>
+                        <div class="puzzle-hint">🧩</div>
                         <button class="line-share-btn" onclick="shareLine('colne_icol')" title="LINE 分享">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="12" cy="12" r="12" fill="#00c300"/>
@@ -1155,6 +1211,15 @@
                             </div>
                         </div>
                     </a>
+                    <a href="#" class="game-link" id="randomPuzzleBtn">
+                        <div class="game-card">
+                            <div class="game-icon">🧩</div>
+                            <div class="game-info">
+                                <h4>拼圖遊戲</h4>
+                                <p>隨機圖片拼圖挑戰！</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -1187,11 +1252,13 @@
     <div id="newsMode" class="news-mode">
         <!-- 縮小的圖片畫廊 -->
         <div class="compact-gallery">
-            <div class="compact-image-container">
+            <div class="compact-image-container image-container">
                 <img id="compactImage1" class="compact-image" src="" alt="ice_deliverer">
+                <div class="puzzle-hint">🧩</div>
             </div>
-            <div class="compact-image-container">
+            <div class="compact-image-container image-container">
                 <img id="compactImage2" class="compact-image" src="" alt="colne_icol">
+                <div class="puzzle-hint">🧩</div>
             </div>
         </div>
 
@@ -2537,6 +2604,100 @@
         var shareUrl = 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(url);
         window.open(shareUrl, '_blank');
     }
+
+    // 拼圖遊戲功能
+    function setupPuzzleClickEvents() {
+        // 為主要圖片添加點擊事件
+        function addPuzzleClickToImage(containerId) {
+            const container = document.getElementById(containerId);
+            if (container) {
+                container.addEventListener('click', function(e) {
+                    // 避免點擊分享按鈕時觸發
+                    if (e.target.closest('.line-share-btn')) {
+                        return;
+                    }
+                    
+                    const img = container.querySelector('img.random-image');
+                    if (img && img.src) {
+                        const puzzleUrl = `puzzle/index.html?image=${encodeURIComponent(img.src)}`;
+                        window.open(puzzleUrl, '_blank');
+                    }
+                });
+            }
+        }
+        
+        // 為縮小圖片添加點擊事件
+        function addPuzzleClickToCompactImage(imageId) {
+            const img = document.getElementById(imageId);
+            if (img) {
+                img.addEventListener('click', function() {
+                    if (img.src) {
+                        const puzzleUrl = `puzzle/index.html?image=${encodeURIComponent(img.src)}`;
+                        window.open(puzzleUrl, '_blank');
+                    }
+                });
+            }
+        }
+        
+        // 設定所有圖片的點擊事件
+        addPuzzleClickToImage('imageContainer1');
+        addPuzzleClickToImage('imageContainer2');
+        addPuzzleClickToCompactImage('compactImage1');
+        addPuzzleClickToCompactImage('compactImage2');
+    }
+
+    // 隨機拼圖遊戲功能
+    function startRandomPuzzle() {
+        // 收集所有可用的圖片
+        const allImages = [];
+        
+        // 從主要圖片容器收集圖片
+        const img1 = document.querySelector('#imageContainer1 img.random-image');
+        const img2 = document.querySelector('#imageContainer2 img.random-image');
+        const compactImg1 = document.getElementById('compactImage1');
+        const compactImg2 = document.getElementById('compactImage2');
+        
+        if (img1 && img1.src && !img1.src.includes('data:')) {
+            allImages.push(img1.src);
+        }
+        if (img2 && img2.src && !img2.src.includes('data:')) {
+            allImages.push(img2.src);
+        }
+        if (compactImg1 && compactImg1.src && !compactImg1.src.includes('data:')) {
+            allImages.push(compactImg1.src);
+        }
+        if (compactImg2 && compactImg2.src && !compactImg2.src.includes('data:')) {
+            allImages.push(compactImg2.src);
+        }
+        
+        // 如果沒有可用圖片，使用預設圖片或顯示提示
+        if (allImages.length === 0) {
+            alert('目前沒有可用的圖片，請等待圖片載入完成後再試！');
+            return;
+        }
+        
+        // 隨機選擇一張圖片
+        const randomIndex = Math.floor(Math.random() * allImages.length);
+        const selectedImage = allImages[randomIndex];
+        
+        // 跳轉到拼圖遊戲
+        const puzzleUrl = `puzzle/index.html?image=${encodeURIComponent(selectedImage)}`;
+        window.open(puzzleUrl, '_blank');
+    }
+
+    // 頁面載入完成後設定拼圖點擊事件
+    document.addEventListener('DOMContentLoaded', function() {
+        setupPuzzleClickEvents();
+        
+        // 設定隨機拼圖按鈕事件
+        const randomPuzzleBtn = document.getElementById('randomPuzzleBtn');
+        if (randomPuzzleBtn) {
+            randomPuzzleBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                startRandomPuzzle();
+            });
+        }
+    });
     </script>
 
 </html>

@@ -1,0 +1,362 @@
+/* 拼圖遊戲樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 標題區域 */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    color: #4a5568;
+    font-size: 2rem;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+/* 按鈕樣式 */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: #4299e1;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #3182ce;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #718096;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #4a5568;
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: #48bb78;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #38a169;
+    transform: translateY(-2px);
+}
+
+.btn-info {
+    background: #38b2ac;
+    color: white;
+}
+
+.btn-info:hover {
+    background: #319795;
+    transform: translateY(-2px);
+}
+
+.btn-large {
+    padding: 15px 30px;
+    font-size: 16px;
+}
+
+/* 設定面板 */
+.setup-panel {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.setup-content h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4a5568;
+}
+
+.image-preview {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.image-preview img {
+    max-width: 300px;
+    max-height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image-placeholder {
+    width: 300px;
+    height: 200px;
+    border: 2px dashed #cbd5e0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: #a0aec0;
+}
+
+.difficulty-selection {
+    margin-bottom: 30px;
+}
+
+.difficulty-selection h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4a5568;
+}
+
+.difficulty-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.difficulty-option {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.difficulty-option:hover {
+    border-color: #4299e1;
+    background: #f7fafc;
+}
+
+.difficulty-option input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.difficulty-option input[type="radio"]:checked + span {
+    color: #4299e1;
+    font-weight: 600;
+}
+
+.setup-content .btn-large {
+    display: block;
+    margin: 0 auto;
+}
+
+/* 遊戲區域 */
+.game-area {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f7fafc;
+    border-radius: 10px;
+}
+
+.info-item {
+    text-align: center;
+}
+
+.info-item span:first-child {
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.info-item span:last-child {
+    color: #4299e1;
+    font-weight: 700;
+}
+
+.game-content {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.reference-image {
+    text-align: center;
+}
+
+.reference-image h3 {
+    margin-bottom: 10px;
+    color: #4a5568;
+}
+
+.reference-image img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 拼圖板 */
+.puzzle-container {
+    display: flex;
+    justify-content: center;
+}
+
+.puzzle-board {
+    display: grid;
+    gap: 2px;
+    background: #e2e8f0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.puzzle-piece {
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.puzzle-piece:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.puzzle-piece.selected {
+    border-color: #4299e1;
+    box-shadow: 0 0 15px rgba(66, 153, 225, 0.5);
+}
+
+.puzzle-piece.correct {
+    border-color: #48bb78;
+    box-shadow: 0 0 15px rgba(72, 187, 120, 0.5);
+}
+
+.puzzle-piece.empty {
+    background: #f7fafc;
+    border: 2px dashed #cbd5e0;
+}
+
+/* 模態框 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+    color: #4a5568;
+}
+
+.modal-content p {
+    margin-bottom: 10px;
+    color: #718096;
+}
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .game-content {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .reference-image {
+        order: -1;
+    }
+    
+    .difficulty-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .puzzle-piece {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .game-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

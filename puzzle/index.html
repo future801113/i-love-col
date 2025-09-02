@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拼圖遊戲 - i-COL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🧩 拼圖遊戲</h1>
+            <div class="controls">
+                <button id="backBtn" class="btn btn-secondary">← 返回主頁</button>
+                <button id="newGameBtn" class="btn btn-primary">新遊戲</button>
+                <button id="saveGameBtn" class="btn btn-success">💾 儲存</button>
+                <button id="loadGameBtn" class="btn btn-info">📂 載入</button>
+            </div>
+        </header>
+
+        <!-- 遊戲設定面板 -->
+        <div id="setupPanel" class="setup-panel">
+            <div class="setup-content">
+                <h2>選擇拼圖設定</h2>
+                
+                <div class="image-preview">
+                    <img id="selectedImage" src="" alt="選擇的圖片" style="display: none;">
+                    <div id="imagePlaceholder" class="image-placeholder">
+                        <p>請從主頁選擇圖片</p>
+                    </div>
+                </div>
+
+                <div class="difficulty-selection">
+                    <h3>選擇難度</h3>
+                    <div class="difficulty-options">
+                        <label class="difficulty-option">
+                            <input type="radio" name="difficulty" value="easy" checked>
+                            <span>簡單 (3×3 = 9塊)</span>
+                        </label>
+                        <label class="difficulty-option">
+                            <input type="radio" name="difficulty" value="medium">
+                            <span>中等 (4×4 = 16塊)</span>
+                        </label>
+                        <label class="difficulty-option">
+                            <input type="radio" name="difficulty" value="hard">
+                            <span>困難 (5×5 = 25塊)</span>
+                        </label>
+                        <label class="difficulty-option">
+                            <input type="radio" name="difficulty" value="expert">
+                            <span>專家 (6×6 = 36塊)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button id="startGameBtn" class="btn btn-primary btn-large">開始遊戲</button>
+            </div>
+        </div>
+
+        <!-- 遊戲區域 -->
+        <div id="gameArea" class="game-area" style="display: none;">
+            <div class="game-info">
+                <div class="info-item">
+                    <span>難度: </span>
+                    <span id="currentDifficulty"></span>
+                </div>
+                <div class="info-item">
+                    <span>進度: </span>
+                    <span id="gameProgress">0%</span>
+                </div>
+                <div class="info-item">
+                    <span>時間: </span>
+                    <span id="gameTimer">00:00</span>
+                </div>
+            </div>
+
+            <div class="game-content">
+                <div class="reference-image">
+                    <h3>參考圖片</h3>
+                    <img id="referenceImg" src="" alt="參考圖片">
+                </div>
+
+                <div class="puzzle-container">
+                    <div id="puzzleBoard" class="puzzle-board"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 完成提示 -->
+        <div id="completionModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>🎉 恭喜完成！</h2>
+                <p>你成功完成了拼圖！</p>
+                <p>完成時間: <span id="finalTime"></span></p>
+                <div class="modal-actions">
+                    <button id="playAgainBtn" class="btn btn-primary">再玩一次</button>
+                    <button id="backToMainBtn" class="btn btn-secondary">返回主頁</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="puzzle.js"></script>
+</body>
+</html>
