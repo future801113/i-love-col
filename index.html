@@ -686,8 +686,9 @@
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
             transition: all 0.3s ease;
-            min-width: 220px;
-            max-width: 280px;
+            min-width: 200px;
+            max-width: 250px;
+            flex: 1;
         }
 
         .game-card:hover {
@@ -702,6 +703,15 @@
 
         #randomPuzzleBtn .game-card:hover {
             box-shadow: 0 8px 25px rgba(66, 153, 225, 0.4);
+        }
+
+        /* 記憶翻翻樂卡片特殊樣式 */
+        a[href="./memory-flip/"] .game-card {
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+        }
+
+        a[href="./memory-flip/"] .game-card:hover {
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
         }
 
         .game-icon {
@@ -1217,6 +1227,15 @@
                             <div class="game-info">
                                 <h4>拼圖遊戲</h4>
                                 <p>隨機圖片拼圖挑戰！</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="./memory-flip/" class="game-link" target="_blank">
+                        <div class="game-card">
+                            <div class="game-icon">🃏</div>
+                            <div class="game-info">
+                                <h4>記憶翻翻樂</h4>
+                                <p>圖片對對碰，挑戰你的記憶力！</p>
                             </div>
                         </div>
                     </a>

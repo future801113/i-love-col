@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記憶翻翻樂 - i-COL</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../logo3.svg">
+    <link rel="alternate icon" href="../logo3.svg">
+    <link rel="shortcut icon" href="../logo3.svg">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🃏 記憶翻翻樂</h1>
+            <div class="controls">
+                <button id="backBtn" class="btn btn-secondary">← 返回主頁</button>
+                <button id="newGameBtn" class="btn btn-primary">新遊戲</button>
+                <button id="pauseBtn" class="btn btn-warning" style="display: none;">⏸️ 暫停</button>
+            </div>
+        </header>
+
+        <!-- 遊戲設定面板 -->
+        <div id="setupPanel" class="setup-panel">
+            <div class="setup-content">
+                <h2>遊戲設定</h2>
+                
+                <div class="setting-group">
+                    <h3>選擇圖片數量</h3>
+                    <div class="card-count-options">
+                        <label class="option-card">
+                            <input type="radio" name="cardCount" value="8" checked>
+                            <span class="option-info">
+                                <strong>簡單</strong>
+                                <small>8對 (16張卡片)</small>
+                            </span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="cardCount" value="12">
+                            <span class="option-info">
+                                <strong>中等</strong>
+                                <small>12對 (24張卡片)</small>
+                            </span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="cardCount" value="18">
+                            <span class="option-info">
+                                <strong>困難</strong>
+                                <small>18對 (36張卡片)</small>
+                            </span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="cardCount" value="24">
+                            <span class="option-info">
+                                <strong>專家</strong>
+                                <small>24對 (48張卡片)</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>遊戲模式</h3>
+                    <div class="game-mode-options">
+                        <label class="option-card">
+                            <input type="radio" name="gameMode" value="single" checked>
+                            <span class="option-info">
+                                <strong>單人模式</strong>
+                                <small>挑戰最佳時間</small>
+                            </span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="gameMode" value="versus">
+                            <span class="option-info">
+                                <strong>雙人對戰</strong>
+                                <small>比比誰找到更多對</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>圖片來源</h3>
+                    <div class="image-source-options">
+                        <label class="option-card">
+                            <input type="radio" name="imageSource" value="mixed" checked>
+                            <span class="option-info">
+                                <strong>混合圖片</strong>
+                                <small>ice_deliverer + colne_icol</small>
+                            </span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="imageSource" value="ice_deliverer">
+                            <span class="option-info">
+                                <strong>ice_deliverer</strong>
+                                <small>只使用 ice_deliverer 圖片</small>
+                            </span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="imageSource" value="colne_icol">
+                            <span class="option-info">
+                                <strong>colne_icol</strong>
+                                <small>只使用 colne_icol 圖片</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <button id="startGameBtn" class="btn btn-primary btn-large">開始遊戲</button>
+            </div>
+        </div>
+
+        <!-- 遊戲區域 -->
+        <div id="gameArea" class="game-area" style="display: none;">
+            <div class="game-info">
+                <div class="player-info">
+                    <div class="player-card active" id="player1Info">
+                        <h3>🎮 玩家一</h3>
+                        <div class="score">得分: <span id="player1Score">0</span></div>
+                        <div class="pairs">配對: <span id="player1Pairs">0</span></div>
+                    </div>
+                    <div class="game-stats">
+                        <div class="stat-item">
+                            <span>時間</span>
+                            <span id="gameTimer">00:00</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>翻牌次數</span>
+                            <span id="flipCount">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span>剩餘配對</span>
+                            <span id="remainingPairs">0</span>
+                        </div>
+                    </div>
+                    <div class="player-card" id="player2Info" style="display: none;">
+                        <h3>🎯 玩家二</h3>
+                        <div class="score">得分: <span id="player2Score">0</span></div>
+                        <div class="pairs">配對: <span id="player2Pairs">0</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-board-container">
+                <div id="gameBoard" class="game-board"></div>
+            </div>
+        </div>
+
+        <!-- 遊戲結束提示 -->
+        <div id="gameOverModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2 id="gameOverTitle">🎉 遊戲結束！</h2>
+                <div id="gameOverStats"></div>
+                <div class="modal-actions">
+                    <button id="playAgainBtn" class="btn btn-primary">再玩一次</button>
+                    <button id="backToMainBtn" class="btn btn-secondary">返回主頁</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 載入提示 -->
+        <div id="loadingModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>🖼️ 載入圖片中...</h2>
+                <div class="loading-progress">
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <p id="loadingText">準備圖片資源...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="memory-flip.js"></script>
+</body>
+</html>

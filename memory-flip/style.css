@@ -1,0 +1,475 @@
+/* 記憶翻翻樂遊戲樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 標題區域 */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    color: #4a5568;
+    font-size: 2rem;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+/* 按鈕樣式 */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: #4299e1;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #3182ce;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #718096;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #4a5568;
+    transform: translateY(-2px);
+}
+
+.btn-warning {
+    background: #ed8936;
+    color: white;
+}
+
+.btn-warning:hover {
+    background: #dd6b20;
+    transform: translateY(-2px);
+}
+
+.btn-large {
+    padding: 15px 30px;
+    font-size: 16px;
+}
+
+/* 設定面板 */
+.setup-panel {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.setup-content h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4a5568;
+}
+
+.setting-group {
+    margin-bottom: 30px;
+}
+
+.setting-group h3 {
+    margin-bottom: 15px;
+    color: #4a5568;
+    text-align: center;
+}
+
+.card-count-options,
+.game-mode-options,
+.image-source-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.option-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.option-card:hover {
+    border-color: #4299e1;
+    background: #f7fafc;
+    transform: translateY(-2px);
+}
+
+.option-card input[type="radio"] {
+    margin-right: 15px;
+    transform: scale(1.2);
+}
+
+.option-card input[type="radio"]:checked + .option-info strong {
+    color: #4299e1;
+}
+
+.option-card input[type="radio"]:checked {
+    accent-color: #4299e1;
+}
+
+.option-info strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.option-info small {
+    color: #718096;
+    font-size: 12px;
+}
+
+.setup-content .btn-large {
+    display: block;
+    margin: 0 auto;
+}
+
+/* 遊戲區域 */
+.game-area {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.game-info {
+    margin-bottom: 20px;
+}
+
+.player-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.player-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 150px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.player-card.active {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.player-card h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.player-card .score,
+.player-card .pairs {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.game-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #f7fafc;
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 200px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.stat-item span:first-child {
+    color: #4a5568;
+    font-weight: 600;
+}
+
+.stat-item span:last-child {
+    color: #4299e1;
+    font-weight: 700;
+}
+
+/* 遊戲板 */
+.game-board-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.game-board {
+    display: grid;
+    gap: 15px;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    max-width: 100%;
+}
+
+/* 動態網格大小 */
+.game-board.grid-4x4 { grid-template-columns: repeat(4, 1fr); }
+.game-board.grid-4x6 { grid-template-columns: repeat(6, 1fr); }
+.game-board.grid-6x6 { grid-template-columns: repeat(6, 1fr); }
+.game-board.grid-6x8 { grid-template-columns: repeat(8, 1fr); }
+
+/* 卡片樣式 */
+.memory-card {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    cursor: pointer;
+    perspective: 1000px;
+    transition: transform 0.3s ease;
+}
+
+.memory-card:hover {
+    transform: scale(1.05);
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+}
+
+.memory-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-front {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 24px;
+}
+
+.card-back {
+    background: white;
+    transform: rotateY(180deg);
+    overflow: hidden;
+}
+
+.card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.memory-card.matched .card-inner {
+    transform: rotateY(180deg);
+}
+
+.memory-card.matched {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.memory-card.matched .card-back {
+    border: 3px solid #48bb78;
+    box-shadow: 0 0 15px rgba(72, 187, 120, 0.5);
+}
+
+/* 模態框 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #4a5568;
+}
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* 載入進度條 */
+.loading-progress {
+    margin-top: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4299e1, #48bb78);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#loadingText {
+    color: #718096;
+    font-size: 14px;
+}
+
+/* 遊戲結束統計 */
+#gameOverStats {
+    background: #f7fafc;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+#gameOverStats .stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 5px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+#gameOverStats .stat-row:last-child {
+    border-bottom: none;
+    font-weight: bold;
+    color: #4299e1;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .player-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .card-count-options,
+    .game-mode-options,
+    .image-source-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .memory-card {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .card-front {
+        font-size: 18px;
+    }
+    
+    .game-board {
+        gap: 8px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .memory-card {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .card-front {
+        font-size: 16px;
+    }
+    
+    .game-board {
+        gap: 6px;
+        padding: 10px;
+    }
+}
