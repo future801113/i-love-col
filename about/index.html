@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於我 - 我的故事書</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../logo3.svg">
+    <link rel="alternate icon" href="../logo3.svg">
+    <link rel="shortcut icon" href="../logo3.svg">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📖 我的故事書</h1>
+            <div class="controls">
+                <button id="backBtn" class="btn btn-secondary">← 返回主頁</button>
+            </div>
+        </header>
+
+        <div class="book-container">
+            <!-- 書本封面 -->
+            <div class="book-cover" id="bookCover">
+                <div class="cover-content">
+                    <img src="https://future801113.github.io/i-love-col/about/images/book00.png" alt="故事書封面" class="cover-image">
+                    <div class="cover-overlay">
+                        <h2>我的故事</h2>
+                        <p>點擊開始閱讀</p>
+                        <div class="open-book-btn">📖 打開書本</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 書本內容 -->
+            <div class="book-reader" id="bookReader" style="display: none;">
+                <div class="book-pages">
+                    <!-- 左側點擊區域 -->
+                    <div class="click-area left-click-area" id="leftClickArea"></div>
+                    
+                    <!-- 右側點擊區域 -->
+                    <div class="click-area right-click-area" id="rightClickArea"></div>
+                    
+                    <!-- 當前頁面 -->
+                    <div class="page current-page" id="currentPage">
+                        <div class="page-content">
+                            <img id="currentPageImage" src="" alt="故事頁面" class="page-image">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 翻頁控制 -->
+                <div class="page-controls">
+                    <button id="prevBtn" class="page-btn prev-btn">
+                        <span>◀</span>
+                        <span>上一頁</span>
+                    </button>
+                    
+                    <div class="page-indicator">
+                        <span id="currentPageInfo">第 1 頁</span>
+                        <div class="progress-bar">
+                            <div id="progressFill" class="progress-fill"></div>
+                        </div>
+                        <span id="totalPagesInfo">共 10 頁</span>
+                    </div>
+                    
+                    <button id="nextBtn" class="page-btn next-btn">
+                        <span>下一頁</span>
+                        <span>▶</span>
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- 底部工具列 -->
+        <div class="toolbar" id="toolbar" style="display: none;">
+            <button id="backToCoverBtn" class="tool-btn">📖 回到封面</button>
+            <button id="shareBtn" class="tool-btn">📤 分享</button>
+        </div>
+
+
+
+
+
+        <!-- 分享面板 -->
+        <div id="sharePanel" class="share-panel" style="display: none;">
+            <div class="share-content">
+                <h3>📤 分享我的故事</h3>
+                <p>分享這本精彩的故事書給朋友們！</p>
+                <div class="share-options">
+                    <button class="share-btn" data-platform="line">💬 LINE</button>
+                    <button class="share-btn" data-platform="copy">📋 複製連結</button>
+                </div>
+                <button id="closeShareBtn" class="btn btn-primary">關閉</button>
+            </div>
+        </div>
+
+        <!-- 載入提示 -->
+        <div id="loadingModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>📚 載入故事書中...</h2>
+                <div class="loading-animation">
+                    <div class="book-loading">
+                        <div class="book-page"></div>
+                        <div class="book-page"></div>
+                        <div class="book-page"></div>
+                    </div>
+                </div>
+                <p id="loadingText">準備精彩的故事...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="storybook.js"></script>
+</body>
+</html>
