@@ -2374,6 +2374,14 @@
                 // 顯示天氣視窗
                 if (weatherWidget) weatherWidget.style.display = 'flex';
 
+                // 顯示 compact-gallery（如果存在）
+                const compactGallery = document.querySelector('.compact-gallery');
+                if (compactGallery) compactGallery.style.display = 'flex';
+
+                // 恢復新聞容器原來的位置
+                const newsContainer = document.querySelector('.news-container');
+                if (newsContainer) newsContainer.style.marginTop = '330px';
+
                 // 停止縮小模式的幻燈片
                 if (compactSlideshowInterval) {
                     clearInterval(compactSlideshowInterval);
@@ -2387,6 +2395,14 @@
 
                 // 隱藏天氣視窗
                 if (weatherWidget) weatherWidget.style.display = 'none';
+
+                // 隱藏 compact-gallery
+                const compactGallery = document.querySelector('.compact-gallery');
+                if (compactGallery) compactGallery.style.display = 'none';
+
+                // 調整新聞容器位置，往上移
+                const newsContainer = document.querySelector('.news-container');
+                if (newsContainer) newsContainer.style.marginTop = '20px';
 
                 // 載入縮小圖片並開始自動播放
                 loadCompactImages();
