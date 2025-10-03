@@ -21,9 +21,9 @@ class PuzzleGame {
         this.init();
     }
 
-    init() {
+    async init() {
         this.bindEvents();
-        this.loadImageFromURL();
+        await this.loadImageFromURL();
         this.loadSavedGames();
     }
 
@@ -72,8 +72,8 @@ class PuzzleGame {
         });
     }
 
-    // 從 URL 參數載入圖片
-    loadImageFromURL() {
+    // 從 URL 參數載入圖片，如果沒有則隨機選擇
+    async loadImageFromURL() {
         const urlParams = new URLSearchParams(window.location.search);
         const imageUrl = urlParams.get('image');
 
@@ -96,7 +96,56 @@ class PuzzleGame {
             this.currentImage = decodedUrl;
             console.log('載入圖片 URL:', this.currentImage);
             this.displaySelectedImage();
+        } else {
+            // 沒有指定圖片，從主頁圖片庫隨機選擇
+            await this.loadRandomImageFromGallery();
         }
+    }
+
+    // 從主頁圖片庫隨機選擇圖片
+    async loadRandomImageFromGallery() {
+        try {
+            // 隨機選擇一個帳號
+            const accounts = ['ice_deliverer', 'colne_icol'];
+            const selectedAccount = accounts[Math.floor(Math.random() * accounts.length)];
+            
+            // 載入對應的圖片清單
+            const jsonPath = selectedAccount === 'ice_deliverer' 
+                ? '../images/images.json' 
+                : '../colne_icol_images/images.json';
+            
+            console.log(`從 ${selectedAccount} 載入圖片清單:`, jsonPath);
+            
+            const response = await fetch(jsonPath);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const imageList = await response.json();
+            
+            if (imageList && imageList.length > 0) {
+                // 隨機選擇一張圖片
+                const randomIndex = Math.floor(Math.random() * imageList.length);
+                const imageData = imageList[randomIndex];
+                
+                this.currentImage = imageData.url;
+                console.log('隨機選擇圖片:', this.currentImage);
+                this.displaySelectedImage();
+            } else {
+                console.error('圖片清單為空');
+                this.showImageError('圖片清單為空');
+            }
+        } catch (error) {
+            console.error('載入圖片清單失敗:', error);
+            this.showImageError('無法載入圖片，請稍後再試');
+        }
+    }
+
+    // 顯示圖片載入錯誤
+    showImageError(message) {
+        const placeholder = document.getElementById('imagePlaceholder');
+        placeholder.innerHTML = `<p>❌ ${message}</p>`;
+        placeholder.style.display = 'flex';
     }
 
     // 顯示選擇的圖片

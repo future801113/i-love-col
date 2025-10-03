@@ -2698,9 +2698,15 @@
                     }
 
                     const img = container.querySelector('img.random-image');
-                    if (img && img.src) {
+                    // 驗證圖片 URL 是否有效（必須包含圖片副檔名）
+                    if (img && img.src && 
+                        (img.src.includes('.jpg') || img.src.includes('.jpeg') || 
+                         img.src.includes('.png') || img.src.includes('.gif') || 
+                         img.src.includes('.webp'))) {
                         const puzzleUrl = `puzzle/index.html?image=${encodeURIComponent(img.src)}`;
                         window.open(puzzleUrl, '_blank');
+                    } else {
+                        alert('請等待圖片載入完成後再試！');
                     }
                 });
             }
@@ -2711,9 +2717,15 @@
             const img = document.getElementById(imageId);
             if (img) {
                 img.addEventListener('click', function () {
-                    if (img.src) {
+                    // 驗證圖片 URL 是否有效（必須包含圖片副檔名）
+                    if (img.src && 
+                        (img.src.includes('.jpg') || img.src.includes('.jpeg') || 
+                         img.src.includes('.png') || img.src.includes('.gif') || 
+                         img.src.includes('.webp'))) {
                         const puzzleUrl = `puzzle/index.html?image=${encodeURIComponent(img.src)}`;
                         window.open(puzzleUrl, '_blank');
+                    } else {
+                        alert('請等待圖片載入完成後再試！');
                     }
                 });
             }
@@ -2750,9 +2762,10 @@
             allImages.push(compactImg2.src);
         }
 
-        // 如果沒有可用圖片，使用預設圖片或顯示提示
+        // 如果沒有可用圖片，直接跳轉讓拼圖遊戲自己隨機選擇
         if (allImages.length === 0) {
-            alert('目前沒有可用的圖片，請等待圖片載入完成後再試！');
+            // 不傳遞 image 參數，讓拼圖遊戲自動從圖片庫隨機選擇
+            window.open('puzzle/index.html', '_blank');
             return;
         }
 
@@ -2760,9 +2773,18 @@
         const randomIndex = Math.floor(Math.random() * allImages.length);
         const selectedImage = allImages[randomIndex];
 
-        // 跳轉到拼圖遊戲
-        const puzzleUrl = `puzzle/index.html?image=${encodeURIComponent(selectedImage)}`;
-        window.open(puzzleUrl, '_blank');
+        // 驗證圖片 URL
+        if (selectedImage && 
+            (selectedImage.includes('.jpg') || selectedImage.includes('.jpeg') || 
+             selectedImage.includes('.png') || selectedImage.includes('.gif') || 
+             selectedImage.includes('.webp'))) {
+            // 跳轉到拼圖遊戲
+            const puzzleUrl = `puzzle/index.html?image=${encodeURIComponent(selectedImage)}`;
+            window.open(puzzleUrl, '_blank');
+        } else {
+            // URL 無效時，不傳參數讓拼圖遊戲自動選擇
+            window.open('puzzle/index.html', '_blank');
+        }
     }
 
     // 頁面載入完成後設定拼圖點擊事件
