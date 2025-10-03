@@ -76,6 +76,18 @@ body {
     transform: translateY(-2px);
 }
 
+.btn-cv {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+}
+
+.btn-cv:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #63408a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
 .btn-info {
     background: #4682B4;
     color: white;

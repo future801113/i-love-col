@@ -7,7 +7,7 @@
     <title>i-COL</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="logo3ㄆ.svg">
+    <link rel="icon" type="image/svg+xml" href="logo3.svg">
     <link rel="alternate icon" href="logo3.svg">
     <link rel="shortcut icon" href="logo3.svg">
 
@@ -298,6 +298,19 @@
                 background: rgba(160, 82, 45, 0.9) !important;
                 transform: translateY(-2px);
                 box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+            }
+
+            .cv-btn {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+                color: white !important;
+                text-decoration: none;
+                border: 2px solid transparent !important;
+            }
+
+            .cv-btn:hover {
+                background: linear-gradient(135deg, #5568d3 0%, #63408a 100%) !important;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
             }
 
             /* 模式切換樣式 - 完整版 */
@@ -1124,7 +1137,8 @@
     <div class="mode-toggle">
         <button class="mode-btn active" onclick="switchMode('gallery')">📸</button>
         <button class="mode-btn" onclick="switchMode('news')">📰</button>
-        <a href="./about/" class="mode-btn about-btn" target="_blank">📖</a>
+        <a href="./about/index.html" class="mode-btn about-btn" target="_blank">📖</a>
+        <a href="./about/career_journey.html" class="mode-btn cv-btn" target="_blank">🚀</a>
     </div>
 
     <!-- 相簿模式 -->

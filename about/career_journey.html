@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Cheng - 履歷旅程圖</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../logo3.svg">
+    <link rel="alternate icon" href="../logo3.svg">
+    <link rel="shortcut icon" href="../logo3.svg">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* 標題區域 */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .linkedin-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #0077b5;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: rgba(0, 119, 181, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .linkedin-link:hover {
+            background: rgba(0, 119, 181, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #764ba2;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #63408a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+        }
+
+        /* 內容區域 */
+        .content {
+            margin-bottom: 30px;
+        }
+
+        /* 整合時間軸區域 */
+        .timeline-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #667eea;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .section-title.project-title {
+            color: #764ba2;
+            justify-content: flex-end;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+        }
+
+        /* 時間軸容器 */
+        .timeline-container {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* 中央時間軸 */
+        .center-timeline {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            min-height: 100%;
+            padding: 20px 0;
+        }
+
+        .center-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+            z-index: 1;
+        }
+
+        /* 時間軸上的圓點 */
+        .timeline-circle {
+            width: 16px;
+            height: 16px;
+            background: white;
+            border: 3px solid #667eea;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+        }
+
+        .timeline-circle:nth-child(even) {
+            border-color: #764ba2;
+            box-shadow: 0 0 0 4px rgba(118, 75, 162, 0.2);
+        }
+
+        /* 左側角色區域 */
+        .role-section {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: flex-end;
+        }
+
+        .role-section .timeline-item {
+            text-align: right;
+        }
+
+        /* 右側專案區域 */
+        .project-section {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* 時間軸項目 */
+        .timeline-item {
+            position: relative;
+            padding: 20px;
+            background: #f8f9ff;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+            transform: scale(1.02);
+        }
+
+        /* 角色項目 */
+        .role-section .timeline-item:hover {
+            transform: translateX(-5px) scale(1.02);
+        }
+
+        /* 專案項目 */
+        .project-section .timeline-item:hover {
+            transform: translateX(5px) scale(1.02);
+        }
+
+        /* 時間點標記 */
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 4px solid #667eea;
+            border-radius: 50%;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+        }
+
+        .project-section .timeline-dot {
+            border-color: #764ba2;
+            box-shadow: 0 0 0 4px rgba(118, 75, 162, 0.2);
+        }
+
+        .timeline-role {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .timeline-period {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .timeline-company {
+            font-size: 0.9rem;
+            color: #764ba2;
+            font-weight: 500;
+        }
+
+        /* 年份標籤 */
+        .year-label {
+            display: none;
+        }
+
+        .project-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .project-client {
+            font-size: 0.95rem;
+            color: #764ba2;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .project-period {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            padding: 4px 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* 統計區域 */
+        .stats-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            grid-column: 1 / -1;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 1024px) {
+            .timeline-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .timeline-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section-title.project-title {
+                justify-content: flex-start;
+            }
+
+            .role-section {
+                align-items: flex-start;
+            }
+
+            .role-section .timeline-item {
+                text-align: left;
+            }
+
+            .center-timeline {
+                display: none;
+            }
+
+            .role-section,
+            .project-section {
+                padding-left: 30px;
+                position: relative;
+            }
+
+            .role-section::before,
+            .project-section::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 4px;
+                background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+                border-radius: 2px;
+            }
+
+            .timeline-dot {
+                left: -39px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .timeline-section {
+                padding: 20px;
+            }
+
+            .timeline-container {
+                gap: 15px;
+            }
+
+            .role-section,
+            .project-section {
+                padding-left: 25px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 20px;
+            }
+
+            .timeline-section,
+            .stats-section {
+                padding: 20px;
+            }
+
+            .role-section,
+            .project-section {
+                padding-left: 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 標題區域 -->
+        <div class="header">
+            <h1>🚀 Jason Cheng 的履歷旅程圖</h1>
+            <p>自2015年起的職涯發展歷程</p>
+            <div class="header-actions">
+                <a href="https://www.linkedin.com/in/%E9%80%B8%E6%B0%91-%E9%84%AD-8aa98754/" target="_blank" class="linkedin-link">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+                <div class="nav-buttons">
+                    <a href="index.html" class="btn btn-primary">📖 返回故事書</a>
+                    <a href="../index.html" class="btn btn-secondary">🏠 返回首頁</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 統計區域 -->
+        <div class="stats-section">
+            <div class="section-title">
+                <span class="section-icon">📊</span>
+                職涯統計
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">11</div>
+                    <div class="stat-label">年工作經驗</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">參與專案</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">職涯階段</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">服務公司</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 內容區域 -->
+        <div class="content">
+            <!-- 整合時間軸區域 -->
+            <div class="timeline-section">
+                <!-- 標題區域 -->
+                <div class="timeline-header">
+                    <div class="section-title">
+                        <span class="section-icon">👔</span>
+                        <span>職涯角色 / 教育背景</span>
+                    </div>
+                    <div class="section-title project-title">
+                        <span class="section-icon">📁</span>
+                        <span>專案經歷</span>
+                    </div>
+                </div>
+
+                <!-- 時間軸容器 -->
+                <div class="timeline-container">
+                    <!-- 左側：職涯角色 -->
+                    <div class="role-section">
+                        <div class="timeline-item">
+                            <div class="timeline-role">💼 部門主管</div>
+                            <div class="timeline-period">2022年 - 至今</div>
+                            <div class="timeline-company">偉康科技股份有限公司，管理10人團隊及Partner</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-role">💼 經理</div>
+                            <div class="timeline-period">2020年 - 2022年</div>
+                            <div class="timeline-company">偉康科技股份有限公司，管理25人團隊，包含外包管理</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-role">🏗️ 系統分析師/架構師/專案經理</div>
+                            <div class="timeline-period">2018年 - 2019年</div>
+                            <div class="timeline-company">偉康科技股份有限公司</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-role">⭐ 資深程式設計師</div>
+                            <div class="timeline-period">2016年 - 2017年</div>
+                            <div class="timeline-company">偉康科技股份有限公司</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-role">💻 程式設計師</div>
+                            <div class="timeline-period">2015年 - 2016年</div>
+                            <div class="timeline-company">偉康科技股份有限公司</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-role">🎓 資訊工程碩士</div>
+                            <div class="timeline-period">2014年7月 - 2016年7月</div>
+                            <div class="timeline-company">臺北科技大學</div>
+                        </div>
+                    </div>
+
+                    <!-- 中間：時間軸 -->
+                    <div class="center-timeline">
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-circle"></div>
+                        <div class="timeline-circle"></div>
+                    </div>
+
+                    <!-- 右側：專案經歷 -->
+                    <div class="project-section">
+                    <div class="timeline-item">
+                        <div class="project-name">🎯 智能洞察平台 CDP</div>
+                        <div class="project-client">客戶：兆豐銀行 / 國泰建管</div>
+                        <div class="project-period">2023年1月 - 2025年10月</div>
+                        <div class="project-tags">
+                            <span class="tag">公司產品</span>
+                            <span class="tag">WEB</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">📹 視訊核身</div>
+                        <div class="project-client">客戶：永豐銀行</div>
+                        <div class="project-period">2023年1月 - 2025年10月</div>
+                        <div class="project-tags">
+                            <span class="tag">公司產品</span>
+                            <span class="tag">WEB</span>
+                            <span class="tag">APP SDK</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">📊 資料資產管理平台</div>
+                        <div class="project-client">客戶：永豐金控 / 銀行 / 證券</div>
+                        <div class="project-period">2022年10月 - 2025年10月</div>
+                        <div class="project-tags">
+                            <span class="tag">公司產品</span>
+                            <span class="tag">WEB</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">🎬 威秀影城</div>
+                        <div class="project-period">2016年11月 - 2025年10月</div>
+                        <div class="project-tags">
+                            <span class="tag">APP</span>
+                            <span class="tag">WEB</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">🏦 新光銀行行銷活動站</div>
+                        <div class="project-period">2020年9月 - 2024年6月</div>
+                        <div class="project-tags">
+                            <span class="tag">WEB</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">🐯 倍樂生巧虎商店</div>
+                        <div class="project-period">2020年1月 - 2023年12月</div>
+                        <div class="project-tags">
+                            <span class="tag">電商</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">💳 凱基銀行行網銀優化</div>
+                        <div class="project-period">2023年3月 - 2023年12月</div>
+                        <div class="project-tags">
+                            <span class="tag">WEB</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">♿ 財金資訊官網無障礙</div>
+                        <div class="project-period">2023年7月 - 2023年12月</div>
+                        <div class="project-tags">
+                            <span class="tag">WEB</span>
+                            <span class="tag">無障礙</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">🛒 Costco 好市多</div>
+                        <div class="project-period">2019年10月 - 2023年5月</div>
+                        <div class="project-tags">
+                            <span class="tag">APP</span>
+                            <span class="tag">WEB</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">📮 中華郵政 e動郵局中台系統</div>
+                        <div class="project-period">2021年1月 - 2023年1月</div>
+                        <div class="project-tags">
+                            <span class="tag">WEB</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">🏪 安源 ibon 商戶管理系統</div>
+                        <div class="project-period">2020年1月 - 2022年6月</div>
+                        <div class="project-tags">
+                            <span class="tag">WEB</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">🏦 花旗行動市集</div>
+                        <div class="project-period">2016年6月 - 2022年6月</div>
+                        <div class="project-tags">
+                            <span class="tag">APP</span>
+                            <span class="tag">WEB</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">💰 台新銀行 Richart Life/錢包</div>
+                        <div class="project-period">2021年1月 - 2021年12月</div>
+                        <div class="project-tags">
+                            <span class="tag">開發服務</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">🏠 東元家電經銷商服務系統</div>
+                        <div class="project-period">2019年1月 - 2021年12月</div>
+                        <div class="project-tags">
+                            <span class="tag">APP</span>
+                            <span class="tag">WEB</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">🤖 凱基 RPA 機器人流程自動化</div>
+                        <div class="project-period">2019年9月 - 2021年4月</div>
+                        <div class="project-tags">
+                            <span class="tag">RPA</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">🧾 仁大資訊鉅盛發票系統</div>
+                        <div class="project-period">2016年3月 - 2020年12月</div>
+                        <div class="project-tags">
+                            <span class="tag">系統開發</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">🎮 Looptopia</div>
+                        <div class="project-period">2017年7月 - 2020年7月</div>
+                        <div class="project-tags">
+                            <span class="tag">App</span>
+                            <span class="tag">WEB</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">🌾 中美嘉吉 Cargill</div>
+                        <div class="project-period">2017年1月 - 2020年6月</div>
+                        <div class="project-tags">
+                            <span class="tag">APP</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">💄 Dr.Wu Loyalty Code 一物一碼</div>
+                        <div class="project-period">2017年8月 - 2019年12月</div>
+                        <div class="project-tags">
+                            <span class="tag">WeChat</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">🏦 富邦行銀 APP 功能開發</div>
+                        <div class="project-period">2018年8月 - 2018年12月</div>
+                        <div class="project-tags">
+                            <span class="tag">APP</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="project-name">💬 台新 Line chatbot</div>
+                        <div class="project-period">2017年1月 - 2018年6月</div>
+                        <div class="project-tags">
+                            <span class="tag">Chatbot</span>
+                        </div>
+                    </div>
+
+                        <div class="timeline-item">
+                            <div class="project-name">🤖 人形機器人 Pepper 開發</div>
+                            <div class="project-period">2017年1月 - 2018年1月</div>
+                            <div class="project-tags">
+                                <span class="tag">機器人</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
