@@ -1,67 +1,331 @@
 {
-  "last_updated": "2025-11-07 09:43:10",
+  "last_updated": "2025-11-08 09:37:45",
   "total_count": 45,
   "categories": [
-    "娛樂",
     "科技",
-    "財經"
+    "財經",
+    "娛樂"
   ],
   "news": [
     {
-      "title": "市場報導： Google「陽光捕手計劃」：打造太空AI資料中心的新世代能源革命 - 科技產業資訊室",
-      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5CYURtNnR0Y290ejJ1Tnc4eTI3T0NsUHctRUFfSWJCYzJaazFpR3kyNnBpMFVuSVpkMXRZQTBPUlpKZ1B5MjZBanhlZWZIcFVycEFXaUljNFdyaGdBNHcwUW9lLWJPbW5BMVE?oc=5",
-      "description": "市場報導： Google「陽光捕手計劃」：打造太空AI資料中心的新世代能源革命&nbsp;&nbsp;科技產業資訊室",
-      "published": "2025-11-07 09:35",
+      "title": "蕭美琴歐洲議會演說宛如「大明星」 議員掌聲如雷要求合照 - 奇摩新聞",
+      "link": "https://news.google.com/rss/articles/CBMi9gJBVV95cUxPSTBDbHhfTVczb0xjNVh1azdObXk1dHRPSVpNZUFDbG4wc2JZT3gtZnZGNGNpcnJWNmpBajNfLXdvQUt2Ny1kbWpaWVRTbGlOb1NiR05PTGFGaXVoeWZiN3JsWmhnMFBOQnBMekxSLUxVUEFVbU9VSnVLV3lfNkZ0WmlKNmhUNFdmZm8zMUx1TGQ4c21DOGV5cmozTHRmaUZ5eGFBb0tEdXpOQjU3Q04zUDZ6bWdCaHVrQk90LWw5THJNbkNNYjQ0MnNvTnZRdnl6U3VqLXE4cTVTRTg1aERpVy1WWF9VTlNYclExSGRRUHVSWTdHUzIzaE84cDBsenY3cURKQjlJNmdzQmR2MHpLd19JZ2RZVjRiTGRYbWJUbmh0dFRiZTJRME1NU013WWtMVFZ2Z2xGdUN4ekVKQ1N4Yzg1SHlkc3JuYVhjSU1uVnJxVXEyTlhJa1FPajRsQ0kwX1JqellVcWxXam1BOFpOOUp0eTJkZw?oc=5",
+      "description": "蕭美琴歐洲議會演說宛如「大明星」 議員掌聲如雷要求合照&nbsp;&nbsp;奇摩新聞",
+      "published": "2025-11-08 09:23",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "AI巨頭一週市值蒸發8000億美元，數據揭露：有些賭場已散場 - 天下雜誌",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5MNHdCWndmWmkwWEtaT1JkaF9MdDlGV1BLeEVkWm9EU0JIU01lVHhFRWVZWWt4a0lTUk1ydXd5WTEtVnl1ZjR4REp6MkFndw?oc=5",
+      "description": "AI巨頭一週市值蒸發8000億美元，數據揭露：有些賭場已散場&nbsp;&nbsp;天下雜誌",
+      "published": "2025-11-08 08:51",
       "source": "news.google.com",
       "category": "科技"
     },
     {
-      "title": "Google Cloud 宣布推出 Ironwood TPU 以及全新虛擬機器 Axion，為 AI 推論時代注入動能 - The Keyword",
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQc3hzcmJfMXhCWXRaSTZwQzBrcUY5YUNjaWlVM01TckxMelAxSThIY1BsXzB4aHRHOUI3NUFtQ0U0LXBVeDBqMlh4Y2xMQ3B1T0xmQWk2dlNGN0NoRlZ4LVhORGJjZXVnY0QtTWp3ZHFjT1JraFJ6b0tlUWswT1pQdXNORFJmeTM2UlpReTg0blhTUWE3UnA0YzlNTi01bUh0VW1SRTlWY1Mxdw?oc=5",
-      "description": "Google Cloud 宣布推出 Ironwood TPU 以及全新虛擬機器 Axion，為 AI 推論時代注入動能&nbsp;&nbsp;The Keyword",
-      "published": "2025-11-07 09:22",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "宏泰人壽公平待客表現再升級 金融消費爭議、金融檢查與日常監理皆優於業界平均 - 經濟日報",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5SRWROU0lLY1Y0OEdDX3pRemdDNVVYSnVWLUdOUzhjb28tRk41Sld1bm9tSWFWYzBEeGU5V0pSRFlJUlVwWTdjMVN2TDctMUtJNGVJQ3BTSHlyQdIBX0FVX3lxTE0tQ21yb3lQMk1rSXlqMnpPNXlvVTEyM0s2MWl5aEJHd25xQUpuSkJUb3VvTXhwaXhwaUc4YVFhNlE3WFllbFNRV19XaWxkV1BEazlMdHFRN1AzdnBsRlJj?oc=5",
-      "description": "宏泰人壽公平待客表現再升級 金融消費爭議、金融檢查與日常監理皆優於業界平均&nbsp;&nbsp;經濟日報",
-      "published": "2025-11-07 09:02",
+      "title": "秒速登記普發現金全靠「它」 至金融博覽會體驗再領數位券 - 自由財經",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9EU0dSQTJQTDY3b1VPanE1Vmprb3pYR0V6LVhkNXBhQTlRcmRCVnQwQTdCUlZFOHJWRkdwTWt3c1pSdXF1b2tiSlJJQU5LMHRlMFFVMURXdGZZRTRyTnRn0gFkQVVfeXFMUElDY0NxVVVFZldXUXVMaXlHT1ZHaTYxaUdrUHBBQlp3MFNIVjNIbVU1QlRkMWZ6cm9iVVUwUWxXbDNuMVppRUxncVJOVlRCX0ZDUTBZZVJSZ2NHMC1kVU55TEluVQ?oc=5",
+      "description": "秒速登記普發現金全靠「它」 至金融博覽會體驗再領數位券&nbsp;&nbsp;自由財經",
+      "published": "2025-11-08 08:48",
       "source": "news.google.com",
       "category": "財經"
     },
     {
-      "title": "為推動構建開放型世界經濟貢獻智慧力量--新聞報道-中國共產黨新聞網 - 中国共产党新闻网",
-      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5jajB4bE8yQUJJY1lxeUtpTlAzS2ZNWFlFekNLWHV3WVV6cFNCY2hVeVNwMF94enNyMkc2LXhUdWhoOE56Y0drN0ZUeVFLc0ZEREIyYWJTSklLQk9BX3ZxRjJkaEhjQTM0Y3Z0ejc2cV8?oc=5",
-      "description": "為推動構建開放型世界經濟貢獻智慧力量--新聞報道-中國共產黨新聞網&nbsp;&nbsp;中国共产党新闻网",
-      "published": "2025-11-07 08:27",
+      "title": "美經濟疑慮升高! 美股4大指數漲跌互見、台積電ADR跌0.95%連4跌 - Newtalk新聞",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9wRmk0RXpSckY0YzAzRUR6azBsMmYybHo1blhrd0R2cmF0eGdpRER4OUdGcmlLbUdZUm1sa2h0V09CTjVsTkQ5c0hWZHNmalBPX2FGbVdMaTljazg?oc=5",
+      "description": "美經濟疑慮升高! 美股4大指數漲跌互見、台積電ADR跌0.95%連4跌&nbsp;&nbsp;Newtalk新聞",
+      "published": "2025-11-08 08:47",
       "source": "news.google.com",
       "category": "財經"
     },
     {
-      "title": "AI學習貝多芬 譜出未完成的「第十號交響曲」 - 奇摩新聞",
-      "link": "https://news.google.com/rss/articles/CBMipAJBVV95cUxNUnhjSTZEdUoyeUVlQ1Z2TzQzZUxoRDU4aTUtaGt4cXNmdUFGeVdCLVFTRVBaZ0pRWFh6NFhsaUxKUUxxT0hoQUgzWVRpMlFOVVBaWEREVlZNOUFsWC05T2VBb3BQT2xUZDdNWHVGMk9iNTRyTzhsamZpc0RRZ0NlbTF0b0p4dm1wTjl2UFIzVUxXakNzSC1mWXNKXy1PeDZMYVpmcjFKVUhzWWlHSWgtYnRwNVlZWS1iQnVHaGhxM2VRVndOaFQ0LVJpbTdVRF9YQk1PNFNBOVd2S1NqQnYxbDh6Rl96YkExb1NfZFNDUVkycVRoejkyN0Npc3ZSbVBfSHY0S3lFZUF6VmxZaW1xeHpFVzFZUXdCVG43NURkT2k4RUdm?oc=5",
-      "description": "AI學習貝多芬 譜出未完成的「第十號交響曲」&nbsp;&nbsp;奇摩新聞",
-      "published": "2025-11-07 08:23",
+      "title": "千余項“黑科技”亮相烏鎮峰會AI應用受關注--經濟·科技--人民網 - 人民网财经",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5NR3pmSmR1ck9UUWpHUVhjOFdXU3hZMFhLa09jdlJFc2d2ckw0UXNmRWluSnRtNW1XM3VhT3dDSFhsUC02Qm9KVFc3N2pIT3RtWnZVV1U2NVpidnVNUHlzakExY1o0VFFYUUFnSFJfbDJ4bXQ0?oc=5",
+      "description": "千余項“黑科技”亮相烏鎮峰會AI應用受關注--經濟·科技--人民網&nbsp;&nbsp;人民网财经",
+      "published": "2025-11-08 08:43",
       "source": "news.google.com",
       "category": "科技"
     },
     {
-      "title": "過度依賴AI 恐喪失獨立思考能力 - 奇摩新聞",
-      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPWG9nbFFSaWF3dXhNZ2JTdjdjTHhuM0c1RUdMYkhYdm5jSTEyUE5KUGlhSjFLcS1ZUmpZbS1jdVZSSHNJbVlpc0pvUExNcUZON0YyOW1tM21rd2RZVEtpeFVDSm1RRDBTM25FM1RDTV80THBzMTl3Q2gxckRhN04zWi1QMWt5VjJIX3dVbnU2NFZEV2VHZWFHc1lNc3FEMHBfVkk3UFlPOC15V0NmdXhuRzlCUlFRUzhZcmNkY0lXVktJa3BRN09mbGQweUhRZl9vU1RnekRjM2VFT0J1S3JvN29PLTNwWDR1TURXWG9vNWxZOGM?oc=5",
-      "description": "過度依賴AI 恐喪失獨立思考能力&nbsp;&nbsp;奇摩新聞",
-      "published": "2025-11-07 08:18",
+      "title": "酒後宿醉好痛苦，AI 能找到真正元兇？ - TechNews 科技新報",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE8takZESExYWHY0ZWdTbXhub3ZqSlRVbV8wRV9kM0FKV3pITFc5amYybkVldDdyVlR4cHZWOGlWNWdKcS1ESE9BclF4WGxvSkpNclhVTmpxb24?oc=5",
+      "description": "酒後宿醉好痛苦，AI 能找到真正元兇？&nbsp;&nbsp;TechNews 科技新報",
+      "published": "2025-11-08 08:32",
       "source": "news.google.com",
       "category": "科技"
     },
     {
-      "title": "量子科技比人工智慧（AI）更重要嗎？ - BBC",
-      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE91TXBYOHB4M2lzdmk2enFuR1VwY1ZpWXoxUVF5UWJyTFN1clY2SS0yaC1kX2k3aVBHRUl0Rk5hU2w5WHNXQUZ6Z3psVFdRWHMxV21PYXBaTWhFYVhyS3ZXb3hCdzNBd9IBa0FVX3lxTE9tbHJ6dmhqVV9EVnVNWEpjNmZqTVlFLVpCcWg4dHJxalNFZ09qeWFxTWY4QWJiRUVyZEh2TjktUENxUGZlY0NZQ1dnanp2bWt6ZXNLRnlzWlJwalBtLVBPMXRqUERrRnEycU53?oc=5",
-      "description": "量子科技比人工智慧（AI）更重要嗎？&nbsp;&nbsp;BBC",
-      "published": "2025-11-07 08:17",
+      "title": "今年四度訪台力挺夥伴們 黃仁勳：AI需求非常非常強 - 奇摩新聞",
+      "link": "https://news.google.com/rss/articles/CBMi1AJBVV95cUxQQlNuMzVWcS12SHpTOFllMzNnaUdUa2pOT2JVd0NpWlZWMV81cFQwdUJpNld6SmQ0VENkcEl6Q3BaQ3VncDdLNE5NZ2RzSDVYVVFGRUFOcFJaeXdmc3pnX25SUjJzeDNLTGlSWUdoVFpPZG56aURnZVg1NWFZLW9TcTI4ZjBUS01CYUlfVXk1N2lTWG1vSnZKUXJEblUyN081MFllZHNMUThJcFN5MHh5dV9MYmVoUzJxSjBXVGxLVzBqSkRrVE9uZFRfRW1LQ0xud1ZiQlBQUFVhaU5FRmlNQVFuM0tSMTQ5R0k4cjM3ZWI3ZWc3QUZ3SU81cVlVVk1fN2lwODlXYzRDck1TWU5xanN1aVdWUTR0bDVzQmNKTkFCQjFRYW5FMGpiSjVXRWZvUlZoWG82Nm5rSy0xQXdaNE1TeGRqcUNxYnBlY3NUaDNpOXE5?oc=5",
+      "description": "今年四度訪台力挺夥伴們 黃仁勳：AI需求非常非常強&nbsp;&nbsp;奇摩新聞",
+      "published": "2025-11-08 08:17",
       "source": "news.google.com",
       "category": "科技"
+    },
+    {
+      "title": "美股｜美政府停擺衝擊經濟 美股漲跌互見 特斯拉瀉3.7％ - 工商時報",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE13djJkdWVETmwxMnJUejZ3RUpoQ1hFSWV3UktPQThETzR6YXZNOXc0LV94R21yaXlyNEVMektzb3E4Y1R2bkZZaGROdXgxWXRVNzJ1NmZUWGRXa0pBYWtZ?oc=5",
+      "description": "美股｜美政府停擺衝擊經濟 美股漲跌互見 特斯拉瀉3.7％&nbsp;&nbsp;工商時報",
+      "published": "2025-11-08 08:02",
+      "source": "news.google.com",
+      "category": "財經"
+    },
+    {
+      "title": "桑布伊，從國家音樂廳到池上稻田間——馬世芳眼中的卑南族國寶歌者 - 財訊",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9aN3ZDY1lTdFdOU2tJallPeVVtc3FaYWFxcU1YOGNjWkZSS3VIaVV6WkN0bVBzaDNMbUdCMmZHT0p0WmNYNklkMm1fN1RQTWRPQjZYWTd3ZGNoMHdROG5WR1pfSTFvY3dJVjdmNW9kaWhsVFMtbkxRby13OA?oc=5",
+      "description": "桑布伊，從國家音樂廳到池上稻田間——馬世芳眼中的卑南族國寶歌者&nbsp;&nbsp;財訊",
+      "published": "2025-11-08 07:00",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "娛樂透視／奧斯卡導演助力《左撇子女孩》 雕琢25年小編制拍夜市人生 - 鏡週刊Mirror Media",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5fYWN3QWE0NjdJSjhRQUxxWkNyVXU5alYxWV9GRDFqTDFTMHFSbFpfMThGaVU3bkZtNVljX1FmN01TRzhFNmUxcDFNX1J2ZnFGaERldVNrNFZPSmFoWlZreNIBZkFVX3lxTE54Y01fWVZiMVlldDR0Y29uNmhxdXNnVWtyRjZZN1cxeXpwZ3JxS1lSZXBBc2FET0tNUF9uT3QxMzlNU2ZiWG9aOWlaS0xWT0lHbmFJbUdNZDdoMUo0UVlCbVpOUUUtZw?oc=5",
+      "description": "娛樂透視／奧斯卡導演助力《左撇子女孩》 雕琢25年小編制拍夜市人生&nbsp;&nbsp;鏡週刊Mirror Media",
+      "published": "2025-11-08 06:54",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "全明星會不會／蕭敬騰口舌進化露一手 - 鏡週刊Mirror Media",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1kazdJclpEOXdMZjZfVEpNZHprT2FoX2ZUS2V5TUJTNm9EUl9odmlpSzV4LTY1WVZEZHd1VXdkTlRWX3Y4Y0pEczB4VnNKa01tSS0zWXJKQmFRSW_SAWBBVV95cUxPcUlkWFJKYUlCN2xiSnJZTjNrOWJUYzFoZF8yTm9XSVByQmU2Mm81d242X0NRNFR1Wkt2VFIwbG05VU1rc3NDc1VseEJvWFdtM2FETktlYmQ4aTdaZll4WXA?oc=5",
+      "description": "全明星會不會／蕭敬騰口舌進化露一手&nbsp;&nbsp;鏡週刊Mirror Media",
+      "published": "2025-11-08 06:05",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "全明星會不會／鬼鬼仰天長笑向錢看 - 鏡週刊Mirror Media",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9WWjFpOHQ5MVR3ZW12N3FUdHdrdHRQZ1JaZU1Da0UxTXFKR2pxLUVqS1R4Y29aek81VXdQOVFiNkhyTjQtVDlqQndKNDZHeGdMQWFycENxYTUyQjjSAWBBVV95cUxNVlJwUHBhaTQ1Y09WZjMwbllvQnk1Sl9zUkhXZGxydUVqWWVCU244ZHVmSTRzak9Sb3ByUWd5aS1Mc0xUN2dBS3BIbmJ3RjZqRWJSZEV5Z2pHSUNPb0JIWXA?oc=5",
+      "description": "全明星會不會／鬼鬼仰天長笑向錢看&nbsp;&nbsp;鏡週刊Mirror Media",
+      "published": "2025-11-08 06:05",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "AI boom lifts Taiwan's manufacturing PMI to expansion in October|English News - 僑務電子報",
+      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBjM0ZnaXAwOUtaSTR5cEpzU3lUV3I1d1JHLXBWTUU2djFaTEFLcnA1aEdodEhBTnZ2czcybkJtVkpDVmhFcWdpWmxwaw?oc=5",
+      "description": "AI boom lifts Taiwan's manufacturing PMI to expansion in October|English News&nbsp;&nbsp;僑務電子報",
+      "published": "2025-11-08 06:00",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "《普通的孩子》專訪2／缺乏票房保證仍堅持拍電影 他們孤注一擲竟發生奇蹟 - 奇摩新聞",
+      "link": "https://news.google.com/rss/articles/CBMitgNBVV95cUxQMkhyWGNmYTBrSXdPYWloTnJxWjRKakFKT3FOdzhMbXdVMjZJOG96bVVRMHBzZWF5UmducWpZeFFUcmxUcGRFczdXOXJpQ0dKZjlSd0dZNG9nQUViNDJPN0FRQWZQei1JZWVBRjZiRlRQY2ZvcHhfbDdpd3VmQVVlanltcVhFaGxGMmxyb1h6TmlyMmVnamdTb0VfZ3JyZk9LdmhXbXdJWFYyZFpBU0ZPUUs2WFNqNVFwUWp4RmJGT1c2WFN6UWIxQWxSVFZ5OFBJdXlUejVHRXREenZiV2JwYWJjRjdFdndlWDIwUFFfR2dUU0owVTBMRVpCVWc3VVNjN1ZVNFMzVzRnYWJDTEtPaFo2ejlVMTh6Q2ZYTFpuZ0o1cGg1SHpwREx0cWEyM2k1YVdzLXhOYnZRTTFIN3ppVGhUdVI5VUtxQ21mbWtCTkVDTzV2QnltYUVaeF9SaDdPWGJyRXFKZFlzV1RfQzhER0s1UVFaMXdiamdmbWdBQnZaM0xIbFB4VmFWUld5dFNuZUFNeDZfaFVxcGQ5dUwyRnBPd2pCSXpRNDF1bEY2SFh5TVp5QWc?oc=5",
+      "description": "《普通的孩子》專訪2／缺乏票房保證仍堅持拍電影 他們孤注一擲竟發生奇蹟&nbsp;&nbsp;奇摩新聞",
+      "published": "2025-11-08 05:28",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "2025金博會》兩大主題場域＋金融防詐、永續金融、退休理財3主軸！逾450展位連3天展出 - 奇摩新聞",
+      "link": "https://news.google.com/rss/articles/CBMi8wJBVV95cUxOakVQRE5rZkoxdlJ3RGZwZVZXWm9vMWc5T3Jxa0YwdWtIVXBvOUNwTl9lOEJlc1VqNWlDSHB1Zk95RkQzakVlSnNxNzFkeG9wXzJkUVhXczRYc1lYMWExU2pIc1NSSmJWS3BoZGJmTnlwNllKbHZmQm5aMG1yY09QcHBXd0xjeVVzQ3dBTGkycGpzSmIxQ2Q1bC1WTkxQSC1ubk42dkRkbkpjbTdsRjFoM2R1NDdmTzU0dFE0YmdGREdmUHZ5UGU3M0NwNHlNZS1BNHczMGZaNjNxaUhaVlc0M0pHZTJ0QUxiZlpzMFBHREFfaDhpcXZvNTZCb3FvdFluZXhrSDZrMzdwbVo2UGo5Z2lKOEJYN1ZmZWxtNHdvckJ6QTR3TEg5UHVVLU9oQ2xBYXZUcnpLeWZVbFF2TGFwcDAxa0JKNjNGcDJlRHZqWjBQOGRBZWF0QjlCeUgzUGU5ZDJWQlN1RGtCWlYxNGV1T0NjQQ?oc=5",
+      "description": "2025金博會》兩大主題場域＋金融防詐、永續金融、退休理財3主軸！逾450展位連3天展出&nbsp;&nbsp;奇摩新聞",
+      "published": "2025-11-08 05:00",
+      "source": "news.google.com",
+      "category": "財經"
+    },
+    {
+      "title": "AI淨零／台灣AI綠色科技實力強 泰國盼借鏡助推智慧城市|未分類 - 僑務電子報",
+      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1DbVgtVlZwdlIybUl1WEpQcTNzMlZNZFo1cGQyUThxeHlwSk44cmgzSC00VFN0emlONkZuR0FvYVk0YVhBRnRoSXhidw?oc=5",
+      "description": "AI淨零／台灣AI綠色科技實力強 泰國盼借鏡助推智慧城市|未分類&nbsp;&nbsp;僑務電子報",
+      "published": "2025-11-08 05:00",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "AI伺服器需求旺 廣達10月營收寫同期新高 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMiogJBVV95cUxNYnpCVmtYMF90NG9vTzJ2UFgxaHc5STB3ZHJ2dS1KMmRKZDJjSkNib2FEN2VyMWhMVnEwV0N1OWpsWVFQSHNiX216eUhJQ2ZBcFlrZWRUTjNuUzY2LUNBeWE1dDF3MF9WaHJlVzFIbG9UV2s3SGxEQ1RtMmFPQ1lBQkIzNFRmTXJTeWM5c1UtV3Q2cE5SQmVzdHZIVVkwcWU0QVlxdFZPbVJfOWpoaUt2N3FHX3A0alZYaTN4YmF2WXZsWWtLdjEzekUyQU4xc2lVNUtlcnpzbVg3Q3lkellncVdIZHM2bE5UMlFVV2l0eUQtNFJKOHNkWWp2SDFZT0hsYUdpYWwyQnM4ZE9tSVljNkRpbUNjQTkxc3B4dmlvMWg0Zw?oc=5",
+      "description": "AI伺服器需求旺 廣達10月營收寫同期新高&nbsp;&nbsp;Yahoo股市",
+      "published": "2025-11-08 04:10",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "金融博覽會百家業者參展 AI、AR、防詐科技發亮 - 卡優新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB4bzBhZ3FsOXdPU3F3UXQ0QndJVmtYU2NfdHpVUHFZNTR6Y21WT1R0M2xXbVNrRGNUMU9qeGg4ZldxcGE4OVhzVmJmckxKeDVhVllEWFdNR2lPZw?oc=5",
+      "description": "金融博覽會百家業者參展 AI、AR、防詐科技發亮&nbsp;&nbsp;卡優新聞網",
+      "published": "2025-11-08 03:11",
+      "source": "news.google.com",
+      "category": "財經"
+    },
+    {
+      "title": "金融博覽會百家業者參展 AI、AR、防詐科技發亮 - 卡優新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB4bzBhZ3FsOXdPU3F3UXQ0QndJVmtYU2NfdHpVUHFZNTR6Y21WT1R0M2xXbVNrRGNUMU9qeGg4ZldxcGE4OVhzVmJmckxKeDVhVllEWFdNR2lPZw?oc=5",
+      "description": "金融博覽會百家業者參展 AI、AR、防詐科技發亮&nbsp;&nbsp;卡優新聞網",
+      "published": "2025-11-08 03:11",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "憂AI泡沫科技股賣壓重歐股收黑| 全球財經| 全球 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1TcHFweUNqcDl5THJWSjl3WFNFcFQwWmVBTHR5TlJ0Zzc5TGZ1SG9mVkE1dkdSOGVVQ21SMFFDWTZiWk1uVlk0SkJPSU4tbXFh?oc=5",
+      "description": "憂AI泡沫科技股賣壓重歐股收黑| 全球財經| 全球&nbsp;&nbsp;聯合新聞網",
+      "published": "2025-11-08 03:03",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "天下永續公民獎國泰金金融組奪冠- 日報 - 工商時報",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5tbUpvc29kOFFURVgwWm13MkRsUjdEb19CUXdrbVJ1Sy1kc1psSUVteHJrRVVZWF9IWFkzSlV1dU5GS2o4MXlZSnM1ZkRZdTdPZ0pjZEJ0S21iNExvQWUw?oc=5",
+      "description": "天下永續公民獎國泰金金融組奪冠- 日報&nbsp;&nbsp;工商時報",
+      "published": "2025-11-08 03:00",
+      "source": "news.google.com",
+      "category": "財經"
+    },
+    {
+      "title": "迎AI發展第三階段 阿里加大投入超級AI雲 - 工商時報",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5UbDVSNXhXZnVYNHFPbmlRb2s1X2dnR1VqUEtLNUpWNGI5TWhvNGtrOFg0R1lHcEJMdEFBMzNudmk1VC10Y000U1hwZDlkWG1QaENmbHVrRGk1bUp3R0Rv?oc=5",
+      "description": "迎AI發展第三階段 阿里加大投入超級AI雲&nbsp;&nbsp;工商時報",
+      "published": "2025-11-08 03:00",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "從預測到滅火，AI 如何徹底改變控制火災模式 - TechNews 科技新報",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1HRW04U2t0N285YkxNTzdYRmFXUjZmaktrczBDd202M1Z5TlBzRXRCV2R0ajF5VVBhcEZ1SlhwVVhfOG5BX0l3WTNfMmYxcTV3TWFLTVhWb1FvajREcndhV1I4TVM4SDR0WkdJRWtR?oc=5",
+      "description": "從預測到滅火，AI 如何徹底改變控制火災模式&nbsp;&nbsp;TechNews 科技新報",
+      "published": "2025-11-08 02:34",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "憂AI泡沫科技股賣壓重 歐股收黑 - 經濟日報",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9HR2lCY0sxc3lEdnlTMl9OdUotQTZteXotTi1KVl9semFLM0lsN2tjc3VxOUhENnRTOGw4YTFDQmQzVEcwQ3drcVFESURUVEJHMTdmQzZmY2plQdIBX0FVX3lxTE9yZlRHM0htSkxIdWxsZUhtZ28zMGhtR1pGRWJtZ0lweFhCWkZXcm9Lck14alNxYjRrYl9QZ1ZqWkYweVliOTBKZHByMlBST0JsSXJabDNMOFJfX1lnY3hr?oc=5",
+      "description": "憂AI泡沫科技股賣壓重 歐股收黑&nbsp;&nbsp;經濟日報",
+      "published": "2025-11-08 01:54",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "憂AI泡沫科技股賣壓重 歐股收黑 - 自由財經",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5Nckp1OEtIZFpmcXRhYXF4dHlyVVQxa010UXdzcHBjbm1Sb3lHNU1BdnNZdDVET3hLWE5FRW9XczVOS1hIQ1I5Tm1STVBua2lRYkZmeVFkekw4dzR2OHlN0gFkQVVfeXFMT3FuTHBIT3AtbHViTmpzWnAzMHFJUnpudTdNSV9oN1VjMmtaZ0RPdmVGUDQwVDZiX1hGWlY1em1CYUVtTG5SWG5KUE5peHVuSnVIWHZ0ZkZCeHBIaEJvZGo1ZlFPNg?oc=5",
+      "description": "憂AI泡沫科技股賣壓重 歐股收黑&nbsp;&nbsp;自由財經",
+      "published": "2025-11-08 01:54",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "台北國際金融博覽會 玉山銀秀三創新亮點 - 經濟日報",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE04T082dTQ5Tlg4UWVxeXdjOVpsOUQwNjN2RFkxaUFjMmxPSDEzR2JTZ1lMZmw0bXRVM2swZkxSSmVKb0JMTmxMNjl6T2ZjMXo5V0NEa09vcG1MUVh10gFiQVVfeXFMTUdxb1oyc1Z2NEEwOTlRLTVQQmRLQnNoOWJ2cmViSDFfR3lHdXpONktyd1drZFZxcVItaGREOWtIVHBXTURjNkFCb3hId0FGN1laQjg5VDJnMk9lck9QSVdERUE?oc=5",
+      "description": "台北國際金融博覽會 玉山銀秀三創新亮點&nbsp;&nbsp;經濟日報",
+      "published": "2025-11-08 01:08",
+      "source": "news.google.com",
+      "category": "財經"
+    },
+    {
+      "title": "基金長扣 vs.停利 專家教戰 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE40OXhuLVZMYnpveVVZcktscFBaMW5NRkhlUDhJSmY2bmZfSlJrUUd5WHRsT191elZmbGxVRnc3QmY0YWY1cS14dS1qRFV2anNyR3fSAVdBVV95cUxPZWpDOWFwLTR3eHNMdmZXTlpaSldPd1I3dUdQRU40aHZjMmFqZjdzU3hHN2lrNW5aZXNqRnMzQ2lWUGt2Q3lEdDE0LWl4eWdGZzRGTVJvTFU?oc=5",
+      "description": "基金長扣 vs.停利 專家教戰&nbsp;&nbsp;聯合新聞網",
+      "published": "2025-11-08 00:53",
+      "source": "news.google.com",
+      "category": "財經"
+    },
+    {
+      "title": "AI科技公司開出數百萬年薪，狂搶這3種人才：全都跟行銷有關 - 商周",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE96TXFfdmZvZG9QRW1WYVNJM0tGLUFKYkdwbkhudURoOG84bUVrbXBTV2dkdGM1NW5UeFZZczhjdm4tRUgtNnU4djcwMnJ5Ykl4SmJHQ3ZRVXRHOTZuQ2pKNU5JclE?oc=5",
+      "description": "AI科技公司開出數百萬年薪，狂搶這3種人才：全都跟行銷有關&nbsp;&nbsp;商周",
+      "published": "2025-11-08 00:42",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "大濛 (霧起篇) | 電影預告 - 奇摩新聞",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcTlNUEpPTUxQS285NmN2X0xTSEhESEtyTzlaZU1UeURvM0R5RjN3eDRDQVA5NXFRVE9PNTZNMjBMS21ra21GejRuYXZ0aGt0cGZ0WEV0Q09Xb3R0a3hLb2pPUXVJNXJISGMwUHdra0hYZjhNMC1SX0J6eXd1Y3ZaYmh5bUpVSTl4R2FwcDJlODRIaG5pQ0NYS3I4cHdvNnMyR0hOYmZCeWtsZ1dST2IwbXFGeXB6a2xQcjlTRnFVWlVIQQ?oc=5",
+      "description": "大濛 (霧起篇) | 電影預告&nbsp;&nbsp;奇摩新聞",
+      "published": "2025-11-07 23:00",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "美政府停擺利空蔓延 台指期夜盤持續重挫 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMitAJBVV95cUxNWXNhZnFSNlVQNGx3cnJITUljNVE2NkpaS296RUVZZUgwTm4xbE9xRTBKUW5yZHV1ZjE5TGhPWU9UVUlfZ0owNkt3VFJJVkQ0Z0g1S0F0WS1KQ2xIWWxadnE4V2F0aTRIemZBRENzUGxhdTZHNmpvNTk4a0h0dnpOMTk0RGlNcTl4M2c2MkMzWm4wLUNUcnljTUwtdzJuWEdZOUxQeTB2Vkd0UFM0dXQ5T1BlMnNMck04Z2ZXcTI1R2x5V3BRYVhvcjY5RmxtMFB6VGotTXdVWGZ0SlBlLWpGZjVmd3ZkTlFWcnhtMzBFcUItek5MM2NGdUtPaE9Pb2ZiMjNoOEozR285ZVJkci1TaDhNVmltWVRfTkpnd3pEVjZuaUN4RzgweVd3TzhXU2w5VE1UbA?oc=5",
+      "description": "美政府停擺利空蔓延 台指期夜盤持續重挫&nbsp;&nbsp;Yahoo股市",
+      "published": "2025-11-07 22:17",
+      "source": "news.google.com",
+      "category": "財經"
+    },
+    {
+      "title": "曾文水庫峽谷音樂會 15日震撼登場 - 奇摩新聞",
+      "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPSWdmWE55RGpCNWpkMExGTkljZ3UzSnJyZGowVVJDTnRpUU9ZTHhxbjBQVEJnaDZWOWRFVmMxeWZDUUNNY29jY3Y2ZjRzTTYtYWhvYzlJXzN0cVZxUVVZODhoRFkxM1FtRS1seGVfYVRpWkF4Rlljd21KOEc0a0NlM3V4VWUxZFh1R2NFQUNxVGZTWHkwUVlZdUxOWUpmWDVHVk8yV052b19YU0RUTmFzSE5QXzhuWlgtVG9wNUlBVkNUaXAxc0dVWUtyb25WeE9ONW5yUmgxQU9UajM4U2I2ZTY0WU9Iak1HMTlKZWIxN1ZJZHhzZUhGdC1YODNhcUk?oc=5",
+      "description": "曾文水庫峽谷音樂會 15日震撼登場&nbsp;&nbsp;奇摩新聞",
+      "published": "2025-11-07 22:03",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "千呼萬喚《麥可傑克森》傳記電影曝光 姪子賈法首度拍戲重現天王風采 - 鏡週刊Mirror Media",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE85R0NwSDBrNi1WTnYwOVF4V1ZrNlZWLUxmWE92bU1VbjRZRGwxcUJEQW9qRXRWaFpTVWdNemMyeS1zUVRfLUNjV2Q4ZVJjczRFZUt0Mi12aWp3cFXSAWBBVV95cUxNRlpGN1FLV3FieVI5YkwybDNiTFB6ZnpDNU9CMUNkT1N6QWlxQ3lHekJaeFhZMS1rWFhtaDFacld4WkRVQTlRazNRcHZvRnVXaDRTNTdmeGNrR0J0S3dSY0s?oc=5",
+      "description": "千呼萬喚《麥可傑克森》傳記電影曝光 姪子賈法首度拍戲重現天王風采&nbsp;&nbsp;鏡週刊Mirror Media",
+      "published": "2025-11-07 20:36",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "「半世紀風華」音樂會長笛領航 致敬台灣作曲家|文教 - 僑務電子報",
+      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFB1amRIa285V3MxdmRiZlFtLWVpZEozUzFjVEI4YmMwY09mRHhjbEdtNldpcU41bmNVbjhHSWR0b2Rpc3NEd1FHYTZuZw?oc=5",
+      "description": "「半世紀風華」音樂會長笛領航 致敬台灣作曲家|文教&nbsp;&nbsp;僑務電子報",
+      "published": "2025-11-07 20:00",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "佳音電台賀30週年 11/28辦為愛堅持音樂會| 娛樂 - 中央社 CNA",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5fOEFKUGtvaGFfdmxYb0otSHkySDk2cVF2RlpwTmlaT1pGMWVKc3d6LTlFRzFMdU9QOVk1YlNnTmZLa2o0TjR4QXMtdEVDVmNzLUwtWVBESG52QmJTYkxj?oc=5",
+      "description": "佳音電台賀30週年 11/28辦為愛堅持音樂會| 娛樂&nbsp;&nbsp;中央社 CNA",
+      "published": "2025-11-07 18:34",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "傳記電影《麥可傑克森》預告曝光！5大亮點搶先看：麥可傑克森姪子親自演出，還原經典月球漫步 - ELLE",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOMGRmTXA4TGVHUzRYRVc3MVJ4VDJHWFBWY0oxZnIxTmxndUMzSnJTQVcwUlRvZ0NaZFFzSFg3ZzVXRXJLdTY4Sl84VUtaTldubHNCSEhoSjAwS2pzWmFHTWlMa2tnazVoWUttWTltb0c1WkdKTUJrSzJMbnRfSTFqUFNKdw?oc=5",
+      "description": "傳記電影《麥可傑克森》預告曝光！5大亮點搶先看：麥可傑克森姪子親自演出，還原經典月球漫步&nbsp;&nbsp;ELLE",
+      "published": "2025-11-07 18:23",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "《台北股市》不斷更新！金控10月獲利8家揭曉 元大金摘獲利雙冠！ - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMigwNBVV95cUxPd29BcHFPeWpVRl96ZDhkSUhjdnRQZlhFSHB0YVp0Q1h2emZ2THVOQUtSNWMxeHVoSDFKd1dzajNLLU5pdzlFN0EyclY5a1liTzlGdm16bkxTQkhRcWxDMWZqbDJNMVU1T09ORl9xbGN3X01OZm5rUjgwNkFRZ1JQbWVQbjdUM2MtbUR1RUphLVlGVjBGUWVsTFZsVmJ2NkcwVjdMZFY1NWVHcEY1elRrRUZ6Vm5vV01ISm5aNmE1LXM0dWFlV2k3bkRiUHhJeDVUVVUtcWsyUURxbW1RRFBxYjB0cE95OWYwLUttZ1dSZWFGdHVxcVBnTkpkQ1F2X251WWRHal9FVWpMZHhPZ3pXS05GQlhEZ21NSVgzTXJ4ZE54RUV4M2gybGtobW5nTjcyVExWT21jb3l3V2lNVHhFMnhud0hXSnpuRnRXbFVXVVZpZW43QnNUS2FSUElJYjZJSFBmMEhRX0ZVN1dxcjI3Z29MVldOM0E1MTR0OHQ1RUtuMUE?oc=5",
+      "description": "《台北股市》不斷更新！金控10月獲利8家揭曉 元大金摘獲利雙冠！&nbsp;&nbsp;Yahoo股市",
+      "published": "2025-11-07 17:21",
+      "source": "news.google.com",
+      "category": "財經"
+    },
+    {
+      "title": "鳳凰颱風北轉接近臺灣 水利署超前部署加強防汛整備 - moea.gov.tw",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOMlJmeFhIdDdJSDNkeVF2anRuWm9UeE5JeUMwczh2NXNRb2RTYW5YVEl3UFpqZHp4VnNXN0ZpWEFLRTJDQzJ1RFJuSHhMWW5SQ0N4T25OVlZCcGFVQmwxQ3ZOUjBNU3pGd1gzbHZHTWo0SEFPSFZ5a29pekVwVWZvaHdmYmNxUFhCek1xQQ?oc=5",
+      "description": "鳳凰颱風北轉接近臺灣 水利署超前部署加強防汛整備&nbsp;&nbsp;moea.gov.tw",
+      "published": "2025-11-07 17:10",
+      "source": "news.google.com",
+      "category": "財經"
+    },
+    {
+      "title": "【GQ科普】電影《國寶》歌舞伎文化：為何男性限定演出？舞台又有哪些玄機？ - GQ Taiwan",
+      "link": "https://news.google.com/rss/articles/CBMiiANBVV95cUxPQXRLQ0hzejFOcEdGVlVvSnFvYU5rUWFfT21xdnJrNGt0LXlTblAtR1dxUXlZWXJRQWF6S2cySGRZcGF1aEJjV3VHa3hhLXQ0MlRJSnZ1Vm5zNVdIUWxFckV5SUJPcGdZWkluelVEV2s5VmdZOVQ5azdxelB6R2JIbXYtS19oSGlkVFlrZ2hFdVV5MmhyRVNkU3hNQm45VnN4VFZHdzBodG1weWZfRGxjcTFhZXAzYzZ1ajhDUllFVnlXQTBpRTcxQWx6MGhIRUlxWVQtbUVHZWpYMEpfcndzNjJJWGQ1S1FqTm9mVDdoZllLd2FPTmV2UGVYT2lxbmxzNE9FdFdkQ2VTNUhkVVpxeXFILV9zSUJJWVE5OGZxVFJuajk5V3NHMGdDZnN0c3hoQVUzZnF6VkNPaGp2RXh0dVZHeEZaSWxYLVVNYkJvNlduZTZDd0VKYlJFcEt3Sm1oOXZDUDlqUU5YQW5VVjJlRURUYlZHTG82SGVJRVBpODF4TVJGWkRqUA?oc=5",
+      "description": "【GQ科普】電影《國寶》歌舞伎文化：為何男性限定演出？舞台又有哪些玄機？&nbsp;&nbsp;GQ Taiwan",
+      "published": "2025-11-07 15:32",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "Netflix電影《科學怪人》劇情亮點！吉勒摩戴托羅重塑人性悲歌，關於一場孤獨靈魂的覺醒 - Harper's BAZAAR",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPY1hldHNacDBhTHp2OVVtNzVHLTFOQUZFb0owbGJ2WndwREdmTG54bjZiQ2Z5SjhUNklOVnNSVmJONExjempQUGg2R29td0IyZnV0V1BmM2s1Tk5sRTlYYlZzYUVKZ0NuakJ2bDlNTXZiQzF2Y2MwNGE5ZXNjb2ExWmpIbGkxRjFyQ1NqS0o0UWN4WkI5VHg4T0tMcHJBeVlYMkY4?oc=5",
+      "description": "Netflix電影《科學怪人》劇情亮點！吉勒摩戴托羅重塑人性悲歌，關於一場孤獨靈魂的覺醒&nbsp;&nbsp;Harper's BAZAAR",
+      "published": "2025-11-07 14:03",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "加拿大華語音樂節揭幕 台灣音樂人母語唱出身分認同|北美洲 - 僑務電子報",
+      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5HVmZ3eGZkZ1RPVW80U21LeHp5R3ZxTXpfaWNtaXlzSEtlZGFpNVg3eFNWVW9qVFVZN2VzSmkyVXVGX0NwWEtjYUVmWQ?oc=5",
+      "description": "加拿大華語音樂節揭幕 台灣音樂人母語唱出身分認同|北美洲&nbsp;&nbsp;僑務電子報",
+      "published": "2025-11-07 11:00",
+      "source": "news.google.com",
+      "category": "娛樂"
     },
     {
       "title": "裁員惡化，美股大跌 ; 美國股市反彈，台股虎頭蛇尾｜豐雲學堂 2025 年 11 月 - sinotrade.com.tw",
@@ -72,266 +336,18 @@
       "category": "財經"
     },
     {
-      "title": "AI 浪潮下的PCB 供應鏈革命：M9 時代來襲！CCL、玻纖布、載板台股受惠股解析｜產業熱話｜豐雲學堂2025 年 11 月 - sinotrade.com.tw",
-      "link": "https://news.google.com/rss/articles/CBMi8gNBVV95cUxOWVhlOUNMLTBCUlVmblczelozR0pfSHBzRXZpb2FsNUIzb2xvTjFXVVJhbjgzemNyV2FkeExKSDZIc2w4YzhMejBmUlI0dHhyNHZJZjROYmR2ZExGYXNUQk96RGJxN2g0cFF3M1hnQXZFMi1yNEw5NDNRQWV1eE9iUHhYOTE2LXdCY0lxVWZpZExjeDlydGg5X0hDNUF4d2xSdVlHeGtJZkh2Tmk2T21Qb3FrVFpUeTBPX0t5NUllcUJvQWx5VUhnSEdTTUE1TjBNR1NSbEJTZGM1cHVIdlVPLUhOelR1OGdtU0p4bXZ5T1lPbXM3ZDQ2czVxTVFtcVlyYktsZU1mVXZsWUk0NWZXTTNBMExjMFpHb3VSMlBTMGhKT0pzX2dQeV9GTGpUY3ltdW5Pd1ZTRXVqZkU3ZE9yUm1XanNPdFY3djI2Y1ZfSl9MTU9WM0s1THNRc0wzdTZDRGZJa3VMcHBQeWdZWEd5RU9XR3Q1RzNrRjRFWFVxRHNlcS02SzVad1p4Tk5TdGkzQlJ1ZUlPMkdFQkREMnBudFVGRXpSUHFQdnZoWnRFVEh2blZTWXpYMVI1OE0zQ3drNjVvZkJUZHFFdmxKVlRVRjJfWXNzSUVZYTMwODRuVnI5T3RMR3k4ek9BYS1LQ1l1T2c?oc=5",
-      "description": "AI 浪潮下的PCB 供應鏈革命：M9 時代來襲！CCL、玻纖布、載板台股受惠股解析｜產業熱話｜豐雲學堂2025 年 11 月&nbsp;&nbsp;sinotrade.com.tw",
-      "published": "2025-11-07 08:13",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "美股收低：科技股估值過高與經濟疑慮拖累大盤 - 優分析UAnalyze",
-      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE45Q1VRX2o2VUtzdEdDTTNrakUxYm9GMlo0c1N1MnlLcElTMUZ3djNSUlFNcVQ4UDN0dGtxcV9Ea0R2TlNMTjRhSHFmWnJvMHY1UFJFOWtn?oc=5",
-      "description": "美股收低：科技股估值過高與經濟疑慮拖累大盤&nbsp;&nbsp;優分析UAnalyze",
-      "published": "2025-11-07 08:00",
+      "title": "11月7日 五件財經大事搶先看 - 經濟日報",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFA0SEkyTE1JT3FNcWJKWmhYeldxWFZnQVMxMWpmWXRFQzdCRkZreUdBY1NiVDZlWmFKMjk2RGV0dko2STNWRV9rcnBtNi1WdDlmYnBXal9GUmYtQdIBX0FVX3lxTFBkRjhsWnk2VmI2eFN0T1dOODFWS2xaOHdFSmRwRTVxRm14LU5BU0Z5LTJSTUx3ZE5HZWs3dU0zOUhsVUdZWE5GckxDbG1TYXlZS0R6UGxqOUtya0ZWSGRR?oc=5",
+      "description": "11月7日 五件財經大事搶先看&nbsp;&nbsp;經濟日報",
+      "published": "2025-11-07 03:46",
       "source": "news.google.com",
       "category": "財經"
     },
     {
-      "title": "擷發科技軟硬整合 全力搶攻北美市場 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMinAJBVV95cUxNeHdRdFRpV1R1UzA4UmNNTjVVakVGS2pTaC1TZlZjOUl4R01fTklKN0NKVTBWTUtqaTVTNFpxOU5iQjlGcDc3dmdlYnNWTUtQSG9UeG9BbDB1OUJJVEV4V096aG0wVHhqdFNqRVoxTTZDQTQtbnJoY1FaNl94ck5rMk04T2RibGh4dTRRaUU1WGpuLWRxdGFqWmZPUGUtLTR1TWNpUzQtNkJsZmxoSzlVMERKUGlyZFBRRmxoWjVPM1NCZDJYY0dtbzZvOU9FYW5OSm9tcEp3UllfUUVOQ3VWSlVwbmsydU1BUHlMZHdaWklSckxnYmxuYU8zX1lpNVRfWk5qX2NWUlBvVDI2alhWdGo2RUM3MERQRy1RbQ?oc=5",
-      "description": "擷發科技軟硬整合 全力搶攻北美市場&nbsp;&nbsp;Yahoo股市",
-      "published": "2025-11-07 07:49",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "AI 教父辛頓示警：人工智慧數年內或超越人類，失業與貧富差距恐加劇 - TechNews 科技新報",
-      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNOVhpMXo2Yk1PVlc1SUdkTlVubUZkcU1LeXRSNG5vYzRaM2dBcmtQUFNEajZTNk5RTk1zWVhQTXNMdlVxS3FfUVY3YktYaUg2VHZSSDd5dExpcldEQnZSQWt4SWU2S3M5eUFLcDhsTHRHektYcDV3TFc4RWF1aXhkdTcwSGFGYngwQkR0S0NHN0lCRE1ROWpJVnF4bEZ6ZDlOVW04SlBRVk14M0U?oc=5",
-      "description": "AI 教父辛頓示警：人工智慧數年內或超越人類，失業與貧富差距恐加劇&nbsp;&nbsp;TechNews 科技新報",
-      "published": "2025-11-07 07:38",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "劍指輝達！ Google最強AI晶片TPU Ironwood、為「最嚴苛工作負載」而生 - 奇摩新聞",
-      "link": "https://news.google.com/rss/articles/CBMisgJBVV95cUxQa3p2T01XcGhUQzR0c09PU28zVVB0M1ZFOFQySlhqM2Fka0pJYTVZRFdYYURJQlZqcExVWEFwYXFIUld4SUllRzFtMUZ0djQ5ay1yQ1c3OVNkVS1ldjVBUmYwQnNxRC0tVXYtR3ZySnBoMnh1OWlDdTZneGJMQl9saWNiLWVTZmxISEVkbWJPY184X2RuanNTNlNhTVV5YldFT1BCRjhlVVJxcTdDU0c1a3Z6QUlKQjJ0SDZBdGJYZTBDRmZCeFJZWmp1VnhYZFdpMjBWZWpPMFptWlZTNUhFeTRLLUxDYlhuankzM0p5UnJmRjAydngxRDZXSl92NUxMYW1CT09YamVkNG9JWmktTWVQNXdDMVZVQVkta0Q3UmdCamxYLVEweTRwM3d4bE8wTUE?oc=5",
-      "description": "劍指輝達！ Google最強AI晶片TPU Ironwood、為「最嚴苛工作負載」而生&nbsp;&nbsp;奇摩新聞",
-      "published": "2025-11-07 07:37",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "電影《國寶》好看嗎？日本現象級神片10大亮點深度解析，票房突破164億、角逐2026奧斯卡國際影片 - Marie Claire 美麗佳人",
-      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9zSXZwZEtLQVhTUlF2Wkt0VnY3dl9RUVFKRFNUd1hSMzh4WkVzVFNNb2hJOVJvb3Q5bFJOdF9lakc2UkVlWVk1SVB5WDhNSmxxUGlNaFRrMmdWVzRNRVJ5ZlZTclVsbzBMZHVUU2dTSXM3V05IQ0otYWln?oc=5",
-      "description": "電影《國寶》好看嗎？日本現象級神片10大亮點深度解析，票房突破164億、角逐2026奧斯卡國際影片&nbsp;&nbsp;Marie Claire 美麗佳人",
-      "published": "2025-11-07 07:02",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "投資台灣3大方案逾半未完成 監院：經濟部、國發基金須檢討 - 奇摩新聞",
-      "link": "https://news.google.com/rss/articles/CBMi-AJBVV95cUxOMlNtaUpzZWtNWDRsOE1tbVpDMVFjQV9fYzFaelJ4ajRqMFotN21UTjAtdzZVZzZoSjZJUWRYWGxoSjFrOW4xck9BZEQ2VWpoRnB2VXczWEtjdVdZUjlKaVFQbmVKNFlFY0lCWWF5dUlFdDNwSWxpV291UFEwZUV5ZzFTdTcwVi1Ia3I1OWYwaWpGWU1WWmsyc2xyX1hMSXlGX3ZPMWQ2U2ttQmVrbzQ1cUZYS0NHQnpVZ01EaE5JLTA4MGlxYWxnRE9ZSnNaNWFqVm1ZeVNvVjhWX1BYc2tyUkpleGl0TjllS1NJRUpTQUI2Y1R1SlBON3BjYXp6cHplNmV2VjEyanRSNEFLYjhENHhkbmx1MW5NaXEwQjkzSzBqMUJ6Q0thZjJTcVBNWDdES0ExRHRWS2RMZFdUbTh2QTlYVl8waGJ1bEp1MUhzMk50VWZTbkM3TDNsNmV6emg1aXZfVDFQeW9hTlBKZThFSUVYTTJmM2wt?oc=5",
-      "description": "投資台灣3大方案逾半未完成 監院：經濟部、國發基金須檢討&nbsp;&nbsp;奇摩新聞",
-      "published": "2025-11-07 06:54",
-      "source": "news.google.com",
-      "category": "財經"
-    },
-    {
-      "title": "11月7日重要財經行事曆 - 經濟日報",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1OY3BlbmZIVmhpQ1JzTGgtQ0hkN2ZXZHZYaWRNcEs1VzR4SWFQdEY4Tm9reV9vczkwM04xaUlSMEp2LXlHbE9OYmZmUGplam9RaTR3Q3UtYlE2QdIBX0FVX3lxTE5DUDdHYXJCRGVuOWVib1VOY3BWT2FKdWlTTWZ3VEtkN3BYVExOV0ZaR1RIUXBHaWxoYkFQYmVuVG54aEVydmpndUE4XzdpLWIzd1ZZUnBKTkE2UzhIcUE0?oc=5",
-      "description": "11月7日重要財經行事曆&nbsp;&nbsp;經濟日報",
-      "published": "2025-11-07 06:51",
-      "source": "news.google.com",
-      "category": "財經"
-    },
-    {
-      "title": "多重經濟隱憂凸顯！美股道瓊挫跌近400點 - 奇摩新聞",
-      "link": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPYlRIUS11RVVEb2JMXzcxNFgxN1EtY2NvQWVBYTNoVkFqRHRXZm1rdVJLQ3UydF9mTU9lUHNpaTBUdzNtRXJzeVk2YWg5d0RBSUNwa0VGTDZrSkQteTZhWFFGaXlpaFM2akd0djNjNEdNRlZVbUtSOWp1alNjcjIxcjBfZ3IyRXZxVmt6UUo4M1ZWQ2ZzQVphRUlnNm5GSThQTTREaW1GTVptS2sxVnNoNk1iejFsWUd5VFRWbjMxLVp3cm5PNnJ4YXcwWU5TVEYyMkdLeG5FQ3dRNC1aUFJzV1MtSEstbmV4WnRpbDJQSHF4dlN4ekhTWV95aVNiaFZLV2tRTjhZZDdXOWhhS294cnF6c1ZpQzV5?oc=5",
-      "description": "多重經濟隱憂凸顯！美股道瓊挫跌近400點&nbsp;&nbsp;奇摩新聞",
-      "published": "2025-11-07 06:06",
-      "source": "news.google.com",
-      "category": "財經"
-    },
-    {
-      "title": "台大研究獲獎 AI預測抗藥性 錯誤率 - 奇摩新聞",
-      "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPZ2dZZHBDSmx3LTJMdjYtTWhQN1lMNzdCd1VGSUFNdndJV3VnNy1VUW9FNVExOEI1SWNBSlpGUTlJejBta0RTZEVuU3MtS3pTampMRVpkT2lJeF9zelB6bUF1dFRfV3BIb1l4Sks0SmhqOVBIZ3Z1UEJQOVNxenFYOXNPLUROOFJzZ3FlTndBWTY4VFk3WVRLam9kYkEwd0JqcTE4MFE1MnNGRVJwZV9pb0EyUG81Y3NXRk1sNjZzRmpQLWdMY0g2WmZ3N3BROGpLRVpxVjE3QjNzVzg5azVzMlhQNXZLWWpEN2M0YmJLVFZuT3lRY3l6UUJTY2ZnaFpr?oc=5",
-      "description": "台大研究獲獎 AI預測抗藥性 錯誤率&nbsp;&nbsp;奇摩新聞",
-      "published": "2025-11-07 06:00",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "寵物情緣／電影《左撇子女孩》中「咕咕」超搶鏡 導演鄒時擎童年寵物不是狐獴竟是「牠」 - 奇摩新聞",
-      "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOVVVQd1JTWFExZ1Q4N1NJTWlKb0ZwRFJCVTVjVVpDRTE4SWF1ZS1LM3hOV2dQcGRuRlRGc0ZmWHkyUmtrOG9MMW5kRUZqbHFXaWpOXzBLcnZuaHloblBpd2VqVGJaekNSRVEtZUphMkRMVF95V0JwbjFUcjFiVndIU3JMRmhjVVR3dFBybGpvZHhNV0pyYktWM2g3UjNhQi1GZ24yTEc5YjVQYXd4NHl0WWlXd0FxeHk2anJ6ckxBTTF3TEY2YVQ1RkV1b2VBcmJjX1NRWTRMVFBZdFBqcFlqN0R1OXBnajZkaks0N3BOZVZDbFRWVjhrLXMyVTliVGNK?oc=5",
-      "description": "寵物情緣／電影《左撇子女孩》中「咕咕」超搶鏡 導演鄒時擎童年寵物不是狐獴竟是「牠」&nbsp;&nbsp;奇摩新聞",
-      "published": "2025-11-07 06:00",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "美股收盤》估值過高疑慮再起！道瓊跌近400點 台積電ADR連3黑 - 自由財經",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1KcG93a2paRmwtbEJtYzJMdFhuc3N1TkVJbUlsTUdVQ1pvSGhTQVVXTEMtNG5oYVBOYVlMYTVIOV8xeUxqaDczWFljUUlYTWYwVElVeDJiM1FGM21xcmpF0gFkQVVfeXFMTS1MLXAwY1Nyb29WQWJXa0RuTExaa3FpLU50bUpVRUFZc2QwY3RvOXpGdEdNUFhYRElzTFFzMjhmeDlRSFBmb3ZOWkFCOWY1ZWlRWjJYNk9ORXV4R2x0R2lLQ1ZJNg?oc=5",
-      "description": "美股收盤》估值過高疑慮再起！道瓊跌近400點 台積電ADR連3黑&nbsp;&nbsp;自由財經",
-      "published": "2025-11-07 05:43",
-      "source": "news.google.com",
-      "category": "財經"
-    },
-    {
-      "title": "新北市表揚年度傑出身心障礙者》視障者徐承邦發行專輯 不放棄音樂夢 - 自由時報",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBLRTlsakRzVF85WEVWaVlkN3NZUG14VXR0YURjTHB5S0pLNlEtVzliblltLW95UGRiT3JCelpMbFhjaUNmYTVEZFZhdGZ0T1FuRVgydWZhemtCeVHSAWBBVV95cUxPSnJHakJxRW9NNzY5RWtKN0dWVEpzQnF2VUlwN0h1VHY3UlpLWUx2a3d1NnAtVkR6STFQZW43TDlWTFhWcGRSTGtNb2NHeG9nbG4ySFR2NkJaZVVXTjJhelo?oc=5",
-      "description": "新北市表揚年度傑出身心障礙者》視障者徐承邦發行專輯 不放棄音樂夢&nbsp;&nbsp;自由時報",
-      "published": "2025-11-07 05:30",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "2025金馬影展今正式開鑼 電影《大濛》揭開序幕 - 鏡週刊Mirror Media",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9jY0NTV2hzTUVqa01POU1wV1dxYUxVandLa2JPX3Y3TklLV3BTZ2tmRGhTOF9sN2FnME5CVWhtaUpIMXdQX0hLbVJTQnJZY0NWRmFWSGlPZHdpOTDSAWBBVV95cUxQeVR1WDk0NDFpQk9mUEh1WWNzenAtOFVkYzhzUXRPa2NYdVR3NXh6MXZueE1CY0dhQTEyQ1JyTXRSYXpLZmdDY19hUV8xbWtEQWFOMEQ5STQ5YmtiMTM1SGo?oc=5",
-      "description": "2025金馬影展今正式開鑼 電影《大濛》揭開序幕&nbsp;&nbsp;鏡週刊Mirror Media",
-      "published": "2025-11-07 05:26",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "英央行：AI拉高科技股估值若泡沫破裂恐影響全球需求| 全球財經| 全球 - 聯合新聞網",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9ROGViUzhyeV9vekZtOGo1ZTRZQmhITjZNYnRYczZGMUxEaW4tTVVqT2Q5MTFhUGFKZXF0OUotRzE5OFJDcW1kZWVoSk1MeXJW?oc=5",
-      "description": "英央行：AI拉高科技股估值若泡沫破裂恐影響全球需求| 全球財經| 全球&nbsp;&nbsp;聯合新聞網",
-      "published": "2025-11-07 05:20",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "【袁志峰專欄】中港股市升勢可持續 - news.cnyes.com",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9sUzlfMTQxVlpEc1hsTHlKaktrTU4yQmdjcTdJd3R3YUE5S2x6cUZaUXhXb2VxNHVaZ1phS0RRVlFYN2tGZGdVNkd5NlZWR0k?oc=5",
-      "description": "【袁志峰專欄】中港股市升勢可持續&nbsp;&nbsp;news.cnyes.com",
-      "published": "2025-11-07 04:51",
-      "source": "news.google.com",
-      "category": "財經"
-    },
-    {
-      "title": "黃仁勳：中國將贏得 AI 競賽 - 經濟日報",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5UWTZIQ09KcDZmRUxQQlZTRHl4Uzc4Q1k2Mnl6MnRjclBnU2FJWFRWajVmV2xYYVZuQUxVUVozXzNvb0R1T2xVWEk5TU9yV0xtanJyWThyWjNzZ9IBX0FVX3lxTE5LcjNLR3pSOW1XWEptMkkzREFHRTFXZ09DUEU5eGtrdWFsOXNPdkJQbXJUNVB1bjVZN1p5VkRSV1pmYzhwYmhzVDIza3lYa0FQY1lnZFQxSGE0U2UxbkN3?oc=5",
-      "description": "黃仁勳：中國將贏得 AI 競賽&nbsp;&nbsp;經濟日報",
-      "published": "2025-11-07 03:09",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "彭金隆看高雄專區金融史最大示範案- 日報 - 工商時報",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9kT3A1SUlQaW1Tdl9DQUpnYlhPXzl1S3N4QzMtb1dOZFRxU2Q1Tm1XaTNsTlNIZE1pZnYwMjFzeDJqay1JeGlBTEl3S1pkZHhQUm1ZZTUteXVETFZvXzFV?oc=5",
-      "description": "彭金隆看高雄專區金融史最大示範案- 日報&nbsp;&nbsp;工商時報",
-      "published": "2025-11-07 03:00",
-      "source": "news.google.com",
-      "category": "財經"
-    },
-    {
-      "title": "《麥可傑克森》傳記電影2026年上映！親侄子神還原MJ，5大亮點一次看 - Marie Claire 美麗佳人",
-      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQbkp6RmNwQ2YteVVKTHh4bE5RZ3pGUEdwQmdpWHVFSU9xQlFCbzRBaVlBd3llb05ScG9IeTlYeUlJZXB2VXNCZTJNNWUxMmxCaktUQy1qWDFMQ1BBSHU5WUVSbmc5Mm1HeGpXeVZtUVJ0dmlncy1jM0pkclVxNGxaRFQ2TFQ?oc=5",
-      "description": "《麥可傑克森》傳記電影2026年上映！親侄子神還原MJ，5大亮點一次看&nbsp;&nbsp;Marie Claire 美麗佳人",
-      "published": "2025-11-07 02:41",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "成功可以不擇手段？電影《自殺通告》影評：你會違反道德爭取高分嗎？ - 奇摩新聞",
-      "link": "https://news.google.com/rss/articles/CBMi0wNBVV95cUxPSGpOZHgyZm5VZFRtdlRkbW5FRDFiamVyT2hUT1VBOTJOcVNXTnBqYlRKRTQtUEktUHAzN1VYR0hfdUFQbkFKYmduYnFHeG9YcEV1NzBsQ1A2UDF4NVVKVnBLMkUyUEN2RXAwRWVwVjAxWldEbFFxZHAwRzNPVF9Rb0pUa015Qm0xczZOaXJ4T3YzdGRtdXA1VFFBY3hyNmlVSHdJQl9ldXVzRXg3WUlKdm5UWTE2dXFtRGRDZmQ4WGE1QjlBQzFENjMzNEp3cTN0ajlNN1JRV3BnSzk2YVJhRFdjWmhUalZrcVh1dGExNUt5TXhEcnhzUktkVktIWW5mRjNaTjhGMllkVTFONGJLczU2U3hVSTlsUGJJeE1UdWtfSkNOVm5pbDRBRFNCaWR5Q3RUa0d0ZWNPMzFicXN6aDlzN0RmeTVMSUVVLWVtbFRZUjdOaUs3MHBGWVVaRWNEckV1c0s4WVBjQ1NPNkxMZEZIZ0dvMUIyalViQzhOSkVXamxfSmJ5UkJKaHF0SF85Xzh5ckxQbDhpY19TQ3hKSENsWDd1SW9HQzg3ZHZ5V1FjMUJWdDFEVDU2WmpYUTJIM2pwWVhvVWN4UkN6c1pMb0Z3Yw?oc=5",
-      "description": "成功可以不擇手段？電影《自殺通告》影評：你會違反道德爭取高分嗎？&nbsp;&nbsp;奇摩新聞",
-      "published": "2025-11-07 01:11",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "《私刑教育》導演打造「麥可傑克森」傳記片《Michael》首支預告曝光！迎接明年大銀幕音樂盛會 - 玩具人 TOY PEOPLE",
-      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9IZlE5eUd1UlBkUGJpS2tIaVU2MjZpRy1rV0VXRWFyLTZBbGgwbWw3UXFjZHRmVEtmOGlpLXFNZUxfZzMwbnZ2SEhBUHU?oc=5",
-      "description": "《私刑教育》導演打造「麥可傑克森」傳記片《Michael》首支預告曝光！迎接明年大銀幕音樂盛會&nbsp;&nbsp;玩具人 TOY PEOPLE",
-      "published": "2025-11-06 22:38",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "別把AI當醫師台大研究：3大生成式AI表現不及格| 生活 - 中央社 CNA",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFAxQVd6M1RZS0o3R003ZkI3V1NiZ3VmN0l4VmVmcEtkZER0OFdzRDVxMU9LQ29vTDVBYXZ4b1BKLVZ2Yjhrc2E3d3FwaTk5dm0zb1laNXJTSVNHX2xJTDJR?oc=5",
-      "description": "別把AI當醫師台大研究：3大生成式AI表現不及格| 生活&nbsp;&nbsp;中央社 CNA",
-      "published": "2025-11-06 22:13",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "年底好電影大爆發！《暴蜂尼亞》《普通的孩子》《終極戰士》系列第七彈都上映！｜11/06新片快報 - 奇摩新聞",
-      "link": "https://news.google.com/rss/articles/CBMi0ARBVV95cUxOZVF5dDJxbGswaDhWektyTGhDOFJ1TXJHVHNvRE10TW94cWVhRVpZanh3T29yY0Nxb3N0SFVxX0JkSFV2MGxqX1hyN0NDS3ZYODRWbk45bE80bkZkOXZrdG0yc044eHY0Q05TV2hiX2FtTG9JZkZGc1JUWHpvYjhJdFF2ZWFmS3pmY3VJdEJlU2J1R1RVSXRnQXFiNVotQVJRWkw3N09tSU1hbXlycjdEVVdIeVdBd0NxOWFPdGtacXdhU3hPWnA0YXAwRHd6WVdFZ2VvWTFlMlVBS2p4M1VBQ0ZnbTJHalJnTzV3YlJXd0xna1BjY1NQQ3BUaDJyVFBpQmRzSG9FcnlyTUlvUUlueTJsdjhyTnlxVV9xSVlpNC1UaURaZlVQWHF0SWtOMDRXd01FZVVKQzZoVU1QQWRlNDdiOUpVR19Ba0JDLU5ZZFJKZUlaSHh1aGowT2RseE1HR3A0MVpwdzRGZVhueTJLdHJNZGxUc0xXd1VNM2NMZFdSVXZIRnlzdnkxZDRwSWpQaEJ1OGUzV2U4bEdvakQ4RXJjZW91Zk5PX21GZEhSeFRBMnoxUC1hcEJLN2x2czdWYWFrUjZiamZhcnF3ZVFncUN6VXUtMDU5alFxNzN3bzh1NEJpSDItR1RYWU5GLVRHTDdDdUFrd2YwOWJxclRKbDJNdmNhMXhfNmVMN2pCdVhsU3RucmhlZWxnUzlabDdtcmhibFNjbTNJMW9OMmRWSF9qc1djUGpobkJkWVZRVTVwTnFlaUdVbmktYmEtZ0Z1?oc=5",
-      "description": "年底好電影大爆發！《暴蜂尼亞》《普通的孩子》《終極戰士》系列第七彈都上映！｜11/06新片快報&nbsp;&nbsp;奇摩新聞",
-      "published": "2025-11-06 21:36",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "邱鋒澤從「迷失」變「覺醒」透過音樂實踐「馬拉松式人生哲學」 - 墨新聞-MORE News",
-      "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE13cnBmRjZXY1J5SE9Yb3duc2NCcC1ZcjlOTkZOWFQtR01GdXNhMFNLcGdqZHdvVjVrMTRKd2FIekNnUQ?oc=5",
-      "description": "邱鋒澤從「迷失」變「覺醒」透過音樂實踐「馬拉松式人生哲學」&nbsp;&nbsp;墨新聞-MORE News",
-      "published": "2025-11-06 20:47",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "雪景三宮格超夯AI圖，Gemini也能免費做？完整教學 - 遠見雜誌",
-      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9OdVVKV0JaUHUyTzdUeWRXS1JiWVlvSmY0a1pUc0VBc1JmaHF1YlhvUWR3ZjE0VXF1a0xpR0JXQUs4dDdNblpueHdfenNTQQ?oc=5",
-      "description": "雪景三宮格超夯AI圖，Gemini也能免費做？完整教學&nbsp;&nbsp;遠見雜誌",
-      "published": "2025-11-06 18:15",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "第 23 屆 CASH 金帆音樂獎｜方大同憑《才二十三》勇奪五項大獎為歷屆首位囊括最多獎項音樂人 - YAHOO HK - NEWS",
-      "link": "https://news.google.com/rss/articles/CBMiqgRBVV95cUxNN3NXR1BFWW5LUUNSQWdxZmREVVRaVmxib1RVQW1vQjdQWlFqSTR4NDctU3dKQXJISWEzcTJjMkhob0JLNnFONDZ4Nlotby1xSVBUTFBzVS1CNEhpUFNVbVFMV3NkekctcDBxWmI1ZTMzdno3VUU4UnR6WDlERDFCTGNsTVVYNXdFSzZUSGpreFZaZDhIczJUdlFjRGw0dmk5MXQzdnRpbmMtRjhsei0wREgyQWhBSU80akt1SFUwY0VfVGVlOTEtVVNRM2dDbVFpWGR6MGUzNWFsejl6U1BQSzJPdkxITk1WS3VmSGZGMFlleFZKemFRSHRVY3QwQ0ljZTZQTlUyNEd5T3FMazM1MUFscGltQ005X3Y1bE9DeVk2Vzd1UlpOQUNES1VoblZHY1pyT2lCYzN0aVlhVUdrdGJMclJQZ2NPNDh2NEY0aVpRR19tY3hwM2ZwbXpXVThGTWVKVC1YNGpNZERsNjduQWkzY3ExcE14aHB0NV9zLW43OGNpS3JwZmdOSVBUOG1NZF9rR1hpQWMxMy1GeFpnd1o4a0VDUFNYUzNvM3lDWk91cGc0V2RiMk1HZGpPTmJYRmtMZEJ0WlJZaXZGTzEycmZqMkhVekdaR3JQWGxmLWh3MnZvXzRuWjJUT0w1RV9CQm5KTHdVN1UtQkxUUXE5TTc2Sk43N1FpU2taUVpfMUZBWk5JQk1qOUxDaGdoR1NJNFJqYi0yUUJwZw?oc=5",
-      "description": "第 23 屆 CASH 金帆音樂獎｜方大同憑《才二十三》勇奪五項大獎為歷屆首位囊括最多獎項音樂人&nbsp;&nbsp;YAHOO HK - NEWS",
-      "published": "2025-11-06 18:13",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "2025全台冬日音樂祭總整理｜11-12月活動卡司、購票懶人包 - 奇摩新聞",
-      "link": "https://news.google.com/rss/articles/CBMi0gJBVV95cUxNcGQ4U1lFTlZNSm1xYlI1SVJOZGVDMHA2YTNFbkdsS2RkVmVLeF9jZG9DdjBfWU0zcFdiM3N5VF9iZVZNUmlqdXNsMzB4dVJsSEd1dG8ta01VcFk5TDZZcndRWlFVaVBVYnpCcEJma3pITUVPMnRUbk4wRWhheFlKeDVKV1JmSGtqQ0MxRmlreDFyeTJWOHVJUWEwWkNPc0xFeEsxNlZQN0RhanAxWnFQVk9HdXl6RkhJSFpLclBvaDQ3OHlhaWx2eFdSSzVOdVhKZWpqMmNjdElMakNvUGE0X0NJSHRwNmY5ZFJwdjBDUEZLR3NCMmxfOUNNSGNhQ0w1MWNJSXdFbXNKeUhxSjdjOXJqbzJ5Y3BDb1ZwMF9GZ2J6X2Y4VGdia0l1eE1vd0RMbnQ4dmp1VlI5U2ZTSWxsM2RyYzhIWnYtNDFvVWlFV0Zkdw?oc=5",
-      "description": "2025全台冬日音樂祭總整理｜11-12月活動卡司、購票懶人包&nbsp;&nbsp;奇摩新聞",
-      "published": "2025-11-06 18:09",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "加拿大華語音樂節揭幕台灣音樂人母語唱出身分認同| 文化 - 中央社 CNA",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5IZWZSR3FsaW5LdkhJTldjbHZyVEp0cnhjZW12MUt5RGhfbHVzaFNWQTMwY3g0dlQwWVU2dFBFWVNTYjl1eGE0WUxOdTFkVklXWU5xdmduZlEtWkxTMzZV?oc=5",
-      "description": "加拿大華語音樂節揭幕台灣音樂人母語唱出身分認同| 文化&nbsp;&nbsp;中央社 CNA",
-      "published": "2025-11-06 16:47",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "台東無圍牆巨蛋音樂會 讓山海成為舞台...城市化作樂章 - ETtoday新聞雲",
-      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBMN3d0WjNEb0M5ZEtsRU5vNDh2UWt6eFg5dDdKeHYxRWVEby1yQl9JODBhVzFrZ2lzY0d1bEF0bW90c1hHamFOOUFkN0Y4MUxlVV85ZTBTYWNBLUNLNFHSAWhBVV95cUxPNWRGcE96SlBJUEpKNUhDOEJ3dG5HeDhqV1Y3LTQ2VHdRaE5fMGVRR012RXhmS1JQcWhLVWNabTZua2dLSFhkT2xQNnFRZVdxWEltTUl2TDN4bzBFb19UbHZ1TjdWNXA5eg?oc=5",
-      "description": "台東無圍牆巨蛋音樂會 讓山海成為舞台...城市化作樂章&nbsp;&nbsp;ETtoday新聞雲",
-      "published": "2025-11-06 16:03",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "攜「守」太魯閣音樂季最終場15日上下午台地演出| 地方 - 中央社 CNA",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1odFgtbk1sV0RVbnA5N3lTUzRWRnlJTzZ6dWh4T2ZjY2JJWGdTb3dCeDVlWVN1bGVxQW90cUcxcmZyY1dUdHRiQVFhbWx4T3lTS0p6MjhnVVhuM29KX3c0?oc=5",
-      "description": "攜「守」太魯閣音樂季最終場15日上下午台地演出| 地方&nbsp;&nbsp;中央社 CNA",
-      "published": "2025-11-06 13:43",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "股市大逃殺台積電跳水大盤重挫399點/普發一萬撐內需觀光股逆襲掀漲潮/併購題材點火中石化爆量25萬張奪人氣王｜Yahoo財經掃描 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi3AVBVV95cUxQZ2R2TVBXQUMxVWtDMVBmVDZReGM1X1dDUjhHSXRPZFhsRGExZ2w1Vk1DZEwtdjVmM252eWVJR2tDMm42TnE1cDh1eTBwMGZWalNfZ0hnRE9HT0dIbTgyVWJra1dSNWlRcTFYQmloWi1PTUxvV2FBdmtQRUNGRTJ4eF9HZHRJdHhBWjBEUWpDUmVEeFo2Wk5yU040Z251VjVsZUFYbXJDUE4tUmU4WXlMVmdhc2pmRVBmWmxTVWY0Ui1xN1ZHLUFWeElETlBBYm5kdjZYdGJ3Z1FYQWcyVGhyd2lJc0VySFM4c3Ntb0NROGxvWkJFS25BaGVrcWxGQUgzd04wUTZDc0FBbzRkRU1YRHdtRklrdXI1d2h2cFA3NXAtSUVUUnhvWlduVGdtdllCSFRrcXE5NFhtRzhjNFlwb09fdVMzZzVLZDF0VFVVSHk0QzNvYndBX05pd01ralZPMW12ZWVTc0RMSTlWdFZOUHlHT1JfQmxWWGI5SE52aEZqTDExNFV3YjJ2b2tubnBFemliLVVvQk1JN3pWalBLUk1uUXowalBEeWp5SEU3Z2tKVjRab1J6Z2s4RjJZRUY1OHlKUGVVam1WNE1weDBqbEptOGQwT3QwcTJuNEFUMXhyTUxibFF5SFFHSWhIYmgydlJ5aWJ3dDdKYm1wMHRPOThrNldyTkstSTZTeDZyNlAxNkdTQzEtVUt2Wk1ha180TjFTa0dlWUVSWTdGckNiYVFOQmlhcTlsejBRRDVSNzhSNGJubWZuemlpX1FCRzFPMV90eGEyN2hHc1hrbHpTYS1nSC1hbzN0b3loQnJmX0labmdSMFNTTWstRFR2V1EwLVpIa2lad2xEb2twS3JsbDd6NXVZaW1LUk1JRC1sTWFickp6TDYyZ09GemV1OENFUENVbVV6NXJ2RHlGU2hOanZOd0lfeTdiU2hxWXhhSUdQcUdSUzhaM0hsUUY?oc=5",
-      "description": "股市大逃殺台積電跳水大盤重挫399點/普發一萬撐內需觀光股逆襲掀漲潮/併購題材點火中石化爆量25萬張奪人氣王｜Yahoo財經掃描&nbsp;&nbsp;Yahoo股市",
-      "published": "2025-11-05 17:25",
-      "source": "news.google.com",
-      "category": "財經"
-    },
-    {
-      "title": "11月4日 五件財經大事搶先看 - 經濟日報",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB2elZpLXFNX3VNaGpDOG5KNnhMV1RBUzN4ZGd1cU5XYVU4MzhOM0FtN0RKcXNYSjIwR2V4UUlSQjY1M1pSV2t6RlRyTHJodnB5ZE4zWU5NUGYzQdIBX0FVX3lxTE5uT2M1T3JMZXV4U0pnaE1sTmVTZU9VcDJ5UGVKRzRIVF9UdzlzNWo0aUtLbFNoTENicm9xQ0Y2R09IV1hZd1FLaFdZV2RSODlUR1N0bmxhQXZ0eGJuYm9Z?oc=5",
-      "description": "11月4日 五件財經大事搶先看&nbsp;&nbsp;經濟日報",
-      "published": "2025-11-05 16:00",
-      "source": "news.google.com",
-      "category": "財經"
-    },
-    {
-      "title": "股市恐全面回檔20%？AI科技股倒一片 專家曝2未爆彈：巴菲特又笑了 - 奇摩新聞",
-      "link": "https://news.google.com/rss/articles/CBMi_wJBVV95cUxNUFQ1SG0wNGlEMTJTRVcyTG9RRG1GZ1NtNjVPU2k2VnE3WHNSeFZGU21OaFlRcm1pRXJwSmd3emswdHMwdGJBbUdOdjg5UUgzNWFmQklwMVdEMXdLanZUY1U2X0ptWmJ0d0RBYlBzV1J5b3p0UXVEdXdWMDdOV2FDMUJYQ1gxWlV5ZFlMaElKYXd6cDVjZFNKU3ZlWEFNQjRDZERVajVVQVR2S1hsb0phVzB5RzN5dDYyQk05RWVnTTZhNFd2VXp5V1owV3lBSkhqbFVCRUJTSXp4QzVCUTZhZDVBWklwQWZNYlRQbVBTcHVDWFp0SFdIb3czM3NXSGNNNWswbmg1YldaZ3RWa2R0RmZQXzFic1JiZWctYzhnQ29PMG1PMS1wVjRxcjFXdWR6UHJNZmo1dTk1emxiZS1vYUFYUG5WZG1rU20tY1dpREMyaVNLTzR0bWtWVXU0VWFGY0lLQjZuUENyOFMyemtMYmJrdzQxREZDQnZfV0xHWQ?oc=5",
-      "description": "股市恐全面回檔20%？AI科技股倒一片 專家曝2未爆彈：巴菲特又笑了&nbsp;&nbsp;奇摩新聞",
-      "published": "2025-11-05 14:23",
+      "title": "明年經濟成長率恐「不保三」！台經院點3原因:從6％變2.6％ - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMigANBVV95cUxQM1oxWVcyTkVNV3JWZEttbVZvdE5UYXJKSUdSSFZwUlpORVBCS21pWEpkYjRVTXVYQTZzWGhVNW1VcnhEa2N4RFZvMi1yUzRHX21ieXdNcXdNYXRTV1owTDVrMnBDeW5nenc1X3dOUVNCVTRaenNVc29sdlhURU8xV09tTEQzX3NFWUUtcFU4a21TUEl6VjAxTzJIVUxXQkNrNnBMNHNheEFITVdyMGRSN3JoZ0VXd0tLUUctLWV5QjR6NmlxRWhQRDBoRzB2WXNzTXFudndmaHoxTGd2aTA4SG5XYzU3TmtCa0FzNjdZVk4zS05BX3lZbTVkck9kWm5WZVVQN1ZteHJVa0g1Y2xITG9kNTRIVGZJLW1MSkItVUdFWVlGWGRaWXJLb1FpMi1fT242RHo1OXgtU0dGUThNQ1FSWEh4MV9tOUx4Tm9tZXNXVTBER2d4enJiNGZIbUNCSDd3Q21GVVlKaVNmT2duRm1fZzdFY2hNTk5BLU9RUTg?oc=5",
+      "description": "明年經濟成長率恐「不保三」！台經院點3原因:從6％變2.6％&nbsp;&nbsp;Yahoo股市",
+      "published": "2025-11-06 11:46",
       "source": "news.google.com",
       "category": "財經"
     },
@@ -350,22 +366,6 @@
       "published": "2025-11-05 13:37",
       "source": "news.google.com",
       "category": "財經"
-    },
-    {
-      "title": "多頭將告一段落？高盛、摩根士丹利示警：全球股市恐回檔10%-20% - news.cnyes.com",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBpakhsS25HME1aZi1CR0VleUZmYWtneC1pS25lUWVLbXRlUklyNms3bno2ZXVtS1VoSWRNOVVsYUZHb25RYVhzV29xeWo3ZFE?oc=5",
-      "description": "多頭將告一段落？高盛、摩根士丹利示警：全球股市恐回檔10%-20%&nbsp;&nbsp;news.cnyes.com",
-      "published": "2025-11-05 01:00",
-      "source": "news.google.com",
-      "category": "財經"
-    },
-    {
-      "title": "2025全台冬日音樂祭總整理｜11-12月活動卡司、購票懶人包 - 城市學",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1JTG1yVTdGbUR6NHZiVkhiN3ZNQWJ0WkRyLW4tZ1ZvVUJYejlOaFA5enpoWXlPQ0dSZmNKSkoyaXo1NlZ4RlZmYWlBbGFMU2s?oc=5",
-      "description": "2025全台冬日音樂祭總整理｜11-12月活動卡司、購票懶人包&nbsp;&nbsp;城市學",
-      "published": "2025-11-03 18:09",
-      "source": "news.google.com",
-      "category": "娛樂"
     }
   ]
 }
