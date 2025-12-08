@@ -436,6 +436,7 @@ class TwitterImageScraperSimple:
             ])
             
             image_urls = []  # 初始化變數
+            anti_crawl_keywords = ["cloudflare", "attention required", "captcha", "access denied", "verify you are human", "too many requests"]
             
             for url in urls_to_try:
                 print(f"🔗 嘗試 URL: {url}")
@@ -444,44 +445,41 @@ class TwitterImageScraperSimple:
                     self.driver.get(url)
                     time.sleep(12)
                     
-                    anti_crawl_keywords = ["cloudflare", "attention required", "captcha", "access denied", "verify you are human", "too many requests"]
-                    found_images = False
-                    for url in urls_to_try:
-                            print(f"🔗 嘗試 URL: {url}")
-                            try:
-                                self.driver.get(url)
-                                time.sleep(8)
-                                current_url = self.driver.current_url
-                                page_title = self.driver.title
-                                print(f"   當前 URL: {current_url}")
-                                print(f"   頁面標題: {page_title}")
-                                page_source = self.driver.page_source.lower()
-                                if any(k in page_source for k in anti_crawl_keywords):
-                                    print(f"   ⚠️ 防爬蟲偵測到關鍵字，自動切換下一個鏡像！")
-                                    continue
-                                if ("login" not in current_url.lower() and 
-                                    "signin" not in current_url.lower() and 
-                                    "suspended" not in page_title.lower() and
-                                    "error" not in page_title.lower()):
-                                    print("   ✅ 成功載入頁面")
-                                    page_length = len(self.driver.page_source)
-                                    print(f"   頁面內容長度: {page_length} 字元")
-                                    if page_length > 10000:
-                                        print("   📷 直接抓取初始載入的圖片內容")
-                                        image_urls = self.extract_image_urls()
-                                        if image_urls:
-                                            print(f"   在 {url} 找到 {len(image_urls)} 張圖片")
-                                            found_images = True
-                                            break
-                                        else:
-                                            print(f"   在 {url} 沒有找到圖片，嘗試下一個 URL")
-                                    else:
-                                        print(f"   頁面內容太少，可能載入失敗")
-                                else:
-                                    print(f"   頁面需要登入或有其他問題")
-                            except Exception as e:
-                                print(f"   載入 {url} 時發生錯誤: {e}")
-                                continue
+                    current_url = self.driver.current_url
+                    page_title = self.driver.title
+                    print(f"   當前 URL: {current_url}")
+                    print(f"   頁面標題: {page_title}")
+                    page_source = self.driver.page_source.lower()
+                    
+                    # 檢查防爬蟲和錯誤訊息
+                    if any(k in page_source for k in anti_crawl_keywords):
+                        print(f"   ⚠️ 防爬蟲偵測到關鍵字，自動切換下一個鏡像！")
+                        continue
+                    
+                    # 檢查 HTTP 錯誤碼 (403, 404 等) 和其他問題
+                    if any(error in page_title for error in ["403", "404", "500", "502", "503"]):
+                        print(f"   ⚠️ 服務器返回錯誤: {page_title}，自動切換下一個鏡像！")
+                        continue
+                    
+                    if ("login" not in current_url.lower() and 
+                        "signin" not in current_url.lower() and 
+                        "suspended" not in page_title.lower() and
+                        "error" not in page_title.lower()):
+                        print("   ✅ 成功載入頁面")
+                        page_length = len(self.driver.page_source)
+                        print(f"   頁面內容長度: {page_length} 字元")
+                        if page_length > 10000:
+                            print("   📷 直接抓取初始載入的圖片內容")
+                            image_urls = self.extract_image_urls()
+                            if image_urls:
+                                print(f"   在 {url} 找到 {len(image_urls)} 張圖片")
+                                break
+                            else:
+                                print(f"   在 {url} 沒有找到圖片，嘗試下一個 URL")
+                        else:
+                            print(f"   頁面內容太少，可能載入失敗，嘗試下一個 URL")
+                    else:
+                        print(f"   頁面需要登入或有其他問題，嘗試下一個 URL")
                 except Exception as e:
                     print(f"   載入 {url} 時發生錯誤: {e}")
                     continue
