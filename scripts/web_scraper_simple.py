@@ -121,7 +121,7 @@ class TwitterImageScraperSimple:
             print(f"❌ Chrome 瀏覽器驅動初始化失敗: {e}")
             return False
     
-    def build_nitter_search_url(self, username, start_date=None, end_date=None, nitter_instance="nitter.net"):
+    def build_nitter_search_url(self, username, start_date=None, end_date=None, nitter_instance="nitter.poast.org"):
         """建立 Nitter 搜尋 URL（支援日期區間）"""
         import urllib.parse
         # 建立搜尋查詢
@@ -409,10 +409,10 @@ class TwitterImageScraperSimple:
             if start_date or end_date:
                 print("📅 偵測到日期參數，將優先使用 Nitter 搜尋功能")
                 nitter_instances = [
-                    "nitter.net",
+                    "nitter.poast.org",
                     "nitter.it", 
                     "nitter.1d4.us",
-                    "nitter.poast.org",
+                    "nitter.net",
                     "nitter.privacydev.net"
                 ]
                 
@@ -423,10 +423,10 @@ class TwitterImageScraperSimple:
             # 加入一般的 URL
             urls_to_try.extend([
                 # Nitter 鏡像站（/media 結尾，加上 f-media=on&e-nativeretweets=on 參數）
-                f"https://nitter.net/{username}/media?f-media=on&e-nativeretweets=on",
+                f"https://nitter.poast.org/{username}/media?f-media=on&e-nativeretweets=on",
                 f"https://nitter.it/{username}/media?f-media=on&e-nativeretweets=on",
                 f"https://nitter.1d4.us/{username}/media?f-media=on&e-nativeretweets=on",
-                f"https://nitter.poast.org/{username}/media?f-media=on&e-nativeretweets=on",
+                f"https://nitter.net/{username}/media?f-media=on&e-nativeretweets=on",
                 f"https://nitter.privacydev.net/{username}/media?f-media=on&e-nativeretweets=on",
                 # 官方站點
                 f"https://x.com/{username}",
@@ -442,7 +442,7 @@ class TwitterImageScraperSimple:
                 
                 try:
                     self.driver.get(url)
-                    time.sleep(8)
+                    time.sleep(12)
                     
                     anti_crawl_keywords = ["cloudflare", "attention required", "captcha", "access denied", "verify you are human", "too many requests"]
                     found_images = False
