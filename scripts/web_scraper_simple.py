@@ -409,11 +409,16 @@ class TwitterImageScraperSimple:
             if start_date or end_date:
                 print("📅 偵測到日期參數，將優先使用 Nitter 搜尋功能")
                 nitter_instances = [
+                    "nitter.ftw.in",
+                    "nitter.snopyta.org",
+                    "nitter.oxo.xz",
+                    "twitter.moomoo.me",
                     "nitter.poast.org",
                     "nitter.it", 
                     "nitter.1d4.us",
                     "nitter.net",
-                    "nitter.privacydev.net"
+                    "nitter.privacydev.net",
+                    "nitter.fediverse.observer"
                 ]
                 
                 for instance in nitter_instances:
@@ -423,6 +428,10 @@ class TwitterImageScraperSimple:
             # 加入一般的 URL
             urls_to_try.extend([
                 # Nitter 鏡像站（/media 結尾，加上 f-media=on&e-nativeretweets=on 參數）
+                f"https://nitter.ftw.in/{username}/media?f-media=on&e-nativeretweets=on",
+                f"https://nitter.snopyta.org/{username}/media?f-media=on&e-nativeretweets=on",
+                f"https://nitter.oxo.xz/{username}/media?f-media=on&e-nativeretweets=on",
+                f"https://twitter.moomoo.me/{username}/media?f-media=on&e-nativeretweets=on",
                 f"https://nitter.poast.org/{username}/media?f-media=on&e-nativeretweets=on",
                 f"https://nitter.it/{username}/media?f-media=on&e-nativeretweets=on",
                 f"https://nitter.1d4.us/{username}/media?f-media=on&e-nativeretweets=on",
@@ -678,9 +687,10 @@ def daily_scrape_and_send():
     
     total_new_images = sum(len(files) for files in all_downloaded_files.values())
     
-    # 步驟 2: 建立組合圖片（如果有新圖片）
+    # 步驟 2: 建立組合圖片或選擇備用圖片
     print(f"\n🎨 步驟 2/3: 建立組合圖片")
     combined_image_path = None
+    backup_image_path = None
     
     if total_new_images > 0:
         try:
@@ -701,6 +711,18 @@ def daily_scrape_and_send():
             print(f"   ❌ 建立組合圖片時發生錯誤: {e}")
     else:
         print("   😔 沒有新圖片可建立組合")
+        # 嘗試從 combined_images 中隨機選擇一張圖片作為備用
+        combined_dir = "./combined_images"
+        if os.path.exists(combined_dir):
+            try:
+                image_files = [f for f in os.listdir(combined_dir) 
+                              if f.lower().endswith(('.jpg', '.jpeg', '.png', '.gif'))]
+                if image_files:
+                    backup_image = random.choice(image_files)
+                    backup_image_path = os.path.join(combined_dir, backup_image)
+                    print(f"   📸 從組合圖片備用庫隨機選擇: {backup_image}")
+            except Exception as e:
+                print(f"   ⚠️ 選擇備用圖片時發生錯誤: {e}")
     
     # 步驟 3: 發送組合圖片到 LINE 群組 (如果未被禁用)
     if os.environ.get('SKIP_LINE_SEND', '').lower() == 'true':
@@ -711,33 +733,43 @@ def daily_scrape_and_send():
             print(f"🖼️ 已建立組合圖片: {combined_image_path}")
         return True
     
-    print(f"\n📱 步驟 3/3: 發送組合圖片到 LINE 群組")
+    print(f"\n📱 步驟 3/3: 發送圖片到 LINE 群組")
     
     total_sent = 0
-    if combined_image_path:
+    image_to_send = combined_image_path or backup_image_path
+    
+    if image_to_send:
         try:
-            # 使用第一個帳號的 scraper 來發送組合圖片
+            # 使用第一個帳號的 scraper 來發送圖片
             scraper = TwitterImageScraperSimple(username=accounts[0])
             
-            # 發送組合圖片
-            if scraper.send_images_to_line_group([combined_image_path], "daily_combined"):
-                print("   ✅ 組合圖片已發送到 LINE 群組")
+            # 決定發送的類型
+            send_type = "daily_combined" if combined_image_path else "daily_backup"
+            
+            # 發送圖片
+            if scraper.send_images_to_line_group([image_to_send], send_type):
+                if combined_image_path:
+                    print("   ✅ 組合圖片已發送到 LINE 群組")
+                else:
+                    print("   ✅ 備用圖片已發送到 LINE 群組")
                 total_sent = 1
             else:
-                print("   ❌ 組合圖片發送失敗")
+                print("   ❌ 圖片發送失敗")
                 total_sent = 0
                 
         except Exception as e:
-            print(f"   ❌ 發送組合圖片時發生錯誤: {e}")
+            print(f"   ❌ 發送圖片時發生錯誤: {e}")
             total_sent = 0
     else:
-        print("   😔 沒有組合圖片可發送")
+        print("   😔 沒有可發送的圖片（無新圖片，也無備用圖片）")
 
     print(f"\n🎉 每日任務完成！")
     print(f"📊 總計下載 {total_new_images} 張圖片")
     print(f"📊 總計發送 {total_sent} 張圖片到 LINE 群組")
     if combined_image_path:
-        print(f"🖼️ 額外建立了 1 張組合圖片")
+        print(f"🖼️ 額外建立了 1 張新組合圖片")
+    elif backup_image_path:
+        print(f"🖼️ 發送了 1 張備用組合圖片（因為今日無新圖片）")
     
     return total_sent > 0
 
