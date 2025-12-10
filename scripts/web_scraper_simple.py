@@ -91,7 +91,7 @@ class TwitterImageScraperSimple:
         return filename in blacklist
     
     def setup_driver(self):
-        """設定 Chrome 瀏覽器驅動 - GitHub Actions 版本"""
+        """設定 Chrome 瀏覽器驅動 - 強化反爬蟲對抗"""
         chrome_options = Options()
         # GitHub Actions 必需的選項
         chrome_options.add_argument('--headless')
@@ -99,23 +99,47 @@ class TwitterImageScraperSimple:
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument('--disable-gpu')
         chrome_options.add_argument('--disable-software-rasterizer')
-        chrome_options.add_argument('--window-size=1200,800')
+        chrome_options.add_argument('--window-size=1920,1080')
+        
+        # 反爬蟲對抗 - 隱藏自動化特徵
         chrome_options.add_argument('--disable-blink-features=AutomationControlled')
         chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
         chrome_options.add_experimental_option('useAutomationExtension', False)
-        chrome_options.add_argument('--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36')
+        chrome_options.add_argument('--disable-extensions')
+        
+        # 使用真實用戶代理（Windows + Chrome）
+        chrome_options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36')
+        
+        # 添加更多瀏覽器特徵使其看起來更像真實用戶
+        chrome_options.add_argument('--disable-plugins')
+        chrome_options.add_argument('--disable-images')  # 加速頁面載入
+        chrome_options.add_argument('--no-first-run')
+        chrome_options.add_argument('--no-default-browser-check')
         
         try:
             self.driver = webdriver.Chrome(options=chrome_options)
-            # 隱藏 webdriver 特徵
+            
+            # 設定多個隱藏 webdriver 的方式
             self.driver.execute_cdp_cmd('Page.addScriptToEvaluateOnNewDocument', {
                 'source': '''
                     Object.defineProperty(navigator, 'webdriver', {
                         get: () => undefined
-                    })
+                    });
+                    Object.defineProperty(navigator, 'plugins', {
+                        get: () => [1, 2, 3, 4, 5]
+                    });
+                    Object.defineProperty(navigator, 'languages', {
+                        get: () => ['zh-TW', 'zh', 'en']
+                    });
                 '''
             })
-            print("✅ Chrome 瀏覽器驅動初始化成功")
+            
+            # 添加 headers 模仿真實瀏覽器
+            self.driver.execute_cdp_cmd('Network.setUserAgentOverride', {
+                "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+            })
+            
+            print("✅ Chrome 瀏覽器驅動初始化成功（強化反爬蟲模式）")
             return True
         except Exception as e:
             print(f"❌ Chrome 瀏覽器驅動初始化失敗: {e}")
@@ -230,14 +254,29 @@ class TwitterImageScraperSimple:
                 print(f"   ⏭️  跳過排除的 domain: {url[:80]}...")
                 return None
             
+            # 更完整的 headers 模仿真實瀏覽器
             headers = {
-                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-                'Referer': 'https://x.com/'
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+                'Accept': 'image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Accept-Language': 'zh-TW,zh;q=0.9,en;q=0.8',
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache',
+                'Referer': 'https://twitter.com/',
+                'Sec-Ch-Ua': '"Google Chrome";v="131"',
+                'Sec-Ch-Ua-Mobile': '?0',
+                'Sec-Ch-Ua-Platform': '"Windows"',
+                'Sec-Fetch-Dest': 'image',
+                'Sec-Fetch-Mode': 'no-cors',
+                'Sec-Fetch-Site': 'cross-site'
             }
             
             print(f"   📥 開始下載: {url[:80]}...")
             print(f"   📁 目標目錄: {self.images_dir}")
             print(f"   📁 絕對路徑: {os.path.abspath(self.images_dir)}")
+            
+            # 隨機延遲下載
+            time.sleep(random.uniform(1, 3))
             
             response = requests.get(url, headers=headers, timeout=30)
             response.raise_for_status()
@@ -409,10 +448,6 @@ class TwitterImageScraperSimple:
             if start_date or end_date:
                 print("📅 偵測到日期參數，將優先使用 Nitter 搜尋功能")
                 nitter_instances = [
-                    "nitter.ftw.in",
-                    "nitter.snopyta.org",
-                    "nitter.oxo.xz",
-                    "twitter.moomoo.me",
                     "nitter.poast.org",
                     "nitter.it", 
                     "nitter.1d4.us",
@@ -428,10 +463,6 @@ class TwitterImageScraperSimple:
             # 加入一般的 URL
             urls_to_try.extend([
                 # Nitter 鏡像站（/media 結尾，加上 f-media=on&e-nativeretweets=on 參數）
-                f"https://nitter.ftw.in/{username}/media?f-media=on&e-nativeretweets=on",
-                f"https://nitter.snopyta.org/{username}/media?f-media=on&e-nativeretweets=on",
-                f"https://nitter.oxo.xz/{username}/media?f-media=on&e-nativeretweets=on",
-                f"https://twitter.moomoo.me/{username}/media?f-media=on&e-nativeretweets=on",
                 f"https://nitter.poast.org/{username}/media?f-media=on&e-nativeretweets=on",
                 f"https://nitter.it/{username}/media?f-media=on&e-nativeretweets=on",
                 f"https://nitter.1d4.us/{username}/media?f-media=on&e-nativeretweets=on",
@@ -451,8 +482,22 @@ class TwitterImageScraperSimple:
                 print(f"🔗 嘗試 URL: {url}")
                 
                 try:
+                    # 隨機延遲（2-5秒）模擬真實用戶
+                    random_delay = random.uniform(2, 5)
+                    time.sleep(random_delay)
+                    
                     self.driver.get(url)
-                    time.sleep(12)
+                    
+                    # 頁面載入後隨機等待（8-15秒）
+                    random_wait = random.uniform(8, 15)
+                    time.sleep(random_wait)
+                    
+                    # 模擬滑動頁面（真實用戶行為）
+                    try:
+                        self.driver.execute_script("window.scrollBy(0, window.innerHeight);")
+                        time.sleep(random.uniform(1, 3))
+                    except:
+                        pass
                     
                     current_url = self.driver.current_url
                     page_title = self.driver.title
