@@ -681,18 +681,6 @@ def generate_random_date_range(days_span=20):
     """生成隨機的日期區間（20天）"""
     # 隨機選擇一個開始日期（過去一年內）
     today = datetime.now()
-    # 測試用鉤子：如果設定了 FORCE_RANDOM_NO_IMAGES=true，回傳未來的日期區間以模擬沒有圖片
-    try:
-        if os.environ.get('FORCE_RANDOM_NO_IMAGES', '').lower() == 'true':
-            far_future_start = today + timedelta(days=365 * 5)
-            start_date = far_future_start
-            end_date = start_date + timedelta(days=days_span - 1)
-            start_str = start_date.strftime('%Y-%m-%d')
-            end_str = end_date.strftime('%Y-%m-%d')
-            print(f"⚙️ 測試模式: 強制隨機區間為未來日期 {start_str} ~ {end_str}")
-            return start_str, end_str
-    except Exception:
-        pass
     max_days_back = 365  # 最多往前一年
     
     # 隨機選擇開始日期
@@ -710,59 +698,39 @@ def daily_scrape_and_send():
     print("🤖 開始每日抓圖、提交推送、發送到 LINE 群組...")
     print("=" * 50)
     
-    # 嘗試策略：
-    # 1) 先抓近三天的
-    # 2) 如果沒有新圖，改用原本的隨機邏輯
-    # 3) 如果還是沒有新圖，使用 combined_images 裡的隨機備用圖（已排除最新）
-    today = datetime.now()
-    recent_start = (today - timedelta(days=3)).strftime('%Y-%m-%d')
-    recent_end = today.strftime('%Y-%m-%d')
-    print(f"🎯 先嘗試近三天日期區間: {recent_start} ~ {recent_end}")
-
+    # 生成隨機日期區間
+    start_date, end_date = generate_random_date_range()
+    print(f"🎲 使用隨機日期區間: {start_date} ~ {end_date}")
+    
     accounts = ['ice_deliverer', 'colne_icol']
     num_images_per_account = 2  # 每個帳號抓 2 張用於組合
-
-    # 將抓取流程抽成可重複呼叫的內部函式
-    def run_scrape_for_dates(start_date_param, end_date_param):
-        all_downloaded = {}
-        # 測試用鉤子：若設定 FORCE_NO_SCRAPE=true，直接模擬沒有抓到任何新圖片
-        try:
-            if os.environ.get('FORCE_NO_SCRAPE', '').lower() == 'true':
-                print('⚙️ 測試模式：強制跳過實際抓圖，模擬沒有新圖片')
-                return {a: [] for a in accounts}
-        except Exception:
-            pass
-        for account in accounts:
-            print(f"\n📷 開始處理 {account} (日期: {start_date_param} ~ {end_date_param})...")
-            scraper = TwitterImageScraperSimple(username=account)
-            downloaded_files = scraper.scrape_user_media(account, num_images_per_account, start_date_param, end_date_param)
-            if downloaded_files:
-                print(f"   ✅ {account} 成功下載 {len(downloaded_files)} 張圖片")
-                all_downloaded[account] = downloaded_files
-            else:
-                print(f"   😔 {account} 沒有下載到新圖片")
-                all_downloaded[account] = []
-
-            # 兩個帳號之間等待一下
-            if account != accounts[-1]:
-                print("   ⏳ 等待 3 秒後處理下一個帳號...")
-                time.sleep(3)
-
-        return all_downloaded
-
-    # 第一次嘗試：近三天
-    all_downloaded_files = run_scrape_for_dates(recent_start, recent_end)
-    total_new_images = sum(len(files) for files in all_downloaded_files.values())
-
-    # 第二次嘗試：如果沒有新圖片，使用隨機區間
-    if total_new_images == 0:
-        start_date, end_date = generate_random_date_range()
-        print(f"⚠️ 近三天沒有新圖，改用隨機日期區間: {start_date} ~ {end_date}")
-        all_downloaded_files = run_scrape_for_dates(start_date, end_date)
-        total_new_images = sum(len(files) for files in all_downloaded_files.values())
     
-    # 步驟 1: 抓取結果已由前面的 run_scrape_for_dates 決定（recent 或 random）
-    print("\n🔄 步驟 1/3: 抓取圖片（使用先前嘗試的結果）")
+    all_downloaded_files = {}  # 儲存所有下載的檔案
+    
+    # 步驟 1: 抓取所有帳號的圖片
+    print("\n🔄 步驟 1/3: 抓取圖片")
+    for account in accounts:
+        print(f"\n📷 開始處理 {account}...")
+        
+        # 建立爬蟲實例
+        scraper = TwitterImageScraperSimple(username=account)
+        
+        # 抓取圖片
+        downloaded_files = scraper.scrape_user_media(account, num_images_per_account, start_date, end_date)
+        
+        if downloaded_files:
+            print(f"   ✅ {account} 成功下載 {len(downloaded_files)} 張圖片")
+            all_downloaded_files[account] = downloaded_files
+        else:
+            print(f"   😔 {account} 沒有下載到新圖片")
+            all_downloaded_files[account] = []
+        
+        # 兩個帳號之間等待一下
+        if account != accounts[-1]:  # 不是最後一個帳號
+            print("   ⏳ 等待 3 秒後處理下一個帳號...")
+            time.sleep(3)
+    
+    total_new_images = sum(len(files) for files in all_downloaded_files.values())
     
     # 步驟 2: 建立組合圖片或選擇備用圖片
     print(f"\n🎨 步驟 2/3: 建立組合圖片")
@@ -786,64 +754,39 @@ def daily_scrape_and_send():
             print("   ⚠️ 組合圖片模組不存在，跳過組合圖片建立")
         except Exception as e:
             print(f"   ❌ 建立組合圖片時發生錯誤: {e}")
-    else:
-        # 如果沒有新圖片可建立組合，嘗試從 combined_images 中隨機選擇一張圖片作為備用
-        print("   😔 沒有新圖片可建立組合")
-        # 需求：不要發送最新的一張組合圖片（排除最新）
-        combined_dir = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', 'combined_images'))
-        print(f"   🔍 嘗試載入組合圖片資料夾: {combined_dir}")
-        if os.path.exists(combined_dir):
-            try:
-                image_files = [f for f in os.listdir(combined_dir)
-                              if f.lower().endswith(('.jpg', '.jpeg', '.png', '.gif'))]
-                print(f"   🔎 找到 {len(image_files)} 張候選檔（含過濾前）")
-                # 僅保留實際檔案
-                image_files = [f for f in image_files if os.path.isfile(os.path.join(combined_dir, f))]
-                print(f"   🔎 過濾後剩 {len(image_files)} 張候選檔（存在且為檔案）")
+        else:
+            print("   😔 沒有新圖片可建立組合")
+            # 嘗試從 combined_images 中隨機選擇一張圖片作為備用
+            # 需求：不要發送最新的一張組合圖片（排除最新）
+            combined_dir = "./combined_images"
+            if os.path.exists(combined_dir):
+                try:
+                    image_files = [f for f in os.listdir(combined_dir)
+                                  if f.lower().endswith(('.jpg', '.jpeg', '.png', '.gif'))]
+                    # 僅保留實際檔案
+                    image_files = [f for f in image_files if os.path.isfile(os.path.join(combined_dir, f))]
 
-                if image_files:
-                    # 依據檔案修改時間排序，最新放前面
-                    image_files_sorted = sorted(
-                        image_files,
-                        key=lambda f: os.path.getmtime(os.path.join(combined_dir, f)),
-                        reverse=True
-                    )
+                    if image_files:
+                        # 依據檔案修改時間排序，最新放前面
+                        image_files_sorted = sorted(
+                            image_files,
+                            key=lambda f: os.path.getmtime(os.path.join(combined_dir, f)),
+                            reverse=True
+                        )
 
-                    # 排除最新的一張
-                    if len(image_files_sorted) > 1:
-                        eligible = image_files_sorted[1:]
-                        backup_image = random.choice(eligible)
-                        backup_image_path = os.path.join(combined_dir, backup_image)
-                        print(f"   📸 從組合圖片備用庫隨機選擇（排除最新）: {backup_image}")
-                    else:
-                        # 只有一張組合圖片且為最新，依規則不發送
-                        print("   ⚠️ 只有一張組合圖片（為最新），依設定不會發送備用圖片")
-            except Exception as e:
-                print(f"   ⚠️ 選擇備用圖片時發生錯誤: {e}")
+                        # 排除最新的一張
+                        if len(image_files_sorted) > 1:
+                            eligible = image_files_sorted[1:]
+                            backup_image = random.choice(eligible)
+                            backup_image_path = os.path.join(combined_dir, backup_image)
+                            print(f"   📸 從組合圖片備用庫隨機選擇（排除最新）: {backup_image}")
+                        else:
+                            # 只有一張組合圖片且為最新，依規則不發送
+                            print("   ⚠️ 只有一張組合圖片（為最新），依設定不會發送備用圖片")
+                except Exception as e:
+                    print(f"   ⚠️ 選擇備用圖片時發生錯誤: {e}")
     
     # 步驟 3: 發送組合圖片到 LINE 群組 (如果未被禁用)
-    # 在此之前，將本次選擇（combined / backup / none）寫入檔案，供 CI/workflow 使用
-    try:
-        selection_info = {
-            "type": None,
-            "filename": None
-        }
-        if combined_image_path:
-            selection_info["type"] = "daily_combined"
-            selection_info["filename"] = os.path.basename(combined_image_path)
-        elif backup_image_path:
-            selection_info["type"] = "daily_backup"
-            selection_info["filename"] = os.path.basename(backup_image_path)
-        else:
-            selection_info["type"] = "none"
-
-        # 寫入 scripts/selected_combined.json（workflow 會在 scripts 下執行）
-        with open('selected_combined.json', 'w', encoding='utf-8') as _f:
-            json.dump(selection_info, _f, ensure_ascii=False)
-        print(f"📋 已記錄選擇: {selection_info}")
-    except Exception as e:
-        print(f"⚠️ 無法寫入選擇檔案: {e}")
-
     if os.environ.get('SKIP_LINE_SEND', '').lower() == 'true':
         print(f"\n📱 跳過 LINE 發送 (SKIP_LINE_SEND=true)")
         print(f"\n🎉 每日任務完成！")

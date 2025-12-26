@@ -157,60 +157,17 @@ jobs:
         cd scripts
         echo "📱 開始發送組合圖片到 LINE 群組..."
         
-        # 從 Python 腳本產生的選擇檔取得要發送的檔案（若存在則優先使用）
-        IMAGE_URL=""
-        if [ -f scripts/selected_combined.json ]; then
-          echo "📋 找到 scripts/selected_combined.json，優先使用裡面的選擇"
-          SEL_TYPE=$(python3 - <<'PY'
-import json
-try:
-    j=json.load(open('scripts/selected_combined.json'))
-    print(j.get('type',''))
-except Exception:
-    print('')
-PY
-)
-          SEL_FILE=$(python3 - <<'PY'
-import json
-try:
-    j=json.load(open('scripts/selected_combined.json'))
-    print(j.get('filename',''))
-except Exception:
-    print('')
-PY
-)
-          echo "   選擇類型: $SEL_TYPE    檔名: $SEL_FILE"
-
-          if [ "$SEL_TYPE" = "daily_backup" ] || [ "$SEL_TYPE" = "daily_combined" ]; then
-            if [ -n "$SEL_FILE" ]; then
-              IMAGE_URL="https://future801113.github.io/i-love-col/combined_images/$SEL_FILE"
-              echo "🖼️ 使用選擇檔指定的圖片: $SEL_FILE"
-            else
-              echo "⚠️ 選擇檔內沒有檔名，將回退至查找最新組合圖片的邏輯"
-            fi
-          else
-            echo "🔕 選擇檔標記為 none，表示本次沒有可發送的組合或備用圖片，跳過 LINE 發送"
-            exit 0
-          fi
-        fi
-
-        # 如果尚未決定 IMAGE_URL（選擇檔不存在或找不到檔名），使用舊有的最新組合圖片邏輯
-        if [ -z "$IMAGE_URL" ]; then
-          # 檢查是否有新的組合圖片
-          LATEST_COMBINED=$(find ../combined_images -name "daily_combined_*.jpg" 2>/dev/null | sort -r | head -1)
-          if [ -n "$LATEST_COMBINED" ]; then
-            echo "🖼️ 找到最新組合圖片: $LATEST_COMBINED"
-            FILENAME=$(basename "$LATEST_COMBINED")
-            IMAGE_URL="https://future801113.github.io/i-love-col/combined_images/$FILENAME"
-          fi
-        fi
-
-        if [ -z "$IMAGE_URL" ]; then
-          echo "😔 沒有要發送的圖片，跳過 LINE 發送"
-          exit 0
-        fi
-
-        echo "🔗 圖片 URL: $IMAGE_URL"
+        # 檢查是否有新的組合圖片
+        LATEST_COMBINED=$(find ../combined_images -name "daily_combined_*.jpg" 2>/dev/null | sort -r | head -1)
+        
+        if [ -n "$LATEST_COMBINED" ]; then
+          echo "🖼️ 找到最新組合圖片: $LATEST_COMBINED"
+          
+          # 建立組合圖片的 GitHub Pages URL
+          FILENAME=$(basename "$LATEST_COMBINED")
+          IMAGE_URL="https://future801113.github.io/i-love-col/combined_images/$FILENAME"
+          
+          echo "🔗 圖片 URL: $IMAGE_URL"
           
           # 測試 URL 是否可訪問
           echo "🧪 測試圖片 URL 可用性..."
