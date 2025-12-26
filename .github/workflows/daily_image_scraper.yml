@@ -10,6 +10,7 @@ on:
     - cron: '0 15 * * *'
   workflow_dispatch: # 允許手動觸發
 
+)
 permissions:
   contents: write  # 允許寫入內容和推送
 
