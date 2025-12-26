@@ -754,20 +754,37 @@ def daily_scrape_and_send():
             print("   ⚠️ 組合圖片模組不存在，跳過組合圖片建立")
         except Exception as e:
             print(f"   ❌ 建立組合圖片時發生錯誤: {e}")
-    else:
-        print("   😔 沒有新圖片可建立組合")
-        # 嘗試從 combined_images 中隨機選擇一張圖片作為備用
-        combined_dir = "./combined_images"
-        if os.path.exists(combined_dir):
-            try:
-                image_files = [f for f in os.listdir(combined_dir) 
-                              if f.lower().endswith(('.jpg', '.jpeg', '.png', '.gif'))]
-                if image_files:
-                    backup_image = random.choice(image_files)
-                    backup_image_path = os.path.join(combined_dir, backup_image)
-                    print(f"   📸 從組合圖片備用庫隨機選擇: {backup_image}")
-            except Exception as e:
-                print(f"   ⚠️ 選擇備用圖片時發生錯誤: {e}")
+        else:
+            print("   😔 沒有新圖片可建立組合")
+            # 嘗試從 combined_images 中隨機選擇一張圖片作為備用
+            # 需求：不要發送最新的一張組合圖片（排除最新）
+            combined_dir = "./combined_images"
+            if os.path.exists(combined_dir):
+                try:
+                    image_files = [f for f in os.listdir(combined_dir)
+                                  if f.lower().endswith(('.jpg', '.jpeg', '.png', '.gif'))]
+                    # 僅保留實際檔案
+                    image_files = [f for f in image_files if os.path.isfile(os.path.join(combined_dir, f))]
+
+                    if image_files:
+                        # 依據檔案修改時間排序，最新放前面
+                        image_files_sorted = sorted(
+                            image_files,
+                            key=lambda f: os.path.getmtime(os.path.join(combined_dir, f)),
+                            reverse=True
+                        )
+
+                        # 排除最新的一張
+                        if len(image_files_sorted) > 1:
+                            eligible = image_files_sorted[1:]
+                            backup_image = random.choice(eligible)
+                            backup_image_path = os.path.join(combined_dir, backup_image)
+                            print(f"   📸 從組合圖片備用庫隨機選擇（排除最新）: {backup_image}")
+                        else:
+                            # 只有一張組合圖片且為最新，依規則不發送
+                            print("   ⚠️ 只有一張組合圖片（為最新），依設定不會發送備用圖片")
+                except Exception as e:
+                    print(f"   ⚠️ 選擇備用圖片時發生錯誤: {e}")
     
     # 步驟 3: 發送組合圖片到 LINE 群組 (如果未被禁用)
     if os.environ.get('SKIP_LINE_SEND', '').lower() == 'true':
