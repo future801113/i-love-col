@@ -696,10 +696,10 @@ def generate_random_date_range(days_span=20):
 def daily_scrape_and_send():
     """每日抓圖、提交推送、發送到 LINE 群組 - GitHub Actions 版本
     
-    三層回退策略:
+    三層策略:
     1. 先抓最近三天的圖片
-    2. 如果沒有新圖，用原本的隨機邏輯 (隨機20天區間)
-    3. 如果還是沒有，使用 combined_images 裡面隨機抓一張
+    2. 如果沒有新圖，用隨機20天區間 (隨機邏輯)
+    3. 如果還是沒有，使用 combined_images 隨機抓一張備用
     """
     print("🤖 開始每日抓圖、提交推送、發送到 LINE 群組...")
     print("=" * 50)
@@ -708,6 +708,7 @@ def daily_scrape_and_send():
     num_images_per_account = 2  # 每個帳號抓 2 張用於組合
     
     all_downloaded_files = {}  # 儲存所有下載的檔案
+    has_new_images = False  # Flag: 是否有抓到新圖片
     
     # 內部函數：使用指定日期範圍嘗試抓圖
     def run_scrape_for_dates(start_date, end_date, strategy_name):
@@ -737,12 +738,10 @@ def daily_scrape_and_send():
     if os.environ.get('FORCE_NO_SCRAPE', '').lower() == 'true':
         print("\n🧪 [TEST MODE] FORCE_NO_SCRAPE=true - 模擬沒有下載到新圖片")
         all_downloaded_files = {account: [] for account in accounts}
-        total_new_images = 0
-        # 直接跳到第3個策略（備用圖片）
-        print("\n🎯 策略 3/3: 仍無新圖，使用 combined_images 備用")
+        has_new_images = False
     else:
         # 策略 1: 先抓最近三天
-        print("\n🎯 策略 1/3: 抓最近三天的圖片")
+        print("\n🎯 策略 1: 抓最近三天的圖片")
         today = datetime.now()
         three_days_ago = today - timedelta(days=3)
         start_date = three_days_ago.strftime('%Y-%m-%d')
@@ -751,27 +750,27 @@ def daily_scrape_and_send():
         
         all_downloaded_files = run_scrape_for_dates(start_date, end_date, "嘗試抓最近三天")
         total_new_images = sum(len(files) for files in all_downloaded_files.values())
+        has_new_images = total_new_images > 0
         
         # 策略 2: 如果沒有新圖，用隨機邏輯
-        if total_new_images == 0:
-            print("\n🎯 策略 2/3: 沒有最近新圖，改用隨機20天區間")
+        if not has_new_images:
+            print("\n🎯 策略 2: 沒有最近新圖，改用隨機20天區間")
             random_start, random_end = generate_random_date_range()
             print(f"   日期範圍: {random_start} ~ {random_end}")
             
             all_downloaded_files = run_scrape_for_dates(random_start, random_end, "嘗試抓隨機日期範圍")
             total_new_images = sum(len(files) for files in all_downloaded_files.values())
+            has_new_images = total_new_images > 0
         
-        # 策略 3: 如果還是沒有新圖，使用 combined_images 備用
-        if total_new_images == 0:
-            print("\n🎯 策略 3/3: 仍無新圖，使用 combined_images 備用")
-    
+        if not has_new_images:
+            print("\n📢 沒有抓到新圖片，將使用 combined_images 備用")
     
     # 步驟 2: 建立組合圖片或選擇備用圖片
     print(f"\n🎨 步驟 2/3: 建立組合圖片或選擇備用")
     combined_image_path = None
     backup_image_path = None
     
-    if total_new_images > 0:
+    if has_new_images:
         # 有新圖片，建立組合圖片
         try:
             from image_combiner import create_combined_from_new_images
