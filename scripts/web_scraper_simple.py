@@ -825,22 +825,12 @@ def daily_scrape_and_send():
             print(f"   ⚠️ combined_images 目錄不存在: {combined_dir}")
     
     # 步驟 3: 發送組合圖片到 LINE 群組 (如果未被禁用)
-    if os.environ.get('SKIP_LINE_SEND', '').lower() == 'true':
-        print(f"\n📱 跳過 LINE 發送 (SKIP_LINE_SEND=true)")
-        print(f"\n🎉 每日任務完成！")
-        print(f"📊 總計下載 {total_new_images} 張圖片")
-        if combined_image_path:
-            print(f"🖼️ 已建立組合圖片: {combined_image_path}")
-        elif backup_image_path:
-            print(f"🖼️ 已選擇備用圖片: {backup_image_path}")
-        return True
-    
     print(f"\n📱 步驟 3/3: 發送圖片到 LINE 群組")
     
     total_sent = 0
     image_to_send = combined_image_path or backup_image_path
     
-    if image_to_send:
+    if os.environ.get('SKIP_LINE_SEND', '').lower() != 'true' and image_to_send:
         try:
             # 使用第一個帳號的 scraper 來發送圖片
             scraper = TwitterImageScraperSimple(username=accounts[0])
@@ -863,7 +853,10 @@ def daily_scrape_and_send():
             print(f"   ❌ 發送圖片時發生錯誤: {e}")
             total_sent = 0
     else:
-        print("   😔 沒有可發送的圖片（無新圖片，也無備用圖片）")
+        if os.environ.get('SKIP_LINE_SEND', '').lower() == 'true':
+            print(f"   跳過 LINE 發送 (SKIP_LINE_SEND=true)")
+        else:
+            print("   😔 沒有可發送的圖片（無新圖片，也無備用圖片）")
 
     print(f"\n🎉 每日任務完成！")
     print(f"📊 總計下載 {total_new_images} 張圖片")
