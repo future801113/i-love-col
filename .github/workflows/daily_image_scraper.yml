@@ -157,46 +157,59 @@ jobs:
         cd scripts
         echo "📱 開始發送組合圖片到 LINE 群組..."
         
+        # 先讀取抓圖狀態
+        if [ -f .scrape_status ]; then
+          echo "📖 讀取抓圖狀態..."
+          source .scrape_status
+          echo "HAS_NEW_IMAGES: $HAS_NEW_IMAGES"
+          echo "COMBINED_IMAGE_PATH: $COMBINED_IMAGE_PATH"
+          echo "BACKUP_IMAGE_PATH: $BACKUP_IMAGE_PATH"
+        else
+          echo "⚠️ 找不到抓圖狀態文件，將進行回退檢查..."
+          HAS_NEW_IMAGES="unknown"
+        fi
+        
         # 檢查是否有新的組合圖片
         LATEST_COMBINED=$(find ../combined_images -name "daily_combined_*.jpg" 2>/dev/null | sort -r | head -1)
         
-        if [ -n "$LATEST_COMBINED" ]; then
-          echo "🖼️ 找到最新組合圖片: $LATEST_COMBINED"
-          
-          # 建立組合圖片的 GitHub Pages URL
-          FILENAME=$(basename "$LATEST_COMBINED")
-          IMAGE_URL="https://future801113.github.io/i-love-col/combined_images/$FILENAME"
-          
-          echo "🔗 圖片 URL: $IMAGE_URL"
-          
-          # 測試 URL 是否可訪問
-          echo "🧪 測試圖片 URL 可用性..."
-          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$IMAGE_URL")
-          echo "HTTP 狀態碼: $HTTP_STATUS"
-          
-          if [ "$HTTP_STATUS" = "200" ]; then
-            echo "✅ 圖片 URL 可訪問"
+        # 根據 has_new_images flag 來決定是否發送
+        if [ "$HAS_NEW_IMAGES" = "true" ]; then
+          echo "✅ 檢測到新圖片，準備發送..."
+          if [ -n "$LATEST_COMBINED" ]; then
+            FILENAME=$(basename "$LATEST_COMBINED")
+            IMAGE_URL="https://future801113.github.io/i-love-col/combined_images/$FILENAME"
             
-            # 使用獨立的 Python 腳本發送 LINE 訊息
-            python3 send_line_image.py "$IMAGE_URL"
+            echo "🖼️ 找到最新組合圖片: $LATEST_COMBINED"
+            echo "🔗 圖片 URL: $IMAGE_URL"
             
-          else
-            echo "❌ 圖片 URL 尚未可訪問 (狀態碼: $HTTP_STATUS)"
-            echo "⏳ 再等待 60 秒後重試..."
-            sleep 60
-            
+            # 測試 URL 是否可訪問
+            echo "🧪 測試圖片 URL 可用性..."
             HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$IMAGE_URL")
+            echo "HTTP 狀態碼: $HTTP_STATUS"
+            
             if [ "$HTTP_STATUS" = "200" ]; then
-              echo "✅ 重試成功，圖片 URL 現在可訪問"
+              echo "✅ 圖片 URL 可訪問"
               
-              # 重試發送 LINE 訊息
+              # 使用獨立的 Python 腳本發送 LINE 訊息
               python3 send_line_image.py "$IMAGE_URL"
+              
             else
-              echo "❌ 圖片 URL 仍然無法訪問，跳過 LINE 發送"
+              echo "⏳ 圖片 URL 尚未可訪問，再等待 60 秒後重試..."
+              sleep 60
+              
+              HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$IMAGE_URL")
+              if [ "$HTTP_STATUS" = "200" ]; then
+                echo "✅ 重試成功，圖片 URL 現在可訪問"
+                python3 send_line_image.py "$IMAGE_URL"
+              else
+                echo "❌ 圖片 URL 仍然無法訪問，跳過 LINE 發送"
+              fi
             fi
+          else
+            echo "❌ 沒有找到新的組合圖片"
           fi
         else
-          echo "😔 沒有找到新的組合圖片"
+          echo "⏭️ 沒有新圖片，跳過 LINE 發送"
         fi
         
     - name: 顯示執行結果統計

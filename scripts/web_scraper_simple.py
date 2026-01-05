@@ -873,6 +873,17 @@ def daily_scrape_and_send():
     elif backup_image_path:
         print(f"🖼️ 發送了 1 張備用組合圖片（因為今日無新圖片）")
     
+    # 將抓圖狀態寫入文件，供後續步驟使用
+    status_file = os.path.join(os.path.dirname(__file__), '.scrape_status')
+    try:
+        with open(status_file, 'w', encoding='utf-8') as f:
+            f.write(f"HAS_NEW_IMAGES={str(has_new_images).lower()}\n")
+            f.write(f"COMBINED_IMAGE_PATH={combined_image_path or ''}\n")
+            f.write(f"BACKUP_IMAGE_PATH={backup_image_path or ''}\n")
+        print(f"✅ 抓圖狀態已保存: {status_file}")
+    except Exception as e:
+        print(f"⚠️ 保存抓圖狀態失敗: {e}")
+    
     return total_sent > 0
 
 def main():
