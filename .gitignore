@@ -19,6 +19,7 @@ Thumbs.db
 *.tmp
 *.temp
 temp_*
+.scrape_status
 
 # 環境設定檔 (包含 API Key)
 .env
