@@ -168,10 +168,25 @@ jobs:
         cd scripts
         echo "📱 開始發送組合圖片到 LINE 群組..."
         
+        # 調試：顯示當前目錄和文件
+        echo "🔍 調試信息："
+        echo "   當前目錄: $(pwd)"
+        echo "   .scrape_status 文件狀態:"
+        if [ -f .scrape_status ]; then
+          echo "   ✅ 文件存在"
+          ls -lh .scrape_status
+          echo "   📄 文件內容:"
+          cat .scrape_status
+        else
+          echo "   ❌ 文件不存在"
+          ls -la | grep -E "scrape|status" || echo "   沒有找到相關文件"
+        fi
+        
         # 先讀取抓圖狀態
         HAS_NEW_IMAGES="false"
         COMBINED_IMAGE_PATH=""
         BACKUP_IMAGE_PATH=""
+        HAS_IMAGE_TO_SEND="false"
         
         if [ -f .scrape_status ]; then
           echo "📖 讀取抓圖狀態..."
@@ -179,21 +194,31 @@ jobs:
           echo "HAS_NEW_IMAGES: $HAS_NEW_IMAGES"
           echo "COMBINED_IMAGE_PATH: $COMBINED_IMAGE_PATH"
           echo "BACKUP_IMAGE_PATH: $BACKUP_IMAGE_PATH"
+          echo "HAS_IMAGE_TO_SEND: $HAS_IMAGE_TO_SEND"
         else
           echo "⚠️ 找不到抓圖狀態文件"
         fi
         
-        # 檢查是否有新的組合圖片
-        LATEST_COMBINED=$(find ../combined_images -name "daily_combined_*.jpg" 2>/dev/null | sort -r | head -1)
-        
-        # 根據 has_new_images flag 來決定是否發送
-        if [ "$HAS_NEW_IMAGES" = "true" ]; then
-          echo "✅ 檢測到新圖片，準備發送..."
-          if [ -n "$LATEST_COMBINED" ]; then
-            FILENAME=$(basename "$LATEST_COMBINED")
+        # 根據有無圖片決定是否發送
+        if [ "$HAS_IMAGE_TO_SEND" = "true" ]; then
+          # 優先使用組合圖片，其次備用圖片
+          IMAGE_TO_SEND=""
+          IMAGE_TYPE=""
+          
+          if [ -n "$COMBINED_IMAGE_PATH" ] && [ -f "$COMBINED_IMAGE_PATH" ]; then
+            IMAGE_TO_SEND="$COMBINED_IMAGE_PATH"
+            IMAGE_TYPE="新組合圖片"
+          elif [ -n "$BACKUP_IMAGE_PATH" ] && [ -f "$BACKUP_IMAGE_PATH" ]; then
+            IMAGE_TO_SEND="$BACKUP_IMAGE_PATH"
+            IMAGE_TYPE="備用組合圖片"
+          fi
+          
+          if [ -n "$IMAGE_TO_SEND" ]; then
+            echo "✅ 找到可發送的圖片: $IMAGE_TYPE"
+            FILENAME=$(basename "$IMAGE_TO_SEND")
             IMAGE_URL="https://future801113.github.io/i-love-col/combined_images/$FILENAME"
             
-            echo "🖼️ 找到最新組合圖片: $LATEST_COMBINED"
+            echo "🖼️ 圖片路徑: $IMAGE_TO_SEND"
             echo "🔗 圖片 URL: $IMAGE_URL"
             
             # 測試 URL 是否可訪問
@@ -220,10 +245,10 @@ jobs:
               fi
             fi
           else
-            echo "❌ 沒有找到新的組合圖片"
+            echo "❌ 圖片路徑無效或文件不存在"
           fi
         else
-          echo "⏭️ 沒有新圖片 (HAS_NEW_IMAGES=$HAS_NEW_IMAGES)，跳過 LINE 發送"
+          echo "⏭️ 沒有可發送的圖片 (HAS_IMAGE_TO_SEND=$HAS_IMAGE_TO_SEND)"
         fi
         
     - name: 顯示執行結果統計

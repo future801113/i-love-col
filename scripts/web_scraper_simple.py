@@ -877,10 +877,17 @@ def daily_scrape_and_send():
     status_file = os.path.join(os.path.dirname(__file__), '.scrape_status')
     try:
         with open(status_file, 'w', encoding='utf-8') as f:
+            # 決定是否有可發送的圖片
+            has_image_to_send = combined_image_path or backup_image_path
             f.write(f"HAS_NEW_IMAGES={str(has_new_images).lower()}\n")
             f.write(f"COMBINED_IMAGE_PATH={combined_image_path or ''}\n")
             f.write(f"BACKUP_IMAGE_PATH={backup_image_path or ''}\n")
+            f.write(f"HAS_IMAGE_TO_SEND={str(bool(has_image_to_send)).lower()}\n")
         print(f"✅ 抓圖狀態已保存: {status_file}")
+        if combined_image_path:
+            print(f"   📍 組合圖片路徑: {combined_image_path}")
+        if backup_image_path:
+            print(f"   📍 備用圖片路徑: {backup_image_path}")
     except Exception as e:
         print(f"⚠️ 保存抓圖狀態失敗: {e}")
     
