@@ -1,265 +1,257 @@
 {
-  "last_updated": "2026-07-10 11:30:59",
+  "last_updated": "2026-07-11 10:47:20",
   "total_count": 45,
   "categories": [
+    "娛樂",
     "財經",
-    "科技",
-    "娛樂"
+    "科技"
   ],
   "news": [
     {
-      "title": "GuardFall攻擊鎖定開源AI程式開發代理，可繞過Shell命令防護 - iThome",
-      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE45UURLVlh4cmRHWG9ERnFaOU5JOHl1MDMzNVdVYWxhcmZvYnBhMmMxa0ZHNWQ1cmpaOVRaSV9rNFQ1NGV4QXpMRjBYR2QtQQ?oc=5",
-      "description": "GuardFall攻擊鎖定開源AI程式開發代理，可繞過Shell命令防護&nbsp;&nbsp;iThome",
-      "published": "2026-07-10 11:21",
+      "title": "別再過度依賴AI！專家揭密職場生存關鍵 3個習慣讓你不可替代 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMijgNBVV95cUxOWkdTZzNVMWQ1dld6dlJSZkhIQl80VDlHaXo4bktKX0c0RkdOLXNuWUg0UEl6MzRwXy1pMS16OUpyWHQ5SkNlRVVVQkpGNjFZRmtfUHEwMDJkQzhuQzdjMXZuWEpCX010aVN5c2FhYWtBb0hOalBucDVjTEtUMk4wWUxnZ1FYTjdXZ09rUmYtbU9kMUx4Q1V0Vl8zT1Y2OHAtWkUxSmh4M0pWd09hekc3M1BUXzEzS2Npb1dMbk5iaEhCV3BJNXh3dTQybWtkaDVocDhvdFdBZ3VEaS01LUpHMENoR0ZmQlM1UzhUajlWMERTUVFrN1pTVUE2TFVMcEJwU0gtck1BWHhOaHlfUmUxQ25mNFB1b25EVGtJNmVLUkxGYjRkV3RIQ3JJN3ctWm1FaDlheXZZS1YyejB1eFE2YTZTVXl0NHFKY28wc3ktNlQ5eExQTURTV205WTlyLUlkYlo1d3ZYWWpyMjJVUEg0WEpaRlo1SE5ZdFdnemxubTRaUm8tYXZVZF9nanRoZw?oc=5",
+      "description": "別再過度依賴AI！專家揭密職場生存關鍵 3個習慣讓你不可替代&nbsp;&nbsp;Yahoo股市",
+      "published": "2026-07-11 10:39",
       "source": "news.google.com",
       "category": "科技"
     },
     {
-      "title": "2026 AI應用大展7月底登場聚焦AI Agent、Edge AI兩大主軸| 科技產業| 產經 - 聯合新聞網",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1tQ1RqQ3VkR0R6XzRydU1EeG9MaXo1NXRGQ2ZZNktzSnJpLS1FZUo5cWtmYTNpUWJfSlkxYU1iLS1FU0hSdUVmYU9EaWxIOUt2?oc=5",
-      "description": "2026 AI應用大展7月底登場聚焦AI Agent、Edge AI兩大主軸| 科技產業| 產經&nbsp;&nbsp;聯合新聞網",
-      "published": "2026-07-10 11:05",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "歐盟推AI資安行動計畫，強化模型安全評估與網路韌性 - iThome",
-      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFAyZEJOdlA3UmllWWl6bTZHNk1FNDVCTFZlTmU4Uk9haU9rbGRBMmtzOGdkc3hySW1DUkVnTGNnbWNTelU1MzlvRlhodFJIZw?oc=5",
-      "description": "歐盟推AI資安行動計畫，強化模型安全評估與網路韌性&nbsp;&nbsp;iThome",
-      "published": "2026-07-10 10:57",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "1070%！A股半導體明星股托倫斯上市首日漲超10倍觸發臨停 中籤一檔大賺近57萬 - news.cnyes.com",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE82QkZISFhoTDVYT0N1WG5lUkZFV3Bic2szbnZDajBEVkF2ZERZZ0VybVk0MzFZbWxLWDdvbWZIZHlHcno3ZlY1NERFemhDbUk?oc=5",
-      "description": "1070%！A股半導體明星股托倫斯上市首日漲超10倍觸發臨停 中籤一檔大賺近57萬&nbsp;&nbsp;news.cnyes.com",
-      "published": "2026-07-10 10:35",
+      "title": "遭司機怒嗆「死矮子、臭明星」！大咖男星搭車爆衝突 飆罵畫面瘋傳 - Yahoo新聞",
+      "link": "https://news.google.com/rss/articles/CBMikANBVV95cUxQMmZ1VHctUkppMG9PV0ZQaEVTYnY5Sm9OUHdKaExhaUF2bFhmOUE1djNBQjJ4cERaVkgzc09uREZQMkJfS2J4SGtVWHdFVEVVQjNPMG5tOGgzZ3U0X05PaDZYb1FWM0RJMEJJNm9wcHdlcGhMdXJHX2tLSnZqcnJTdk03bEZ4UVZrbU5CTExwWk8ydHpOV0dNdkxXVnZuRWZlelNKTHp0U3BFWVNhNWtQN2RIaTdxUUhHME13NmhxaU4tZVc1NXYzZ3lYdUsyTjY2Q3dsUngwalZqMHJqNWdNTkJFbzNuLXUxMGIwcm1xTGlNQUI2ZUluNXZZd1NaZi1aR3AwZFBfdngxLW94YWt1WjRIRWRIaGtfTWFSd1FsX3VBMWdrbXJlMTFZLURucU0zaVRKc2JFMUItMUJCQ19IM2NYYTNjc2JuclRJOEYyT0w5NE1kRVhlQjRRanRBWUpTdVUwcEhfN1lqVDYwYTlnUjJHQkp3c0ZKSVVtNDlHNDZod0xBc1NYQXZfZTBSVjZ4?oc=5",
+      "description": "遭司機怒嗆「死矮子、臭明星」！大咖男星搭車爆衝突 飆罵畫面瘋傳&nbsp;&nbsp;Yahoo新聞",
+      "published": "2026-07-11 10:37",
       "source": "news.google.com",
       "category": "娛樂"
     },
     {
-      "title": "WillTrip 須弘道啟動走唱計畫 盼以音樂跨越語言與文化界線 - 樂聯網",
-      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE42MkFZYVJ2N3JYcktQS1Joa1I0WlRCNk1pbEZ1akZ3NWFNanFycEU3cG96dW5oUVhGZTlMRHV6QjY3U0VfbG9yZ1J2dw?oc=5",
-      "description": "WillTrip 須弘道啟動走唱計畫 盼以音樂跨越語言與文化界線&nbsp;&nbsp;樂聯網",
-      "published": "2026-07-10 10:29",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "AI工具書首度攻占暢銷榜、Threads成賣書新推手！2026上半年商業理財書單出爐 - Meet創業小聚",
-      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1KNVlXUmIwdWUzQVBlQWdaNUFXemx0cUJLQ2hLd29vQVNvT0FHeXZlakVHR3ZrX0JBdERDbEwybVhzZ1FWcHRnT1ZtcDgzV0VrazREaFl1aG4?oc=5",
-      "description": "AI工具書首度攻占暢銷榜、Threads成賣書新推手！2026上半年商業理財書單出爐&nbsp;&nbsp;Meet創業小聚",
-      "published": "2026-07-10 10:11",
+      "title": "AI資金大風吹！半導體已飆83% 華爾街喊換股 逢低布局科技七雄 - news.cnyes.com",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9JOXRIQ3pGRnltbG8xTU1xU3N0UGtyMUZHbXRwX1NYcWVhd1dmcnlXLWlMRG1CUTVkYlZ2QTNuM1lSZkctUjNSaUF2T2pPcWc?oc=5",
+      "description": "AI資金大風吹！半導體已飆83% 華爾街喊換股 逢低布局科技七雄&nbsp;&nbsp;news.cnyes.com",
+      "published": "2026-07-11 10:30",
       "source": "news.google.com",
       "category": "科技"
     },
     {
-      "title": "美國企業轉向低成本中國AI - 日經中文網",
-      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE51aUNhZm5SenJCbEZ3cngxMGVyV3RFNFdzeEdfVXZEVjR6a0tQNUhud3o3SUpKTXFOUjQzZGtGdjJfTnlabnNkcDRIa2kwR0FDcTFycW5ZOVBFMXNSOXo4T3ZsTHFjMk5JaFBZOHYwN1ZSaktrQ3p5QS1n?oc=5",
-      "description": "美國企業轉向低成本中國AI&nbsp;&nbsp;日經中文網",
-      "published": "2026-07-10 10:03",
+      "title": "AI 浪潮吞噬入門職缺？資深老鳥降級卡位，新鮮人面臨最嚴峻求職戰 - TechNews 科技新報",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9iWXZTMW1pTlB4cUk1TmdVWFYtQUVtdVItbFd2d2U5QU1VNlNLQklGNXNxc2xVVUR3SlBjNGZfTzZTR2tGay0yVmMyXzVKczhrdng4OThVaTdjRTRibTY3M0ptQVZURGhUaFVQR3N5bkpZZDNV?oc=5",
+      "description": "AI 浪潮吞噬入門職缺？資深老鳥降級卡位，新鮮人面臨最嚴峻求職戰&nbsp;&nbsp;TechNews 科技新報",
+      "published": "2026-07-11 10:28",
       "source": "news.google.com",
       "category": "科技"
     },
     {
-      "title": "【下班經濟學】財富傳承比賺錢更難？81萬高資產族最怕這件事！專家曝：沒規劃恐讓子女反目 - 風傳媒",
-      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE8yNi15Z2NKa09iMFJYbzkzQmNkWUE0Rmp2T0JkQWw3SG1rcjU1RkMtODhsRjRzX09ZWDl0R2kxNzFTMC0xajRXWG9uSnkxdw?oc=5",
-      "description": "【下班經濟學】財富傳承比賺錢更難？81萬高資產族最怕這件事！專家曝：沒規劃恐讓子女反目&nbsp;&nbsp;風傳媒",
-      "published": "2026-07-10 09:30",
+      "title": "AI股大對決！Meta vs. Alphabet 現在買誰好？ - 三立新聞",
+      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1mU3dDenhiQW1QZ2NrNmxPVDlLM3cybzRiRWtiR21NcVhCTEZxOXdZa2VieklPVVR4anNBTk0tUEdrNUdHU2RhWWcySQ?oc=5",
+      "description": "AI股大對決！Meta vs. Alphabet 現在買誰好？&nbsp;&nbsp;三立新聞",
+      "published": "2026-07-11 10:13",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "成本差逾百倍 美企採用「價格實惠」中國AI比重攀升 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBmcUVNOTZNSXRKZ2xXM1BxQS0ycVVQNTc1dVBZaWpPQW1nNzh5Qk5UOG9laDBCaDFJMnNhNXdGRTVLdFlLcjNCS00zNXRrZFla0gFWQVVfeXFMT1NrOGs2d09FSVdOVFFOVUxFeUZrVFNDeUR6cUFxUm1DaDNpQTdzTVVHcFFnLUVLbV9LTWdXRGdRMDdIa2N6UmJSQlRwajl1ZUU4NlY0aVE?oc=5",
+      "description": "成本差逾百倍 美企採用「價格實惠」中國AI比重攀升&nbsp;&nbsp;聯合新聞網",
+      "published": "2026-07-11 10:09",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "別被金融網紅騙了！英國最大銀行CEO的投資建言：沒存到錢之前，別碰高風險產品| BBC News 中文 | 新聞 - 風傳媒",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE56eHNMbUZXU0VpM3dSY3NTZzUyQlZyU09maWdYSW5CLVFEYUFXTUpkaDF1ZTJGbzhTenc2UjR3LUZxdjFHMVZpemI2RTBiUQ?oc=5",
+      "description": "別被金融網紅騙了！英國最大銀行CEO的投資建言：沒存到錢之前，別碰高風險產品| BBC News 中文 | 新聞&nbsp;&nbsp;風傳媒",
+      "published": "2026-07-11 10:05",
       "source": "news.google.com",
       "category": "財經"
     },
     {
-      "title": "颱風攪局股市停擺！AI利多齊發、費半夜盤暴衝台股下週開盤動向成焦點- 上市櫃 - 旺得富理財網",
-      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBIQzkzR1hmVnI2VVdnZkdOclRnV1pFLXNLN0FPMFU0N2NVMGVUNGhQYnppb2tCVlZIaDVSQzNRU3R6OEg2ZXFWZTJUckZDbVBwbmpzM1JjYkV6MjBYZGRmem9mRHMzcE8teHc?oc=5",
-      "description": "颱風攪局股市停擺！AI利多齊發、費半夜盤暴衝台股下週開盤動向成焦點- 上市櫃&nbsp;&nbsp;旺得富理財網",
-      "published": "2026-07-10 09:18",
+      "title": "MLB》大谷翔平因左膝不適確定退出明星賽 藉明星週接受治療為下半季做好準備 - Yahoo運動",
+      "link": "https://news.google.com/rss/articles/CBMi4wNBVV95cUxPbEV6SEhiMjZ6c2YyMy04MlJycXBNQi1YSy1FOGZnT1RtVFRKMW00aHRvNFc0ekpLb0pQdEU0NmV2UWFtcGRvN1oyeE4wckZrbkpQU3VQZHhFUzM4UEZuX3VfeEdJdTBFbWVPdzhNeldMZ19EYUNUeFBaQ2xTdzZRMkg3X3pJbEdkSy1HSm93OGpma092ZGtidTJWcFlLckk4R2ZqTjhONjRTU01qOThnQ1I2ajNlaTFDMldpNFowWEFFeGxGbDZhWmp1NFV2c09xRTEwSC1DWFRqV1RqeEJkS3dpb1M4cHhtaGQwRFBXcjk0cC05VFdPQjZSaTdTcEFIMTZ5d3A0cGViM2JuTmRjNlJ5ck16TUlEZWRMVzhKX2dvclVRSDI4dTlGWC11YWU0c285QzhJZ2FBcnVXT2xwcEJ2S0M0dGxlMnRiWkpkZFNLeS1mZFhSdEdDRU5Ca2ZCU2ltcnZ4R2N1dXl5cGt1NmN6NzduaVJHbWZNYU9UcXBBQlg5TS1iU2laN2sxREkwaWExVkk5TlpPaFFubldWRkJoSG9jV0hHemVXdzZENmFZbTRMcUxSMVhmNXAwX0lvQTNLYmlmdUtETnMxdmxVY3VFRmNvRUV1NHcwVkdPM3pGc1E?oc=5",
+      "description": "MLB》大谷翔平因左膝不適確定退出明星賽 藉明星週接受治療為下半季做好準備&nbsp;&nbsp;Yahoo運動",
+      "published": "2026-07-11 09:47",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "AI 故人體驗趨近成熟，但受試者擔心仍有依賴上癮風險 - TechNews 科技新報",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQUEtjUDZJdGw4Rk5MWUtlQk9EejdCeVlib3hQN0dOWENOSlFabTdvYWNvVXBQX29yZVptMTl1MnEwOWN0emdiZkZlU1lRMkktc2NqbkZWNnRaRFU1VUU2aXJMTjkzZkdHekl2WVRXd0JjOXd3eDVpYjN6ZjhUMVZfNzFTNmVWZWZZVEdaZDR0eFBZOXZmejdYV0VxMXVNRlBmR2ZmMFg3VmVKQk1ST1g0Nk9aOXpldFR0YmJVZEgydEY?oc=5",
+      "description": "AI 故人體驗趨近成熟，但受試者擔心仍有依賴上癮風險&nbsp;&nbsp;TechNews 科技新報",
+      "published": "2026-07-11 09:43",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "MLB》大谷翔平先發臨時取消 也不會打明星賽 - Yahoo運動",
+      "link": "https://news.google.com/rss/articles/CBMiugJBVV95cUxQNTlRUjFPakJZelNpVXNBYWduS3FPUVJXRXM3bEJuSHVsemprT19BSkNGR2ZnWk9rSDhlY21yTlpUSE9BNFcwUzZqWV9QVWNtNGNtQzhTNDNQaC1mOGN5Sk15UjJGbkJ0MkctWHVreGVKZU9YNjNoendYTGRJbXNpSTBZNndlOTFJZ0ZqTVVIM0hndmNDRTRiYlFYb0piQkQxTnBuSUo3QTBfRWtjY2F2ekQwV19BRDJ5NkcwdkVuMVlHNTh6clBmREsyejdWbXVOdmxsZG5PcmNjS3JJSnNTZDNvU05GcVRTZXp6Nl8tV0ZyVHIyWGpzLTFmSjU4LWFsTC1FOC1obGV6bFlTa29XdlNsdlhGRTQtc2o4NjJvUkZvYXJVclhDZmppTm5ZOXJYV3YyUk9yZERtdw?oc=5",
+      "description": "MLB》大谷翔平先發臨時取消 也不會打明星賽&nbsp;&nbsp;Yahoo運動",
+      "published": "2026-07-11 09:41",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "AI需求太強！SK海力士執行長郭魯正：記憶體荒2027年將最吃緊 且恐延續至2030年後 - news.cnyes.com",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBFVnVlTzBzbUJ5TlZtbXNlSlQ2cm1WUWtfRWh0eTZYMktxYl9QX0F5bkVpZkpzLWk4MS1lbzF6NGI2Tnl3YXFmQUpvMXNiV2c?oc=5",
+      "description": "AI需求太強！SK海力士執行長郭魯正：記憶體荒2027年將最吃緊 且恐延續至2030年後&nbsp;&nbsp;news.cnyes.com",
+      "published": "2026-07-11 09:30",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "中國首個！純中文AI音樂模型殺瘋了，全面接入10億人的抖音| 科技 - 鉅亨號",
+      "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE93MFE1czV5ejduOUhvUFZqQ0ttUE52djU4V3dxdGNsUGhXVHF1X2hvNmZhRlFlN0c2SzRJRGU2MGRpOERweEtkRQ?oc=5",
+      "description": "中國首個！純中文AI音樂模型殺瘋了，全面接入10億人的抖音| 科技&nbsp;&nbsp;鉅亨號",
+      "published": "2026-07-11 09:08",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "澎大海沙灘音樂祭8月登場 30組國內外人氣卡司齊聚隘門沙灘 - 新住民全球新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQaUJMU09NVkJWRzBSV1Azcms0YUZReTk0cHRTM0dhU0xlc2JPX1hqclNXTzZvLUpCTVBYLUwybEowVWhMaVdnR1ZZNUJ3TnNUWHU1MFlTeHU2OUR0U0otb3BQWU9PeXdoLVF0UFpMVFN5emJCMjdmRVU5VmVKTlltd3k2RmRaNTVRcjRYMDBrQkZRd0Racko5TlQ5M3V2QWxpZUYteWVuVnRJdw?oc=5",
+      "description": "澎大海沙灘音樂祭8月登場 30組國內外人氣卡司齊聚隘門沙灘&nbsp;&nbsp;新住民全球新聞網",
+      "published": "2026-07-11 09:00",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "AI競賽變了！企業從比模型大小轉向比成本效率 - news.cnyes.com",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5WaFpmRGJDdEhoYW5xOUw4WHNWNzdBd2tZYzFqeWlDUkZ0OGVPb2RBWGhEU2x5T1NNVlFnbmU5cGlJUlpaZFpvSjFIT0NmaEk?oc=5",
+      "description": "AI競賽變了！企業從比模型大小轉向比成本效率&nbsp;&nbsp;news.cnyes.com",
+      "published": "2026-07-11 08:50",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "聯發科Q2營收優於預期！AI ASIC第四季貢獻上看20億美元 法人看好毛利率、獲利再提升 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi4gNBVV95cUxPSVZRcF9veHdnYnhoOFRsOHZ1LTBIQzBTTExIN3FUWFNsYmJoRFVibmVyT0I4aURtLTdEVVFjcm5Ra1JsMUd4YlJGTjI3SkcxTE5FUE9DX09waEN3Sy1weGM0bGphaUFJc1hGcXVmMkdoamRLdUdHQjloVlZKa2FwdDUzdmFROHVxU2VmemY5cnNmcGc3ekxsc2F4S2dUNVpyVEpfMFVsV2MyRXVOZFd6bmlkUktCdUgtTlhHODFkRWZPUkxDeV9KVVBXanZlQkp3Skkyb2FrTFVORVVSVzM5Z3U0WlNGbEJ4bW9NdDE1TG44b0d0cXF2S1draHU1WE1adG1RT182OXhJa2h0NjRiaUZPSVluWmE0aFh2dGJiUEZEYXdhdlVzaW5wdDJVSExPWk1zQlI4Qlp1WWtyYTNrNkE0QTA2M2E3VUhrTnVXcm1rcGxXZXd6TWF4d3NWNy0wVTRCa0NtdzJWR0ZqZ082aGlkbnI3aGcyY05lMHJoOFJhMEhWeTE5VGF3bDVQQ1ROdGRWZWkzWEdUZWxGdEViNTl3ZFBveHVmdmNZN0kxQmlPN3pUZGRlVkd1M0dyYUxhSk51ODVWV3RXcGNZc1Z6NGVTNWR5NnlkYlFobG01OHpVdw?oc=5",
+      "description": "聯發科Q2營收優於預期！AI ASIC第四季貢獻上看20億美元 法人看好毛利率、獲利再提升&nbsp;&nbsp;Yahoo股市",
+      "published": "2026-07-11 08:38",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "MLB》無緣全明星賽！大谷翔平將動手術治療 道奇主帥透露最新狀況 - 自由體育",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE0tSkZ0NTRja01MQmJrNkNqcTNVM1pKSENjSFdzMU1SczZhbjQxcThJZVBqM3MxR2tmNFhudV9HZ3BZYWd1YUhvemk4eXhMVU1WUkNDR2tZRWdJWTlfMkhwZdIBZkFVX3lxTE1VbXV2MXdRM2syM3JpYjlEY3NhTTBneVBnMzFGQnFQcW9LNmgtTS1iSDl6MFA5VmJ5X0l6TEoxSlZNckc4UFFJY1dkWjVlNVRFUEtDbE96eFNsYTFqdV9QTjdKaU43UQ?oc=5",
+      "description": "MLB》無緣全明星賽！大谷翔平將動手術治療 道奇主帥透露最新狀況&nbsp;&nbsp;自由體育",
+      "published": "2026-07-11 08:34",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "蘋果控OpenAI竊取商業機密提告要求停止使用技術雙方AI合作恐添變數- 國際 - 工商時報",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5NelpUNXN2Q3huRzVtTGpPcS1pblA2YVQwSUFTLTBUcVo3Ni16ZjBjSnQ2UDIzNFFoVWNVTDJuOVZDaU44T2ZLXzY3TkJLNm9RM1ZUVTYzbVZNelNUdXBn?oc=5",
+      "description": "蘋果控OpenAI竊取商業機密提告要求停止使用技術雙方AI合作恐添變數- 國際&nbsp;&nbsp;工商時報",
+      "published": "2026-07-11 08:33",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "MLB明星賽》日本重砲村上宗隆遞補入選！宣布參戰全壘打大賽寫紀錄 - 自由體育",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE8yckUwNzNPb254cGQ1a2FTWFNrSWZzWXVhaXhTc21HT0hLZFNITFlvczdxSkFVelJFQ2NxR3R6REhvc2VpMjFJOGpydG11MnlCbzZyRlg3THNzcHpWMm5uU9IBZkFVX3lxTE5SYzZmcWhoNE05aF9rcVdnaVB5N3hDTG1VYVliUkhXOEE3OFQxeFNfWVMzSEI3SnkxLUxPWHN0R3ZMaUxBZ0NtbkZfMUJ5YzJLOXpualhYTTl6UThjQXY3RXgtNmRmUQ?oc=5",
+      "description": "MLB明星賽》日本重砲村上宗隆遞補入選！宣布參戰全壘打大賽寫紀錄&nbsp;&nbsp;自由體育",
+      "published": "2026-07-11 08:13",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "MLB/大谷翔平左膝不適 道奇宣布他退出明星賽 - Yahoo運動",
+      "link": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxOVzlQWF9Kdnp3cEIyaDFWemhwS1V6dzF0Y05WWnVYN0l1eVM5bGNIeDZCXy0zcXVtNG4xVWRFSHBHQnluUUZXZlNCdDA1V1o4blkxN1llbGtPZlNmVXhSVl9NZHBZVmhlVXlDUU9uZHhGNHZyNTZLY1hHU2FsTG9MT0FpbkpuTFBLN25jSEx3Rm4zSUpkUGhWUVlfYTJQb1B4VmM0OUlLdkpoSUc5RTdKLTZKU0pVLVJwN3NCYlI4cjE0Z3Vsajd0QUJSQ1ZqMHUtZ0x1Q3dMZnVDc0JBSEpwaUNqY1ozam9GeURQc1RIOXhIUmcxQlJFTkhpcmVZcVFhRmszVlJKaXdlNU56SXJiY2ctNWVzLVl3cEx1WEhsVGhFcWU0Q0VkSUdVdXVzN1RXMVdrZnFkaFJqN2s?oc=5",
+      "description": "MLB/大谷翔平左膝不適 道奇宣布他退出明星賽&nbsp;&nbsp;Yahoo運動",
+      "published": "2026-07-11 07:48",
+      "source": "news.google.com",
+      "category": "娛樂"
+    },
+    {
+      "title": "Reddit 祭出「AI 對抗 AI」戰術，每日擊落 2.5 萬則假留言 - TechNews 科技新報",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBlNjl1bTR5R3FHc0M2WG92czJucE9uc1ZRcFFnYWRiTHAwRlJ6SjZPMG9YYnFtR1pJV2ZqUDBGZXMxTUFSQ2p6STRhZF9rMzcyc1hPbC1oN0hhNXMzTVE?oc=5",
+      "description": "Reddit 祭出「AI 對抗 AI」戰術，每日擊落 2.5 萬則假留言&nbsp;&nbsp;TechNews 科技新報",
+      "published": "2026-07-11 07:41",
+      "source": "news.google.com",
+      "category": "科技"
+    },
+    {
+      "title": "H2樂觀！「這檔高息ETF」成分股集結卡位雙利多：AI硬體營收迎爆發、金融下檔力撐 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMixgNBVV95cUxQM3VESjMzSm9namhsTlJpemd6OGxYOXZDbGZOaVRzT0lnQ2tRSm9FcmZMMHBMLWgybTZSWUxYaEg0RmdIM2hnQmlYNTFZNXZQc3RkM2FTYlcwb1ZkdmN1enNvU3JGQ1hzcGtxT3hXZDJncEl1b0VJUTdhRWlOc3hIbE9uYTVDMUx1OG96VFdZQkEzYm5HVVBuU0dDdU1YX04tNDRyOG1ycFI0UTY0cXZjaDhrdGdaR2pJSHh3RkdYdmYxMmNYRDdWYUJlNGItaVJ6YmVBdjJfZ2tWQzZVeFBkdXc4ZVhVVnpnbmhTN3NsSWFTazJmZGRkTzJwVFhiUmxpeDkyTEt3OVpEYUJYRi1EUXlIb2hBZmN3Y2o0OVY0RDFOU19oOS1lWm44UUEyOEFmdGpWZFdxc080X2hGbzN0RU81M3lnb0dmZ21HX09sd0pmc0JMSm1MTDJ2dnI1ejQ1WDJaTXRDeUNtUTFlWmdBUWd5WEdDRHRxYU1wXzhocnVYOC1CQXVIOGN0UThIenEybnJUS0wyUEVxSnplekRMQmllSnZBMElfNEdZVzBncnZ6QWVFQ0R5LVE4b0ZRaHhKMzlvZjFB?oc=5",
+      "description": "H2樂觀！「這檔高息ETF」成分股集結卡位雙利多：AI硬體營收迎爆發、金融下檔力撐&nbsp;&nbsp;Yahoo股市",
+      "published": "2026-07-11 07:30",
       "source": "news.google.com",
       "category": "財經"
     },
     {
-      "title": "AI液冷先行者元鈦科興櫃三天砸2.68億購地深坑打造專屬數據中心-房地產 - 商周財富網",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5wLThnZU45SGNRb19YYXhvczVEMmpJcXBuZGcyXzFnVjFWcjF2UzJZNThWTENTWHBJRUhDZG1IQS1xRzJzYVlUbXBUek1heWMxMmdzUFhlTU1nT2FtbUZrbk83Zk9Kb0loVUhUN3Rlbk05TXc3WGc?oc=5",
-      "description": "AI液冷先行者元鈦科興櫃三天砸2.68億購地深坑打造專屬數據中心-房地產&nbsp;&nbsp;商周財富網",
-      "published": "2026-07-10 09:02",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "台積電多一大客戶！Meta宣布自研AI晶片 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPSUVObkhFREpFZF9xNmlhdG9WcG1tRklFb0xUc3V0TWhxbUt6NFBsdWdZaDBRUW9sZFZKLWdCU2JCYUJuSWFNMDhhQlYtamlqeUJSOW9qWWtieVE3M0dPU2NGbHB1VjlzWXBGRmtkaXJLc2UxY2pLWnBJamU0OUg4bXE0SUVJYjUtRFRsVG1EQUdPWk1jbXdRLU85UTZpY3B5YXJXcDQwLTJCSGx0NDltbzgwTHgyUHZ2TlN4VGVGUjVwbmIxMFNkODJ6VUFiQ3VZYzE3ajN4Q3lISDRLQmlHaUx1Tzh4YmRRYnptdGlERFUtSFVJNVhPTUxwVWlWR0RvaWc?oc=5",
-      "description": "台積電多一大客戶！Meta宣布自研AI晶片&nbsp;&nbsp;Yahoo股市",
-      "published": "2026-07-10 08:55",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "飛越風雨的魔法 音樂劇《魔女宅急便》颱風來臨前舉行總彩排 - Par表演藝術",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBMSjdmX3d2bjVmUlFGMnY5dlNETTc4RUoxZ1hfd3ExZFBVeFlaUXZlSGNxUUJQQ1lhdW9SdFRPdnNpLXVQZGFXUjVqSnNVNkg4dzJYaU0zcW9MMV81cG00Wg?oc=5",
-      "description": "飛越風雨的魔法 音樂劇《魔女宅急便》颱風來臨前舉行總彩排&nbsp;&nbsp;Par表演藝術",
-      "published": "2026-07-10 08:53",
+      "title": "MLB》大谷翔平臨時拔除先發無緣二刀流！確定首度缺席全明星盛宴 - 自由體育",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBKWHBrdmVPU1ZIRlNiNFZwcXhjVkhhTWVaUkQ0ZDR5VUJqeGxPQ0JENW5SRlpOWHJfSGJNTzhSYm1fbTJDb3BaUjlTRmhyTWtjbUxqOW5ORjFqbWk3WGg2eNIBZkFVX3lxTE9VTlBVSU9nNUtOV2w4cFA1Z2NvM3pNLXA0d3UwdkZqVko5QVhJWUJHdGw5dkphTU42R0FtdjJUZzY0bzREUFM4ejNtdVc5RE95V0ZlVFByNWIta2tuRy1BbTVUYXpRdw?oc=5",
+      "description": "MLB》大谷翔平臨時拔除先發無緣二刀流！確定首度缺席全明星盛宴&nbsp;&nbsp;自由體育",
+      "published": "2026-07-11 07:19",
       "source": "news.google.com",
       "category": "娛樂"
     },
     {
-      "title": "中國醞釀對 DeepSeek 和月之暗面 AI 模型收緊管控 - TechNews 科技新報",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNZG04VGtDdkxhS1gyWnl0a2tacUxpWWV1MkV1M2xaLVlldXNRODhsRk1wbkR5bmxHY2FZSDlmeFdxc09zaG5XN21oX3NiVG9ic0MwaHlWbTlTUUx2dUNyTklIMUdZamRvREgxaVg0MFJiSlFhdFJKUXBvRlkxTmo3NWg0WXlsOGJvR0JiWG9EQVlsaFlUT2t3?oc=5",
-      "description": "中國醞釀對 DeepSeek 和月之暗面 AI 模型收緊管控&nbsp;&nbsp;TechNews 科技新報",
-      "published": "2026-07-10 08:47",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "音樂輔療結合AI醫療照護 承恩協會攜手大葉大學跨域合作 - Yahoo新聞",
-      "link": "https://news.google.com/rss/articles/CBMi9wJBVV95cUxNNThLZUNlSkljdTFJcEl0SS1BbUNBYVVZMzdRQTNLMGdVNGFOZVVBaFNGZVAybTZzMjlqd1hlMVJ0eGh1RkNvc0xwU0dka3BvVk9OTU1yT1JDbXVDYThEc0lBMjJleVJKdjVKdV9MWkN1YmdiMUJMT1RqM3ZkQkM2VzZmQnZCd1hWVzFVc3lydXFqZTVEWm82RFJ5cFZiaC15eXJFVmRKU2s4UUpMcGxpMV9XX2kxZkd6S1k4eFJvT1NxMndCY1o1RW1DWGxwQS12dWZfclVnOHk4T2szTE9vMnVQU2xWNjQ4bmdrR0lqRk1PejluRHh3UzRCalFyR2g2ZmVBSEdlZ2xDckcxU0E3cXZURzNFWnY5ZUo2anFrcWd2b0ZPLU5QcERUY2lMYlJFQTFjRDkxU0t2NklhVy1qbWhpWWxBaW1Ka05xYll6WFVxNW1kcGpncXF0TE02NjF3VUllNllIdFdTSE5Gd2NoRWdFWUMtUDA?oc=5",
-      "description": "音樂輔療結合AI醫療照護 承恩協會攜手大葉大學跨域合作&nbsp;&nbsp;Yahoo新聞",
-      "published": "2026-07-10 08:34",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "全球股市大洗牌！AI退燒「這國」超車南韓登全球第1 台股最新名次曝光 - 自由財經",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE55VzQxVl81NVl1d3czZE9HUi1yemFmNWhtRlg1a1FmLWV4Q0V1Y2I5NWtvRmZDUzdMNkJ2bk5XejdFNVpWX0VMUjF3NkZVaG9vbF9DLUtmLU5RSGJaNGUw0gFkQVVfeXFMTUhRbWFQYjRXUjhSbU1McWVjWFl6N0w2ZUY2Y0ZmaUc1SndCckwtQ3FlNm9VbGtoeVJxOW1nNnpPUU5uNXg4WXNTMXpFellOR2l6Q3paWGoweXpCUEpKUjQxX2l2NQ?oc=5",
-      "description": "全球股市大洗牌！AI退燒「這國」超車南韓登全球第1 台股最新名次曝光&nbsp;&nbsp;自由財經",
-      "published": "2026-07-10 08:02",
+      "title": "擁破億身價！股市肥羊翁建原堅持抱金融股20年、年領600萬股利「28原則」大公開- 理財 - 工商時報",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE84VFlYSXhOT1E4a0IzZFEtSmJEc1JfUE9MWWh3cHFLRk9WdnZMZmZmUkp3QmRxYjFTVGN1aXZUTEhCQUNNS0JjUDREejcyTWU1N0x2dElmSkpxN1RlcnJn?oc=5",
+      "description": "擁破億身價！股市肥羊翁建原堅持抱金融股20年、年領600萬股利「28原則」大公開- 理財&nbsp;&nbsp;工商時報",
+      "published": "2026-07-11 07:15",
       "source": "news.google.com",
       "category": "財經"
     },
     {
-      "title": "校園行政減量 縣市教局提AI公文、流程自動化|發展臺灣 | 僑新聞OCAC NEWS - OCACnews",
-      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5tZVJCS2lDb2o0Vno3bEVHdXpzdHRGemo1VmZPZE4tMFFKYlU1bGF6UU1FNHVKXzFHUG13RDNyX2ZMQkJlcFBsN2NHaw?oc=5",
-      "description": "校園行政減量 縣市教局提AI公文、流程自動化|發展臺灣 | 僑新聞OCAC NEWS&nbsp;&nbsp;OCACnews",
-      "published": "2026-07-10 08:00",
+      "title": "微軟打造AI視覺化中介語言Flint，以語意規格簡化圖表生成 - iThome",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9TckItSXZKbWdtcVE2ekx2bGJmck1lWFdUX0dKcEg5WTlMOU5KY2E5R0VzMWtqSE5KLXBnTTlzNG9aNVNDX2xhYzh0eXRjdw?oc=5",
+      "description": "微軟打造AI視覺化中介語言Flint，以語意規格簡化圖表生成&nbsp;&nbsp;iThome",
+      "published": "2026-07-11 07:11",
       "source": "news.google.com",
       "category": "科技"
     },
     {
-      "title": "AI獲利拐點將至？克雷默：現在賣科技七雄恐犯大錯 - news.cnyes.com",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE8wT2VRNFdQSGh6Z1MtV0hDb21RSVhQaUl5b1JxQzRaSjZvWlM1RnNPNjJ0eDN3cEVLLTVvQmk5UFI5NVR6NGY3cS1TZFZfWHM?oc=5",
-      "description": "AI獲利拐點將至？克雷默：現在賣科技七雄恐犯大錯&nbsp;&nbsp;news.cnyes.com",
-      "published": "2026-07-10 08:00",
+      "title": "緯創、緯穎AI商機燒不停！「6月、Q2、上半年營收」齊寫同期新高 GB300下半年接力放量 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMimwJBVV95cUxQcFU1aURtZ3JEeUYxZW1OM1BLSzljeU0yQnhVQURkbkNOdDFGS1VuSllZaDJEQ2h4dkNjaGtIVW9lbWNEcnZGZ0RlY1c3WmFmekNoTngtY1hCM2YtcVBIdzd2blpjUk91djQxa3pOal9TWHJacUJQUGhabHpRMFRfdGRKeldxV0YxaEhQMWNBb0tPTjJoUjYzZlFzejZCNVBrMDVRNXNLbFZ3QWE3LVA3Tm5EQUhKaGVGWnBLUHQ1ckNOakNieUZJZXR0YVlqUDNpbVlLeUhHMUVYbUJHejZsVXItYk01dTBKT2VfeWNJeGdiTUQzekFnNGN6UnNRT3o5MzBnd1VVODY1VFRWcHllcXkxMFJEVWpycHpn?oc=5",
+      "description": "緯創、緯穎AI商機燒不停！「6月、Q2、上半年營收」齊寫同期新高 GB300下半年接力放量&nbsp;&nbsp;Yahoo股市",
+      "published": "2026-07-11 07:00",
       "source": "news.google.com",
       "category": "科技"
     },
     {
-      "title": "NSO女武神歌劇音樂會延期魔女宅急便晚間首演取消| 文化 - 中央社 CNA",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBLc3NWWnVwelNkUUN2SnVwNEFxSjdNelF2V1NOeVNLOGtDRlNxYzhfX2tFeEJlcTAyVDJWaG5faVdxcWh5c21jeEt6aXpELWhLSHVvUzdRLXlPbHBqY3ZR?oc=5",
-      "description": "NSO女武神歌劇音樂會延期魔女宅急便晚間首演取消| 文化&nbsp;&nbsp;中央社 CNA",
-      "published": "2026-07-10 07:57",
+      "title": "音樂人文饗宴擴至星馬 一句好話深植人心 - Yahoo",
+      "link": "https://news.google.com/rss/articles/CBMimgJBVV95cUxOQzJHUlllZVU0cy15dGZGQ1FNblVYcnJ4ay1rN2M4aHgtbmw1WnJySDFvdnRIclJUc0tuTDZLSFpIN3lkbzhfSzdMZzIxTGZaeHBRbkJWYVlRaHBhNWJWU0hhSm1IekpSa004dkJQcU1YWW9Bb1JsdHZpR042TVdXbEFWMXo5TG1oTHctR1R6MkZGeVIwWFQ1dnJhYTZCZE13dms1RDNDQ1Vpblllc2htc2RRZXJjdjIxcEJZS1o5cG5pMTc2ZnU4VGJGZFBlTGxYVWQyMXBFNHg3MHFTZ3FkZzFtZFhHaFlIbzJyelZIZXJad0pFREZUWVVUd0F6NzZTZEZWWmVjekxBX0hVX2g3ZWtZcHZLOU5qaFE?oc=5",
+      "description": "音樂人文饗宴擴至星馬 一句好話深植人心&nbsp;&nbsp;Yahoo",
+      "published": "2026-07-11 06:58",
       "source": "news.google.com",
       "category": "娛樂"
     },
     {
-      "title": "掌握主權新藍海！日本 AI 科技出海，領軍全球南方共創雙贏 - TechNews 科技新報",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPUFdpQ3JwcFRLTDB5aWdsa25QSWhUZ2pfbkFBTFI0RHB1S2ppLW43dmVyS2NqMmU3SmgwamxlSm9aaVBaRzliaWVqX0J3WjdHUzd5ZXNoN3RDMElVdkN0UVQxaUEwalZQTXZBMjZER1R4Q195YnV1TWZaeWVnRngwS2hIMHB1VHZVeFE?oc=5",
-      "description": "掌握主權新藍海！日本 AI 科技出海，領軍全球南方共創雙贏&nbsp;&nbsp;TechNews 科技新報",
-      "published": "2026-07-10 07:56",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "馬斯克罕見認輸？稱Anthropic當前AI領先者 - news.cnyes.com",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9FMkJfRnZFVmNDN3NOVDFzWU1sTmNscUdwZHRwWU5CVXp2VXoxWExNRVFGX0Ytem0wUzZLMnBrZ3BCWkNRMDkwYmZBN2xHelE?oc=5",
-      "description": "馬斯克罕見認輸？稱Anthropic當前AI領先者&nbsp;&nbsp;news.cnyes.com",
-      "published": "2026-07-10 07:20",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "夜盤走揚、美股領漲！「台股放颱風假」這群人哀號 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMi7wJBVV95cUxNX3hfT3d1T1ZCdnk0aU1EV1gtOE4zbEJXNkxwREQ2OTRHcUsycHVyVzlWUnhRZGNyeEFDNGkyUFg2WF9ndEZ6bVkxWjRhS2tpSlhtcTJ6N0pfakMtbjJZajZsc1dSZ2VkWmxjU3Z5S2lDeFpQSFpXVVBXOGUybWN4aENqeEhkd1JuN1pldWJ1MjIzYlVibHctUXp5U0J3WnVKeEcxdnM5SS1uZFBBRjZkSXcxN2pwMVBJdGJmOUxkRDg5a0FQQWllNDV6LWdOa19sQldfMl9FYWxXdjVGODhSOE1PNVZwa0J4NGExal9TRTREVHQxZzg0TVBHT3prM0h1UVBJd09aRXVESkZLYVhMVWVQM2FvNGNiZ09qZjNGbEJSNGd3TEozTzVleGljQ3dKSFg3azlxMktEeGhtMHRrSnRkUmdjU1VuRUhFd25vTi1MU1Vqdm1FcGMtX1ZoX3V6eEpCNzRFNEoxWF9wMWhZ?oc=5",
-      "description": "夜盤走揚、美股領漲！「台股放颱風假」這群人哀號&nbsp;&nbsp;Yahoo股市",
-      "published": "2026-07-10 07:01",
+      "title": "美國經濟擴張超過兩年 股債多元布局掌握成長、收益機會 - ETtoday財經雲",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE05d1VqNmlNQUluRVMzZUQtUzNubWx5OF9NZ2lNVmxFeHdjY3UxSThFeVREU0ZwN1VSTS1uTmM3UGttcVB0YjJrT2xRckFnMU9sakHSAW5BVV95cUxPaW5DTFVpVTVhZDhRUGJNaXdlMldTUVNZX2sybVpOQnRzX2QxcFVueWVMc0hfTmg3eWdDX1dqbFUwWV8tYzNIbW9NMXRERFl5UHZ3bUczUVNlb05hdjVqN2xfLUxETHd2YWl2NjBZQQ?oc=5",
+      "description": "美國經濟擴張超過兩年 股債多元布局掌握成長、收益機會&nbsp;&nbsp;ETtoday財經雲",
+      "published": "2026-07-11 06:05",
       "source": "news.google.com",
       "category": "財經"
     },
     {
-      "title": "Meta AI雙利多齊發！首款付費AI模型上線、Iris量產在即 股價強漲4.7% - news.cnyes.com",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE91clVqODlSOVdTLV9YTzBGOGJmYjduVWxMcTFvc3BYenV0OWQtTzN2WnZWX2x3bXNVZi1VZWtMZmRJQ2FLZGlaMEpPbFFUaUk?oc=5",
-      "description": "Meta AI雙利多齊發！首款付費AI模型上線、Iris量產在即 股價強漲4.7%&nbsp;&nbsp;news.cnyes.com",
-      "published": "2026-07-10 06:32",
+      "title": "人工智能學會“使壞”，我們怎麼辦（嘮“科”） --經濟·科技--人民網 - 人民网财经",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBqdjgxWkY2VnpqYTZmZHlFcUl6c240RWNyUVZ4cVhuemRUSnBKM05zSnU0MDVNTjU5eDh5UVJFbzJoTFZOZ3FKcndiM3JIY3U1S1MybmtLMlk3VHdFVUk5UUY4VWROdmUwdW04ci15ZVhnVzJ1?oc=5",
+      "description": "人工智能學會“使壞”，我們怎麼辦（嘮“科”） --經濟·科技--人民網&nbsp;&nbsp;人民网财经",
+      "published": "2026-07-11 05:53",
       "source": "news.google.com",
       "category": "科技"
     },
     {
-      "title": "電影光點1／台灣電影文化協會名稱有深意 25年來帶動產業連結 - 鏡週刊Mirror Media",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4tay1salRnczNDd2MtYWs4ME5sc2dqMnZkYzV3dE5CdDJPQzFmUGMyUlY3dVFPZ1N4NVpEeUE4TDJKSVd3M0R4UFp2cmtZWjJhOGlLcEQxUk83a3BpU0hocNIBZkFVX3lxTFBaVEUtczc0RzNMcTRnU0t6bWFYbGxnNVNaNGE0b2NFSUtWZXhGdTF1ai1BUTBsYS1rVTByWV9iTkdsd2RzQ1o4c0dTZ2MxaFNSVjc0QnpiWUZSZVBaY0docndiNGVfZw?oc=5",
-      "description": "電影光點1／台灣電影文化協會名稱有深意 25年來帶動產業連結&nbsp;&nbsp;鏡週刊Mirror Media",
-      "published": "2026-07-10 06:28",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "電影光點4／影展、電影教育同步進行 慧眼識佳片合作吸納觀眾 - Yahoo新聞",
-      "link": "https://news.google.com/rss/articles/CBMihANBVV95cUxOcVN0bG9CTXJJYVZSSk96UDhLekZJeDdUYmZuQnlvc1Buc0VmbmFIVnVXOEIxT2NuYmo3MlJpUU15QzFrblBuZ0JSVDZ1SmV0WHEycmVEZE56VFIxQmVCd3d0WVd6SjM3aHA2bFNMUlZGZ0cxVXJrRktjbTZ2cW5BZWk0MGFrMnhRQl9mRGs3OUdPVS0wQlg4NW9rR2xPRVlHVEZoZHdOMy14dkhVN1FTdVlxRl85cGNIa1FSOVVqYy1adDhLaEEyQWFONzRwRFN1R2s5S1BTd2dRcFNkTk03dklqTVF1MzI1eFVNVG5Ca01rUnF5MDFYa1hKdWIwTVlpSk9ycUtYTDhmVDRPdmNvcDVPMGJNOHp5cmhpMERDbldlU05TazE5dXRGRmtiYXdKanFfTFYtcWQ5TE4xdTEwQU94NTMxcjEwOFhIYU1KUXhXVHZuWlFSb0VkanQ2UEFqdnZ1QlZxcEVobU9vYVNXTHpRN3RUV2IwZ0U1V3pHRnlhSGRw?oc=5",
-      "description": "電影光點4／影展、電影教育同步進行 慧眼識佳片合作吸納觀眾&nbsp;&nbsp;Yahoo新聞",
-      "published": "2026-07-10 06:28",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "電影光點3／兩場館區隔各自發光 映演國片對接電影產業當龍頭 - 鏡週刊Mirror Media",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE51SzJMckc1WlBUTGtOckpiWkk3UW13YndrcGhHd1hZSWoxaHM0VnEwa3BGRXRSZXVpaW1fZTFVMFdZOWcyODVxNU1kQ0ZvYzU3WVZhcHJrZnJjTzhDUVBqWNIBZkFVX3lxTE1HSWNjbGhjOEVELVh4WEc2VEpBYkxCaXFhTUNrakNhdVh1YXRLR0p4dGY2R0tYYjVYRC16Z2R1ZjlacU9KZVk4Z1FOOEc2dk8wOUkwLUdUNmg2S2UwRkxRaFhPdFhsQQ?oc=5",
-      "description": "電影光點3／兩場館區隔各自發光 映演國片對接電影產業當龍頭&nbsp;&nbsp;鏡週刊Mirror Media",
-      "published": "2026-07-10 06:28",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "電影光點2／跨界對話拓展視野 「國民戲院」一個世代影迷的記憶 - 鏡週刊Mirror Media",
-      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1wZzJkbjFyZk9BM2JVNzdxT1FjQ2VuSjMxb2tFY0dRR1psTDVmT0xCb1BCNk5OZTE4WGduTThpbkxrZFNyQzlQUjBlel9PRHg2aDdnSUV0Tlo3OVdNaHZrN9IBZkFVX3lxTE5TMlg5WEZ4Z004cjItb29PN0pVOUtNTEhST1p4dmVhVFhrMjVDRUx3S1BUQ0tadkhPbG9CM1NlTjFUcUFyYWRwcjlHV3VZV1h1YjJwbnZMTGtocXdlZGprbDV0WU1HUQ?oc=5",
-      "description": "電影光點2／跨界對話拓展視野 「國民戲院」一個世代影迷的記憶&nbsp;&nbsp;鏡週刊Mirror Media",
-      "published": "2026-07-10 06:28",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "電影光點5／回歸源頭扶植新導演 多方攜手潛力新銳培養大師接班人 - Yahoo新聞",
-      "link": "https://news.google.com/rss/articles/CBMipwNBVV95cUxNZVZRcnFNYXVvdmk2UXNTdUVUMFhXZXJabE9yS2ZOUEo5UkRRek9hZXBibGxDaTBKMFpFZmxrUUc1azN1b1V3WXlCVTFHVmpscnJBcFpITWltRS1hRUFlaWNsbHk0VXh6UEFYaEJmYUdKUHc4X3gxdjhOZDBRMS1BQzdLX2hKbUM1WjBkSzNWamZ6MnFEQnFkdTdaUHhEVG5IRy1sMnJmRXpOOXBpQWFTQ0doZDJHVU9UNTBmdTUyS0tqM2x4VmpGaE91bkRmWERWQThKT1FYd0ZxbEotSW9aYWozUjNaZk5rZFliRUFTRlZWWEQ2dW44Mm5uQ0hFS0ZDREpEZHJsT09PYVBOV0s1bk5lb050LWI4elJ2ZlJaN2xCbGI2a1lMc1oxZk4tODRtWXZYWVZta3g4MmZnU1A4ekl2V3ZoVVhpamJYcGViOUF1N2Z5WWZpWkIydV95S1FFTWlpUF9yVEwtQjNBRmpZM0lQZ1VLLVhnMlBCUEo2ZHhfYzJIV0hPUFUtYUtIYUZ4aFRVbk5CQlZYVDV4a0pkNlpDZERvT0E?oc=5",
-      "description": "電影光點5／回歸源頭扶植新導演 多方攜手潛力新銳培養大師接班人&nbsp;&nbsp;Yahoo新聞",
-      "published": "2026-07-10 06:28",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "擔心吸金？楊金龍︰AI發展方向沒問題 - 自由財經",
-      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAzOVRicHZlNzNGd1RGbFI0ZkZDMEpRRExwaVJxdTRheWxjcmpDNWZnZy01bUtpWnhrcmxOaUVMRlo0Ul9ZMFZ3VFVOazhYQTFwVE1KbXVB0gFbQVVfeXFMTzRRbkNVczFkZi1JZUZRT3Ruck4zeS1GY3NoN1hTOHZMLVV1anVOdHJuY3RsWXNERVZLS3hzOWhPazc4am5KRXZ0ZWJNZzN3c0VsVjVKUWtkekRUVQ?oc=5",
-      "description": "擔心吸金？楊金龍︰AI發展方向沒問題&nbsp;&nbsp;自由財經",
-      "published": "2026-07-10 05:30",
+      "title": "一周熱門零股／0050、國巨、群創 交投重心 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5TOGVsTzhQbFYzeFY4d0lMVHE5aU9BYWtVdHBraFl3VW9WWkZDelJuSkVnZW1EeDNZLXZERVF5T2tXODd4TmdRRGJWT2p5ZUhz0gFWQVVfeXFMTWZNbHVxa0tjQkdKbUM3SHFlZDNlR2hHMHY0NEhobHFjQ3Z5dExFQm1SMUFFeE5xb3E2R2tKczlJUGszcmp2QUN5TnR3Wjk4ZjVFWFJYS3c?oc=5",
+      "description": "一周熱門零股／0050、國巨、群創 交投重心&nbsp;&nbsp;聯合新聞網",
+      "published": "2026-07-11 05:30",
       "source": "news.google.com",
       "category": "財經"
     },
     {
-      "title": "AI需求續強》6月出口連32紅 創歷年最強上半年 - 自由財經",
-      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1lek42czVyeUx2WVhTcklkR0J4NmhlMERGcWdhVjMtYUstM29VSVlrSkRXanlSd1RLODBaZlM3eENqSTBFSnBiUi1mQVlheHFKMFhxVlRR0gFbQVVfeXFMT1N0Slo2R0RfRl9Wa2dDX1VVVjJzZWhraTlQWW5Nd284OEVfQmZJdVAwVmQ3WExxbEJuTG10d2l4VmtLeGVITzRUTUhtM0NhcGhXOHlLa043eU5wdw?oc=5",
-      "description": "AI需求續強》6月出口連32紅 創歷年最強上半年&nbsp;&nbsp;自由財經",
-      "published": "2026-07-10 05:30",
-      "source": "news.google.com",
-      "category": "科技"
-    },
-    {
-      "title": "股匯期10日休市 - 聯合新聞網",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFAza3MyZzJwUVBCSnFqNUlWdjdLQ2o1ckJUQ1o1VXVOZGpja1lsRG85U3dLc0YxT2FxR2x4SGZXdzFod2Y2elE4bXRzU0k0ZXRt0gFWQVVfeXFMTjhiWGNaNTdDSnJuMWk1NU9MTFI3eVhoUWNXZUMxMUd1VGZBM1U5cF9ETmRXbF9kTG1fNmkteVhDeHR2cGNLNXk5WktXM3hQdkp2TlNqbkE?oc=5",
-      "description": "股匯期10日休市&nbsp;&nbsp;聯合新聞網",
-      "published": "2026-07-10 05:18",
+      "title": "興櫃一周回顧／雷虎生漲逾50% 稱冠 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFA1NjlkMHRYekVjU2JoLVYtVWY5T0Y1bU9LM2l5alFjWGtIVk1qZ3dOZFFkUnVjN2FMdE55WFRsb2VIbVdBaTdfaFQzRHFoajJG0gFWQVVfeXFMUC1pb2s1VDNwTVBUNUdyVGl4LVB5cnoxMDFOR3lsR0RVaW0ycXRPR25vdHVRUG5UY2RWdmJvaW5oT2ZUOGprQjRvRmVoc2djaUtzdG1Md3c?oc=5",
+      "description": "興櫃一周回顧／雷虎生漲逾50% 稱冠&nbsp;&nbsp;聯合新聞網",
+      "published": "2026-07-11 05:30",
       "source": "news.google.com",
       "category": "財經"
     },
     {
-      "title": "7月10日 五件財經大事搶先看 - 經濟日報",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBoajI0Y19ZSC1JM0ZQVUZpR2lEanQtRjR1VHNIQlVKLWpKWktycFpWSDNrUXNDQl9lT1ZCOGM2SW9fU0VoUnFIc0c1WHU5VTlacmlWalNHMnNoZ9IBX0FVX3lxTE9SSU9FX3kzMXVYNUtyMnhxWFlGekxDMV9rakpRMUYzVndNTDQ3OU1tMThUa01QNzNlc1VjZFlESldJTVE2b194TFJfNjNESHUzQ2szcVM2cElSTlNNUjFn?oc=5",
-      "description": "7月10日 五件財經大事搶先看&nbsp;&nbsp;經濟日報",
-      "published": "2026-07-10 04:03",
-      "source": "news.google.com",
-      "category": "財經"
-    },
-    {
-      "title": "亞洲科技股扮全球經濟成長核心- 日報 - 工商時報",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBjT3dhTzc5OEdLWHRtZEpZd09SdUdZOGpmTjdCcDA4TEdkQ2RTZk5EclZ6dHNZaTd3eUxQV1pUeXhMWlV1ZXVfSm1RNFhjcUN0VXJ6MVIybVhQMVNTMXZR?oc=5",
-      "description": "亞洲科技股扮全球經濟成長核心- 日報&nbsp;&nbsp;工商時報",
-      "published": "2026-07-10 03:00",
+      "title": "外資空單八萬口真實訊號！? - CMoney",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5pNlRMWFozblB0aXNoZkVqRjJFdWJEeTdSaVAyUlZFYzRQMzBhZmp1N3NjdnJEdzhHekxhajM1Wi1HQnZtVXJ4ZjM3eG9SVThhZ3FjdmNUdXQ?oc=5",
+      "description": "外資空單八萬口真實訊號！?&nbsp;&nbsp;CMoney",
+      "published": "2026-07-11 05:14",
       "source": "news.google.com",
       "category": "財經"
     },
@@ -267,87 +259,95 @@
       "title": "個股概覽 | 個股 - 股市 - CMoney",
       "link": "https://news.google.com/rss/articles/CBMiREFVX3lxTFBfVGtPUmhQeF9nalNLNm9zTGJWQlREWTlFa2dVeEhkNElpN1d0OXlyaFF3U3NaYnBodklvejVEU1YtdkNl?oc=5",
       "description": "個股概覽 | 個股 - 股市&nbsp;&nbsp;CMoney",
-      "published": "2026-07-09 23:51",
+      "published": "2026-07-11 05:04",
       "source": "news.google.com",
       "category": "財經"
     },
     {
-      "title": "台北電影獎／安潔兒艾奎諾、余香凝搶影后 劉冠廷「手心手背都是肉」 - 客新聞 HakkaNews",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE54YmFWa1E2T3hPeHZBeUpyQk9HNHpfWGprSURxWW5UZDd2VGd4THctbUhGQWlDTFhmTTIwNE1zU3lsc2dXSlNkSWN4U2lGcXRt?oc=5",
-      "description": "台北電影獎／安潔兒艾奎諾、余香凝搶影后 劉冠廷「手心手背都是肉」&nbsp;&nbsp;客新聞 HakkaNews",
-      "published": "2026-07-09 23:44",
+      "title": "7月11日 五件財經大事搶先看 - 經濟日報",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBMd00yeDA2NXVndWxFck5ndDVXb094VmRBSTBXUldFZEFlN3lHUWVxQ1hlaDJWTHpGLTgyWVVRSlI0cFp4YUNGMEx5UmVHeVBDaG0yeDUwbWkwZ9IBX0FVX3lxTE9QRFVaZ2lHRmdRb3RvSkExR0VKS1FCbnRCYXItOGRqdGZObE5KeTh0NkhkU1JsN04wLS1BYlI3Rmo5cjZ1bXRmZlRoODF5VldhdFNVTWFzMlVadUtlSzhN?oc=5",
+      "description": "7月11日 五件財經大事搶先看&nbsp;&nbsp;經濟日報",
+      "published": "2026-07-11 03:19",
+      "source": "news.google.com",
+      "category": "財經"
+    },
+    {
+      "title": "2026中職明星賽7/18登場！門票、周邊商品、表演嘉賓、球員名單一次看－商周頭條 - 商周",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9ZMWxjQ1NoWFhYRW5CTWltQ3NLVVU2V3B2LXc4dldDd2x2SDNKTnA5ZVdWbHNYWGxSTjRUTjRuZU85U0I5R0hqX1BNZDhRbk00RXVPSTFvRWQySGVDcXNEOUZ3?oc=5",
+      "description": "2026中職明星賽7/18登場！門票、周邊商品、表演嘉賓、球員名單一次看－商周頭條&nbsp;&nbsp;商周",
+      "published": "2026-07-11 02:25",
       "source": "news.google.com",
       "category": "娛樂"
     },
     {
-      "title": "臉書不玩了 AI泡沫正式來臨？ - 經濟日報",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1ZeGItek5fWGxiQ0JzYzUtNVlXSGhSeEFpNGpIdmJrakxQYlMtdk5XZS11RTJ0UG1GcXgtLVZBVUpFem5tTkRyMllwU2J2bFI4OVhFbGhKLWktQdIBX0FVX3lxTE01cW9la1JHMElSd1dpdDlMRHE3b3d0VkVqYW1zdlVFR1pvbVY3Z3Z5RWoxR09fNDY1enRWb1RTdmxYN1ZyRnM0a3FuQW5wbE9vNHdxMjE2ZktjVndrUkE0?oc=5",
-      "description": "臉書不玩了 AI泡沫正式來臨？&nbsp;&nbsp;經濟日報",
-      "published": "2026-07-09 23:14",
+      "title": "AI走出雲端 台灣準備好了嗎？ | 社論 | 專欄 - 經濟日報",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1yRHRwY1NpX2h2UDhKODZlQWhVVFpOejRUT2tHdURRVU45QWxvZXFydWp1SUNBRmR4N2wwOS1Yaks0TDVtMEVIMF9KaHBNOVFrSFZsVUVmc21udw?oc=5",
+      "description": "AI走出雲端 台灣準備好了嗎？ | 社論 | 專欄&nbsp;&nbsp;經濟日報",
+      "published": "2026-07-11 02:08",
       "source": "news.google.com",
       "category": "科技"
     },
     {
-      "title": "台北電影獎／《深度安靜》奪首屆青少年評審團獎 團隊：獲年輕人認同意義非凡 - 客新聞 HakkaNews",
-      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBONGVENFNmemozcUFKSnFtYWlQb1lQWlh3NllMQ3VSUW9jZHd1aWxaZW1pUmFxamlMQWVHVUhrN3lPWHQ1elRud1ZYeVBPUFo2?oc=5",
-      "description": "台北電影獎／《深度安靜》奪首屆青少年評審團獎 團隊：獲年輕人認同意義非凡&nbsp;&nbsp;客新聞 HakkaNews",
-      "published": "2026-07-09 23:01",
+      "title": "這檔精選30只金融創新股！虛擬資產法規元年 小資急卡位 - 三立新聞",
+      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE4wVjgwa0NYVk9qZ1Ywd2pPVTdNLUFvbENQNFJqNFpNak80ZjQteHh6c3NSNjJJQVU2WFVoMkZ5Vk5xbTNPeVNZU0V2aw?oc=5",
+      "description": "這檔精選30只金融創新股！虛擬資產法規元年 小資急卡位&nbsp;&nbsp;三立新聞",
+      "published": "2026-07-11 01:52",
+      "source": "news.google.com",
+      "category": "財經"
+    },
+    {
+      "title": "台北放假台股被迫跟著關門？網轟：2026年金融系統還無法遠端運作太落後 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5NWkZ5ak5oLS1XNXE4OC1fOHN5TWh0aXkxU2pOaXJFQU5IMlh3YmFmemhwTGkxT194YldtX293dG9HV2EzZmExbENiUU4tX0VxYWfSAVdBVV95cUxOVjJtV01ZR2V5c19mbjdOT1FldHZheHMzVTh3aEt1TlVWUHh6MlBOVzlodVhTX0pVODZPZERiWG5jRlBmLXREMUdmVDdFb1phZl9oSUM4ZlE?oc=5",
+      "description": "台北放假台股被迫跟著關門？網轟：2026年金融系統還無法遠端運作太落後&nbsp;&nbsp;聯合新聞網",
+      "published": "2026-07-11 00:44",
+      "source": "news.google.com",
+      "category": "財經"
+    },
+    {
+      "title": "ETN趨勢導航／元大金融配息N 帶勁 - 經濟日報",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1CNVpPX2dCYWpPcUpyNVhtX2pvd2djcm5qMU4zTGIzVExDVVVmYWxqMG1qVnpYUlltQ19EeUV6Y285dnh1ZFN1S3ZFS25qdmxXSGJlWU5aeFkzZ9IBX0FVX3lxTFBScFJsdVJGdEsyeGItYkRPalhQWFd5U01udVdXZ1lyXzJOMVg1ZVVrVHRacnJicmNZWEh2WnJiZWE2X3hCdlg5UjlQUHBhazFKMGpHeDZPU1dRbmNTcFdz?oc=5",
+      "description": "ETN趨勢導航／元大金融配息N 帶勁&nbsp;&nbsp;經濟日報",
+      "published": "2026-07-11 00:44",
+      "source": "news.google.com",
+      "category": "財經"
+    },
+    {
+      "title": "泰雅爾設教八十週年辦音樂營 傳唱母語詩歌培育事奉人才 - 台灣教會公報新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1Ocmp6WGluaHBQTHYzOHk5TnNYbk9GRHpnVEllQXpaaTdNSEJLV2dPdGhMbV9pMExzTkp6cWZvdHJZcUhEeW42bHJlWQ?oc=5",
+      "description": "泰雅爾設教八十週年辦音樂營 傳唱母語詩歌培育事奉人才&nbsp;&nbsp;台灣教會公報新聞網",
+      "published": "2026-07-11 00:18",
       "source": "news.google.com",
       "category": "娛樂"
     },
     {
-      "title": "【7/9 電影推薦】《海洋奇緣》《電影哆啦A夢》暑假戲院必看！《魯冰花》《外賣》台灣之光電影再上映！ - Yahoo新聞",
-      "link": "https://news.google.com/rss/articles/CBMi9ARBVV95cUxNQmxCU21CUUcwUWtsUWQ0SHBxaXFlblRpbl9DY1lVeWFHc3JXeU5lR2tVZUVWNjN0eWt3VWRvdkRZUE9LWHJUS3luNWszb2NzelJkWXZJN2dZdDN6bjFneHlZYThGYjN0NDZad1BjYlh6V1ZMT0pPeWtnQU1vQ1JPcEotZVdyNFk5SjVMcXh0aUtkTjZkel9BQ3VWRnJDZ05BQ1pjTVV3d1dBR05VcS1lc1lhM013eHkwNkdsbThBTjV2Y2tEQXc0cVNTVEoyNWlOWUVZemdFaFdNOGdoUWs2dVZqTHNlT0UzcUlCNE9zWllnSDZITVJMWE5wNTNwRy1VSC0yUTktQXlmclF6OFgwV0Zjei1FTWprYnB1UWNOQnJOU0tjdmpXUTRhZHBXSmpocnc4UDZ4VFBvcjdSMUJhaEZ2NWVtbXJpaHBrZEhnU1Q0QjFVNVNlS0R6U01xbWlSamM1OXl5dFM1RE5OS3N2T2oyb3JoQXZsdnd0cW56ZHhtLWVRMWI5V1pXZVNyc3h6U205SzVwZGNiOENCWXdTMzFhTTVBMEZyMFBPbkVmeFRyNUR5SkNaN0RUaWhYdXR2SngwQU90T19STVo4QjNCVGd3SU5TNExwV21wbmVRaGlqMWtDNlNXaThMZHRwbnBFZGxFYUV0SXRDVWRaV1BLd0JxT1oyNi1BV3dJTVREUGFNZmxUNUxCWk9Fc3RHd3VVblJXQ1ptbVZoRG1sSDRIRWhzSkt6QzJueUxaaFBPSHA3dWhQdlNKS1EtbU1sMWp3UGZsb0NDWmpSV3RlVXF5cWtFQnZscjNQN2lxSGd5X0RtVzQy?oc=5",
-      "description": "【7/9 電影推薦】《海洋奇緣》《電影哆啦A夢》暑假戲院必看！《魯冰花》《外賣》台灣之光電影再上映！&nbsp;&nbsp;Yahoo新聞",
-      "published": "2026-07-09 22:51",
+      "title": "選情初探／桃園區搶12席 明星議員、政二代激戰 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1oMHBkaE9BSU9YZXMyVzN1NVMybGRmdDF0aXFOVDhGaTRUUzBzalJlczFRV2lEc3gxcmVQZ2Z5RTZ4eERBc2U1RzdvcUl0UnZOcl9B0gFYQVVfeXFMUGhjUkZUV1VXMlJrM1pGVWxacXV3VE1kVmZfUEhWdm02YzNtc1pKcDVGTUdMYzRsMW51R2pmbWhzSzY1cE5mbGZLOWdNQUItUGFpTmIxZG5LcA?oc=5",
+      "description": "選情初探／桃園區搶12席 明星議員、政二代激戰&nbsp;&nbsp;聯合新聞網",
+      "published": "2026-07-11 00:12",
       "source": "news.google.com",
       "category": "娛樂"
     },
     {
-      "title": "颱風假股市會開盤嗎？台股休市標準、交割款順延、期貨影響全攻略 - TVBS新聞網",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9oR0hrVkNRRW1xd19faWhkUDFvUTBJOTN6Y0paRm1iWWtlXzFlUTNqVGcwaTFJbVNmbWNETHVJYm5HWHZwcFp4TDlZaEk2V2c?oc=5",
-      "description": "颱風假股市會開盤嗎？台股休市標準、交割款順延、期貨影響全攻略&nbsp;&nbsp;TVBS新聞網",
-      "published": "2026-07-09 20:28",
+      "title": "下個金融危機已上演？美專家示警： 衝擊恐是網路泡沫數倍 - 三立新聞",
+      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE4tUURDb1M2c0tReGM4elZTd0ZZTm4yQW84WTlXSEhuYURDNnJsUHpnbExubl9pSklWMUdhV2RZaGt5MVN5MFUwRFc2NA?oc=5",
+      "description": "下個金融危機已上演？美專家示警： 衝擊恐是網路泡沫數倍&nbsp;&nbsp;三立新聞",
+      "published": "2026-07-10 23:22",
       "source": "news.google.com",
       "category": "財經"
     },
     {
-      "title": "台北市電影委員會 TAIPEI FILM COMMISSION - 台北市電影委員會",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFAwc1pGZXNkS1d6enRVeGhoLUthNGpKaUpxTnNmdEhQcG50dWZjRzk3MXlENno1REZEZ05vNVJMRE4zV3FxR0V3aUNsakc0NUtUYk1Vb3NpZk9DVHd6OWpkcWdYNHY?oc=5",
-      "description": "台北市電影委員會 TAIPEI FILM COMMISSION&nbsp;&nbsp;台北市電影委員會",
-      "published": "2026-07-09 20:17",
-      "source": "news.google.com",
-      "category": "娛樂"
-    },
-    {
-      "title": "股匯休市！巴威颱風停班 中信金、華航逾20檔除權息延後一天 - Yahoo股市",
-      "link": "https://news.google.com/rss/articles/CBMilwNBVV95cUxQT3VfaWN1emVvdl8zT1VVYV9WRWZEcl9OeTc4RC0yQXpZTUZoaVREZ29ybk41SklyRk94NmNuYmkzeGdrWXl0Wk9kOGNyb0phY0h5cjRNYUFmNjJUa19PMGNpZ0JQUWZTeDhIa1pxX2ZUX0NUSmd0TmNFUUZ1VnlyVTFWSUo3Rkd3WnVUQndKV3k3OVYtV3h2V3dTVnYtUEpaYjdnUi1lMV8xdnJmYUpHdzl6RnZ6bDlUbWRVa2xZWGdET2xPcmVnbl84SWRRQ052UzNZcWlkOW5hUjg4eEszTEVDNURzM3RHM2pybzk3VVpETVl0N2dCRUZ2YzZWcnhsSlk4Y0lkVVJsY3dtTkVtYzM1aWZLLVNPcTRYM3MzZk9ReGhnRHNwX1BRdWp6UFJlRjBfR2wxNFFva0dXZFBsSHg4MV9wM3dfcHNaVzhVTjlrSlZSYmF0dVNSb29UTUtoTHE1WkFnOTlsRE9jYVVYXzVMb1ZhYnBlVVZvd2xPYmVLU1RrQ3pSTkRVLXYwMGxtbURYRVkzQQ?oc=5",
-      "description": "股匯休市！巴威颱風停班 中信金、華航逾20檔除權息延後一天&nbsp;&nbsp;Yahoo股市",
-      "published": "2026-07-09 20:09",
+      "title": "金融專欄作家示警「下個金融危機已展開」 衝擊會是網路泡沫數倍| 全球財經| 全球 - 聯合新聞網",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE0wMkNGWXpTR19RZVVOM3d5c1ZWUHl4bGtJb3FqN3V6SkVXc0RXc0JfNEhNTlpSMVVDTk93NUFlSENyRl93TWV2MzE1YW9YWWc2?oc=5",
+      "description": "金融專欄作家示警「下個金融危機已展開」 衝擊會是網路泡沫數倍| 全球財經| 全球&nbsp;&nbsp;聯合新聞網",
+      "published": "2026-07-10 22:11",
       "source": "news.google.com",
       "category": "財經"
     },
     {
-      "title": "經濟部新建辦公廳舍統包工程動土打造智慧淨零與歷史共融新地標 - moea.gov.tw",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQaGx1M2JvLXZnUVU2NzZod3pCSmUySVFVa1h3clZJc0RKamtYcExoem56bllkRmFCNUVlRnNEZUJmZzlpY0J0ZVBuRl9xczhkcE9WWDNzemN1MUk1U2dVT3h3RzhfdVBHa1hIZVFNX09vdzNWbDZXajZKbWdjQm9xY2hDZmIxNS1DMGRSZg?oc=5",
-      "description": "經濟部新建辦公廳舍統包工程動土打造智慧淨零與歷史共融新地標&nbsp;&nbsp;moea.gov.tw",
-      "published": "2026-07-09 18:30",
-      "source": "news.google.com",
-      "category": "財經"
-    },
-    {
-      "title": "經濟部新建辦公廳舍動土 卓揆：打造智慧永續指標性大樓 帶動產業升級 再創國家經濟高峰 - ey.gov.tw",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOZ2lwdXlLYWE0QmJNWWtlSm9GWUp0dzVocHhOZ1FuS3B1V2lVRm9hSVpVSGtLRFh0Vy1IR2IyZ3dEY3Ezb3JNS091UkZyOUY4by1RcDgweGZjSjRobGFVRGpGQmtCbHJsbExmM25wUmVTOFN1OU9yM0VEUjNLWnhIZW5nX3JJOWs?oc=5",
-      "description": "經濟部新建辦公廳舍動土 卓揆：打造智慧永續指標性大樓 帶動產業升級 再創國家經濟高峰&nbsp;&nbsp;ey.gov.tw",
-      "published": "2026-07-09 17:51",
-      "source": "news.google.com",
-      "category": "財經"
-    },
-    {
-      "title": "經濟部推動跨部會AI輔導團，參與企業已達9,249家 - moea.gov.tw",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNT2xpUU8yV3JTR2h5M0Q4b1RpLUNpYlNsZjFkYXhzaGpYWFpfTmVBTkVLX1p0eDd4ekFqSGQxdGRuTDRuZlFCMjVQLXVmZ2pRc29XQk5oc0FYbVVQS2tycF94THR4aDJaTjVGbmdzQXUwYmpxcGNZOWxYcEhjOXRudTc0RWZLbFlsalNweg?oc=5",
-      "description": "經濟部推動跨部會AI輔導團，參與企業已達9,249家&nbsp;&nbsp;moea.gov.tw",
-      "published": "2026-07-09 14:50",
+      "title": "夜盤走揚、美股領漲！「台股放颱風假」這群人哀號 - Yahoo股市",
+      "link": "https://news.google.com/rss/articles/CBMi7wJBVV95cUxNX3hfT3d1T1ZCdnk0aU1EV1gtOE4zbEJXNkxwREQ2OTRHcUsycHVyVzlWUnhRZGNyeEFDNGkyUFg2WF9ndEZ6bVkxWjRhS2tpSlhtcTJ6N0pfakMtbjJZajZsc1dSZ2VkWmxjU3Z5S2lDeFpQSFpXVVBXOGUybWN4aENqeEhkd1JuN1pldWJ1MjIzYlVibHctUXp5U0J3WnVKeEcxdnM5SS1uZFBBRjZkSXcxN2pwMVBJdGJmOUxkRDg5a0FQQWllNDV6LWdOa19sQldfMl9FYWxXdjVGODhSOE1PNVZwa0J4NGExal9TRTREVHQxZzg0TVBHT3prM0h1UVBJd09aRXVESkZLYVhMVWVQM2FvNGNiZ09qZjNGbEJSNGd3TEozTzVleGljQ3dKSFg3azlxMktEeGhtMHRrSnRkUmdjU1VuRUhFd25vTi1MU1Vqdm1FcGMtX1ZoX3V6eEpCNzRFNEoxWF9wMWhZ?oc=5",
+      "description": "夜盤走揚、美股領漲！「台股放颱風假」這群人哀號&nbsp;&nbsp;Yahoo股市",
+      "published": "2026-07-10 07:01",
       "source": "news.google.com",
       "category": "財經"
     },
@@ -360,12 +360,12 @@
       "category": "娛樂"
     },
     {
-      "title": "7月8日 五件財經大事搶先看 - 經濟日報",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5Td0xUdDZBZHI3TGJqdm5tenhZQ1B1d2FPSUdYUm1JMXZaTzlEX0NKS3FFdnprV3hONUFMSEstZFpTMHU3RS1XTlZOUFdlMnRrMGh0dTJQOWRZZ9IBX0FVX3lxTE1Lc2d3SlVKcEtCc213VHZhbWJRTThwaWlkbzRjTkR2YV9nTkxWa0hNeVVSNm1XSGtuS0pkYldSMzR5UmhYZi1IT3NKQjRKanVncUlUbnZwNkxWdk9FSFpV?oc=5",
-      "description": "7月8日 五件財經大事搶先看&nbsp;&nbsp;經濟日報",
-      "published": "2026-07-08 03:21",
+      "title": "2026上半年台灣電影票房Top 10出爐 動畫片強佔冠軍及亞軍 《穿著prada的惡魔2》僅排第3！ - Yahoo新聞",
+      "link": "https://news.google.com/rss/articles/CBMi7ANBVV95cUxNVlkwVW9FbXpUZmhzbE9UVGFLM2xqVkJqTFljSGFvRnh5WUNZajBmSTFIT29Ma083X0pLQThWaV83bVFobkMwUnZoNW9Zckp6VHpWcGdaY2V0M09XSEFyMWlVX3hENnBPNVlpOGluR096SVFKMFVmazdRRHlIMVBJU0JfTVVGam1Lc2hJOF9vZHFCRDVQWWE3SnpGam5tcFI2ZzE4TXJZSjFPRUkzaDlFajVHRXlqdU1OajlkdUxCTkFSZmFTSlJfbVpyWTdfRU9OSmhfU01TOXhlZjBJY1VLbjFHWUlHczZHNUNWOWVBMWdMYlpENzc0MWJ1OU81NUdWQ1lnWmxoUVIxRl9Kb1o5dGdoZzVMYWVqOERwOXFyWUZSSHlnc2s3SEE0TXUxY1JBT1VIdG9NZUZ1VDNyRDZ4TnhSWnhESmZ0YTFKeTVVbU84bW13UXBhVnlIYmJNcFpBNzJZbEx3ZU1QNEFlTkhpYXBDam40RkRCUWFjSk9iM3RYWUFkSFNzejlGZE1Nd2VuZl9RY3dLNW10VUI2Q0VKbVV4b3NzUUFDTThMZVB2N2NReW9ySk9xVURvYW9iZEZpTzR5cElvako0aG9pYkl2UnhmdUJfNzJXWGxRNUx0ZjFONFphdHVWMjJYQU0?oc=5",
+      "description": "2026上半年台灣電影票房Top 10出爐 動畫片強佔冠軍及亞軍 《穿著prada的惡魔2》僅排第3！&nbsp;&nbsp;Yahoo新聞",
+      "published": "2026-07-07 23:06",
       "source": "news.google.com",
-      "category": "財經"
+      "category": "娛樂"
     }
   ]
 }
